@@ -1,0 +1,1050 @@
+/* =========================================
+ MAIN CONTENT 
+========================================= */
+
+/* Section Introductions*/
+section {
+  .section-intro {
+    text-align: center;
+    margin-bottom: 50px;
+
+    h2 {
+      font-size: 36px;
+      line-height: 44px;
+      font-weight: 700;
+      margin-bottom: 0.4em !important;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 0.6em;
+    }
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 15vh 0;
+
+  // --- Stock Marquee ---
+  .stock-marquee-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+
+    // Gradient background: black at top fading to transparent
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    padding: 12px 0;
+    overflow: hidden;
+    pointer-events: none; // Allows clicks to pass through to slides if necessary
+
+    // The moving track
+    .stock-marquee-track {
+      display: flex;
+      width: fit-content;
+      animation: scrollMarquee 40s linear infinite; // Adjust speed here
+    }
+
+    // Individual stock items
+    .stock-item {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      font-size: 14px;
+      font-weight: 500;
+      color: #ffffff; // White text for general text
+      padding-right: 15px;
+    }
+
+    .stock-name {
+      color: #ffffff;
+    }
+
+    .stock-up {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      color: #ffffff;
+
+      // The green numbers
+      .stock-number {
+        color: #58c86e;
+        margin-left: 5px;
+      }
+    }
+
+    .stock-separator {
+      margin-left: 20px;
+      color: rgba(255, 255, 255, 0.5); // Faded pipe separator
+      font-weight: 400;
+    }
+  }
+
+  .hero_video {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: -1;
+    background: #202020a0;
+  }
+  .container {
+    height: fit-content;
+    z-index: 3;
+    * {
+      z-index: 3;
+    }
+    h2 {
+      font-size: 45px;
+      line-height: 53px;
+      color: $white;
+      font-weight: 700;
+    }
+    p {
+      font-size: 16px;
+      line-height: 22px;
+      color: $white;
+      font-weight: 500;
+      width: 40%;
+      margin: 1em 0;
+    }
+    .cta-btns {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+  }
+}
+
+.currency-marquee {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  overflow: hidden;
+  background: #f4f4f7;
+  padding: 12px 0;
+
+  .marquee-container {
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+    pointer-events: none; // Allows clicks to pass through if necessary
+  }
+
+  .marquee-track {
+    display: flex;
+    width: fit-content;
+    animation: scrollMarquee 30s linear infinite; // Adjust speed here
+  }
+
+  .currency-item {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000; // Black text for general text
+    padding-right: 15px;
+
+    .currency-pair {
+      color: #000000;
+      font-weight: 600;
+    }
+
+    .exchange-rate {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      color: #000000;
+      font-weight: 400;
+    }
+
+    .currency-separator {
+      margin-left: 20px;
+      color: rgba(0, 0, 0, 0.5); // Faded pipe separator
+      font-weight: 400;
+    }
+  }
+
+  .marquee-cta {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    color: $secondary;
+    transition: color 0.3s ease;
+    &:hover {
+      color: $primary-dark;
+    }
+  }
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    // Translate by exactly half the width (since we duplicated the items)
+    // Note: This works best if the track is exactly 2x the width of the visible items.
+    // Adjust the percentage based on how many duplicate sets you added.
+    transform: translateX(-50%);
+  }
+}
+
+/* Products Section */
+.products {
+  padding: 70px 0;
+  /* Tabs */
+  .tab-links {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    background: transparent;
+    width: fit-content;
+    margin: 0 auto 50px;
+
+    li {
+      width: fit-content;
+      height: fit-content;
+      background: #f4f4f7;
+      color: $black;
+      border: 1px solid #f4f4f7;
+      list-style: none;
+      padding: 8px 16px;
+      border-radius: 24px;
+      cursor: pointer;
+      font-size: 16px !important;
+      transition: all 0.3s ease-in-out;
+
+      &.active,
+      &:hover {
+        color: $secondary;
+        border: 1px solid $secondary;
+      }
+    }
+  }
+
+  /* Cards */
+  .cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .product-card {
+    background: $white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .card-img {
+      width: 100%;
+      margin-bottom: 15px;
+      img {
+        width: 100%;
+        height: 210px;
+        object-fit: cover;
+        display: block;
+        border-radius: 28px;
+      }
+    }
+    .card-text {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      h3 {
+        font-size: 22px;
+        line-height: 30px;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 14px;
+      }
+      .button {
+        width: fit-content !important;
+      }
+    }
+  }
+
+  .tab {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+/* =========================================
+   REAL STORIES CAROUSEL
+========================================= */
+.stories-section {
+  --stories-bg: #f4f4f8;
+  --stories-blue: #2d5eaa;
+  --stories-cyan: #05a9df;
+
+  padding: 70px 0;
+  overflow: hidden;
+  background: #f4f4f7;
+  .container {
+    display: grid;
+    grid-template-columns: 28% 72%;
+    min-height: 430px;
+    width: 100% !important;
+    max-width: 95% !important;
+    margin: 0 !important;
+    margin-left: auto !important;
+
+    /* =========================================
+    LEFT INTRODUCTION
+    ========================================= */
+    .stories-intro {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      min-width: 0;
+      padding-right: 24px;
+      .stories-intro__content {
+        h2 {
+          margin-bottom: 8px;
+
+          font-size: 36px;
+          line-height: 44px;
+          font-weight: 700;
+          margin-bottom: 0.4em !important;
+        }
+
+        p {
+          margin-bottom: 10px;
+          font-size: 18px;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    /* =========================================
+    CAROUSEL VIEWPORT
+    ========================================= */
+    .stories-carousel {
+      min-width: 0;
+      width: 100%;
+      overflow: hidden;
+      .stories-swiper {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        .swiper-wrapper {
+          align-items: stretch;
+        }
+        .swiper-slide {
+          width: 233px;
+          height: auto;
+          flex-shrink: 0;
+        }
+        .story-card {
+          display: flex;
+          flex-direction: column;
+
+          overflow: hidden;
+          background: $primary-dark;
+          border-radius: 17px;
+
+          transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+
+          &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(19, 42, 79, 0.16);
+          }
+          /* Story image */
+          .story-card__image {
+            position: relative;
+            flex: 1 1 auto;
+
+            min-height: 0;
+            height: 275px;
+            overflow: hidden;
+
+            background: #dbe5f0;
+
+            img {
+              display: block;
+
+              width: 100%;
+              height: 100%;
+              min-height: 100%;
+
+              object-fit: cover;
+              object-position: center top;
+
+              transition: transform 0.5s ease;
+            }
+
+            .story-card:hover & img {
+              transform: scale(1.04);
+            }
+
+            /* Circular arrow on each image */
+            .story-card__arrow {
+              position: absolute;
+              top: 8px;
+              right: 8px;
+              z-index: 2;
+
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              width: 30px;
+              height: 30px;
+
+              color: $secondary;
+              background: $white;
+              border-radius: 50%;
+
+              font-size: 20px;
+              line-height: 1;
+
+              transition:
+                color 0.2s ease,
+                background 0.2s ease,
+                transform 0.2s ease;
+
+              &:hover {
+                color: $white;
+                background: $secondary;
+                transform: translateX(2px);
+              }
+            }
+          }
+          /* Blue caption panel */
+          .story-card__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            min-height: 76px;
+            padding: 8px 10px 10px;
+
+            color: $white;
+            background: $primary-dark;
+
+            h3 {
+              margin: 0 0 5px;
+
+              color: $white;
+              font-size: 18px;
+              font-weight: 500;
+              line-height: 1.4;
+            }
+
+            p {
+              margin-top: auto;
+
+              color: $white;
+              font-size: 14px;
+              line-height: 1.4;
+            }
+          }
+        }
+      }
+    }
+
+    .stories-navigation {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 25px;
+    }
+
+    .stories-navigation__button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 30px;
+      height: 30px;
+      padding: 0;
+
+      color: $secondary;
+      background: $white;
+      border: none;
+      outline: none;
+      border-radius: 50%;
+
+      font-size: 20px;
+      line-height: 1;
+
+      transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+
+      &:hover:not(.swiper-button-disabled) {
+        color: $white;
+        background: $secondary;
+        transform: scale(1.05);
+      }
+
+      &.swiper-button-disabled {
+        opacity: 0.35;
+        cursor: default;
+      }
+    }
+  }
+}
+
+// Variables
+$font-primary: "Inter", sans-serif;
+$color-dark: #1a1a1a;
+$color-blue-primary: #0047ab; // Dark Blue for active numbers
+$color-blue-light: #00aaff; // Bright Blue for button
+$color-grey-text: #8c92a0; // Grey for inactive labels
+$color-line: #e0e0e0;
+
+/* =========================================
+   IMPACT SECTION
+========================================= */
+.impact-section {
+  padding: 60px 0;
+  // Section Header Styles
+  .section-intro {
+    margin-bottom: 40px;
+    align-items: flex-start;
+
+    p {
+      margin-bottom: 1em;
+    }
+  }
+
+  // Tabs Layout
+  .tabs-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr; // Ratio: Left column smaller than right
+    gap: 60px;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr; // Stack on mobile
+    }
+  }
+
+  // Navigation Styles (Left Column)
+  .tab-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    .tab-btn {
+      background: none;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #0812221f;
+      text-align: left;
+      padding: 20px 0;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      transition: all 0.3s ease;
+      opacity: 0.4; // Default reduced opacity for inactive
+
+      // Typography for Stats
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: $primary-dark; // Inactive color
+        line-height: 1;
+        margin-bottom: 5px;
+      }
+
+      .stat-label {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $primary-dark;
+      }
+
+      // Hover state
+      &:hover {
+        opacity: 0.7;
+      }
+
+      // ACTIVE STATE
+      // In your image, the active tab (1.3M) is DARKER/BOLDER.
+      // Inactive ones (98, 208.7B) are FADED/LIGHTER.
+      &.active {
+        opacity: 1;
+        border-bottom-color: #0812221f;
+
+        .stat-number {
+          color: $secondary; // Deep blue for active number
+        }
+
+        .stat-label {
+          color: $black; // Dark text for active label
+        }
+      }
+    }
+  }
+
+  // Content Area Styles (Right Column)
+  .tab-content-area {
+    position: relative;
+
+    .tab-panel {
+      display: none; // Hide all panels
+      animation: fadeIn 0.5s ease;
+
+      &.active {
+        display: block; // Show active panel
+      }
+    }
+  }
+
+  // Image & Glassmorphism Overlay
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    max-height: 500px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .glass-overlay {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 60%;
+
+      // Glassmorphism CSS
+      background: rgba(0, 0, 0, 0.4); // Dark semi-transparent
+      backdrop-filter: blur(10px); // The blur effect
+      -webkit-backdrop-filter: blur(10px); // Safari support
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 24px;
+      color: white;
+
+      p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        font-weight: 400;
+        color: #f0f0f0;
+      }
+    }
+  }
+}
+
+// Simple Animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   BANK SERVICES SECTION
+========================================= */
+.bank-services {
+  padding: 60px 0;
+  .container {
+    // Layout Configurations
+    $grid-gap: 24px;
+    $breakpoint-md: 768px;
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr; // Single column by default (Mobile)
+      gap: $grid-gap;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      // Medium screens and above (Desktop layout)
+      @media (min-width: $breakpoint-md) {
+        // Configures a 2-column layout. The left column is twice as wide as the right column.
+        grid-template-columns: 2fr 1fr;
+
+        // Explicitly defines 2 equal-height rows so the stacked side matches the large side
+        grid-template-rows: repeat(2, 1fr);
+      }
+
+      &__card {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+
+        .bg-image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: -1; // Places the image behind the content
+        }
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(
+            0,
+            0,
+            0,
+            0.4
+          ); // Semi-transparent overlay for better text contrast
+          z-index: -1; // Ensures the overlay is above the image but below the text
+        }
+
+        h3,
+        p,
+        a {
+          z-index: 1; // Ensures text and button are above the image
+        }
+
+        h3 {
+          font-size: 24px;
+          line-height: 32px;
+          font-weight: 600;
+          margin-bottom: 8px;
+          color: $white;
+        }
+        p {
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 12px;
+          width: 70%; // Restricts paragraph width for better readability
+          color: $white;
+        }
+
+        .button {
+          width: fit-content !important;
+          color: $primary-dark; // Inherits color from parent for better contrast
+        }
+
+        .app-download-btns {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          img {
+            height: 32px;
+            width: auto;
+          }
+        }
+        &--small-bottom {
+          justify-content: flex-start; // Aligns content to the top for the bottom small card
+        }
+
+        // Grid placement overrides for desktop
+        @media (min-width: $breakpoint-md) {
+          &--large {
+            grid-column: 1;
+            grid-row: 1 / span 2; // Spans across both vertical rows
+            min-height: 450px; // Gives a solid baseline height
+          }
+
+          &--small-top {
+            grid-column: 2;
+            grid-row: 1;
+          }
+
+          &--small-bottom {
+            grid-column: 2;
+            grid-row: 2;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =========================================
+   SUSTAINABILITY SLIDER SECTION
+========================================= */
+.sustainability-slider-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; // Fullscreen height
+  overflow: hidden;
+  background-color: #000; // Fallback dark color
+
+  .sustainability-swiper {
+    width: 100%;
+    height: 100%;
+
+    .swiper-slide {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end; // Vertically center the text block
+
+      // The container where jQuery injects the iframe
+      .video-background-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100vw;
+        height: 56.25vw; // 16:9 Aspect Ratio
+        min-height: 100vh;
+        min-width: 177.77vh; // Ensure it covers on portrait screens
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        pointer-events: none; // Prevent clicking the video
+
+        iframe {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      // Dark gradient overlay to make text readable over bright videos
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        // Stronger on the left where text is, fades to clear on right
+        background: linear-gradient(
+          90deg,
+          rgba(0, 20, 40, 0.85) 0%,
+          rgba(0, 20, 40, 0.6) 40%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        z-index: 1;
+      }
+
+      // Content Wrapper (Left aligned)
+      .slide-content-wrapper {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 3%;
+        padding-bottom: 15vh; // Pushes content up from the bottom
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start; // Align left
+      }
+
+      .slide-text-container {
+        max-width: 650px; // Restrict width so text doesn't span entire screen
+        color: $white;
+        animation: slideUpFade 0.8s ease forwards;
+        opacity: 0;
+        transform: translateY(30px);
+
+        .slide-title {
+          font-size: 2.5rem;
+          font-weight: 700;
+          line-height: 1.1;
+          margin-bottom: 20px;
+          text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+          @media (max-width: 768px) {
+            font-size: 2rem;
+          }
+        }
+
+        .slide-description {
+          font-size: 1rem;
+          line-height: 1.6;
+          margin-bottom: 30px;
+          color: $white;
+        }
+      }
+    }
+
+    // --- Custom Full-Width Pagination ---
+    .custom-fullwidth-pagination {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex; // Swiper uses flex for horizontal pagination by default
+      gap: 6px;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.2); // Slight background for the bar itself
+
+      // Override default swiper bullet styles
+      .swiper-pagination-bullet {
+        flex: 1; // Forces all bullets to take equal width
+        height: 5px; // Thickness of the bar
+        border-radius: 0;
+        background-color: rgba(255, 255, 255, 0.3);
+        margin: 0 !important; // Remove default margins
+        opacity: 1;
+        transition: background-color 0.3s ease;
+        position: relative;
+
+        // The progress fill effect
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 0%;
+          background-color: $white;
+          transition: width 0.1s linear;
+        }
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        // Active state
+        &.swiper-pagination-bullet-active {
+          background-color: rgba(255, 255, 255, 0.3); // Keep background subtle
+
+          // Animate the white fill
+          &::after {
+            width: 100%;
+            transition: width 5s linear; // Should match autoplay delay
+          }
+        }
+      }
+    }
+  }
+}
+
+// Animation for slide content entering
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   NEWS UPDATES SECTION
+========================================= */
+.news-updates {
+  padding: 60px 0;
+  .container {
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+
+      @media (max-width: 900px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+      }
+      .update {
+        .update-image {
+          width: 100%;
+          height: 300px;
+          overflow: hidden;
+          border-radius: 24px;
+          margin-bottom: 15px;
+          transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+          }
+        }
+        .update-content {
+          h4 {
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+          }
+          p {
+            font-size: 13px;
+            line-height: 20px;
+            margin-bottom: 12px;
+          }
+        }
+        &:hover {
+          .update-image {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(19, 42, 79, 0.16);
+          }
+          h4 {
+            color: $secondary;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+}
