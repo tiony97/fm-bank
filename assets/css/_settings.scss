@@ -1,0 +1,186 @@
+/* =========================================
+   1. VARIABLES
+========================================= */
+$primary: #2d5eaa;
+$primary-dark: #2a5caa;
+$secondary: #00a6e5;
+$white: #ffffff;
+$black: #202020;
+
+$text-primary: #1e293b;
+$text-secondary: #64748b;
+$border-color: #e5eaf1;
+$light-blue: #d5e2f5;
+
+$font-family: "Jost", sans-serif;
+
+$container-width: 1440px;
+$border-radius: 12px;
+$transition: 0.25s ease;
+
+/* =========================================
+GLOBAL STYLES
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  font-size: 14px;
+  //font-family: body;
+  font-family: $font-family;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-family;
+  //font-family: header !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid $secondary;
+  outline-offset: 3px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* =========================================
+   3. REUSABLE BUTTONS
+========================================= */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 9px 17px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+
+  transition:
+    background $transition,
+    color $transition,
+    border-color $transition,
+    transform $transition;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &--primary {
+    color: $white;
+    background: $primary;
+
+    &:hover {
+      background: $primary-dark;
+    }
+  }
+
+  &--blue {
+    color: $white;
+    background: $secondary;
+
+    &:hover {
+      background: $primary;
+    }
+  }
+
+  &--cyan {
+    color: $white;
+    background: $secondary;
+
+    &:hover {
+      background: #008fc5;
+    }
+  }
+
+  &--light {
+    color: $primary;
+    background: $white;
+
+    &:hover {
+      background: #edf5ff;
+    }
+  }
+
+  &--outline {
+    color: $white;
+    background: transparent;
+    border: 2px solid $white;
+    border-color: rgba($white, 0.5);
+
+    &:hover {
+      background: rgba($white, 0.1);
+    }
+  }
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  color: $secondary;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

@@ -1,205 +1,9 @@
-/* =========================================
-   1. VARIABLES
-========================================= */
-
-$primary: #2d5eaa;
-$primary-dark: #2a5caa;
-$secondary: #00a6e5;
-$white: #ffffff;
-$black: #202020;
-
-$text-primary: #1e293b;
-$text-secondary: #64748b;
-$border-color: #e5eaf1;
-$light-blue: #d5e2f5;
-
-$font-family: "Jost", sans-serif;
-
-$container-width: 1440px;
-$border-radius: 12px;
-$transition: 0.25s ease;
-
-//Font Settings
-@font-face {
-  font-family: header;
-  src: url(../fonts/Jost-Bold.ttf);
-}
-
-@font-face {
-  font-family: body;
-  src: url(../fonts/Jost-Regular.ttf);
-}
+@use "settings" as *;
+@forward "_page-content.scss";
 
 /* =========================================
-   2. RESET & GLOBAL STYLES
+   HEADER
 ========================================= */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-  font-size: 14px;
-  //font-family: body;
-  font-family: $font-family;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: $font-family;
-  //font-family: header !important;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-ul {
-  list-style: none;
-}
-
-button:focus-visible,
-a:focus-visible,
-input:focus-visible {
-  outline: 2px solid $secondary;
-  outline-offset: 3px;
-}
-
-.container {
-  width: 90%;
-  max-width: $container-width;
-  margin: 0 auto;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-}
-
-/* =========================================
-   3. REUSABLE BUTTONS
-========================================= */
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-
-  padding: 9px 17px;
-  border: 1px solid transparent;
-  border-radius: 30px;
-
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.3;
-  white-space: nowrap;
-
-  transition:
-    background $transition,
-    color $transition,
-    border-color $transition,
-    transform $transition;
-
-  &:hover {
-    transform: translateY(-1px);
-  }
-
-  &--primary {
-    color: $white;
-    background: $primary;
-
-    &:hover {
-      background: $primary-dark;
-    }
-  }
-
-  &--blue {
-    color: $white;
-    background: $secondary;
-
-    &:hover {
-      background: $primary;
-    }
-  }
-
-  &--cyan {
-    color: $white;
-    background: $secondary;
-
-    &:hover {
-      background: #008fc5;
-    }
-  }
-
-  &--light {
-    color: $primary;
-    background: $white;
-
-    &:hover {
-      background: #edf5ff;
-    }
-  }
-
-  &--outline {
-    color: $white;
-    background: transparent;
-    border: 2px solid $white;
-    border-color: rgba($white, 0.5);
-
-    &:hover {
-      background: rgba($white, 0.1);
-    }
-  }
-}
-
-.eyebrow {
-  display: block;
-  margin-bottom: 10px;
-  color: $secondary;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-/* =========================================
-   4. HEADER
-========================================= */
-
 .site-header {
   position: relative;
   z-index: 100;
@@ -252,9 +56,6 @@ input:focus-visible {
 .main-nav {
   color: $white;
   background: $primary;
-  //   .container {
-  //     margin: 0 !important;
-  //   }
 }
 
 .main-nav__inner {
@@ -316,7 +117,6 @@ input:focus-visible {
 }
 
 /* Search, language and CTA buttons */
-
 .nav-actions {
   display: flex;
   align-items: center;
@@ -486,15 +286,16 @@ input:focus-visible {
 
   h3 {
     margin-bottom: 12px;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 600;
   }
 
   img {
     width: 100%;
-    height: 120px;
+    height: 200px;
     object-fit: cover;
     object-position: top center;
-    border-radius: 9px;
+    border-radius: 24px;
     margin-bottom: 10px;
   }
 
@@ -502,6 +303,73 @@ input:focus-visible {
     margin: 9px 0 12px;
     color: $text-secondary;
     font-size: 11px;
+  }
+}
+
+/* =========================================
+   6. ACCESSIBILITY & CHATBOT
+========================================= */
+.accessibility-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  border: none !important;
+  outline: none !important;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+
+  color: $white;
+  background: $primary;
+  border-radius: 50%;
+
+  transition:
+    background $transition,
+    transform $transition;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &:hover {
+    background: $secondary;
+    transform: translateY(-2px);
+  }
+}
+
+.chatbot-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  border: none !important;
+  outline: none !important;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  transition: transform $transition;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
   }
 }
 
@@ -917,11 +785,11 @@ input:focus-visible {
 ========================================= */
 
 @media (max-width: 560px) {
-  .site-header,
-  .page-content,
-  .site-footer {
-    width: calc(100% - 20px);
-  }
+  //   .site-header,
+  //   .page-content,
+  //   .site-footer {
+  //     width: calc(100% - 20px);
+  //   }
 
   .utility-bar {
     padding: 7px 10px;
@@ -963,11 +831,6 @@ input:focus-visible {
   .icon-button,
   .language-button {
     min-width: 40px;
-  }
-
-  .page-content {
-    min-height: 300px;
-    padding: 65px 20px;
   }
 
   .site-footer {
@@ -1030,8 +893,3 @@ input:focus-visible {
     animation-duration: 0.01ms !important;
   }
 }
-
-/* =========================================
-   16. STYLE IMPORTS
-========================================= */
-@import "./page-content";

@@ -1,9 +1,149 @@
+@use "settings" as *;
+
+/* =========================================
+   INDEX ROUTING PAGE STYLES
+========================================= */
+.routing {
+  width: 100%;
+  height: 100vh;
+  background: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .routing-container {
+    width: 98%;
+    height: 95%;
+    max-width: 1440px;
+    display: flex;
+    gap: 20px;
+    .page-intro {
+      flex: 1;
+      background: $primary-dark;
+      color: $white;
+      padding: 15px;
+      border-radius: 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      .upper {
+        .logo {
+          img {
+            height: 45px;
+            width: auto;
+            object-fit: cover;
+          }
+        }
+        h2 {
+          font-size: 30px;
+          line-height: 1.2;
+          font-weight: 700;
+          color: $white;
+          margin-top: 20px;
+        }
+      }
+      .lower {
+        width: 100%;
+        height: fit-content;
+        border: 1px solid $white;
+        border-radius: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+        h3 {
+          font-size: 21px;
+          line-height: 1.2;
+          font-weight: 600;
+          color: $white;
+        }
+        .button-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+      }
+    }
+    .route-grid {
+      flex: 3;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      .route {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px;
+        border-radius: 24px;
+        overflow: hidden;
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.4);
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+        }
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+
+          object-fit: cover;
+          object-position: center;
+          display: block;
+          z-index: 1;
+        }
+        h3 {
+          font-size: 22px;
+          line-height: 30px;
+          font-weight: 600;
+          color: $white;
+          z-index: 2;
+        }
+        .route-link {
+          align-self: flex-end !important;
+          width: 35px;
+          height: 35px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: $white;
+          border-radius: 50%;
+          outline: none;
+          border: none;
+          font-size: 20px;
+          line-height: 1;
+          color: $primary;
+          transition: all 0.3s ease;
+          z-index: 2;
+          &:hover {
+            background: $secondary;
+            transform: translateY(-2px);
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
 /* =========================================
  MAIN CONTENT 
 ========================================= */
 
 /* Section Introductions*/
 section {
+  position: relative;
+  width: 100%;
   .section-intro {
     text-align: center;
     margin-bottom: 50px;
@@ -117,6 +257,17 @@ section {
     * {
       z-index: 3;
     }
+    .breadcrumbs {
+      width: fit-content;
+      height: fit-content;
+      background: #ffffff1a;
+      padding: 4px 10px;
+      color: $white;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 24px;
+      margin-bottom: 15px;
+    }
     h2 {
       font-size: 45px;
       line-height: 53px;
@@ -130,6 +281,9 @@ section {
       font-weight: 500;
       width: 40%;
       margin: 1em 0;
+      span {
+        font-weight: 600;
+      }
     }
     .cta-btns {
       display: flex;
@@ -529,14 +683,6 @@ section {
   }
 }
 
-// Variables
-$font-primary: "Inter", sans-serif;
-$color-dark: #1a1a1a;
-$color-blue-primary: #0047ab; // Dark Blue for active numbers
-$color-blue-light: #00aaff; // Bright Blue for button
-$color-grey-text: #8c92a0; // Grey for inactive labels
-$color-line: #e0e0e0;
-
 /* =========================================
    IMPACT SECTION
 ========================================= */
@@ -704,8 +850,6 @@ $color-line: #e0e0e0;
       grid-template-columns: 1fr; // Single column by default (Mobile)
       gap: $grid-gap;
       width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
 
       // Medium screens and above (Desktop layout)
       @media (min-width: $breakpoint-md) {
@@ -1032,6 +1176,215 @@ $color-line: #e0e0e0;
         }
       }
     }
+  }
+}
+
+/* =========================================
+   Overview SECTION
+========================================= */
+.overview {
+  padding: 60px 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    .title-wrapper {
+      flex: 1;
+      h2 {
+        font-size: 36px;
+        line-height: 44px;
+        font-weight: 700;
+      }
+    }
+    .content-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      p {
+        font-size: 16px;
+        line-height: 1.4;
+      }
+      .button {
+        width: fit-content;
+      }
+    }
+  }
+}
+
+/* =========================================
+   CTA CONTACT FORMS SECTION
+========================================= */
+.contact-forms {
+  padding: 50px 0;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1.42fr 1fr;
+    gap: 20px;
+  }
+
+  // Shared heading styles
+  h2 {
+    margin: 0 0 10px;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .form-description {
+    margin: 0 0 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  // LEFT: Sales form
+  .sales-form {
+    min-width: 0;
+    padding: 22px;
+    color: #fff;
+    background: #08a7df;
+    border-radius: 27px;
+
+    .sales-form-fields {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .sales-fields-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 12px;
+      width: 100%;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-width: 0;
+      color: #fff;
+      background: transparent;
+      border: 1px solid rgb(255 255 255 / 85%);
+      border-radius: 24px;
+      outline: none;
+      font: inherit;
+      font-size: 14px;
+
+      &::placeholder {
+        color: #fff;
+        opacity: 1;
+      }
+
+      &:focus {
+        border-color: #fff;
+        box-shadow: 0 0 0 2px rgb(255 255 255 / 15%);
+      }
+    }
+
+    input,
+    select {
+      height: 40px;
+      padding: 0 13px;
+    }
+
+    select {
+      appearance: auto;
+      cursor: pointer;
+
+      option {
+        color: #222;
+        background: #fff;
+      }
+    }
+
+    textarea {
+      min-height: 160px;
+      padding: 9px 13px;
+      border-radius: 24px;
+      resize: vertical;
+    }
+  }
+
+  // RIGHT: Loan calculator
+  .loan-form {
+    position: relative;
+    isolation: isolate;
+    min-width: 0;
+    min-height: 453px;
+    overflow: hidden;
+
+    padding: 22px 14px 30px;
+    color: #fff;
+
+    background:
+      linear-gradient(rgb(0 0 0 / 52%), rgb(0 0 0 / 52%)),
+      url("../images/cta-bg-image.png") center / cover no-repeat;
+
+    border-radius: 27px;
+
+    .loan-form-content {
+      position: relative;
+      z-index: 1;
+      max-width: 100%;
+    }
+
+    h2 {
+      font-size: 30px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .form-description {
+      margin-bottom: 10px;
+    }
+
+    .loan-calculator-fields {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 9px;
+    }
+
+    input,
+    select {
+      width: 65%;
+      max-width: 100%;
+      height: 40px;
+      padding: 0 12px;
+
+      color: #fff;
+      background: rgb(255 255 255 / 5%);
+      border: 1px solid rgb(255 255 255 / 55%);
+      border-radius: 30px;
+      outline: none;
+      font-size: 14px;
+
+      &::placeholder {
+        color: #fff;
+        opacity: 1;
+      }
+
+      &:focus {
+        border-color: #fff;
+      }
+    }
+
+    select {
+      cursor: pointer;
+
+      option {
+        color: #222;
+        background: #fff;
+      }
+    }
+  }
+
+  .button {
+    width: fit-content;
+    margin-top: 15px;
   }
 }
 

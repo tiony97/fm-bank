@@ -1,0 +1,1206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Family Bank | Banking Made Simple</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/tailwind.css" />
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+      <!-- Utility navigation -->
+      <div class="utility-bar">
+        <div class="container">
+          <div class="utility-inner">
+            <nav class="utility-left" aria-label="Banking categories">
+              <a href="./personal.html">Personal</a>
+              <a href="#">SME</a>
+              <a href="#">Corporate</a>
+              <a href="#">Diaspora</a>
+              <a href="#">Insurance</a>
+              <a href="#">Queen Banking</a>
+              <a href="#">Asset Auction</a>
+            </nav>
+
+            <nav class="utility-right" aria-label="Useful links">
+              <a href="#">About Us</a>
+              <a href="#">News</a>
+              <a href="#">Talk to Us</a>
+              <a href="#">Investor Relations</a>
+              <a href="#">Sustainability</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main navigation -->
+      <div class="main-nav">
+        <div class="container">
+          <div class="main-nav__inner">
+            <a class="brand" href="/" aria-label="Family Bank home">
+              <img src="./assets/images/logo.png" alt="Family Bank Logo" />
+            </a>
+
+            <button
+              class="mobile-toggle"
+              type="button"
+              aria-label="Toggle navigation"
+              aria-expanded="false"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="primary-nav" aria-label="Main navigation">
+              <div class="nav-item has-mega-menu">
+                <a
+                  class="nav-link"
+                  href="#cards"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Cards
+                  <i class="fa-solid fa-chevron-down"></i>
+                </a>
+
+                <!-- Mega menu -->
+                <div class="mega-menu" id="cards" aria-label="Cards menu">
+                  <div class="mega-menu__promo">
+                    <h2>Personal Banking</h2>
+                    <p>
+                      Accounts, loans, cards and savings that work with you, for
+                      your full day-to-day banking needs.
+                    </p>
+                    <a href="#" class="text-link">
+                      Explore<i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+
+                  <div class="mega-menu__links">
+                    <a href="#">Debit Cards</a>
+                    <a href="#">Credit Cards</a>
+                    <a href="#">Prepaid Cards</a>
+                    <a href="#">Virtual Cards</a>
+                  </div>
+
+                  <div class="mega-menu__feature">
+                    <h3>Your bank in your pocket</h3>
+
+                    <img
+                      src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                      alt="Customer using a mobile device"
+                    />
+
+                    <a href="#" class="button button--blue">
+                      Download PesaPap
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#" class="nav-link">Transactions</a>
+              <a href="#" class="nav-link">Borrow</a>
+              <a href="#" class="nav-link">Invest</a>
+              <a href="#" class="nav-link">Way of Banking</a>
+              <a href="#" class="nav-link">FX Rates</a>
+            </nav>
+
+            <div class="nav-actions">
+              <button class="icon-button" aria-label="Search" type="button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+
+              <button class="language-button" type="button">
+                EN <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <a href="#" class="button button--light">Open Account</a>
+              <a href="#" class="button button--cyan">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--ACCESSIBILITY BUTTON -->
+    <button class="accessibility-button" aria-label="Accessibility options">
+      <img
+        src="./assets/images/accessibility.png"
+        alt="Accessibility options"
+      />
+    </button>
+
+    <!--CHATBOT BUTTON -->
+    <button class="chatbot-button" aria-label="Open chatbot">
+      <img src="./assets/images/chatbot.png" alt="Chatbot" />
+    </button>
+
+    <!-- ================= PAGE CONTENT ================= -->
+    <main class="page-content">
+      <!--Hero (Banner)-->
+      <section class="hero">
+        <video
+          class="hero_video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+          aria-hidden="true"
+        >
+          <source
+            src="https://www.youtube.com/watch?v=vXlVGA1QF00&pp=ygUYZmFtaWx5IGJhbmsgaW1hcmEgcGFtb2ph"
+            type="video/mp4"
+          />
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <!-- NSE Stock Ticker Marquee -->
+        <div class="stock-marquee-container">
+          <div class="stock-marquee-track">
+            <!-- First set of items -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <!-- Duplicate set to create seamless loop -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <!-- Add more duplicates as needed to fill the screen width before looping -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="hero-content">
+            <h2>With You, For Life</h2>
+            <p>
+              Kenya's trusted banking partner for over 40 years. accounts,
+              loans, and more for every stage of your life.
+            </p>
+            <div class="cta-btns">
+              <a href="#" class="button button--light">Open Account</a>
+              <a href="#" class="button button--outline">Apply for a Loan</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Currency Marquee Section-->
+      <section class="currency-marquee">
+        <div class="marquee-container">
+          <div class="marquee-track">
+            <!-- First set of items -->
+            <div class="currency-item">
+              <span class="currency-pair">USD/KES: </span>
+              <span class="exchange-rate">Buy: 126.85 Sell: 131.85</span>
+              <span class="currency-separator">|</span>
+            </div>
+            <div class="currency-item">
+              <span class="currency-pair">USD/KES: </span>
+              <span class="exchange-rate">Buy: 126.85 Sell: 131.85</span>
+              <span class="currency-separator">|</span>
+            </div>
+            <div class="currency-item">
+              <span class="currency-pair">USD/KES: </span>
+              <span class="exchange-rate">Buy: 126.85 Sell: 131.85</span>
+              <span class="currency-separator">|</span>
+            </div>
+            <div class="currency-item">
+              <span class="currency-pair">USD/KES: </span>
+              <span class="exchange-rate">Buy: 126.85 Sell: 131.85</span>
+              <span class="currency-separator">|</span>
+            </div>
+            <div class="currency-item">
+              <span class="currency-pair">USD/KES: </span>
+              <span class="exchange-rate">Buy: 126.85 Sell: 131.85</span>
+              <span class="currency-separator">|</span>
+            </div>
+            <div class="currency-item">
+              <span class="currency-pair">USD/KES: </span>
+              <span class="exchange-rate">Buy: 126.85 Sell: 131.85</span>
+              <span class="currency-separator">|</span>
+            </div>
+            <div class="currency-item">
+              <span class="currency-pair">USD/KES: </span>
+              <span class="exchange-rate">Buy: 126.85 Sell: 131.85</span>
+              <span class="currency-separator">|</span>
+            </div>
+            <div class="currency-item">
+              <span class="currency-pair">USD/KES: </span>
+              <span class="exchange-rate">Buy: 126.85 Sell: 131.85</span>
+              <span class="currency-separator">|</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="marquee-cta">
+          <a href="#">Convert Currency</a>
+        </div>
+      </section>
+
+      <!--Products Section (With tabs)-->
+      <section class="products">
+        <div class="container">
+          <div class="section-intro">
+            <h2 class="section-title">Products Built Around You</h2>
+            <p class="section-description">
+              Whatever you're working toward, there's a product designed to get
+              you there.
+            </p>
+          </div>
+
+          <!-- Tabs -->
+          <div class="products-tabs">
+            <ul class="tab-links">
+              <li class="active" data-tab="tab1">Freedom</li>
+              <li data-tab="tab2">Confidence</li>
+              <li data-tab="tab3">Support</li>
+              <li data-tab="tab4">Growth</li>
+              <li data-tab="tab5">Protection</li>
+              <li data-tab="tab6">Strength together</li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+              <!-- Tab 1 -->
+              <div id="tab1" class="tab active">
+                <div class="cards">
+                  <!-- Card -->
+                  <div class="product-card">
+                    <div class="card-img">
+                      <img
+                        src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-text">
+                      <h3>Debit Cards</h3>
+                      <p>Spend smart, anywhere you go.</p>
+
+                      <a href="#" class="button button--cyan">Learn More</a>
+                    </div>
+                  </div>
+                  <!-- Card -->
+                  <div class="product-card">
+                    <div class="card-img">
+                      <img
+                        src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-text">
+                      <h3>Debit Cards</h3>
+                      <p>Spend smart, anywhere you go.</p>
+
+                      <a href="#" class="button button--cyan">Learn More</a>
+                    </div>
+                  </div>
+                  <!-- Card -->
+                  <div class="product-card">
+                    <div class="card-img">
+                      <img
+                        src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-text">
+                      <h3>Debit Cards</h3>
+                      <p>Spend smart, anywhere you go.</p>
+
+                      <a href="#" class="button button--cyan">Learn More</a>
+                    </div>
+                  </div>
+                  <!-- Card -->
+                  <div class="product-card">
+                    <div class="card-img">
+                      <img
+                        src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-text">
+                      <h3>Debit Cards</h3>
+                      <p>Spend smart, anywhere you go.</p>
+
+                      <a href="#" class="button button--cyan">Learn More</a>
+                    </div>
+                  </div>
+                  <!-- Card -->
+                  <div class="product-card">
+                    <div class="card-img">
+                      <img
+                        src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-text">
+                      <h3>Debit Cards</h3>
+                      <p>Spend smart, anywhere you go.</p>
+
+                      <a href="#" class="button button--cyan">Learn More</a>
+                    </div>
+                  </div>
+                  <!-- Card -->
+                  <div class="product-card">
+                    <div class="card-img">
+                      <img
+                        src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-text">
+                      <h3>Debit Cards</h3>
+                      <p>Spend smart, anywhere you go.</p>
+
+                      <a href="#" class="button button--cyan">Learn More</a>
+                    </div>
+                  </div>
+                  <!-- Card -->
+                  <div class="product-card">
+                    <div class="card-img">
+                      <img
+                        src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-text">
+                      <h3>Debit Cards</h3>
+                      <p>Spend smart, anywhere you go.</p>
+
+                      <a href="#" class="button button--cyan">Learn More</a>
+                    </div>
+                  </div>
+                  <!-- Card -->
+                  <div class="product-card">
+                    <div class="card-img">
+                      <img
+                        src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-text">
+                      <h3>Debit Cards</h3>
+                      <p>Spend smart, anywhere you go.</p>
+
+                      <a href="#" class="button button--cyan">Learn More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 2 -->
+              <div id="tab2" class="tab">
+                <div class="cards">
+                  <!-- Card -->
+                  <div class="product-card">
+                    <div class="card-img">
+                      <img
+                        src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-text">
+                      <h3>Debit Cards</h3>
+                      <p>Spend smart, anywhere you go.</p>
+
+                      <a href="#" class="button button--cyan">Learn More</a>
+                    </div>
+                  </div>
+                  <!-- Card -->
+                  <div class="product-card">
+                    <div class="card-img">
+                      <img
+                        src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-text">
+                      <h3>Debit Cards</h3>
+                      <p>Spend smart, anywhere you go.</p>
+
+                      <a href="#" class="button button--cyan">Learn More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 3 -->
+              <div id="tab3" class="tab">
+                <div class="cards">
+                  <!-- Card -->
+                  <div class="product-card">
+                    <div class="card-img">
+                      <img
+                        src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-text">
+                      <h3>Debit Cards</h3>
+                      <p>Spend smart, anywhere you go.</p>
+
+                      <a href="#" class="button button--cyan">Learn More</a>
+                    </div>
+                  </div>
+                  <!-- Card -->
+                  <div class="product-card">
+                    <div class="card-img">
+                      <img
+                        src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-text">
+                      <h3>Debit Cards</h3>
+                      <p>Spend smart, anywhere you go.</p>
+
+                      <a href="#" class="button button--cyan">Learn More</a>
+                    </div>
+                  </div>
+                  <!-- Card -->
+                  <div class="product-card">
+                    <div class="card-img">
+                      <img
+                        src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-text">
+                      <h3>Debit Cards</h3>
+                      <p>Spend smart, anywhere you go.</p>
+
+                      <a href="#" class="button button--cyan">Learn More</a>
+                    </div>
+                  </div>
+                  <!-- Card -->
+                  <div class="product-card">
+                    <div class="card-img">
+                      <img
+                        src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-text">
+                      <h3>Debit Cards</h3>
+                      <p>Spend smart, anywhere you go.</p>
+
+                      <a href="#" class="button button--cyan">Learn More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REAL STORIES SECTION -->
+      <section class="stories-section">
+        <div class="container">
+          <!-- Left introduction -->
+          <div class="stories-intro">
+            <div class="stories-intro__content">
+              <h2>Real Stories,<br />Real Impact</h2>
+
+              <p>
+                Hear from the people we've<br class="desktop-break" />
+                walked alongside.
+              </p>
+
+              <a href="#" class="button button--cyan"> Learn More </a>
+            </div>
+
+            <!-- Custom navigation -->
+            <div class="stories-navigation">
+              <button
+                class="stories-navigation__button stories-prev"
+                type="button"
+                aria-label="Previous stories"
+              >
+                <span aria-hidden="true">←</span>
+              </button>
+
+              <button
+                class="stories-navigation__button stories-next"
+                type="button"
+                aria-label="Next stories"
+              >
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right carousel -->
+          <div class="stories-carousel">
+            <div class="swiper stories-swiper">
+              <div class="swiper-wrapper">
+                <!-- Story 1 -->
+                <article class="swiper-slide story-card">
+                  <div class="story-card__image">
+                    <img
+                      src="./assets/images/story_1.jpg"
+                      alt="Woman entrepreneur sharing her business story"
+                      loading="lazy"
+                    />
+
+                    <a
+                      href="#"
+                      class="story-card__arrow"
+                      aria-label="Read the story about Queen Banking"
+                    >
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+
+                  <div class="story-card__content">
+                    <h3>How did Queen Banking help you grow your business?</h3>
+
+                    <p>Christine Wanjohi</p>
+                  </div>
+                </article>
+
+                <!-- Story 2 -->
+                <article class="swiper-slide story-card">
+                  <div class="story-card__image">
+                    <img
+                      src="./assets/images/story_2.png"
+                      alt="Entrepreneur talking about his banking experience"
+                      loading="lazy"
+                    />
+
+                    <a
+                      href="#"
+                      class="story-card__arrow"
+                      aria-label="Read the story about Family Bank"
+                    >
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+
+                  <div class="story-card__content">
+                    <h3>
+                      How did Family Bank help you build a life back home?
+                    </h3>
+
+                    <p>Michael Kariuki (UK)</p>
+                  </div>
+                </article>
+
+                <!-- Story 3 -->
+                <article class="swiper-slide story-card">
+                  <div class="story-card__image">
+                    <img
+                      src="./assets/images/story_3.jpg"
+                      alt="Young customer using a mobile phone"
+                      loading="lazy"
+                    />
+
+                    <a
+                      href="#"
+                      class="story-card__arrow"
+                      aria-label="Read the story about the mobile loan"
+                    >
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+
+                  <div class="story-card__content">
+                    <h3>How did the Mobile Loan help you get ahead?</h3>
+
+                    <p>Kevin Otieno</p>
+                  </div>
+                </article>
+
+                <!-- Story 4 -->
+                <article class="swiper-slide story-card">
+                  <div class="story-card__image">
+                    <img
+                      src="./assets/images/story_4.png"
+                      alt="Young customer using a mobile phone"
+                      loading="lazy"
+                    />
+
+                    <a
+                      href="#"
+                      class="story-card__arrow"
+                      aria-label="Read the story about the mobile loan"
+                    >
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+
+                  <div class="story-card__content">
+                    <h3>How did the Mobile Loan help you get ahead?</h3>
+
+                    <p>Kevin Otieno</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!---IMPACT SECTION--->
+      <section class="impact-section">
+        <div class="container">
+          <!-- Section Header -->
+          <div class="section-intro">
+            <h2>Our Impact Over the Years</h2>
+            <p>
+              Four decades of steady growth, built on trust and consistency.
+            </p>
+            <a href="#" class="button button--cyan">Learn More About Us</a>
+          </div>
+
+          <!-- Tabs Container -->
+          <div class="tabs-wrapper">
+            <!-- Tab Navigation (Left Side) -->
+            <div class="tab-nav" role="tablist">
+              <!-- Tab 1 -->
+              <button
+                class="tab-btn active"
+                data-tab="tab-1"
+                role="tab"
+                aria-selected="true"
+              >
+                <span class="stat-number">1.3M</span>
+                <span class="stat-label">Customers</span>
+              </button>
+
+              <!-- Tab 2 -->
+              <button
+                class="tab-btn"
+                data-tab="tab-2"
+                role="tab"
+                aria-selected="false"
+              >
+                <span class="stat-number">98</span>
+                <span class="stat-label">Branches</span>
+              </button>
+
+              <!-- Tab 3 -->
+              <button
+                class="tab-btn"
+                data-tab="tab-3"
+                role="tab"
+                aria-selected="false"
+              >
+                <span class="stat-number">208.7B</span>
+                <span class="stat-label">In Assets</span>
+              </button>
+
+              <!-- Tab 4 -->
+              <button
+                class="tab-btn"
+                data-tab="tab-4"
+                role="tab"
+                aria-selected="false"
+              >
+                <span class="stat-number">1984</span>
+                <span class="stat-label">Founded</span>
+              </button>
+            </div>
+
+            <!-- Tab Content (Right Side) -->
+            <div class="tab-content-area">
+              <!-- Panel 1 -->
+              <div class="tab-panel active" id="tab-1" role="tabpanel">
+                <div class="image-wrapper">
+                  <img
+                    src="./assets/images/stat_img_1.png"
+                    alt="Professional woman working on laptop"
+                  />
+                  <div class="glass-overlay">
+                    <p>
+                      More than a million Kenyans trust us with their savings,
+                      their loans, and their everyday banking. That trust is the
+                      foundation everything else is built on.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 2 (Example Content) -->
+              <div class="tab-panel" id="tab-2" role="tabpanel">
+                <div class="image-wrapper">
+                  <img
+                    src="./assets/images/stat_img_2.png"
+                    alt="Office branches"
+                  />
+                  <div class="glass-overlay">
+                    <p>
+                      With 98 branches spread across the region, we are always
+                      within reach to serve you better.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 3 (Example Content) -->
+              <div class="tab-panel" id="tab-3" role="tabpanel">
+                <div class="image-wrapper">
+                  <img
+                    src="./assets/images/stat_img_3.png"
+                    alt="Assets growth"
+                  />
+                  <div class="glass-overlay">
+                    <p>
+                      Managing over 208.7 Billion in assets with a focus on
+                      security and sustainable growth.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 4 (Example Content) -->
+              <div class="tab-panel" id="tab-4" role="tabpanel">
+                <div class="image-wrapper">
+                  <img src="./assets/images/stat_img_4.png" alt="History" />
+                  <div class="glass-overlay">
+                    <p>
+                      Founded in 1984, we have been a pillar of the community
+                      for four decades.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Bank Serices-->
+      <section class="bank-services">
+        <div class="container">
+          <!-- Section Header -->
+          <div class="section-intro">
+            <h2>Bank Your Way</h2>
+            <p>Everything you need, right where you need it.</p>
+          </div>
+
+          <div class="services-grid">
+            <!-- Large feature card (Left side) -->
+            <div class="services-grid__card services-grid__card--large">
+              <img
+                src="./assets/images/ser-1.png"
+                alt="service"
+                class="bg-image"
+              />
+              <div class="overlay"></div>
+              <h3>Asset Marketplace</h3>
+              <p>Browse vehicles and property currently up for auction.</p>
+              <a href="#" class="button button--light">Explore Auction</a>
+            </div>
+
+            <!-- Smaller top card (Right side) -->
+            <div class="services-grid__card services-grid__card--small-top">
+              <img
+                src="./assets/images/ser-2.png"
+                alt="service"
+                class="bg-image"
+              />
+              <div class="overlay"></div>
+              <h3>Self-Service</h3>
+              <p>
+                Reset your PIN, check your loan status, or chat with us,
+                anytime.
+              </p>
+              <a href="#" class="button button--light">Get Started</a>
+            </div>
+
+            <!-- Smaller bottom card (Right side) -->
+            <div class="services-grid__card services-grid__card--small-bottom">
+              <img
+                src="./assets/images/ser-3.jpg"
+                alt="service"
+                class="bg-image"
+              />
+              <div class="overlay"></div>
+              <h3>Get PesaPap</h3>
+              <p>Bank from your phone, wherever you are.</p>
+              <div class="app-download-btns">
+                <a href="#" class="app-btn"
+                  ><img
+                    src="./assets/images/app_store_logo.png"
+                    alt="app store"
+                /></a>
+                <a href="#" class="app-btn"
+                  ><img
+                    src="./assets/images/play_store_logo.png"
+                    alt="google play"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Sustainability Slider-->
+      <section class="sustainability-slider-section">
+        <!-- Swiper Main Container -->
+        <div class="swiper sustainability-swiper">
+          <!-- Wrapper for Slides -->
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div
+              class="swiper-slide"
+              data-background-video="https://www.youtube.com/embed/L5cM4qm35CY?si=1TnqT4e6SJO5xTSe&autoplay=1&mute=1&controls=0&loop=1&cc_load_policy=3"
+            >
+              <div class="slide-content-wrapper">
+                <div class="slide-text-container">
+                  <h2 class="slide-title">Family Group Foundation</h2>
+                  <p class="slide-description">
+                    Supporting education, health, entrepreneurship, and
+                    environmental restoration, including the Ngong Hills Forest
+                    project and youth TVET scholarships, across communities in
+                    Kenya.
+                  </p>
+                  <a href="#" class="button button--light"
+                    >Visit the Foundation</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div
+              class="swiper-slide"
+              data-background-video="https://www.youtube.com/embed/KrM4xsydhdY?si=souo21BBXVDSaQU1&autoplay=1&mute=1&controls=0&loop=1&cc_load_policy=3"
+            >
+              <div class="slide-content-wrapper">
+                <div class="slide-text-container">
+                  <h2 class="slide-title">Community Empowerment</h2>
+                  <p class="slide-description">
+                    Empowering local businesses and fostering sustainable
+                    economic growth through dedicated micro-finance initiatives
+                    and strategic partnerships.
+                  </p>
+                  <a href="#" class="button button--light">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Wrapper -->
+
+          <!-- Full Width Custom Pagination Container -->
+          <div class="swiper-pagination custom-fullwidth-pagination"></div>
+        </div>
+      </section>
+
+      <!--News Updates-->
+      <section class="news-updates">
+        <div class="container">
+          <!-- Section Header -->
+          <div class="section-intro">
+            <h2>Latest News & Updates</h2>
+            <p>Stay up to date with what's happening at Family Bank.</p>
+            <a href="#" class="button button--cyan">Explore More</a>
+          </div>
+
+          <div class="news-grid">
+            <!-- News Update 1 -->
+            <a href="#" class="update">
+              <img
+                src="./assets/images/news-update-1.jpg"
+                alt="update image"
+                class="update-image"
+              />
+
+              <div class="update-content">
+                <p class="date">08.09.2026</p>
+                <h4 class="title">Utawala Customer Dinner</h4>
+              </div>
+            </a>
+
+            <!-- News Update 2 -->
+            <a href="#" class="update">
+              <img
+                src="./assets/images/news-update-2.jpg"
+                alt="update image"
+                class="update-image"
+              />
+
+              <div class="update-content">
+                <p class="date">08.09.2026</p>
+                <h4 class="title">Simba Corp Asset Financing</h4>
+              </div>
+            </a>
+
+            <!-- News Update 3 -->
+            <a href="#" class="update">
+              <img
+                src="./assets/images/news-update-3.jpg"
+                alt="update image"
+                class="update-image"
+              />
+
+              <div class="update-content">
+                <p class="date">08.09.2026</p>
+                <h4 class="title">Agri-SME Access to Finance</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
+          <!-- Footer heading -->
+          <div class="footer-heading">
+            <div>
+              <h2>Ready to Bank With Us?</h2>
+              <p>Start online in minutes and finish at your nearest branch.</p>
+            </div>
+
+            <a href="#" class="button button--light">Get Started</a>
+          </div>
+
+          <!-- Main footer columns -->
+          <div class="footer-grid">
+            <!-- Apps and social links -->
+            <div class="footer-column footer-apps">
+              <h3>Get PesaPap</h3>
+
+              <div class="app-links">
+                <a href="#" aria-label="Download on the App Store">
+                  <div class="icon-wrapper">
+                    <i class="fa-brands fa-apple"></i>
+                  </div>
+                  <span><small>Download on the</small>App Store</span>
+                </a>
+
+                <a href="#" aria-label="Get it on Google Play">
+                  <div class="icon-wrapper">
+                    <i class="fa-brands fa-google-play"></i>
+                  </div>
+                  <span><small>GET IT ON</small>Google Play</span>
+                </a>
+              </div>
+
+              <h3 class="social-heading">Our Socials</h3>
+
+              <div class="social-links">
+                <a href="#" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="X">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="YouTube">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- About -->
+            <div class="footer-column">
+              <h3>About Us</h3>
+              <ul>
+                <li><a href="#">Company Profile</a></li>
+                <li><a href="#">Board of Directors</a></li>
+                <li><a href="#">Executive Committee</a></li>
+                <li><a href="#">Financials & Policies</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="#">Sustainability</a></li>
+                <li><a href="#">News & Updates</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Cost of Credit</a></li>
+              </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="footer-column resources-column">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="#">Merchant & Agent Portal</a></li>
+                <li><a href="#">Prepaid Cards Portal</a></li>
+                <li><a href="#">Access Family Pay</a></li>
+                <li><a href="#">Tariff Guide</a></li>
+                <li><a href="#">Customer Notices</a></li>
+                <li><a href="#">Find an Agent, Branch or ATM</a></li>
+                <li><a href="#">Pepper's Agents</a></li>
+                <li><a href="#">Vehicles on Auction</a></li>
+                <li><a href="#">Documents & Forms</a></li>
+                <li><a href="#"></a>Loan Calculator</li>
+                <li><a href="#"></a>Interest Calculator</li>
+                <li><a href="#"></a>Staff Email</li>
+                <li>
+                  <a href="#"
+                    >Correspondent Bank Information Family Bank Prequalification
+                    Notice 2026 - 2027</a
+                  >
+                </li>
+                <li>
+                  <a href="#">Family Bank Prequalification Registration</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="footer-column">
+              <h3>Help & Support</h3>
+              <ul>
+                <li>
+                  <a href="#"
+                    >Indemnity for Instructions Received by Email and/or
+                    Facsimile</a
+                  >
+                </li>
+                <li><a href="#">Branches and Codes</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Complaints Handling Guideline</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Cookies Guidelines</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Notice</a></li>
+                <li><a href="#">Whistle Blowing</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="newsletter">
+            <div class="newsletter__text">
+              <h3>Stay in the Loop</h3>
+              <p>
+                Get the latest updates, offers, and financial tips<br />
+                delivered straight to your inbox.
+              </p>
+            </div>
+
+            <form class="newsletter-form">
+              <label class="sr-only" for="newsletter-email">
+                Your email address
+              </label>
+
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                placeholder="Your email address"
+                required
+              />
+
+              <button type="submit" class="button button--cyan">
+                Subscribe
+              </button>
+            </form>
+          </div>
+
+          <p class="newsletter-message" aria-live="polite"></p>
+
+          <!-- Legal -->
+          <div class="footer-bottom">
+            <p>
+              Copyright © 2026 Family Bank Limited, Kenya. Regulated by the
+              Central Bank of Kenya.
+            </p>
+
+            <a href="#">Site by Bean</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
