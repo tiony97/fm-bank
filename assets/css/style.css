@@ -63,12 +63,6 @@ input:focus-visible {
   outline-offset: 3px;
 }
 
-.container {
-  width: 90%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -586,9 +580,6 @@ section .section-intro p {
    REAL STORIES CAROUSEL
 ========================================= */
 .stories-section {
-  --stories-bg: #f4f4f8;
-  --stories-blue: #2d5eaa;
-  --stories-cyan: #05a9df;
   padding: 70px 0;
   overflow: hidden;
   background: #f4f4f7;
@@ -763,6 +754,189 @@ section .section-intro p {
   transform: scale(1.05);
 }
 .stories-section .container .stories-navigation__button.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.stories-section-2 {
+  padding: 70px 0;
+  overflow: hidden;
+  background: #f4f4f7;
+}
+.stories-section-2 .container {
+  display: flex;
+  flex-direction: column;
+  min-height: 430px;
+  width: 100% !important;
+  max-width: 95% !important;
+  margin: 0 !important;
+  margin-left: auto !important;
+  /* =========================================
+  TOP INTRODUCTION
+  ========================================= */
+}
+.stories-section-2 .container .stories-intro {
+  position: relative;
+  min-width: 0;
+  margin-bottom: 30px;
+}
+.stories-section-2 .container .stories-intro .stories-intro__content {
+  display: flex;
+  justify-content: space-between;
+}
+.stories-section-2 .container .stories-intro .stories-intro__content h2 {
+  flex: 1;
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+  margin-bottom: 0.4em !important;
+}
+.stories-section-2 .container .stories-intro .stories-intro__content p {
+  flex: 0.6;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.stories-section-2 .container {
+  /* =========================================
+  CAROUSEL VIEWPORT
+  ========================================= */
+}
+.stories-section-2 .container .stories-carousel {
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.stories-section-2 .container .stories-carousel .stories-swiper-2 {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.stories-section-2 .container .stories-carousel .stories-swiper-2 .swiper-wrapper {
+  align-items: stretch;
+}
+.stories-section-2 .container .stories-carousel .stories-swiper-2 .swiper-slide {
+  width: 233px;
+  height: auto;
+  flex-shrink: 0;
+}
+.stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #2a5caa;
+  border-radius: 17px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(19, 42, 79, 0.16);
+}
+.stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card {
+  /* Story image */
+}
+.stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__image {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 375px;
+  overflow: hidden;
+  background: #dbe5f0;
+}
+.stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+  transition: transform 0.5s ease;
+}
+.story-card:hover .stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__image img {
+  transform: scale(1.04);
+}
+.stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__image {
+  /* Circular arrow on each image */
+}
+.stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__image .story-card__arrow {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: #00a6e5;
+  background: #ffffff;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+.stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__image .story-card__arrow:hover {
+  color: #ffffff;
+  background: #00a6e5;
+  transform: translateX(2px);
+}
+.stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card {
+  /* Blue caption panel */
+}
+.stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 76px;
+  padding: 8px 10px 10px;
+  color: #ffffff;
+  background: #2a5caa;
+}
+.stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__content h3 {
+  margin: 0 0 5px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__content p {
+  margin-top: auto;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.stories-section-2 .container .stories-navigation {
+  align-self: flex-end !important;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 25px;
+  margin-right: 5% !important;
+}
+.stories-section-2 .container .stories-navigation__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: #00a6e5;
+  background: #ffffff;
+  border: none;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.1803921569);
+  border-radius: 50%;
+  font-size: 26px;
+  line-height: 1;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+.stories-section-2 .container .stories-navigation__button:hover:not(.swiper-button-disabled) {
+  color: #ffffff;
+  background: #00a6e5;
+  transform: scale(1.05);
+}
+.stories-section-2 .container .stories-navigation__button.swiper-button-disabled {
   opacity: 0.35;
   cursor: default;
 }
@@ -1374,9 +1548,712 @@ section .section-intro p {
 /* =========================================
    TABLET
 ========================================= */
+@media (max-width: 900px) {
+  /* =========================================
+     INDEX ROUTING PAGE
+  ========================================= */
+  .routing {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+  .routing .routing-container {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+  }
+  .routing .routing-container .page-intro {
+    flex: none;
+    width: 100%;
+    min-height: 320px;
+    gap: 30px;
+  }
+  .routing .routing-container .page-intro .upper h2 {
+    font-size: 26px;
+  }
+  .routing .routing-container .route-grid {
+    flex: none;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .routing .routing-container .route-grid .route {
+    min-height: 240px;
+  }
+  /* =========================================
+     SECTION INTRODUCTIONS
+  ========================================= */
+  section .section-intro {
+    margin-bottom: 35px;
+  }
+  section .section-intro h2 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  section .section-intro p {
+    font-size: 16px;
+  }
+  /* =========================================
+     HERO SECTION
+  ========================================= */
+  .hero {
+    height: 80vh;
+    padding: 20vh 0 10vh;
+  }
+  .hero .container h2 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .hero .container p {
+    width: 70%;
+    font-size: 15px;
+  }
+  /* =========================================
+     CURRENCY MARQUEE
+  ========================================= */
+  .currency-marquee {
+    gap: 10px;
+  }
+  .currency-marquee .marquee-container {
+    width: 75%;
+  }
+  .currency-marquee .marquee-cta {
+    font-size: 14px;
+  }
+  /* =========================================
+     PRODUCTS SECTION
+  ========================================= */
+  .products {
+    padding: 50px 0;
+  }
+  .products .tab-links {
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+  }
+  .products .tab-links li {
+    font-size: 14px !important;
+    padding: 7px 14px;
+  }
+  .products .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .products .product-card .card-img img {
+    height: 180px;
+  }
+  .products .product-card .card-text h3 {
+    font-size: 19px;
+    line-height: 26px;
+  }
+  /* =========================================
+     STORIES SECTION (carousel)
+  ========================================= */
+  .stories-section {
+    padding: 50px 0;
+  }
+  .stories-section .container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    min-height: auto;
+    padding-right: 0;
+  }
+  .stories-section .container .stories-intro {
+    padding-right: 0;
+  }
+  .stories-section .container .stories-intro .stories-intro__content h2 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .stories-section .container .stories-intro .stories-intro__content p {
+    font-size: 16px;
+  }
+  .stories-section .container .stories-carousel .stories-swiper .swiper-slide {
+    width: 200px;
+  }
+  .stories-section .container .stories-carousel .stories-swiper .story-card .story-card__image {
+    height: 220px;
+  }
+  .stories-section .container .stories-carousel .stories-swiper .story-card .story-card__content h3 {
+    font-size: 16px;
+  }
+  .stories-section .container .stories-navigation {
+    margin-top: 20px;
+  }
+  /* =========================================
+     STORIES SECTION 2
+  ========================================= */
+  .stories-section-2 {
+    padding: 50px 0;
+  }
+  .stories-section-2 .container {
+    min-height: auto;
+  }
+  .stories-section-2 .container .stories-intro {
+    margin-bottom: 25px;
+  }
+  .stories-section-2 .container .stories-intro .stories-intro__content {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .stories-section-2 .container .stories-intro .stories-intro__content h2 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .stories-section-2 .container .stories-intro .stories-intro__content p {
+    flex: 1;
+    font-size: 16px;
+  }
+  .stories-section-2 .container .stories-carousel .stories-swiper-2 .swiper-slide {
+    width: 200px;
+  }
+  .stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__image {
+    height: 300px;
+  }
+  .stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__content h3 {
+    font-size: 16px;
+  }
+  .stories-section-2 .container .stories-navigation {
+    align-self: flex-start !important;
+    margin-right: 0 !important;
+  }
+  /* =========================================
+     IMPACT SECTION
+  ========================================= */
+  .impact-section {
+    padding: 45px 0;
+  }
+  .impact-section .tabs-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .impact-section .tab-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0;
+  }
+  .impact-section .tab-nav .tab-btn {
+    flex: 1 0 auto;
+    min-width: 140px;
+    padding: 15px 15px;
+    border-bottom: 1px solid rgba(8, 18, 34, 0.1215686275);
+  }
+  .impact-section .tab-nav .tab-btn .stat-number {
+    font-size: 2.2rem;
+  }
+  .impact-section .tab-nav .tab-btn .stat-label {
+    font-size: 0.95rem;
+  }
+  .impact-section .image-wrapper {
+    max-height: 400px;
+  }
+  .impact-section .image-wrapper .glass-overlay {
+    width: 80%;
+    bottom: 15px;
+    right: 15px;
+    padding: 18px;
+  }
+  .impact-section .image-wrapper .glass-overlay p {
+    font-size: 0.85rem;
+  }
+  /* =========================================
+     BANK SERVICES SECTION
+  ========================================= */
+  .bank-services {
+    padding: 45px 0;
+  }
+  .bank-services .container .services-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .bank-services .container .services-grid__card--large {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 350px;
+  }
+  .bank-services .container .services-grid__card--small-top, .bank-services .container .services-grid__card--small-bottom {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 260px;
+  }
+  .bank-services .container .services-grid__card h3 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .bank-services .container .services-grid__card p {
+    width: 85%;
+    font-size: 15px;
+  }
+  /* =========================================
+     SUSTAINABILITY SLIDER
+  ========================================= */
+  .sustainability-slider-section {
+    height: 80vh;
+  }
+  .sustainability-slider-section .sustainability-swiper .swiper-slide .slide-content-wrapper {
+    padding-bottom: 12vh;
+  }
+  .sustainability-slider-section .sustainability-swiper .swiper-slide .slide-text-container {
+    max-width: 80%;
+  }
+  .sustainability-slider-section .sustainability-swiper .swiper-slide .slide-text-container .slide-title {
+    font-size: 2rem;
+  }
+  /* =========================================
+     NEWS UPDATES SECTION
+  ========================================= */
+  .news-updates {
+    padding: 45px 0;
+  }
+  .news-updates .container .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .news-updates .container .news-grid .update .update-image {
+    height: 240px;
+    border-radius: 20px;
+  }
+  .news-updates .container .news-grid .update .update-content h4 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  /* =========================================
+     OVERVIEW SECTION
+  ========================================= */
+  .overview {
+    padding: 45px 0;
+  }
+  .overview .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .overview .container .title-wrapper h2 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .overview .container .content-wrapper p {
+    font-size: 15px;
+  }
+  /* =========================================
+     CONTACT FORMS SECTION
+  ========================================= */
+  .contact-forms {
+    padding: 40px 0;
+  }
+  .contact-forms .container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .contact-forms h2 {
+    font-size: 26px;
+  }
+  .contact-forms .form-description {
+    font-size: 15px;
+  }
+  .contact-forms .loan-form {
+    min-height: 380px;
+  }
+  .contact-forms .loan-form input,
+  .contact-forms .loan-form select {
+    width: 80%;
+  }
+}
 /* =========================================
    MOBILE
 ========================================= */
+@media (max-width: 600px) {
+  /* =========================================
+     INDEX ROUTING PAGE
+  ========================================= */
+  .routing {
+    padding: 15px 0;
+  }
+  .routing .routing-container {
+    width: 94%;
+    gap: 15px;
+  }
+  .routing .routing-container .page-intro {
+    padding: 18px;
+    border-radius: 20px;
+    min-height: 280px;
+  }
+  .routing .routing-container .page-intro .upper .logo img {
+    height: 38px;
+  }
+  .routing .routing-container .page-intro .upper h2 {
+    font-size: 22px;
+  }
+  .routing .routing-container .page-intro .lower {
+    gap: 14px;
+  }
+  .routing .routing-container .page-intro .lower h3 {
+    font-size: 18px;
+  }
+  .routing .routing-container .route-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .routing .routing-container .route-grid .route {
+    min-height: 200px;
+    padding: 18px;
+    border-radius: 20px;
+  }
+  .routing .routing-container .route-grid .route h3 {
+    font-size: 20px;
+  }
+  /* =========================================
+     SECTION INTRODUCTIONS
+  ========================================= */
+  section .section-intro {
+    margin-bottom: 25px;
+  }
+  section .section-intro h2 {
+    font-size: 25px;
+    line-height: 32px;
+  }
+  section .section-intro p {
+    font-size: 15px;
+  }
+  /* =========================================
+     HERO SECTION
+  ========================================= */
+  .hero {
+    height: 75vh;
+    padding: 18vh 0 8vh;
+  }
+  .hero .stock-marquee-container {
+    padding: 8px 0;
+  }
+  .hero .stock-marquee-container .stock-item {
+    font-size: 12px;
+  }
+  .hero .container h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .hero .container p {
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .hero .container .breadcrumbs {
+    font-size: 12px;
+  }
+  .hero .container .cta-btns {
+    flex-wrap: wrap;
+  }
+  /* =========================================
+     CURRENCY MARQUEE
+  ========================================= */
+  .currency-marquee {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+  .currency-marquee .marquee-container {
+    width: 100%;
+  }
+  .currency-marquee .currency-item {
+    font-size: 12px;
+  }
+  .currency-marquee .marquee-cta {
+    font-size: 13px;
+  }
+  /* =========================================
+     PRODUCTS SECTION
+  ========================================= */
+  .products {
+    padding: 40px 0;
+  }
+  .products .tab-links {
+    gap: 6px;
+    margin-bottom: 25px;
+  }
+  .products .tab-links li {
+    font-size: 13px !important;
+    padding: 6px 12px;
+  }
+  .products .cards {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .products .product-card .card-img {
+    margin-bottom: 12px;
+  }
+  .products .product-card .card-img img {
+    height: 200px;
+    border-radius: 20px;
+  }
+  .products .product-card .card-text h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .products .product-card .card-text p {
+    font-size: 14px;
+  }
+  /* =========================================
+     STORIES SECTION (carousel)
+  ========================================= */
+  .stories-section {
+    padding: 40px 0;
+  }
+  .stories-section .container {
+    gap: 20px;
+  }
+  .stories-section .container .stories-intro .stories-intro__content h2 {
+    font-size: 25px;
+    line-height: 32px;
+  }
+  .stories-section .container .stories-intro .stories-intro__content p {
+    font-size: 15px;
+  }
+  .stories-section .container .stories-carousel .stories-swiper .swiper-slide {
+    width: 170px;
+  }
+  .stories-section .container .stories-carousel .stories-swiper .story-card .story-card__image {
+    height: 190px;
+  }
+  .stories-section .container .stories-carousel .stories-swiper .story-card .story-card__content {
+    min-height: 70px;
+    padding: 8px;
+  }
+  .stories-section .container .stories-carousel .stories-swiper .story-card .story-card__content h3 {
+    font-size: 15px;
+  }
+  .stories-section .container .stories-carousel .stories-swiper .story-card .story-card__content p {
+    font-size: 12px;
+  }
+  .stories-section .container .stories-navigation {
+    margin-top: 15px;
+  }
+  .stories-section .container .stories-navigation .stories-navigation__button {
+    width: 35px;
+    height: 35px;
+    font-size: 22px;
+  }
+  /* =========================================
+     STORIES SECTION 2
+  ========================================= */
+  .stories-section-2 {
+    padding: 40px 0;
+  }
+  .stories-section-2 .container .stories-intro {
+    margin-bottom: 20px;
+  }
+  .stories-section-2 .container .stories-intro .stories-intro__content h2 {
+    font-size: 25px;
+    line-height: 32px;
+  }
+  .stories-section-2 .container .stories-intro .stories-intro__content p {
+    font-size: 15px;
+  }
+  .stories-section-2 .container .stories-carousel .stories-swiper-2 .swiper-slide {
+    width: 170px;
+  }
+  .stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__image {
+    height: 240px;
+  }
+  .stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__content {
+    min-height: 70px;
+    padding: 8px;
+  }
+  .stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__content h3 {
+    font-size: 15px;
+  }
+  .stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__content p {
+    font-size: 12px;
+  }
+  .stories-section-2 .container .stories-navigation {
+    margin-top: 15px;
+  }
+  .stories-section-2 .container .stories-navigation .stories-navigation__button {
+    width: 35px;
+    height: 35px;
+    font-size: 22px;
+  }
+  /* =========================================
+     IMPACT SECTION
+  ========================================= */
+  .impact-section {
+    padding: 35px 0;
+  }
+  .impact-section .section-intro {
+    margin-bottom: 25px;
+  }
+  .impact-section .tabs-wrapper {
+    gap: 20px;
+  }
+  .impact-section .tab-nav .tab-btn {
+    min-width: 110px;
+    padding: 12px 10px;
+  }
+  .impact-section .tab-nav .tab-btn .stat-number {
+    font-size: 1.7rem;
+  }
+  .impact-section .tab-nav .tab-btn .stat-label {
+    font-size: 0.85rem;
+  }
+  .impact-section .image-wrapper {
+    max-height: 320px;
+    border-radius: 16px;
+  }
+  .impact-section .image-wrapper .glass-overlay {
+    width: 90%;
+    bottom: 10px;
+    right: 10px;
+    padding: 14px;
+    border-radius: 10px;
+  }
+  .impact-section .image-wrapper .glass-overlay p {
+    font-size: 0.8rem;
+  }
+  /* =========================================
+     BANK SERVICES SECTION
+  ========================================= */
+  .bank-services {
+    padding: 35px 0;
+  }
+  .bank-services .container .services-grid {
+    gap: 15px;
+  }
+  .bank-services .container .services-grid__card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+  .bank-services .container .services-grid__card--large {
+    min-height: 280px;
+  }
+  .bank-services .container .services-grid__card--small-top, .bank-services .container .services-grid__card--small-bottom {
+    min-height: 220px;
+  }
+  .bank-services .container .services-grid__card h3 {
+    font-size: 19px;
+    line-height: 26px;
+  }
+  .bank-services .container .services-grid__card p {
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .bank-services .container .services-grid__card .app-download-btns img {
+    height: 28px;
+  }
+  /* =========================================
+     SUSTAINABILITY SLIDER
+  ========================================= */
+  .sustainability-slider-section {
+    height: 70vh;
+  }
+  .sustainability-slider-section .sustainability-swiper .swiper-slide .slide-content-wrapper {
+    padding: 0 5%;
+    padding-bottom: 10vh;
+  }
+  .sustainability-slider-section .sustainability-swiper .swiper-slide .slide-text-container {
+    max-width: 100%;
+  }
+  .sustainability-slider-section .sustainability-swiper .swiper-slide .slide-text-container .slide-title {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+  .sustainability-slider-section .sustainability-swiper .swiper-slide .slide-text-container .slide-description {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  .sustainability-slider-section .sustainability-swiper .custom-fullwidth-pagination .swiper-pagination-bullet {
+    height: 4px;
+  }
+  /* =========================================
+     NEWS UPDATES SECTION
+  ========================================= */
+  .news-updates {
+    padding: 35px 0;
+  }
+  .news-updates .container .news-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .news-updates .container .news-grid .update .update-image {
+    height: 220px;
+    border-radius: 18px;
+    margin-bottom: 12px;
+  }
+  .news-updates .container .news-grid .update .update-content h4 {
+    font-size: 17px;
+    line-height: 24px;
+  }
+  .news-updates .container .news-grid .update .update-content p {
+    font-size: 13px;
+  }
+  /* =========================================
+     OVERVIEW SECTION
+  ========================================= */
+  .overview {
+    padding: 35px 0;
+  }
+  .overview .container {
+    gap: 15px;
+  }
+  .overview .container .title-wrapper h2 {
+    font-size: 25px;
+    line-height: 32px;
+  }
+  .overview .container .content-wrapper {
+    gap: 12px;
+  }
+  .overview .container .content-wrapper p {
+    font-size: 14px;
+  }
+  /* =========================================
+     CONTACT FORMS SECTION
+  ========================================= */
+  .contact-forms {
+    padding: 30px 0;
+  }
+  .contact-forms .container {
+    gap: 20px;
+  }
+  .contact-forms h2 {
+    font-size: 22px;
+  }
+  .contact-forms .form-description {
+    font-size: 14px;
+  }
+  .contact-forms .sales-form {
+    padding: 18px;
+    border-radius: 20px;
+  }
+  .contact-forms .sales-form .sales-fields-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-forms .sales-form input,
+  .contact-forms .sales-form select {
+    height: 38px;
+  }
+  .contact-forms .sales-form textarea {
+    min-height: 120px;
+  }
+  .contact-forms .loan-form {
+    min-height: 340px;
+    padding: 18px 14px 25px;
+    border-radius: 20px;
+  }
+  .contact-forms .loan-form h2 {
+    font-size: 22px;
+  }
+  .contact-forms .loan-form input,
+  .contact-forms .loan-form select {
+    width: 100%;
+    height: 38px;
+  }
+  .contact-forms .button {
+    margin-top: 12px;
+  }
+}
+.container {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 /* =========================================
    HEADER
 ========================================= */
@@ -1635,7 +2512,7 @@ section .section-intro p {
 }
 
 /* =========================================
-   6. ACCESSIBILITY & CHATBOT
+   6. ACCESSIBILITY, DOCKER, & CHATBOT
 ========================================= */
 .accessibility-button {
   position: fixed;
@@ -1688,6 +2565,88 @@ section .section-intro p {
 }
 .chatbot-button:hover {
   transform: translateY(-2px);
+}
+
+.quick-dock {
+  position: fixed;
+  top: 142px;
+  right: 40px;
+  z-index: 10000;
+  width: 60px;
+  box-sizing: border-box;
+}
+.quick-dock .dock-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #e0e4ea;
+  border-radius: 999px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+.quick-dock .dock-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+  height: 60px;
+  text-decoration: none;
+}
+.quick-dock .dock-item img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: transform 0.2s ease;
+}
+.quick-dock .dock-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 48px;
+  height: 1px;
+  background: #d3def0;
+  transform: translateX(-50%);
+}
+.quick-dock .dock-item:hover img {
+  transform: scale(1.08);
+}
+.quick-dock .dock-trigger {
+  height: 65px;
+  flex-shrink: 0;
+}
+.quick-dock .dock-trigger img {
+  width: 30px;
+  height: 30px;
+}
+.quick-dock .dock-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: max-height 0.4s ease, opacity 0.25s ease, transform 0.3s ease, visibility 0s linear 0.4s;
+}
+.quick-dock .dock-menu:hover .dock-dropdown,
+.quick-dock .dock-menu:focus-within .dock-dropdown {
+  max-height: 540px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition: max-height 0.4s ease, opacity 0.25s ease, transform 0.3s ease, visibility 0s;
 }
 
 /* =========================================
@@ -1922,7 +2881,14 @@ section .section-intro p {
 /* =========================================
    12. TABLET RESPONSIVENESS
 ========================================= */
-@media (max-width: 1100px) {
+@media (max-width: 1280px) {
+  section .container {
+    width: 90% !important;
+  }
+  .site-header .container,
+  .site-footer .container {
+    width: 90% !important;
+  }
   .main-nav__inner {
     gap: 12px;
   }
@@ -1943,16 +2909,26 @@ section .section-intro p {
   }
 }
 /* =========================================
-   13. MOBILE NAVIGATION
+   13. MOBILE NAVIGATION (TABLET)
 ========================================= */
 @media (max-width: 900px) {
+  .utility-bar {
+    padding: 10px 16px;
+  }
+  .utility-inner {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .utility-left {
+    gap: 10px;
+  }
   .utility-right {
     display: none;
   }
   .main-nav__inner {
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10px 14px;
+    padding: 10px 16px;
   }
   .mobile-toggle {
     display: inline-flex;
@@ -1980,7 +2956,7 @@ section .section-intro p {
   .nav-link {
     display: flex;
     justify-content: space-between;
-    padding: 13px 4px;
+    padding: 13px 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     font-size: 13px;
   }
@@ -2008,31 +2984,66 @@ section .section-intro p {
   .mega-menu__feature img {
     height: 180px;
   }
+  /* ---------- Footer ---------- */
+  .site-footer {
+    padding: 40px 20px 20px;
+  }
+  .footer-heading {
+    gap: 16px;
+    margin-bottom: 36px;
+  }
   .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 32px;
+    gap: 32px 24px;
+  }
+  .footer-column {
+    height: auto;
+    min-height: 0;
   }
   .newsletter {
     align-items: flex-start;
     flex-direction: column;
+    gap: 18px;
+  }
+  .newsletter-form {
+    width: 100%;
+    max-width: 420px;
+  }
+  .footer-bottom {
+    flex-wrap: wrap;
+    gap: 10px 20px;
   }
 }
 /* =========================================
    14. SMALL MOBILE SCREENS
 ========================================= */
 @media (max-width: 560px) {
+  section .container {
+    width: 90% !important;
+  }
+  .quick-dock {
+    top: 28vh;
+    right: 10px;
+    transform: scale(0.9);
+    transform-origin: top right;
+  }
+  /* ---------- Header ---------- */
+  .site-header .container {
+    width: 100% !important;
+  }
   .utility-bar {
-    padding: 7px 10px;
+    padding: 7px 14px;
   }
   .utility-left {
     gap: 8px;
+    flex-wrap: wrap;
   }
   .utility-left a {
-    font-size: 8px;
+    font-size: 10px;
   }
   .main-nav__inner {
     gap: 8px;
-    padding: 10px;
+    padding: 10px 14px;
   }
   .brand > i {
     font-size: 22px;
@@ -2053,45 +3064,103 @@ section .section-intro p {
   .language-button {
     min-width: 40px;
   }
+  /* ---------- Footer ---------- */
   .site-footer {
-    padding: 25px 18px 16px;
+    padding: 28px 16px 18px;
   }
   .footer-heading {
     align-items: flex-start;
     flex-direction: column;
-    margin-bottom: 32px;
+    gap: 14px;
+    margin-bottom: 28px;
   }
   .footer-heading h2 {
-    font-size: 27px;
+    font-size: 24px;
+    line-height: 1.25;
   }
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 28px 18px;
-  }
-  .footer-column h3 {
+  .footer-heading p {
     font-size: 13px;
   }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .footer-column {
+    height: auto;
+  }
+  .footer-column h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .footer-column ul li {
+    margin-bottom: 7px;
+  }
   .footer-column ul a {
-    font-size: 10px;
+    font-size: 12.5px;
+  }
+  .resources-column ul {
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+  }
+  .app-links {
+    gap: 8px;
+  }
+  .app-links > a {
+    padding: 6px 10px;
+  }
+  .social-links {
+    gap: 8px;
   }
   .newsletter {
-    gap: 18px;
-    margin-top: 30px;
+    gap: 16px;
+    margin-top: 28px;
+    padding-top: 20px;
+  }
+  .newsletter__text h3 {
+    font-size: 17px;
+  }
+  .newsletter__text p {
+    font-size: 13px;
   }
   .newsletter-form {
     align-items: stretch;
     flex-direction: column;
+    width: 100%;
+  }
+  .newsletter-form input {
+    height: 42px;
   }
   .newsletter-form .button {
-    align-self: flex-start;
+    align-self: stretch;
+    width: 100%;
   }
   .footer-bottom {
     align-items: flex-start;
     flex-direction: column;
+    gap: 8px;
+  }
+  .footer-bottom p,
+  .footer-bottom a {
+    font-size: 12px;
   }
 }
 /* =========================================
-   15. REDUCED MOTION ACCESSIBILITY
+   15. EXTRA SMALL MOBILE
+========================================= */
+@media (max-width: 380px) {
+  .site-footer {
+    padding: 24px 14px 16px;
+  }
+  .footer-heading h2 {
+    font-size: 21px;
+  }
+  .resources-column ul {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================
+   16. REDUCED MOTION ACCESSIBILITY
 ========================================= */
 @media (prefers-reduced-motion: reduce) {
   *,

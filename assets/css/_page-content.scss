@@ -465,10 +465,6 @@ section {
    REAL STORIES CAROUSEL
 ========================================= */
 .stories-section {
-  --stories-bg: #f4f4f8;
-  --stories-blue: #2d5eaa;
-  --stories-cyan: #05a9df;
-
   padding: 70px 0;
   overflow: hidden;
   background: #f4f4f7;
@@ -662,6 +658,222 @@ section {
       border-radius: 50%;
 
       font-size: 20px;
+      line-height: 1;
+
+      transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+
+      &:hover:not(.swiper-button-disabled) {
+        color: $white;
+        background: $secondary;
+        transform: scale(1.05);
+      }
+
+      &.swiper-button-disabled {
+        opacity: 0.35;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.stories-section-2 {
+  padding: 70px 0;
+  overflow: hidden;
+  background: #f4f4f7;
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 430px;
+    width: 100% !important;
+    max-width: 95% !important;
+    margin: 0 !important;
+    margin-left: auto !important;
+
+    /* =========================================
+    TOP INTRODUCTION
+    ========================================= */
+    .stories-intro {
+      position: relative;
+
+      min-width: 0;
+      margin-bottom: 30px;
+      .stories-intro__content {
+        display: flex;
+        justify-content: space-between;
+        h2 {
+          flex: 1;
+          font-size: 36px;
+          line-height: 44px;
+          font-weight: 700;
+          margin-bottom: 0.4em !important;
+        }
+
+        p {
+          flex: 0.6;
+          font-size: 18px;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    /* =========================================
+    CAROUSEL VIEWPORT
+    ========================================= */
+    .stories-carousel {
+      min-width: 0;
+      width: 100%;
+      overflow: hidden;
+      .stories-swiper-2 {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        .swiper-wrapper {
+          align-items: stretch;
+        }
+        .swiper-slide {
+          width: 233px;
+          height: auto;
+          flex-shrink: 0;
+        }
+        .story-card {
+          display: flex;
+          flex-direction: column;
+
+          overflow: hidden;
+          background: $primary-dark;
+          border-radius: 17px;
+
+          transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+
+          &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(19, 42, 79, 0.16);
+          }
+          /* Story image */
+          .story-card__image {
+            position: relative;
+            flex: 1 1 auto;
+
+            min-height: 0;
+            height: 375px;
+            overflow: hidden;
+
+            background: #dbe5f0;
+
+            img {
+              display: block;
+
+              width: 100%;
+              height: 100%;
+              min-height: 100%;
+
+              object-fit: cover;
+              object-position: center top;
+
+              transition: transform 0.5s ease;
+            }
+
+            .story-card:hover & img {
+              transform: scale(1.04);
+            }
+
+            /* Circular arrow on each image */
+            .story-card__arrow {
+              position: absolute;
+              top: 8px;
+              right: 8px;
+              z-index: 2;
+
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              width: 30px;
+              height: 30px;
+
+              color: $secondary;
+              background: $white;
+              border-radius: 50%;
+
+              font-size: 20px;
+              line-height: 1;
+
+              transition:
+                color 0.2s ease,
+                background 0.2s ease,
+                transform 0.2s ease;
+
+              &:hover {
+                color: $white;
+                background: $secondary;
+                transform: translateX(2px);
+              }
+            }
+          }
+          /* Blue caption panel */
+          .story-card__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            min-height: 76px;
+            padding: 8px 10px 10px;
+
+            color: $white;
+            background: $primary-dark;
+
+            h3 {
+              margin: 0 0 5px;
+
+              color: $white;
+              font-size: 18px;
+              font-weight: 500;
+              line-height: 1.4;
+            }
+
+            p {
+              margin-top: auto;
+
+              color: $white;
+              font-size: 14px;
+              line-height: 1.4;
+            }
+          }
+        }
+      }
+    }
+
+    .stories-navigation {
+      align-self: flex-end !important;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 25px;
+      margin-right: 5% !important;
+    }
+
+    .stories-navigation__button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 40px;
+      height: 40px;
+      padding: 0;
+
+      color: $secondary;
+      background: $white;
+      border: none;
+      outline: none;
+      border: 1px solid #0000002e;
+      border-radius: 50%;
+
+      font-size: 26px;
       line-height: 1;
 
       transition:
@@ -1393,6 +1605,430 @@ section {
 ========================================= */
 
 @media (max-width: 900px) {
+  /* =========================================
+     INDEX ROUTING PAGE
+  ========================================= */
+  .routing {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 0;
+
+    .routing-container {
+      flex-direction: column;
+      height: auto;
+      gap: 20px;
+
+      .page-intro {
+        flex: none;
+        width: 100%;
+        min-height: 320px;
+        gap: 30px;
+
+        .upper {
+          h2 {
+            font-size: 26px;
+          }
+        }
+      }
+
+      .route-grid {
+        flex: none;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+
+        .route {
+          min-height: 240px;
+        }
+      }
+    }
+  }
+
+  /* =========================================
+     SECTION INTRODUCTIONS
+  ========================================= */
+  section {
+    .section-intro {
+      margin-bottom: 35px;
+
+      h2 {
+        font-size: 30px;
+        line-height: 38px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+
+  /* =========================================
+     HERO SECTION
+  ========================================= */
+  .hero {
+    height: 80vh;
+    padding: 20vh 0 10vh;
+
+    .container {
+      h2 {
+        font-size: 36px;
+        line-height: 44px;
+      }
+
+      p {
+        width: 70%;
+        font-size: 15px;
+      }
+    }
+  }
+
+  /* =========================================
+     CURRENCY MARQUEE
+  ========================================= */
+  .currency-marquee {
+    gap: 10px;
+
+    .marquee-container {
+      width: 75%;
+    }
+
+    .marquee-cta {
+      font-size: 14px;
+    }
+  }
+
+  /* =========================================
+     PRODUCTS SECTION
+  ========================================= */
+  .products {
+    padding: 50px 0;
+
+    .tab-links {
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+
+      li {
+        font-size: 14px !important;
+        padding: 7px 14px;
+      }
+    }
+
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      .card-img img {
+        height: 180px;
+      }
+
+      .card-text h3 {
+        font-size: 19px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  /* =========================================
+     STORIES SECTION (carousel)
+  ========================================= */
+  .stories-section {
+    padding: 50px 0;
+
+    .container {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      min-height: auto;
+      padding-right: 0;
+
+      .stories-intro {
+        padding-right: 0;
+
+        .stories-intro__content {
+          h2 {
+            font-size: 30px;
+            line-height: 38px;
+          }
+
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .stories-carousel {
+        .stories-swiper {
+          .swiper-slide {
+            width: 200px;
+          }
+
+          .story-card {
+            .story-card__image {
+              height: 220px;
+            }
+
+            .story-card__content {
+              h3 {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      .stories-navigation {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  /* =========================================
+     STORIES SECTION 2
+  ========================================= */
+  .stories-section-2 {
+    padding: 50px 0;
+
+    .container {
+      min-height: auto;
+
+      .stories-intro {
+        margin-bottom: 25px;
+
+        .stories-intro__content {
+          flex-direction: column;
+          gap: 10px;
+
+          h2 {
+            font-size: 30px;
+            line-height: 38px;
+          }
+
+          p {
+            flex: 1;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .stories-carousel {
+        .stories-swiper-2 {
+          .swiper-slide {
+            width: 200px;
+          }
+
+          .story-card {
+            .story-card__image {
+              height: 300px;
+            }
+
+            .story-card__content {
+              h3 {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      .stories-navigation {
+        align-self: flex-start !important;
+        margin-right: 0 !important;
+      }
+    }
+  }
+
+  /* =========================================
+     IMPACT SECTION
+  ========================================= */
+  .impact-section {
+    padding: 45px 0;
+
+    .tabs-wrapper {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .tab-nav {
+      flex-direction: row;
+      overflow-x: auto;
+      gap: 0;
+
+      .tab-btn {
+        flex: 1 0 auto;
+        min-width: 140px;
+        padding: 15px 15px;
+        border-bottom: 1px solid #0812221f;
+
+        .stat-number {
+          font-size: 2.2rem;
+        }
+
+        .stat-label {
+          font-size: 0.95rem;
+        }
+      }
+    }
+
+    .image-wrapper {
+      max-height: 400px;
+
+      .glass-overlay {
+        width: 80%;
+        bottom: 15px;
+        right: 15px;
+        padding: 18px;
+
+        p {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+
+  /* =========================================
+     BANK SERVICES SECTION
+  ========================================= */
+  .bank-services {
+    padding: 45px 0;
+
+    .container {
+      .services-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        &__card {
+          &--large {
+            grid-column: auto;
+            grid-row: auto;
+            min-height: 350px;
+          }
+
+          &--small-top,
+          &--small-bottom {
+            grid-column: auto;
+            grid-row: auto;
+            min-height: 260px;
+          }
+
+          h3 {
+            font-size: 22px;
+            line-height: 30px;
+          }
+
+          p {
+            width: 85%;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  /* =========================================
+     SUSTAINABILITY SLIDER
+  ========================================= */
+  .sustainability-slider-section {
+    height: 80vh;
+
+    .sustainability-swiper {
+      .swiper-slide {
+        .slide-content-wrapper {
+          padding-bottom: 12vh;
+        }
+
+        .slide-text-container {
+          max-width: 80%;
+
+          .slide-title {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  /* =========================================
+     NEWS UPDATES SECTION
+  ========================================= */
+  .news-updates {
+    padding: 45px 0;
+
+    .container {
+      .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+
+        .update {
+          .update-image {
+            height: 240px;
+            border-radius: 20px;
+          }
+
+          .update-content {
+            h4 {
+              font-size: 18px;
+              line-height: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* =========================================
+     OVERVIEW SECTION
+  ========================================= */
+  .overview {
+    padding: 45px 0;
+
+    .container {
+      flex-direction: column;
+      gap: 20px;
+
+      .title-wrapper {
+        h2 {
+          font-size: 30px;
+          line-height: 38px;
+        }
+      }
+
+      .content-wrapper {
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  /* =========================================
+     CONTACT FORMS SECTION
+  ========================================= */
+  .contact-forms {
+    padding: 40px 0;
+
+    .container {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    h2 {
+      font-size: 26px;
+    }
+
+    .form-description {
+      font-size: 15px;
+    }
+
+    .loan-form {
+      min-height: 380px;
+
+      input,
+      select {
+        width: 80%;
+      }
+    }
+  }
 }
 
 /* =========================================
@@ -1400,4 +2036,539 @@ section {
 ========================================= */
 
 @media (max-width: 600px) {
+  /* =========================================
+     INDEX ROUTING PAGE
+  ========================================= */
+  .routing {
+    padding: 15px 0;
+
+    .routing-container {
+      width: 94%;
+      gap: 15px;
+
+      .page-intro {
+        padding: 18px;
+        border-radius: 20px;
+        min-height: 280px;
+
+        .upper {
+          .logo img {
+            height: 38px;
+          }
+
+          h2 {
+            font-size: 22px;
+          }
+        }
+
+        .lower {
+          gap: 14px;
+
+          h3 {
+            font-size: 18px;
+          }
+        }
+      }
+
+      .route-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+
+        .route {
+          min-height: 200px;
+          padding: 18px;
+          border-radius: 20px;
+
+          h3 {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  /* =========================================
+     SECTION INTRODUCTIONS
+  ========================================= */
+  section {
+    .section-intro {
+      margin-bottom: 25px;
+
+      h2 {
+        font-size: 25px;
+        line-height: 32px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+
+  /* =========================================
+     HERO SECTION
+  ========================================= */
+  .hero {
+    height: 75vh;
+    padding: 18vh 0 8vh;
+
+    .stock-marquee-container {
+      padding: 8px 0;
+
+      .stock-item {
+        font-size: 12px;
+      }
+    }
+
+    .container {
+      h2 {
+        font-size: 28px;
+        line-height: 36px;
+      }
+
+      p {
+        width: 100%;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .breadcrumbs {
+        font-size: 12px;
+      }
+
+      .cta-btns {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  /* =========================================
+     CURRENCY MARQUEE
+  ========================================= */
+  .currency-marquee {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+
+    .marquee-container {
+      width: 100%;
+    }
+
+    .currency-item {
+      font-size: 12px;
+    }
+
+    .marquee-cta {
+      font-size: 13px;
+    }
+  }
+
+  /* =========================================
+     PRODUCTS SECTION
+  ========================================= */
+  .products {
+    padding: 40px 0;
+
+    .tab-links {
+      gap: 6px;
+      margin-bottom: 25px;
+
+      li {
+        font-size: 13px !important;
+        padding: 6px 12px;
+      }
+    }
+
+    .cards {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .product-card {
+      .card-img {
+        margin-bottom: 12px;
+
+        img {
+          height: 200px;
+          border-radius: 20px;
+        }
+      }
+
+      .card-text {
+        h3 {
+          font-size: 20px;
+          line-height: 28px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  /* =========================================
+     STORIES SECTION (carousel)
+  ========================================= */
+  .stories-section {
+    padding: 40px 0;
+
+    .container {
+      gap: 20px;
+
+      .stories-intro {
+        .stories-intro__content {
+          h2 {
+            font-size: 25px;
+            line-height: 32px;
+          }
+
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+
+      .stories-carousel {
+        .stories-swiper {
+          .swiper-slide {
+            width: 170px;
+          }
+
+          .story-card {
+            .story-card__image {
+              height: 190px;
+            }
+
+            .story-card__content {
+              min-height: 70px;
+              padding: 8px;
+
+              h3 {
+                font-size: 15px;
+              }
+
+              p {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+
+      .stories-navigation {
+        margin-top: 15px;
+
+        .stories-navigation__button {
+          width: 35px;
+          height: 35px;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  /* =========================================
+     STORIES SECTION 2
+  ========================================= */
+  .stories-section-2 {
+    padding: 40px 0;
+
+    .container {
+      .stories-intro {
+        margin-bottom: 20px;
+
+        .stories-intro__content {
+          h2 {
+            font-size: 25px;
+            line-height: 32px;
+          }
+
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+
+      .stories-carousel {
+        .stories-swiper-2 {
+          .swiper-slide {
+            width: 170px;
+          }
+
+          .story-card {
+            .story-card__image {
+              height: 240px;
+            }
+
+            .story-card__content {
+              min-height: 70px;
+              padding: 8px;
+
+              h3 {
+                font-size: 15px;
+              }
+
+              p {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+
+      .stories-navigation {
+        margin-top: 15px;
+
+        .stories-navigation__button {
+          width: 35px;
+          height: 35px;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  /* =========================================
+     IMPACT SECTION
+  ========================================= */
+  .impact-section {
+    padding: 35px 0;
+
+    .section-intro {
+      margin-bottom: 25px;
+    }
+
+    .tabs-wrapper {
+      gap: 20px;
+    }
+
+    .tab-nav {
+      .tab-btn {
+        min-width: 110px;
+        padding: 12px 10px;
+
+        .stat-number {
+          font-size: 1.7rem;
+        }
+
+        .stat-label {
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    .image-wrapper {
+      max-height: 320px;
+      border-radius: 16px;
+
+      .glass-overlay {
+        width: 90%;
+        bottom: 10px;
+        right: 10px;
+        padding: 14px;
+        border-radius: 10px;
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  /* =========================================
+     BANK SERVICES SECTION
+  ========================================= */
+  .bank-services {
+    padding: 35px 0;
+
+    .container {
+      .services-grid {
+        gap: 15px;
+
+        &__card {
+          padding: 16px;
+          border-radius: 14px;
+
+          &--large {
+            min-height: 280px;
+          }
+
+          &--small-top,
+          &--small-bottom {
+            min-height: 220px;
+          }
+
+          h3 {
+            font-size: 19px;
+            line-height: 26px;
+          }
+
+          p {
+            width: 100%;
+            font-size: 14px;
+            line-height: 20px;
+          }
+
+          .app-download-btns {
+            img {
+              height: 28px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* =========================================
+     SUSTAINABILITY SLIDER
+  ========================================= */
+  .sustainability-slider-section {
+    height: 70vh;
+
+    .sustainability-swiper {
+      .swiper-slide {
+        .slide-content-wrapper {
+          padding: 0 5%;
+          padding-bottom: 10vh;
+        }
+
+        .slide-text-container {
+          max-width: 100%;
+
+          .slide-title {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+          }
+
+          .slide-description {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+          }
+        }
+      }
+
+      .custom-fullwidth-pagination {
+        .swiper-pagination-bullet {
+          height: 4px;
+        }
+      }
+    }
+  }
+
+  /* =========================================
+     NEWS UPDATES SECTION
+  ========================================= */
+  .news-updates {
+    padding: 35px 0;
+
+    .container {
+      .news-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+
+        .update {
+          .update-image {
+            height: 220px;
+            border-radius: 18px;
+            margin-bottom: 12px;
+          }
+
+          .update-content {
+            h4 {
+              font-size: 17px;
+              line-height: 24px;
+            }
+
+            p {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* =========================================
+     OVERVIEW SECTION
+  ========================================= */
+  .overview {
+    padding: 35px 0;
+
+    .container {
+      gap: 15px;
+
+      .title-wrapper {
+        h2 {
+          font-size: 25px;
+          line-height: 32px;
+        }
+      }
+
+      .content-wrapper {
+        gap: 12px;
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  /* =========================================
+     CONTACT FORMS SECTION
+  ========================================= */
+  .contact-forms {
+    padding: 30px 0;
+
+    .container {
+      gap: 20px;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    .form-description {
+      font-size: 14px;
+    }
+
+    .sales-form {
+      padding: 18px;
+      border-radius: 20px;
+
+      .sales-fields-grid {
+        grid-template-columns: 1fr;
+      }
+
+      input,
+      select {
+        height: 38px;
+      }
+
+      textarea {
+        min-height: 120px;
+      }
+    }
+
+    .loan-form {
+      min-height: 340px;
+      padding: 18px 14px 25px;
+      border-radius: 20px;
+
+      h2 {
+        font-size: 22px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        height: 38px;
+      }
+    }
+
+    .button {
+      margin-top: 12px;
+    }
+  }
 }

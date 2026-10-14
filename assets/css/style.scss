@@ -1,6 +1,12 @@
 @use "settings" as *;
 @forward "_page-content.scss";
 
+.container {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 /* =========================================
    HEADER
 ========================================= */
@@ -307,7 +313,7 @@
 }
 
 /* =========================================
-   6. ACCESSIBILITY & CHATBOT
+   6. ACCESSIBILITY, DOCKER, & CHATBOT
 ========================================= */
 .accessibility-button {
   position: fixed;
@@ -370,6 +376,130 @@
 
   &:hover {
     transform: translateY(-2px);
+  }
+}
+
+.quick-dock {
+  $dock-width: 60px;
+  $icon-size: 30px;
+  $item-height: 60px;
+
+  position: fixed;
+  top: 142px;
+  right: 40px;
+  z-index: 10000;
+
+  width: $dock-width;
+  box-sizing: border-box;
+
+  .dock-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    padding: 0;
+
+    background: #fff;
+    border: 1px solid #e0e4ea;
+    border-radius: 999px;
+
+    box-shadow: 0 4px 20px rgb(0 0 0 / 5%);
+    overflow: hidden;
+  }
+
+  // All icon items
+  .dock-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 100%;
+    height: $item-height;
+
+    text-decoration: none;
+
+    img {
+      display: block;
+      width: $icon-size;
+      height: $icon-size;
+      object-fit: contain;
+
+      transition: transform 0.2s ease;
+    }
+
+    // Separators
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+
+      width: 48px;
+      height: 1px;
+
+      background: #d3def0;
+      transform: translateX(-50%);
+    }
+
+    &:hover img {
+      transform: scale(1.08);
+    }
+  }
+
+  // Calculator stays visible
+  .dock-trigger {
+    height: 65px;
+    flex-shrink: 0;
+
+    img {
+      width: $icon-size;
+      height: $icon-size;
+    }
+  }
+
+  // Collapsed dropdown
+  .dock-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-8px);
+
+    transition:
+      max-height 0.4s ease,
+      opacity 0.25s ease,
+      transform 0.3s ease,
+      visibility 0s linear 0.4s;
+  }
+
+  // Reveal the other items when hovering the calculator/dock
+  .dock-menu:hover,
+  .dock-menu:focus-within {
+    .dock-dropdown {
+      max-height: 540px;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+
+      transition:
+        max-height 0.4s ease,
+        opacity 0.25s ease,
+        transform 0.3s ease,
+        visibility 0s;
+    }
   }
 }
 
@@ -656,7 +786,18 @@
    12. TABLET RESPONSIVENESS
 ========================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1280px) {
+  section {
+    .container {
+      width: 90% !important;
+    }
+  }
+
+  .site-header .container,
+  .site-footer .container {
+    width: 90% !important;
+  }
+
   .main-nav__inner {
     gap: 12px;
   }
@@ -683,10 +824,23 @@
 }
 
 /* =========================================
-   13. MOBILE NAVIGATION
+   13. MOBILE NAVIGATION (TABLET)
 ========================================= */
 
 @media (max-width: 900px) {
+  .utility-bar {
+    padding: 10px 16px;
+  }
+
+  .utility-inner {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .utility-left {
+    gap: 10px;
+  }
+
   .utility-right {
     display: none;
   }
@@ -694,7 +848,7 @@
   .main-nav__inner {
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10px 14px;
+    padding: 10px 16px;
   }
 
   .mobile-toggle {
@@ -731,7 +885,7 @@
     display: flex;
     justify-content: space-between;
 
-    padding: 13px 4px;
+    padding: 13px 8px;
 
     border-bottom: 1px solid rgba($white, 0.12);
     font-size: 13px;
@@ -769,14 +923,41 @@
     height: 180px;
   }
 
+  /* ---------- Footer ---------- */
+
+  .site-footer {
+    padding: 40px 20px 20px;
+  }
+
+  .footer-heading {
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
   .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 32px;
+    gap: 32px 24px;
+  }
+
+  .footer-column {
+    height: auto;
+    min-height: 0;
   }
 
   .newsletter {
     align-items: flex-start;
     flex-direction: column;
+    gap: 18px;
+  }
+
+  .newsletter-form {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .footer-bottom {
+    flex-wrap: wrap;
+    gap: 10px 20px;
   }
 }
 
@@ -785,27 +966,41 @@
 ========================================= */
 
 @media (max-width: 560px) {
-  //   .site-header,
-  //   .page-content,
-  //   .site-footer {
-  //     width: calc(100% - 20px);
-  //   }
+  section {
+    .container {
+      width: 90% !important;
+    }
+  }
+
+  .quick-dock {
+    top: 28vh;
+    right: 10px;
+    transform: scale(0.9);
+    transform-origin: top right;
+  }
+
+  /* ---------- Header ---------- */
+
+  .site-header .container {
+    width: 100% !important;
+  }
 
   .utility-bar {
-    padding: 7px 10px;
+    padding: 7px 14px;
   }
 
   .utility-left {
     gap: 8px;
+    flex-wrap: wrap;
 
     a {
-      font-size: 8px;
+      font-size: 10px;
     }
   }
 
   .main-nav__inner {
     gap: 8px;
-    padding: 10px;
+    padding: 10px 14px;
   }
 
   .brand > i {
@@ -833,55 +1028,128 @@
     min-width: 40px;
   }
 
+  /* ---------- Footer ---------- */
+
   .site-footer {
-    padding: 25px 18px 16px;
+    padding: 28px 16px 18px;
   }
 
   .footer-heading {
     align-items: flex-start;
     flex-direction: column;
-    margin-bottom: 32px;
+    gap: 14px;
+    margin-bottom: 28px;
 
     h2 {
-      font-size: 27px;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    p {
+      font-size: 13px;
     }
   }
 
   .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .footer-column {
+    height: auto;
+
+    h3 {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      margin-bottom: 7px;
+    }
+
+    ul a {
+      font-size: 12.5px;
+    }
+  }
+
+  .resources-column ul {
     grid-template-columns: 1fr 1fr;
-    gap: 28px 18px;
+    column-gap: 16px;
   }
 
-  .footer-column h3 {
-    font-size: 13px;
+  .app-links {
+    gap: 8px;
   }
 
-  .footer-column ul a {
-    font-size: 10px;
+  .app-links > a {
+    padding: 6px 10px;
+  }
+
+  .social-links {
+    gap: 8px;
   }
 
   .newsletter {
-    gap: 18px;
-    margin-top: 30px;
+    gap: 16px;
+    margin-top: 28px;
+    padding-top: 20px;
+  }
+
+  .newsletter__text h3 {
+    font-size: 17px;
+  }
+
+  .newsletter__text p {
+    font-size: 13px;
   }
 
   .newsletter-form {
     align-items: stretch;
     flex-direction: column;
+    width: 100%;
+  }
+
+  .newsletter-form input {
+    height: 42px;
   }
 
   .newsletter-form .button {
-    align-self: flex-start;
+    align-self: stretch;
+    width: 100%;
   }
 
   .footer-bottom {
     align-items: flex-start;
     flex-direction: column;
+    gap: 8px;
+
+    p,
+    a {
+      font-size: 12px;
+    }
   }
 }
 
 /* =========================================
-   15. REDUCED MOTION ACCESSIBILITY
+   15. EXTRA SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .site-footer {
+    padding: 24px 14px 16px;
+  }
+
+  .footer-heading h2 {
+    font-size: 21px;
+  }
+
+  .resources-column ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   16. REDUCED MOTION ACCESSIBILITY
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {

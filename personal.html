@@ -140,6 +140,51 @@
       </div>
     </header>
 
+    <!-- Hover Dropdown Dock -->
+    <div class="quick-dock" id="quickDock">
+      <nav class="dock-menu" aria-label="Quick tools">
+        <!-- First item: hover trigger -->
+        <a
+          href="#calculator"
+          class="dock-item dock-trigger"
+          aria-label="Calculator"
+        >
+          <img src="./assets/images/dock-icon-1.png" alt="" />
+        </a>
+
+        <!-- Hidden items revealed on hover -->
+        <div class="dock-dropdown">
+          <a href="#finance" class="dock-item" aria-label="Finance">
+            <img src="./assets/images/dock-icon-2.png" alt="" />
+          </a>
+
+          <a href="#payments" class="dock-item" aria-label="Payments">
+            <img src="./assets/images/dock-icon-3.png" alt="" />
+          </a>
+
+          <a href="#currency" class="dock-item" aria-label="Currency exchange">
+            <img src="./assets/images/dock-icon-4.png" alt="" />
+          </a>
+
+          <a href="#reports" class="dock-item" aria-label="Reports">
+            <img src="./assets/images/dock-icon-5.png" alt="" />
+          </a>
+
+          <a href="#locations" class="dock-item" aria-label="Locations">
+            <img src="./assets/images/dock-icon-6.png" alt="" />
+          </a>
+
+          <a href="#account" class="dock-item" aria-label="Account">
+            <img src="./assets/images/dock-icon-7.png" alt="" />
+          </a>
+
+          <a href="#support" class="dock-item" aria-label="Support">
+            <img src="./assets/images/dock-icon-8.png" alt="" />
+          </a>
+        </div>
+      </nav>
+    </div>
+
     <!--ACCESSIBILITY BUTTON -->
     <button class="accessibility-button" aria-label="Accessibility options">
       <img
@@ -522,44 +567,23 @@
       </section>
 
       <!-- REAL STORIES SECTION 2 -->
-      <section class="stories-section">
+      <section class="stories-section-2">
         <div class="container">
-          <!-- Left introduction -->
+          <!-- Top introduction -->
           <div class="stories-intro">
             <div class="stories-intro__content">
-              <h2>Real Stories,<br />Real Impact</h2>
+              <h2>Real Journeys, Real Milestones</h2>
 
               <p>
-                Hear from the people we've<br class="desktop-break" />
-                walked alongside.
+                From that first salary account to a family's first home see how
+                everyday banking has helped real customers get there.
               </p>
-
-              <a href="#" class="button button--cyan"> Learn More </a>
-            </div>
-
-            <!-- Custom navigation -->
-            <div class="stories-navigation">
-              <button
-                class="stories-navigation__button stories-prev"
-                type="button"
-                aria-label="Previous stories"
-              >
-                <span aria-hidden="true">←</span>
-              </button>
-
-              <button
-                class="stories-navigation__button stories-next"
-                type="button"
-                aria-label="Next stories"
-              >
-                <span aria-hidden="true">→</span>
-              </button>
             </div>
           </div>
 
-          <!-- Right carousel -->
+          <!-- Carousel -->
           <div class="stories-carousel">
-            <div class="swiper stories-swiper">
+            <div class="swiper stories-swiper-2">
               <div class="swiper-wrapper">
                 <!-- Story 1 -->
                 <article class="swiper-slide story-card">
@@ -662,8 +686,77 @@
                     <p>Kevin Otieno</p>
                   </div>
                 </article>
+
+                <!-- Story 5 -->
+                <article class="swiper-slide story-card">
+                  <div class="story-card__image">
+                    <img
+                      src="./assets/images/story_3.jpg"
+                      alt="Young customer using a mobile phone"
+                      loading="lazy"
+                    />
+
+                    <a
+                      href="#"
+                      class="story-card__arrow"
+                      aria-label="Read the story about the mobile loan"
+                    >
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+
+                  <div class="story-card__content">
+                    <h3>How did the Mobile Loan help you get ahead?</h3>
+
+                    <p>Kevin Otieno</p>
+                  </div>
+                </article>
+
+                <!-- Story 6 -->
+                <article class="swiper-slide story-card">
+                  <div class="story-card__image">
+                    <img
+                      src="./assets/images/story_4.png"
+                      alt="Young customer using a mobile phone"
+                      loading="lazy"
+                    />
+
+                    <a
+                      href="#"
+                      class="story-card__arrow"
+                      aria-label="Read the story about the mobile loan"
+                    >
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+
+                  <div class="story-card__content">
+                    <h3>How did the Mobile Loan help you get ahead?</h3>
+
+                    <p>Kevin Otieno</p>
+                  </div>
+                </article>
               </div>
             </div>
+          </div>
+
+          <!-- Custom navigation -->
+          <div class="stories-navigation">
+            <button
+              class="stories-navigation__button stories-prev"
+              type="button"
+              aria-label="Previous stories"
+            >
+              <span aria-hidden="true">←</span>
+            </button>
+
+            <button
+              class="stories-navigation__button stories-next"
+              type="button"
+              aria-label="Next stories"
+            >
+              <span aria-hidden="true">→</span>
+            </button>
           </div>
         </div>
       </section>

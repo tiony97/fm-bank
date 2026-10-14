@@ -191,84 +191,155 @@ $(function () {
     $("#" + tabID).addClass("active");
   });
 
-  // ================= STORIES CAROUSEL =================
+  // ================= STORIES CAROUSEL 1 =================
   const storiesElement = document.querySelector(".stories-swiper");
 
-  // Only initialize if the stories carousel exists
-  // and Swiper has loaded.
-  if (!storiesElement || typeof Swiper === "undefined") {
-    return;
+  if (storiesElement && typeof Swiper !== "undefined") {
+    const storiesSwiper = new Swiper(storiesElement, {
+      // Use the actual CSS width of each story card.
+      slidesPerView: 1,
+      spaceBetween: 20,
+
+      // Smooth movement between cards.
+      speed: 500,
+
+      // Keep the first story aligned with the carousel start.
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: 0,
+
+      // Navigation buttons — scoped to this section so it
+      // doesn't collide with the second carousel's buttons.
+      navigation: {
+        prevEl: ".stories-section .stories-prev",
+        nextEl: ".stories-section .stories-next",
+      },
+
+      // Update navigation button states automatically.
+      watchOverflow: true,
+      watchSlidesProgress: true,
+
+      // Accessibility support.
+      a11y: {
+        prevSlideMessage: "Previous story",
+        nextSlideMessage: "Next story",
+        firstSlideMessage: "This is the first story",
+        lastSlideMessage: "This is the last story",
+      },
+
+      // Recalculate layout when the viewport changes.
+      observer: true,
+      observeParents: true,
+      resizeObserver: true,
+
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 12,
+        },
+
+        601: {
+          slidesPerView: 2,
+          spaceBetween: 12,
+        },
+
+        901: {
+          slidesPerView: 2.7,
+          spaceBetween: 20,
+        },
+      },
+    });
+
+    // Allow keyboard navigation when the carousel has focus.
+    storiesElement.setAttribute("tabindex", "0");
+
+    storiesElement.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        storiesSwiper.slideNext();
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        storiesSwiper.slidePrev();
+      }
+    });
   }
 
-  const storiesSwiper = new Swiper(storiesElement, {
-    // Use the actual CSS width of each story card.
-    slidesPerView: 1,
-    spaceBetween: 20,
+  // ================= STORIES CAROUSEL 2 =================
+  const storiesElement2 = document.querySelector(".stories-swiper-2");
 
-    // Smooth movement between cards.
-    speed: 500,
+  if (storiesElement2 && typeof Swiper !== "undefined") {
+    const storiesSwiper2 = new Swiper(storiesElement2, {
+      // Use the actual CSS width of each story card.
+      slidesPerView: 1,
+      spaceBetween: 20,
 
-    // Keep the first story aligned with the carousel start.
-    slidesOffsetBefore: 0,
-    slidesOffsetAfter: 0,
+      // Smooth movement between cards.
+      speed: 500,
 
-    // Navigation buttons from the custom design.
-    navigation: {
-      prevEl: ".stories-prev",
-      nextEl: ".stories-next",
-    },
+      // Keep the first story aligned with the carousel start.
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: 0,
 
-    // Update navigation button states automatically.
-    watchOverflow: true,
-    watchSlidesProgress: true,
-
-    // Accessibility support.
-    a11y: {
-      prevSlideMessage: "Previous story",
-      nextSlideMessage: "Next story",
-      firstSlideMessage: "This is the first story",
-      lastSlideMessage: "This is the last story",
-    },
-
-    // Recalculate layout when the viewport changes.
-    observer: true,
-    observeParents: true,
-    resizeObserver: true,
-
-    breakpoints: {
-      0: {
-        spaceBetween: 12,
+      // Navigation buttons — scoped to this section so it
+      // doesn't collide with the first carousel's buttons.
+      navigation: {
+        prevEl: ".stories-section-2 .stories-prev",
+        nextEl: ".stories-section-2 .stories-next",
       },
 
-      601: {
-        slidesPerView: 2,
-        spaceBetween: 12,
+      // Update navigation button states automatically.
+      watchOverflow: true,
+      watchSlidesProgress: true,
+
+      // Accessibility support.
+      a11y: {
+        prevSlideMessage: "Previous story",
+        nextSlideMessage: "Next story",
+        firstSlideMessage: "This is the first story",
+        lastSlideMessage: "This is the last story",
       },
 
-      901: {
-        slidesPerView: 2.7,
-        spaceBetween: 20,
+      // Recalculate layout when the viewport changes.
+      observer: true,
+      observeParents: true,
+      resizeObserver: true,
+
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 12,
+        },
+
+        601: {
+          slidesPerView: 2.7,
+          spaceBetween: 12,
+        },
+
+        901: {
+          slidesPerView: 3.7,
+          spaceBetween: 20,
+        },
       },
-    },
-  });
+    });
 
-  // Optional: allow keyboard navigation when the
-  // carousel itself has focus.
-  storiesElement.setAttribute("tabindex", "0");
+    // Allow keyboard navigation when the carousel has focus.
+    storiesElement2.setAttribute("tabindex", "0");
 
-  $(storiesElement).on("keydown", function (event) {
-    if (event.key === "ArrowRight") {
-      event.preventDefault();
-      storiesSwiper.slideNext();
-    }
+    storiesElement2.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        storiesSwiper2.slideNext();
+      }
 
-    if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      storiesSwiper.slidePrev();
-    }
-  });
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        storiesSwiper2.slidePrev();
+      }
+    });
+  }
 
-  // ================= STORIES CAROUSEL =================
+  // ================= IMPACT SECTION TABS =================
   const tabButtons = document.querySelectorAll(".impact-section .tab-btn");
   const tabPanels = document.querySelectorAll(".impact-section .tab-panel");
 
