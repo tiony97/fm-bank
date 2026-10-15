@@ -563,7 +563,7 @@ section .section-intro p {
   font-weight: 600;
 }
 .products .product-card .card-text p {
-  font-size: 14px;
+  font-size: 15px;
 }
 .products .product-card .card-text .button {
   width: -moz-fit-content !important;
