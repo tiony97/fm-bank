@@ -372,65 +372,148 @@ $(function () {
   });
 
   // ================= SUSTAINABILITY CAROUSEL =================
-  // 1. Inject YouTube iframes into the background
+  // 1. Inject Cloudinary background videos
   $(".sustainability-swiper .swiper-slide").each(function () {
-    const videoUrl = $(this).attr("data-background-video");
-    if (videoUrl) {
-      // Create the iframe container
-      const videoHtml = `<div class="video-background-container">
-                                 <iframe src="${videoUrl}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                               </div>`;
-      // Prepend it to the slide
-      $(this).prepend(videoHtml);
-    }
+    const slide = $(this);
+    const videoUrl = slide.attr("data-background-video");
+
+    if (!videoUrl) return;
+
+    // Prevent duplicate video injection
+    if (slide.find(".video-background-container").length) return;
+
+    const videoHtml = `
+    <div class="video-background-container">
+      <video
+        class="background-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <source src="${videoUrl}" type="video/mp4">
+      </video>
+    </div>
+  `;
+
+    slide.prepend(videoHtml);
+
+    const video = slide.find(".background-video")[0];
+
+    // Explicitly mute the video
+    video.muted = true;
+    video.defaultMuted = true;
+    video.volume = 0;
   });
 
-  // 2. Initialize Swiper
+  // 2. Pause every background video
+  function pauseAllVideos() {
+    $(".sustainability-swiper .background-video").each(function () {
+      this.pause();
+    });
+  }
+
+  // 3. Play only the active slide's video
+  //    Accepts the swiper instance directly (passed as `this` from
+  //    Swiper event handlers) to avoid referencing the outer
+  //    `sustainabilitySwiper` const before it is initialized.
+  function playSlideVideo(swiper) {
+    pauseAllVideos();
+
+    if (!swiper) return;
+
+    // Swiper's loop mode may create duplicate slides.
+    // Use the active slide element instead of relying
+    // on realIndex to find the correct video.
+    const activeSlide = swiper.slides[swiper.activeIndex];
+
+    if (!activeSlide) return;
+
+    const video = activeSlide.querySelector(".background-video");
+
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.volume = 0;
+
+    const tryPlay = () => {
+      const playPromise = video.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Autoplay can be blocked by browser settings.
+        });
+      }
+    };
+
+    // The video element may have just been injected, or the
+    // browser may not have buffered enough yet. Wait until it
+    // can play, with a fallback timeout in case `canplay`
+    // has already fired or never fires.
+    if (video.readyState >= 2) {
+      tryPlay();
+    } else {
+      video.addEventListener("canplay", tryPlay, { once: true });
+      setTimeout(tryPlay, 300);
+    }
+  }
+
+  // 4. Initialize Swiper
   const sustainabilitySwiper = new Swiper(".sustainability-swiper", {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
-    effect: "fade", // Smooth crossfade between slides
+
+    effect: "fade",
     fadeEffect: {
       crossFade: true,
     },
-    speed: 1000, // Transition speed
+
+    speed: 1000,
+
     autoplay: {
-      delay: 5000, // 5 seconds per slide
+      delay: 5000,
       disableOnInteraction: false,
     },
-    // Custom Pagination config
+
     pagination: {
       el: ".custom-fullwidth-pagination",
       clickable: true,
     },
-    // Events
+
     on: {
       init: function () {
-        // Start playing the first video
-        playSlideVideo(this.realIndex);
+        // `this` is the Swiper instance. Use it instead of the
+        // outer `sustainabilitySwiper` const, which is still in
+        // the temporal dead zone during initialization.
+        playSlideVideo(this);
       },
+
       slideChangeTransitionStart: function () {
-        // Pause all videos when sliding starts to prevent audio/video bleed
+        // Stop all videos during the transition
         pauseAllVideos();
 
-        // Reset the CSS animation for text so it re-animates on every slide
-        $(".swiper-slide .slide-text-container").css({
+        // Reset slide text animations
+        $(".sustainability-swiper .slide-text-container").css({
           animation: "none",
           opacity: "0",
           transform: "translateY(30px)",
         });
       },
-      slideChangeTransitionEnd: function () {
-        // Play the video of the new active slide
-        playSlideVideo(this.realIndex);
 
-        // Re-trigger text animation
+      slideChangeTransitionEnd: function () {
+        // Play the video belonging to the active slide
+        playSlideVideo(this);
+
+        // Re-trigger the text animation
         setTimeout(() => {
-          $(".swiper-slide-active .slide-text-container").css(
-            "animation",
-            "slideUpFade 0.8s ease forwards",
-          );
+          $(
+            ".sustainability-swiper .swiper-slide-active .slide-text-container",
+          ).css("animation", "slideUpFade 0.8s ease forwards");
         }, 100);
       },
     },
