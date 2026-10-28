@@ -33,7 +33,7 @@
           <div class="utility-inner">
             <nav class="utility-left" aria-label="Banking categories">
               <a href="./personal.html">Personal</a>
-              <a href="#">SME</a>
+              <a href="#">MSME</a>
               <a href="#">Corporate</a>
               <a href="#">Diaspora</a>
               <a href="#">Insurance</a>
@@ -54,87 +54,82 @@
 
       <!-- Main navigation -->
       <div class="main-nav">
-        <div class="container">
-          <div class="main-nav__inner">
-            <a class="brand" href="/" aria-label="Family Bank home">
-              <img src="./assets/images/logo.png" alt="Family Bank Logo" />
-            </a>
+        <div class="main-nav__inner">
+          <a class="brand" href="/" aria-label="Family Bank home">
+            <img src="./assets/images/logo.png" alt="Family Bank Logo" />
+          </a>
 
-            <button
-              class="mobile-toggle"
-              type="button"
-              aria-label="Toggle navigation"
-              aria-expanded="false"
-            >
-              <i class="fa-solid fa-bars"></i>
-            </button>
+          <button
+            class="mobile-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
 
-            <nav class="primary-nav" aria-label="Main navigation">
-              <div class="nav-item has-mega-menu">
-                <a
-                  class="nav-link"
-                  href="#cards"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Cards
-                  <i class="fa-solid fa-chevron-down"></i>
-                </a>
+          <nav class="primary-nav" aria-label="Main navigation">
+            <div class="nav-item has-mega-menu">
+              <a
+                class="nav-link"
+                href="#cards"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Business Accounts
+              </a>
 
-                <!-- Mega menu -->
-                <div class="mega-menu" id="cards" aria-label="Cards menu">
-                  <div class="mega-menu__promo">
-                    <h2>Personal Banking</h2>
-                    <p>
-                      Accounts, loans, cards and savings that work with you, for
-                      your full day-to-day banking needs.
-                    </p>
-                    <a href="#" class="text-link">
-                      Explore<i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                  </div>
+              <!-- Mega menu -->
+              <div class="mega-menu" id="cards" aria-label="Cards menu">
+                <div class="mega-menu__promo">
+                  <h2>Personal Banking</h2>
+                  <p>
+                    Accounts, loans, cards and savings that work with you, for
+                    your full day-to-day banking needs.
+                  </p>
+                  <a href="#" class="text-link">
+                    Explore<i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
 
-                  <div class="mega-menu__links">
-                    <a href="#">Debit Cards</a>
-                    <a href="#">Credit Cards</a>
-                    <a href="#">Prepaid Cards</a>
-                    <a href="#">Virtual Cards</a>
-                  </div>
+                <div class="mega-menu__links">
+                  <a href="#">Debit Cards</a>
+                  <a href="#">Credit Cards</a>
+                  <a href="#">Prepaid Cards</a>
+                  <a href="#">Virtual Cards</a>
+                </div>
 
-                  <div class="mega-menu__feature">
-                    <h3>Your bank in your pocket</h3>
+                <div class="mega-menu__feature">
+                  <h3>Your bank in your pocket</h3>
 
-                    <img
-                      src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
-                      alt="Customer using a mobile device"
-                    />
+                  <img
+                    src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                    alt="Customer using a mobile device"
+                  />
 
-                    <a href="#" class="button button--blue">
-                      Download PesaPap
-                    </a>
-                  </div>
+                  <a href="#" class="button button--blue"> Download PesaPap </a>
                 </div>
               </div>
-
-              <a href="#" class="nav-link">Transactions</a>
-              <a href="#" class="nav-link">Borrow</a>
-              <a href="#" class="nav-link">Invest</a>
-              <a href="#" class="nav-link">Way of Banking</a>
-              <a href="#" class="nav-link">FX Rates</a>
-            </nav>
-
-            <div class="nav-actions">
-              <button class="icon-button" aria-label="Search" type="button">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-
-              <button class="language-button" type="button">
-                EN <i class="fa-solid fa-chevron-down"></i>
-              </button>
-
-              <a href="#" class="button button--light">Open Account</a>
-              <a href="#" class="button button--cyan">Login</a>
             </div>
+
+            <a href="#" class="nav-link">Business</a>
+            <a href="#" class="nav-link">Agribusiness</a>
+            <a href="#" class="nav-link">Financing</a>
+            <a href="#" class="nav-link">Borrow</a>
+            <a href="#" class="nav-link">Card Payments</a>
+          </nav>
+
+          <div class="nav-actions">
+            <button class="icon-button" aria-label="Search" type="button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button class="language-button" type="button">
+              EN <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <a href="#" class="button button--light">Open Account</a>
+            <a href="#" class="button button--cyan">Login</a>
           </div>
         </div>
       </div>
@@ -148,37 +143,73 @@
           href="#calculator"
           class="dock-item dock-trigger"
           aria-label="Calculator"
+          data-tooltip="Loan Calculator"
         >
           <img src="./assets/images/dock-icon-1.png" alt="" />
         </a>
 
         <!-- Hidden items revealed on hover -->
         <div class="dock-dropdown">
-          <a href="#finance" class="dock-item" aria-label="Finance">
+          <a
+            href="#finance"
+            class="dock-item"
+            aria-label="Finance"
+            data-tooltip="Fixed Deposit"
+          >
             <img src="./assets/images/dock-icon-2.png" alt="" />
           </a>
 
-          <a href="#payments" class="dock-item" aria-label="Payments">
+          <a
+            href="#payments"
+            class="dock-item"
+            aria-label="Payments"
+            data-tooltip="Savings"
+          >
             <img src="./assets/images/dock-icon-3.png" alt="" />
           </a>
 
-          <a href="#currency" class="dock-item" aria-label="Currency exchange">
+          <a
+            href="#currency"
+            class="dock-item"
+            aria-label="Currency exchange"
+            data-tooltip="FX Convertor"
+          >
             <img src="./assets/images/dock-icon-4.png" alt="" />
           </a>
 
-          <a href="#reports" class="dock-item" aria-label="Reports">
+          <a
+            href="#reports"
+            class="dock-item"
+            aria-label="Reports"
+            data-tooltip="Tariff Guide"
+          >
             <img src="./assets/images/dock-icon-5.png" alt="" />
           </a>
 
-          <a href="#locations" class="dock-item" aria-label="Locations">
+          <a
+            href="#locations"
+            class="dock-item"
+            aria-label="Locations"
+            data-tooltip="Locate a branch, agent or ATM"
+          >
             <img src="./assets/images/dock-icon-6.png" alt="" />
           </a>
 
-          <a href="#account" class="dock-item" aria-label="Account">
+          <a
+            href="#account"
+            class="dock-item"
+            aria-label="Account"
+            data-tooltip="Open an account"
+          >
             <img src="./assets/images/dock-icon-7.png" alt="" />
           </a>
 
-          <a href="#support" class="dock-item" aria-label="Support">
+          <a
+            href="#support"
+            class="dock-item"
+            aria-label="Support"
+            data-tooltip="Talk to us"
+          >
             <img src="./assets/images/dock-icon-8.png" alt="" />
           </a>
         </div>
@@ -587,7 +618,9 @@
                       class="story-card__arrow"
                       aria-label="Read the story about Queen Banking"
                     >
-                      <span aria-hidden="true">→</span>
+                      <span aria-hidden="true"
+                        ><span><i class="fa-solid fa-arrow-right"></i></span
+                      ></span>
                     </a>
                   </div>
 
@@ -614,7 +647,9 @@
                       class="story-card__arrow"
                       aria-label="Read the story about Family Bank"
                     >
-                      <span aria-hidden="true">→</span>
+                      <span aria-hidden="true"
+                        ><span><i class="fa-solid fa-arrow-right"></i></span
+                      ></span>
                     </a>
                   </div>
 
@@ -641,7 +676,9 @@
                       class="story-card__arrow"
                       aria-label="Read the story about the mobile loan"
                     >
-                      <span aria-hidden="true">→</span>
+                      <span aria-hidden="true"
+                        ><span><i class="fa-solid fa-arrow-right"></i></span
+                      ></span>
                     </a>
                   </div>
 
@@ -666,7 +703,9 @@
                       class="story-card__arrow"
                       aria-label="Read the story about the mobile loan"
                     >
-                      <span aria-hidden="true">→</span>
+                      <span aria-hidden="true"
+                        ><span><i class="fa-solid fa-arrow-right"></i></span
+                      ></span>
                     </a>
                   </div>
 
@@ -691,7 +730,9 @@
                       class="story-card__arrow"
                       aria-label="Read the story about the mobile loan"
                     >
-                      <span aria-hidden="true">→</span>
+                      <span aria-hidden="true"
+                        ><span><i class="fa-solid fa-arrow-right"></i></span
+                      ></span>
                     </a>
                   </div>
 
@@ -716,7 +757,9 @@
                       class="story-card__arrow"
                       aria-label="Read the story about the mobile loan"
                     >
-                      <span aria-hidden="true">→</span>
+                      <span aria-hidden="true"
+                        ><span><i class="fa-solid fa-arrow-right"></i></span
+                      ></span>
                     </a>
                   </div>
 
@@ -737,7 +780,9 @@
               type="button"
               aria-label="Previous stories"
             >
-              <span aria-hidden="true">←</span>
+              <span aria-hidden="true"
+                ><span><i class="fa-solid fa-arrow-left"></i></span
+              ></span>
             </button>
 
             <button
@@ -745,7 +790,9 @@
               type="button"
               aria-label="Next stories"
             >
-              <span aria-hidden="true">→</span>
+              <span aria-hidden="true"
+                ><span><i class="fa-solid fa-arrow-right"></i></span
+              ></span>
             </button>
           </div>
         </div>
@@ -894,17 +941,17 @@
 
               <div class="app-links">
                 <a href="#" aria-label="Download on the App Store">
-                  <div class="icon-wrapper">
-                    <i class="fa-brands fa-apple"></i>
-                  </div>
-                  <span><small>Download on the</small>App Store</span>
+                  <img
+                    src="./assets/images/foooter-appstore.png"
+                    alt="Apple store"
+                  />
                 </a>
 
                 <a href="#" aria-label="Get it on Google Play">
-                  <div class="icon-wrapper">
-                    <i class="fa-brands fa-google-play"></i>
-                  </div>
-                  <span><small>GET IT ON</small>Google Play</span>
+                  <img
+                    src="./assets/images/footer-gstore.png"
+                    alt="Apple store"
+                  />
                 </a>
               </div>
 
@@ -950,17 +997,31 @@
               <h3>Resources</h3>
               <ul>
                 <li><a href="#">Merchant & Agent Portal</a></li>
-                <li><a href="#">Prepaid Cards Portal</a></li>
-                <li><a href="#">Access Family Pay</a></li>
+                <li>
+                  <a href="#"
+                    >Prepaid Cards Portal
+                    <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Access Family Pay
+                    <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
                 <li><a href="#">Tariff Guide</a></li>
                 <li><a href="#">Customer Notices</a></li>
                 <li><a href="#">Find an Agent, Branch or ATM</a></li>
                 <li><a href="#">Pepper's Agents</a></li>
                 <li><a href="#">Vehicles on Auction</a></li>
                 <li><a href="#">Documents & Forms</a></li>
-                <li><a href="#"></a>Loan Calculator</li>
-                <li><a href="#"></a>Interest Calculator</li>
-                <li><a href="#"></a>Staff Email</li>
+                <li><a href="#">Loan Calculator</a></li>
+                <li><a href="#">Interest Calculator</a></li>
+                <li>
+                  <a href="#"
+                    >Staff Email <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
                 <li>
                   <a href="#"
                     >Correspondent Bank Information Family Bank Prequalification

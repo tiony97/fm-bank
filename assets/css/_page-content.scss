@@ -120,9 +120,11 @@
           border-radius: 50%;
           outline: none;
           border: none;
-          font-size: 20px;
+          font-size: 18px;
           line-height: 1;
           color: $primary;
+          margin: 0;
+          padding: 0;
           transition: all 0.3s ease;
           z-index: 2;
           &:hover {
@@ -657,7 +659,7 @@ section {
       outline: none;
       border-radius: 50%;
 
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1;
 
       transition:
@@ -760,7 +762,7 @@ section {
             flex: 1 1 auto;
 
             min-height: 0;
-            height: 375px;
+            height: 325px;
             overflow: hidden;
 
             background: #dbe5f0;
@@ -800,7 +802,7 @@ section {
               background: $white;
               border-radius: 50%;
 
-              font-size: 20px;
+              font-size: 18px;
               line-height: 1;
 
               transition:
@@ -873,7 +875,7 @@ section {
       border: 1px solid #0000002e;
       border-radius: 50%;
 
-      font-size: 26px;
+      font-size: 18px;
       line-height: 1;
 
       transition:
@@ -969,7 +971,7 @@ section {
         border-bottom-color: #0812221f;
 
         .stat-number {
-          color: $secondary; // Deep blue for active number
+          color: $primary-dark; // Deep blue for active number
         }
 
         .stat-label {
@@ -1505,8 +1507,21 @@ section {
     }
 
     select {
-      appearance: auto;
+      // Remove native arrow so we can place our own
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
       cursor: pointer;
+
+      // Custom arrow: white chevron, 22px from the right edge
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 12px 8px;
+
+      // Reserve space on the right so text never runs under the arrow
+      padding-right: 44px;
 
       option {
         color: #222;
@@ -1587,7 +1602,21 @@ section {
     }
 
     select {
+      // Remove native arrow so we can place our own
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
       cursor: pointer;
+
+      // Custom arrow: white chevron, 18px from the right edge
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 18px center;
+      background-size: 12px 8px;
+
+      // Reserve space on the right so text never runs under the arrow
+      padding-right: 40px;
 
       option {
         color: #222;
@@ -1599,6 +1628,282 @@ section {
   .button {
     width: fit-content;
     margin-top: 15px;
+  }
+}
+
+/* =========================================
+   LARGE SCREENS
+========================================= */
+@media (min-width: 1440px) {
+  .hero {
+    height: 70vh;
+    padding: 10vh 0;
+    h2 {
+      font-size: 90px !important;
+      line-height: 102px !important;
+    }
+    p {
+      font-size: 24px !important;
+      line-height: 32px !important;
+      width: 30% !important;
+    }
+  }
+
+  section {
+    .section-intro {
+      text-align: center;
+
+      p {
+        font-size: 26px !important;
+        margin-bottom: 0.6em;
+      }
+    }
+  }
+
+  .products {
+    .section-intro {
+      p {
+        font-size: 26px !important;
+      }
+    }
+    .tab-links {
+      li {
+        padding: 8px 16px;
+        font-size: 24px !important;
+      }
+    }
+    .product-card {
+      .card-img {
+        margin-bottom: 15px;
+        img {
+          width: 100%;
+          height: 350px;
+          border-radius: 28px;
+        }
+      }
+      .card-text {
+        gap: 15px;
+
+        p {
+          font-size: 24px !important;
+        }
+      }
+    }
+  }
+
+  .stories-section {
+    .container {
+      grid-template-columns: 28% 72%;
+      min-height: 630px;
+      width: 100% !important;
+      max-width: 95% !important;
+
+      .stories-intro {
+        .stories-intro__content {
+          p {
+            margin-bottom: 20px;
+            font-size: 26px !important;
+            line-height: 1.5;
+          }
+        }
+      }
+
+      .stories-carousel {
+        .stories-swiper {
+          .story-card {
+            /* Blue caption panel */
+            .story-card__content {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+
+              min-height: 200px;
+              padding: 18px 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .stories-section-2 {
+    padding: 70px 0;
+    .container {
+      min-height: 630px;
+      width: 100% !important;
+      max-width: 95% !important;
+
+      .stories-intro {
+        padding-right: 5%;
+        .stories-intro__content {
+          p {
+            flex: 0.6;
+            font-size: 26px !important;
+            line-height: 1.5;
+          }
+        }
+      }
+
+      .stories-carousel {
+        .stories-swiper-2 {
+          .story-card {
+            /* Story image */
+            .story-card__image {
+              height: 625px;
+            }
+            /* Blue caption panel */
+            .story-card__content {
+              min-height: 200px;
+              padding: 18px 24px;
+
+              p {
+                font-size: 14px;
+                line-height: 1.4;
+              }
+            }
+          }
+        }
+      }
+
+      .stories-navigation {
+        align-self: flex-end !important;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 25px;
+        margin-right: 5% !important;
+      }
+
+      .stories-navigation__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 40px;
+        height: 40px;
+        padding: 0;
+
+        color: $secondary;
+        background: $white;
+        border: none;
+        outline: none;
+        border: 1px solid #0000002e;
+        border-radius: 50%;
+
+        font-size: 18px;
+        line-height: 1;
+
+        transition:
+          color 0.2s ease,
+          background 0.2s ease,
+          transform 0.2s ease;
+
+        &:hover:not(.swiper-button-disabled) {
+          color: $white;
+          background: $secondary;
+          transform: scale(1.05);
+        }
+
+        &.swiper-button-disabled {
+          opacity: 0.35;
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  .impact-section {
+    .section-intro {
+      p {
+        font-size: 26px !important;
+        margin-bottom: 1em;
+      }
+    }
+
+    // Navigation Styles (Left Column)
+    .tab-nav {
+      .tab-btn {
+        .stat-number {
+          font-size: 66px !important;
+          line-height: 1.5 !important;
+        }
+        .stat-label {
+          font-size: 32px !important;
+        }
+      }
+    }
+
+    .image-wrapper {
+      max-height: 750px;
+
+      .glass-overlay {
+        p {
+          font-size: 28px !important;
+          line-height: 36px !important;
+        }
+      }
+    }
+  }
+
+  .bank-services {
+    padding: 60px 0;
+    .container {
+      .services-grid {
+        &__card {
+          p {
+            font-size: 24px !important;
+            line-height: 32px !important;
+            margin-bottom: 22px;
+            width: 70%;
+          }
+
+          .app-download-btns {
+            gap: 20px;
+            img {
+              height: 52px;
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sustainability-slider-section {
+    height: 70vh;
+    .slide-title {
+      font-size: 84px !important;
+      line-height: 92px !important;
+    }
+    .slide-description {
+      font-size: 26px !important;
+      line-height: 34px !important;
+    }
+  }
+
+  .news-updates {
+    padding: 60px 0;
+    .container {
+      .news-grid {
+        .update {
+          .update-image {
+            height: 500px;
+            margin-bottom: 15px;
+            object-fit: cover;
+          }
+          .update-content {
+            h4 {
+              font-size: 32px !important;
+              line-height: 40px !important;
+              margin-bottom: 8px;
+            }
+            p {
+              margin-top: 30px;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

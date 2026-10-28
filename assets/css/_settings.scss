@@ -144,7 +144,9 @@ input:focus-visible {
     background: $secondary;
 
     &:hover {
-      background: #008fc5;
+      background: $white;
+      border: 1px solid $secondary;
+      color: $secondary;
     }
   }
 
@@ -153,7 +155,8 @@ input:focus-visible {
     background: $white;
 
     &:hover {
-      background: #edf5ff;
+      background: $secondary;
+      color: $white;
     }
   }
 
@@ -164,7 +167,7 @@ input:focus-visible {
     border-color: rgba($white, 0.5);
 
     &:hover {
-      background: rgba($white, 0.1);
+      background: rgba($white, 0.4);
     }
   }
 }
@@ -177,4 +180,67 @@ input:focus-visible {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+/* =========================================
+   LARGE SCREENS
+========================================= */
+@media (min-width: 1440px) {
+  body {
+    h1 {
+      font-size: 84px !important;
+      line-height: 92px !important;
+    }
+    h2 {
+      font-size: 66px !important;
+      line-height: 74px !important;
+    }
+    h3 {
+      font-size: 38px !important;
+      line-height: 46px !important;
+    }
+    h4 {
+      font-size: 28px !important;
+      line-height: 36px !important;
+    }
+
+    p,
+    li,
+    span,
+    a,
+    label {
+      font-size: 26px !important;
+      line-height: 32px !important;
+    }
+
+    button,
+    .btn,
+    .button,
+    input,
+    textarea,
+    select {
+      font-size: 24px !important;
+      line-height: 32px !important;
+    }
+
+    .container {
+      width: 90% !important;
+      max-width: 90% !important;
+    }
+
+    footer {
+      h3 {
+        font-size: 28px !important;
+      }
+      a {
+        font-size: 16px !important;
+      }
+      .footer-bottom {
+        a,
+        p {
+          font-size: 15px !important;
+        }
+      }
+    }
+  }
 }

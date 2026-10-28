@@ -343,32 +343,41 @@ $(function () {
   const tabButtons = document.querySelectorAll(".impact-section .tab-btn");
   const tabPanels = document.querySelectorAll(".impact-section .tab-panel");
 
-  tabButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      // 1. Get the target ID from the clicked button
-      const targetId = button.getAttribute("data-tab");
+  // Shared activation function so hover and click behave identically
+  function activateTab(button) {
+    const targetId = button.getAttribute("data-tab");
 
-      // 2. Remove active class from all buttons
-      tabButtons.forEach((btn) => {
-        btn.classList.remove("active");
-        btn.setAttribute("aria-selected", "false");
-      });
-
-      // 3. Add active class to clicked button
-      button.classList.add("active");
-      button.setAttribute("aria-selected", "true");
-
-      // 4. Hide all content panels
-      tabPanels.forEach((panel) => {
-        panel.classList.remove("active");
-      });
-
-      // 5. Show the specific content panel
-      const targetPanel = document.getElementById(targetId);
-      if (targetPanel) {
-        targetPanel.classList.add("active");
-      }
+    // 1. Reset all buttons
+    tabButtons.forEach((btn) => {
+      btn.classList.remove("active");
+      btn.setAttribute("aria-selected", "false");
     });
+
+    // 2. Activate the given button
+    button.classList.add("active");
+    button.setAttribute("aria-selected", "true");
+
+    // 3. Hide all panels
+    tabPanels.forEach((panel) => {
+      panel.classList.remove("active");
+    });
+
+    // 4. Show the matching panel
+    const targetPanel = document.getElementById(targetId);
+    if (targetPanel) {
+      targetPanel.classList.add("active");
+    }
+  }
+
+  tabButtons.forEach((button) => {
+    // Click (keyboard/touch/accessibility)
+    button.addEventListener("click", () => activateTab(button));
+
+    // Hover (desktop)
+    button.addEventListener("mouseenter", () => activateTab(button));
+
+    // Keyboard focus (nice for accessibility, mirrors hover)
+    button.addEventListener("focus", () => activateTab(button));
   });
 
   // ================= SUSTAINABILITY CAROUSEL =================
