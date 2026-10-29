@@ -168,7 +168,7 @@ input:focus-visible {
   body span,
   body a,
   body label {
-    font-size: 26px !important;
+    font-size: 24px !important;
     line-height: 32px !important;
   }
   body button,
@@ -982,7 +982,6 @@ section .section-intro p {
   background: #ffffff;
   border: none;
   outline: none;
-  border: 1px solid rgba(0, 0, 0, 0.1803921569);
   border-radius: 50%;
   font-size: 18px;
   line-height: 1;
@@ -1189,7 +1188,6 @@ section .section-intro p {
 .bank-services .container .services-grid__card .button {
   width: -moz-fit-content !important;
   width: fit-content !important;
-  color: #2a5caa;
 }
 .bank-services .container .services-grid__card .app-download-btns {
   display: flex;
@@ -2581,26 +2579,37 @@ section .section-intro p {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 18px;
-  min-height: 55px;
+  min-height: 60px;
   padding-right: 5%;
+  min-width: 0;
+}
+.main-nav__inner .brand,
+.main-nav__inner .nav-actions {
+  flex-shrink: 0;
 }
 
 /* Logo */
 .brand {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  background: #f4f4f7;
+  height: 60px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 5%;
+  padding-right: 1%;
 }
 .brand img {
   width: auto;
-  height: 60px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 /* Navigation links */
 .primary-nav {
   display: flex;
   align-items: center;
-  gap: 10px;
   margin-right: auto;
 }
 
@@ -2614,7 +2623,7 @@ section .section-intro p {
   display: inline-flex;
   align-items: center;
   gap: 2px;
-  padding: 0 5px;
+  padding: 0 10px;
   padding-block: 12px;
   color: #ffffff;
   font-size: 14px;
@@ -2628,6 +2637,79 @@ section .section-intro p {
 .nav-link:hover, .nav-link[aria-expanded=true] {
   color: #202020;
   background: #ffffff;
+}
+
+.nav-scroll-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  margin-right: auto;
+}
+
+.nav-scroll-wrap .nav-scroll-btn {
+  display: none;
+}
+
+.nav-scroll-wrap.has-nav-overflow .nav-scroll-btn {
+  display: inline-flex;
+}
+
+.primary-nav {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.primary-nav::-webkit-scrollbar {
+  display: none;
+}
+.primary-nav.has-overflow-right {
+  mask-image: linear-gradient(to right, #000 calc(100% - 88px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 88px), transparent 100%);
+}
+
+.nav-scroll-btn {
+  position: relative;
+  flex: 0 0 auto;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none !important;
+  outline: none !important;
+  background: rgba(255, 255, 255, 0.9);
+  color: #2a5caa;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 11px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.25s ease, background 0.25s ease;
+}
+.nav-scroll-btn i {
+  font-size: 11px;
+}
+.nav-scroll-btn + .nav-scroll-btn {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+.nav-scroll-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+  box-shadow: none;
+}
+.nav-scroll-btn:hover {
+  background: #00a6e5;
+  color: #ffffff;
 }
 
 /* Search, language and CTA buttons */
@@ -2993,7 +3075,7 @@ section .section-intro p {
 
 .footer-column {
   min-width: 0;
-  height: 300px;
+  min-height: 300px;
 }
 .footer-column h3 {
   margin-bottom: 12px;
@@ -3165,6 +3247,32 @@ section .section-intro p {
 }
 
 /* =========================================
+   LARGE SCREENS
+========================================= */
+@media (min-width: 1440px) {
+  .brand {
+    padding: 0 1em;
+    margin-left: 5%;
+  }
+  footer .newsletter-form {
+    width: 400px;
+  }
+  footer .newsletter-form input {
+    width: 100%;
+    height: 50px;
+    font-size: 18px !important;
+  }
+  footer .newsletter-form input::-moz-placeholder {
+    font-size: 18px !important;
+  }
+  footer .newsletter-form input::placeholder {
+    font-size: 18px !important;
+  }
+  footer .newsletter-form .button {
+    min-height: 50px;
+  }
+}
+/* =========================================
    12. TABLET RESPONSIVENESS
 ========================================= */
 @media (max-width: 1280px) {
@@ -3223,15 +3331,26 @@ section .section-intro p {
   .nav-actions {
     order: 2;
   }
-  .primary-nav {
-    display: none;
+  .nav-scroll-wrap {
     order: 3;
     flex: 0 0 100%;
+    width: 100%;
+    display: block;
+    margin-right: 0;
+  }
+  .primary-nav {
+    display: none;
     align-items: stretch;
     flex-direction: column;
     gap: 0;
     margin: 0;
     padding: 8px 0;
+    overflow: visible;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .nav-scroll-btn {
+    display: none !important;
   }
   .primary-nav.is-open {
     display: flex;
@@ -3247,6 +3366,10 @@ section .section-intro p {
     font-size: 13px;
   }
   .mega-menu {
+    left: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
     position: static;
     display: none;
     grid-template-columns: 1fr;

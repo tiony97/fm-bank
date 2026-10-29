@@ -94,6 +94,141 @@ $(function () {
     }
   });
 
+  // ================= UTILITY BAR ACTIVE STATE =================
+
+  // Normalize a URL path so we can compare it reliably:
+  // - strip protocol, host, query string, and hash
+  // - strip trailing slash
+  // - strip .html extension
+  function normalizePath(path) {
+    return path
+      .toLowerCase()
+      .replace(/\/+$/, "") // remove trailing slashes
+      .replace(/\.html$/, ""); // strip .html extension
+  }
+
+  const currentPath = normalizePath(window.location.pathname);
+
+  $(".utility-bar nav a").each(function () {
+    const $link = $(this);
+    const href = $link.attr("href");
+
+    // Skip placeholder links ("#") and empty hrefs.
+    if (!href || href === "#" || href.charAt(0) === "#") {
+      return;
+    }
+
+    // Resolve relative hrefs against the current location
+    // so "./personal.html" and "/personal" both compare correctly.
+    let linkPath;
+    try {
+      linkPath = new URL(href, window.location.href).pathname;
+    } catch (e) {
+      return; // Skip malformed URLs.
+    }
+
+    const normalizedLink = normalizePath(linkPath);
+
+    // Skip the root/home link unless we're actually on it,
+    // otherwise "/" matches everything via startsWith below.
+    if (normalizedLink === "" || normalizedLink === "/") {
+      if (currentPath === "" || currentPath === "/") {
+        $link.addClass("active");
+        $link.attr("aria-current", "page");
+      }
+      return;
+    }
+
+    // Match exact page OR any child route beneath it.
+    // e.g. /personal matches /personal and /personal/accounts
+    const isMatch =
+      currentPath === normalizedLink ||
+      currentPath.indexOf(normalizedLink + "/") === 0;
+
+    if (isMatch) {
+      $link.addClass("active");
+      $link.attr("aria-current", "page");
+    }
+  });
+
+  // ================= PRIMARY NAV OVERFLOW SCROLLER =================
+  (function initNavScroller() {
+    const $nav = $(".primary-nav");
+    if (!$nav.length) return;
+
+    const navEl = $nav[0];
+    const $wrap = $(".nav-scroll-wrap");
+    const $prevBtn = $(".nav-scroll-btn--prev");
+    const $nextBtn = $(".nav-scroll-btn--next");
+
+    const SCROLL_STEP = 200;
+
+    function updateOverflowState() {
+      // Mobile: hamburger drawer handles nav, no scroller needed.
+      if (mobileQuery.matches) {
+        $wrap.removeClass("has-nav-overflow");
+        $nav.removeClass("has-overflow-right");
+        $prevBtn.prop("disabled", true);
+        $nextBtn.prop("disabled", true);
+        return;
+      }
+
+      const scrollLeft = navEl.scrollLeft;
+      const scrollWidth = navEl.scrollWidth;
+      const clientWidth = navEl.clientWidth;
+
+      // Everything fits — hide buttons entirely.
+      if (scrollWidth <= clientWidth + 1) {
+        $wrap.removeClass("has-nav-overflow");
+        $nav.removeClass("has-overflow-right");
+        $prevBtn.prop("disabled", true);
+        $nextBtn.prop("disabled", true);
+        return;
+      }
+
+      // Overflow exists — show buttons and enable based on position.
+      $wrap.addClass("has-nav-overflow");
+
+      const atStart = scrollLeft <= 1;
+      const atEnd = scrollLeft + clientWidth >= scrollWidth - 1;
+
+      $prevBtn.prop("disabled", atStart);
+      $nextBtn.prop("disabled", atEnd);
+
+      $nav.toggleClass("has-overflow-right", !atEnd);
+    }
+
+    function scrollNav(direction) {
+      navEl.scrollBy({
+        left: direction * SCROLL_STEP,
+        behavior: "smooth",
+      });
+    }
+
+    $prevBtn.on("click", function () {
+      if ($(this).prop("disabled")) return;
+      scrollNav(-1);
+    });
+
+    $nextBtn.on("click", function () {
+      if ($(this).prop("disabled")) return;
+      scrollNav(1);
+    });
+
+    navEl.addEventListener("scroll", updateOverflowState, { passive: true });
+
+    let resizeTimer;
+    window.addEventListener("resize", function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(updateOverflowState, 120);
+    });
+
+    $(".mobile-toggle").on("click", updateOverflowState);
+
+    requestAnimationFrame(updateOverflowState);
+    setTimeout(updateOverflowState, 300);
+  })();
+
   // ================= MOBILE DROPDOWN =================
 
   $menuTrigger.on("click", function (event) {

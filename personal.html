@@ -56,7 +56,7 @@
       <div class="main-nav">
         <div class="main-nav__inner">
           <a class="brand" href="/" aria-label="Family Bank home">
-            <img src="./assets/images/logo.png" alt="Family Bank Logo" />
+            <img src="./assets/images/brand-logo.png" alt="Family Bank Logo" />
           </a>
 
           <button
@@ -68,56 +68,76 @@
             <i class="fa-solid fa-bars"></i>
           </button>
 
-          <nav class="primary-nav" aria-label="Main navigation">
-            <div class="nav-item has-mega-menu">
-              <a
-                class="nav-link"
-                href="#cards"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Business Accounts
-              </a>
+          <div class="nav-scroll-wrap">
+            <nav class="primary-nav" aria-label="Main navigation">
+              <div class="nav-item has-mega-menu">
+                <a
+                  class="nav-link"
+                  href="#cards"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Cards
+                </a>
 
-              <!-- Mega menu -->
-              <div class="mega-menu" id="cards" aria-label="Cards menu">
-                <div class="mega-menu__promo">
-                  <h2>Personal Banking</h2>
-                  <p>
-                    Accounts, loans, cards and savings that work with you, for
-                    your full day-to-day banking needs.
-                  </p>
-                  <a href="#" class="text-link">
-                    Explore<i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </div>
+                <!-- Mega menu -->
+                <div class="mega-menu" id="cards" aria-label="Cards menu">
+                  <div class="mega-menu__promo">
+                    <h2>Personal Banking</h2>
+                    <p>
+                      Accounts, loans, cards and savings that work with you, for
+                      your full day-to-day banking needs.
+                    </p>
+                    <a href="#" class="text-link">
+                      Explore<i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
 
-                <div class="mega-menu__links">
-                  <a href="#">Debit Cards</a>
-                  <a href="#">Credit Cards</a>
-                  <a href="#">Prepaid Cards</a>
-                  <a href="#">Virtual Cards</a>
-                </div>
+                  <div class="mega-menu__links">
+                    <a href="#">Debit Cards</a>
+                    <a href="#">Credit Cards</a>
+                    <a href="#">Prepaid Cards</a>
+                    <a href="#">Virtual Cards</a>
+                  </div>
 
-                <div class="mega-menu__feature">
-                  <h3>Your bank in your pocket</h3>
+                  <div class="mega-menu__feature">
+                    <h3>Your bank in your pocket</h3>
 
-                  <img
-                    src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
-                    alt="Customer using a mobile device"
-                  />
+                    <img
+                      src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                      alt="Customer using a mobile device"
+                    />
 
-                  <a href="#" class="button button--blue"> Download PesaPap </a>
+                    <a href="#" class="button button--blue">
+                      Download PesaPap
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <a href="#" class="nav-link">Business</a>
-            <a href="#" class="nav-link">Agribusiness</a>
-            <a href="#" class="nav-link">Financing</a>
-            <a href="#" class="nav-link">Borrow</a>
-            <a href="#" class="nav-link">Card Payments</a>
-          </nav>
+              <a href="#" class="nav-link">Transact</a>
+              <a href="#" class="nav-link">Borrow</a>
+              <a href="#" class="nav-link">Invest</a>
+              <a href="#" class="nav-link">Ways of Banking</a>
+              <a href="#" class="nav-link">FX Rates</a>
+            </nav>
+
+            <!--Nav Scroller buttons-->
+            <button
+              class="nav-scroll-btn nav-scroll-btn--prev"
+              type="button"
+              aria-label="Scroll navigation left"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button
+              class="nav-scroll-btn nav-scroll-btn--next"
+              type="button"
+              aria-label="Scroll navigation right"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
 
           <div class="nav-actions">
             <button class="icon-button" aria-label="Search" type="button">

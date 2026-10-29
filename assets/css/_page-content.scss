@@ -872,7 +872,6 @@ section {
       background: $white;
       border: none;
       outline: none;
-      border: 1px solid #0000002e;
       border-radius: 50%;
 
       font-size: 18px;
@@ -1130,7 +1129,6 @@ section {
 
         .button {
           width: fit-content !important;
-          color: $primary-dark; // Inherits color from parent for better contrast
         }
 
         .app-download-btns {
