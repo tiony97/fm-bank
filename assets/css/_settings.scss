@@ -12,11 +12,25 @@ $text-secondary: #64748b;
 $border-color: #e5eaf1;
 $light-blue: #d5e2f5;
 
-$font-family: "Jost", sans-serif;
-
 $container-width: 1440px;
 $border-radius: 12px;
 $transition: 0.25s ease;
+
+@font-face {
+  font-family: "header";
+  src: url("/assets/fonts/Jost-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "texts";
+  src: url("/assets/fonts/Jost-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
 
 /* =========================================
 GLOBAL STYLES
@@ -38,17 +52,16 @@ body {
   position: relative;
   min-height: 100vh;
   font-size: 14px;
-  //font-family: body;
-  font-family: $font-family;
+  font-family: texts;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5 {
-  font-family: $font-family;
-  //font-family: header !important;
+h5,
+h6 {
+  font-family: header;
 }
 
 a {

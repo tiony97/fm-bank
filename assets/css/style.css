@@ -1,6 +1,20 @@
 /* =========================================
    1. VARIABLES
 ========================================= */
+@font-face {
+  font-family: "header";
+  src: url("/assets/fonts/Jost-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "texts";
+  src: url("/assets/fonts/Jost-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
 /* =========================================
 GLOBAL STYLES
 ========================================= */
@@ -20,15 +34,16 @@ body {
   position: relative;
   min-height: 100vh;
   font-size: 14px;
-  font-family: "Jost", sans-serif;
+  font-family: texts;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5 {
-  font-family: "Jost", sans-serif;
+h5,
+h6 {
+  font-family: header;
 }
 
 a {
@@ -2640,7 +2655,6 @@ section .section-intro p {
 }
 
 .nav-scroll-wrap {
-  position: relative;
   display: flex;
   align-items: center;
   flex: 1 1 auto;
@@ -2925,7 +2939,7 @@ section .section-intro p {
 
 .quick-dock {
   position: fixed;
-  top: 142px;
+  top: 10em;
   right: 40px;
   z-index: 10000;
   width: 60px;

@@ -141,7 +141,6 @@
 
 // Wrapper that holds the scroller + fixed buttons
 .nav-scroll-wrap {
-  position: relative;
   display: flex;
   align-items: center;
   flex: 1 1 auto;
@@ -498,7 +497,7 @@
   $item-height: 60px;
 
   position: fixed;
-  top: 142px;
+  top: 10em;
   right: 40px;
   z-index: 10000;
 
