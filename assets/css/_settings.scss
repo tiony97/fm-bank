@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
 /* =========================================
    1. VARIABLES
 ========================================= */
@@ -52,7 +54,7 @@ body {
   position: relative;
   min-height: 100vh;
   font-size: 14px;
-  font-family: texts;
+  font-family: "Jost", sans-serif;
 }
 
 h1,
@@ -61,7 +63,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: header;
+  font-family: "Jost", sans-serif;
 }
 
 a {
