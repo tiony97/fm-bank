@@ -662,4 +662,116 @@ $(function () {
       },
     },
   });
+
+  // ================= PRODUCT TABS =================
+
+  $(document).on("click", ".product-tabs-section .tab-btn", function () {
+    const $btn = $(this);
+    const targetId = $btn.data("tab");
+
+    // 1. Update the buttons
+    $(".product-tabs-section .tab-btn")
+      .removeClass("active")
+      .attr("aria-selected", "false");
+    $btn.addClass("active").attr("aria-selected", "true");
+
+    // 2. Hide all panels and show the targeted one
+    $(".product-tabs-section .tab-panel").removeClass("active");
+    $("#" + targetId).addClass("active");
+  });
+
+  // ================= SIMILAR PRODUCTS CAROUSEL =================
+  const similarProductsElement = document.querySelector(".similar-swiper");
+
+  if (similarProductsElement && typeof Swiper !== "undefined") {
+    const similarSwiper = new Swiper(similarProductsElement, {
+      slidesPerView: 1.2, // Shows a hint of the next slide on mobile
+      spaceBetween: 20,
+      speed: 500,
+
+      // Connect to our custom buttons
+      navigation: {
+        prevEl: ".similar-products-section .similar-prev",
+        nextEl: ".similar-products-section .similar-next",
+      },
+
+      // Accessibility
+      a11y: {
+        prevSlideMessage: "Previous product",
+        nextSlideMessage: "Next product",
+      },
+
+      // Recalculate layout when viewport changes
+      observer: true,
+      observeParents: true,
+      resizeObserver: true,
+
+      // Responsive Breakpoints
+      breakpoints: {
+        // Mobile (0px and up)
+        0: {
+          slidesPerView: 1.2,
+          spaceBetween: 15,
+        },
+        // Tablet (600px and up)
+        600: {
+          slidesPerView: 2.2,
+          spaceBetween: 20,
+        },
+        // Small Desktop (900px and up)
+        900: {
+          slidesPerView: 3.2,
+          spaceBetween: 20,
+        },
+        // Desktop (1200px and up) - Shows 4.5 slides
+        1200: {
+          slidesPerView: 4.5,
+          spaceBetween: 24,
+        },
+      },
+    });
+  }
+
+  // ================= CREDIT CARDS CAROUSEL =================
+  const creditCardsElement = document.querySelector(".credit-swiper");
+
+  if (creditCardsElement && typeof Swiper !== "undefined") {
+    const creditSwiper = new Swiper(creditCardsElement, {
+      slidesPerView: 1.2,
+      spaceBetween: 30, // Gap between slides
+      speed: 500,
+
+      navigation: {
+        prevEl: ".credit-cards-section .credit-prev",
+        nextEl: ".credit-cards-section .credit-next",
+      },
+
+      a11y: {
+        prevSlideMessage: "Previous credit card",
+        nextSlideMessage: "Next credit card",
+      },
+
+      observer: true,
+      observeParents: true,
+      resizeObserver: true,
+
+      breakpoints: {
+        // Mobile
+        0: {
+          slidesPerView: 1.2,
+          spaceBetween: 20,
+        },
+        // Tablet
+        768: {
+          slidesPerView: 2.2,
+          spaceBetween: 30,
+        },
+        // Desktop
+        1024: {
+          slidesPerView: 3.8, // Shows 3 full cards and 80% of the 4th
+          spaceBetween: 30,
+        },
+      },
+    });
+  }
 });

@@ -1,0 +1,606 @@
+@use "settings" as *;
+
+/* =========================================
+   PRODUCT TABS SECTION
+========================================= */
+.product-tabs-section {
+  padding: 60px 0;
+  .section-intro {
+    * {
+      text-align: left;
+    }
+    p {
+      width: 70%;
+    }
+  }
+
+  .tabs-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 24px;
+    align-items: stretch; // Ensures both columns are the same height
+
+    /* ---------- Left Side: Navigation ---------- */
+    .tabs-nav {
+      display: flex;
+      flex-direction: column;
+      background: $primary-dark;
+      border-radius: 24px;
+      padding: 40px 20px;
+      overflow: hidden;
+
+      .tab-btn {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        padding: 20px 30px;
+        background: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid rgba($white, 0.3);
+        color: rgba($white, 0.6);
+        font-size: 22px;
+        font-weight: 500;
+        text-align: left;
+        cursor: pointer;
+        transition: all $transition;
+
+        .tab-num {
+          font-size: 15px;
+          font-weight: 400;
+          opacity: 0.8;
+        }
+
+        // Hover state (for non-active tabs)
+        &:hover:not(.active) {
+          color: $white;
+          background: rgba($white, 0.05);
+        }
+
+        // Active state
+        &.active {
+          color: $white;
+          border-bottom: 1px solid rgba($white, 0.6);
+          .tab-num {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    /* ---------- Right Side: Content ---------- */
+    .tabs-content {
+      position: relative;
+      background: #f4f4f7; // Light grey background matching the image
+      border-radius: 24px;
+      overflow: hidden;
+      .tab-panel {
+        display: none; // Hide all panels by default
+        grid-template-columns: 1fr 400px;
+        gap: 40px;
+        height: 100%;
+        padding: 2em;
+
+        .panel-text {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          padding-top: 10px;
+
+          h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: $black;
+            margin-bottom: 20px;
+            line-height: 1.2;
+          }
+
+          .panel-description {
+            font-size: 16px;
+            color: $black;
+            margin-bottom: 15px;
+            line-height: 1.5;
+          }
+
+          .panel-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            li {
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              color: $text-primary;
+              font-size: 16px;
+              line-height: 1.5;
+
+              span {
+                color: $primary-dark; // The cyan arrow color from your variables
+                font-size: 14px;
+                margin-top: 4px; // Aligns arrow with the text
+              }
+            }
+          }
+
+          .tariff-list {
+            gap: 8px;
+            li {
+              span {
+                color: $black;
+                font-size: 6px;
+              }
+            }
+          }
+
+          .footnotes {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            margin-top: 24px;
+            font-size: 14px;
+            color: #59616d;
+          }
+        }
+
+        /* Image styling */
+        .panel-image {
+          height: 100%;
+          min-height: 300px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+            display: block;
+          }
+        }
+
+        // Show active panel
+        &.active {
+          display: grid;
+        }
+      }
+    }
+  }
+}
+
+/* =========================================
+   SIMILAR PRODUCTS SWIPER
+========================================= */
+
+.similar-products-section {
+  padding: 60px 0;
+  background: #f4f4f7;
+  .similar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+
+    .header-text {
+      max-width: 800px;
+
+      h2 {
+        font-size: 36px;
+        line-height: 44px;
+        font-weight: 700;
+        margin-bottom: 0.4em !important;
+      }
+      p {
+        font-size: 18px;
+        margin-bottom: 0.6em;
+      }
+    }
+
+    /* Navigation Arrows */
+    .similar-nav-arrows {
+      display: flex;
+      gap: 10px;
+
+      .swiper-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $white;
+        color: $secondary;
+        border: 1px solid $border-color;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all $transition;
+
+        &:hover {
+          background: $secondary;
+          color: $white;
+          border-color: $secondary;
+        }
+
+        // Swiper adds 'swiper-button-disabled' when at the start/end
+        &.swiper-button-disabled {
+          opacity: 0.35;
+          cursor: default;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  /* Card Design */
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .card-image {
+      width: 100%;
+      aspect-ratio: 4 / 3; // Keeps images uniform
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 16px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+    }
+
+    &:hover .card-image img {
+      transform: scale(1.05); // Slight zoom effect on hover
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-grow: 1;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: $black;
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-size: 16px;
+        color: $black;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        flex-grow: 1; // Pushes the button to the bottom if text lengths differ
+      }
+    }
+  }
+}
+
+/* =========================================
+   CREDIT CARDS SECTION
+========================================= */
+.credit-cards-section {
+  padding: 60px 0;
+  background: $white;
+
+  // 1. Header & Navigation (Unchanged)
+  .credit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+
+    .header-text {
+      max-width: 800px;
+
+      h2 {
+        font-size: 36px;
+        line-height: 44px;
+        font-weight: 700;
+        margin-bottom: 0.4em !important;
+      }
+      p {
+        font-size: 18px;
+        margin-bottom: 0.6em;
+      }
+    }
+
+    .credit-nav-arrows {
+      display: flex;
+      gap: 10px;
+
+      .swiper-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $white;
+        color: $secondary;
+        border: 1px solid $border-color;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all $transition;
+
+        &:hover {
+          background: $secondary;
+          color: $white;
+          border-color: $secondary;
+        }
+
+        &.swiper-button-disabled {
+          opacity: 0.35;
+          cursor: default;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  // 2. The Card Item Layout (Now Position Relative)
+  .credit-card-item {
+    position: relative; // Crucial for the background shape
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 480px; // Ensures all cards are the same height
+    border-radius: 24px;
+    padding-bottom: 20px; // Space at the bottom of the card item
+
+    // --- The 90% Background Box ---
+    .card-bg-shape {
+      position: absolute;
+      bottom: 0; // Anchored to the bottom
+      left: 0;
+      width: 100%;
+      height: 85%; // 90% of the ENTIRE item's height
+      border-radius: 24px;
+      z-index: 1; // Sits behind the image and text
+    }
+
+    // --- The Image Area ---
+    .card-visual {
+      position: relative;
+      z-index: 2; // Sits above the background
+      width: 100%;
+      height: 240px;
+      margin-bottom: 24px;
+      padding-top: 20px; // Pushes image down slightly so it overlaps the shape
+
+      .card-png {
+        width: 90%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center bottom;
+        margin: 0 auto;
+        display: block;
+        filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+      }
+    }
+
+    // --- The Text Content Area ---
+    .card-info {
+      position: relative;
+      z-index: 2; // Sits above the background
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 0 24px; // Keeps text inside the colored box's bounds
+
+      h3 {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 24px;
+        flex-grow: 1;
+      }
+
+      .card-actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 10px;
+
+        // The text link (View Rates) inherits color from the theme wrapper
+        .text-link {
+          font-size: 16px;
+          font-weight: 600;
+          transition: opacity $transition;
+          text-decoration: underline;
+
+          &:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    // --- 3. THEME SPECIFIC STYLES ---
+
+    // Blue Theme
+    &.theme-blue {
+      .card-bg-shape {
+        background-color: #325b9b29; // Blue background
+      }
+
+      .card-info {
+        h3,
+        p,
+        .text-link {
+          color: #325b9b; // All text is #325B9B
+        }
+
+        // Custom Button matching #325B9B
+        .button--blue-theme {
+          background: #325b9b;
+          color: $white;
+          border-color: #325b9b;
+
+          &:hover {
+            background: darken(#325b9b, 10%);
+            border-color: darken(#325b9b, 10%);
+          }
+        }
+      }
+    }
+
+    // Gold Theme
+    &.theme-gold {
+      .card-bg-shape {
+        background-color: #c7974c29; // Gold background
+      }
+
+      .card-info {
+        h3,
+        p,
+        .text-link {
+          color: #c7974c; // All text is #C7974C
+        }
+
+        // Custom Button matching #C7974C
+        .button--gold-theme {
+          background: #c7974c;
+          color: $white;
+          border-color: #c7974c;
+
+          &:hover {
+            background: darken(#c7974c, 10%);
+            border-color: darken(#c7974c, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =========================================
+   RESPONSIVE (MOBILE)
+========================================= */
+
+@media (max-width: 900px) {
+  .product-tabs-section {
+    .section-intro {
+      p {
+        width: 100%;
+      }
+    }
+    .tabs-layout {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      .tabs-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 0;
+        border-radius: 16px;
+
+        // Hide scrollbar
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        .tab-btn {
+          flex: 1;
+          justify-content: center;
+          padding: 16px;
+          border-bottom: none;
+          border-right: 1px solid rgba($white, 0.15);
+          white-space: nowrap;
+          font-size: 14px;
+
+          &:last-child {
+            border-right: none;
+          }
+        }
+      }
+      .tabs-content {
+        border-radius: 16px;
+        padding: 0;
+      }
+      .tab-panel {
+        grid-template-columns: 1fr !important;
+        padding: 0;
+
+        &.active {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 30px;
+        }
+        .panel-text {
+          width: 100%;
+          h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+          }
+        }
+        .panel-image {
+          width: 100%;
+          min-height: 200px;
+          //order: -1; // Puts the image on top for mobile
+
+          img {
+            border-radius: 16px; // Fully rounded on mobile
+          }
+        }
+      }
+    }
+  }
+
+  .similar-products-section {
+    padding: 40px 0;
+    .similar-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      h2 {
+        font-size: 28px !important;
+        line-height: 36px;
+      }
+
+      p {
+        font-size: 16px !important;
+      }
+
+      // Move arrows below the text or hide them if swiping is preferred
+      .similar-nav-arrows {
+        display: none; // Usually hidden on mobile since users can just swipe
+      }
+    }
+  }
+
+  .credit-cards-section {
+    .credit-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+
+      h2 {
+        font-size: 28px !important;
+        line-height: 36px;
+      }
+
+      p {
+        font-size: 16px !important;
+      }
+
+      .credit-nav-arrows {
+        display: none; // Hide arrows on mobile, users can swipe
+      }
+    }
+
+    .credit-card-item {
+      .card-visual {
+        height: 240px; // Slightly smaller on mobile
+      }
+    }
+  }
+}
