@@ -2,15 +2,15 @@
    1. VARIABLES
 ========================================= */
 @font-face {
-  font-family: "header";
-  src: url("/assets/fonts/Jost-Bold.ttf") format("truetype");
+  font-family: header;
+  src: url("../fonts/Jost-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
 }
 @font-face {
-  font-family: "texts";
-  src: url("/assets/fonts/Jost-Regular.ttf") format("truetype");
+  font-family: texts;
+  src: url("../fonts/Jost-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
