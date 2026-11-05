@@ -42,15 +42,38 @@ $(function () {
 
   // ================= DESKTOP HOVER =================
 
+  // ================= DESKTOP HOVER =================
+
   $menuItem.on("mouseenter", function () {
     if (!isMobile()) {
-      openMegaMenu();
+      const $currentItem = $(this);
+      const $currentMegaMenu = $currentItem.find(".mega-menu");
+      const $currentTrigger = $currentItem.children(".nav-link");
+
+      clearTimeout(closeTimer);
+
+      // Close ALL other menus instantly to prevent them from staying open
+      $menuItem.not($currentItem).each(function () {
+        $(this).find(".mega-menu").removeClass("is-open");
+        $(this).children(".nav-link").attr("aria-expanded", "false");
+      });
+
+      // Open the currently hovered menu
+      $currentMegaMenu.addClass("is-open");
+      $currentTrigger.attr("aria-expanded", "true");
     }
   });
 
   $menuItem.on("mouseleave", function () {
     if (!isMobile()) {
-      scheduleClose();
+      const $currentMegaMenu = $(this).find(".mega-menu");
+      const $currentTrigger = $(this).children(".nav-link");
+
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(function () {
+        $currentMegaMenu.removeClass("is-open");
+        $currentTrigger.attr("aria-expanded", "false");
+      }, 120);
     }
   });
 
@@ -64,7 +87,14 @@ $(function () {
 
   $megaMenu.on("mouseleave", function () {
     if (!isMobile()) {
-      scheduleClose();
+      const $currentMegaMenu = $(this);
+      const $currentTrigger = $(this).siblings(".nav-link");
+
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(function () {
+        $currentMegaMenu.removeClass("is-open");
+        $currentTrigger.attr("aria-expanded", "false");
+      }, 120);
     }
   });
 
@@ -72,16 +102,32 @@ $(function () {
 
   $menuItem.on("focusin", function () {
     if (!isMobile()) {
-      openMegaMenu();
+      const $currentItem = $(this);
+      const $currentMegaMenu = $currentItem.find(".mega-menu");
+      const $currentTrigger = $currentItem.children(".nav-link");
+
+      // Close ALL other menus instantly
+      $menuItem.not($currentItem).each(function () {
+        $(this).find(".mega-menu").removeClass("is-open");
+        $(this).children(".nav-link").attr("aria-expanded", "false");
+      });
+
+      $currentMegaMenu.addClass("is-open");
+      $currentTrigger.attr("aria-expanded", "true");
     }
   });
 
   $menuItem.on("focusout", function () {
     if (!isMobile()) {
+      const $currentItem = $(this);
+      const $currentMegaMenu = $(this).find(".mega-menu");
+      const $currentTrigger = $(this).children(".nav-link");
+
       // Wait until the next focused element is known.
       setTimeout(function () {
-        if (!$menuItem.has(document.activeElement).length) {
-          closeMegaMenu();
+        if (!$currentItem.has(document.activeElement).length) {
+          $currentMegaMenu.removeClass("is-open");
+          $currentTrigger.attr("aria-expanded", "false");
         }
       }, 0);
     }
@@ -89,8 +135,37 @@ $(function () {
 
   $(document).on("keydown", function (event) {
     if (event.key === "Escape") {
-      closeMegaMenu();
-      $menuTrigger.trigger("focus");
+      // Close all menus
+      $(".mega-menu").removeClass("is-open");
+      $(".has-mega-menu > .nav-link").attr("aria-expanded", "false");
+
+      // Optionally, focus the trigger that was open
+      $(".nav-link").trigger("focus");
+    }
+  });
+
+  // ================= MOBILE DROPDOWN =================
+
+  $menuTrigger.on("click", function (event) {
+    if (isMobile()) {
+      event.preventDefault();
+
+      const $currentTrigger = $(this);
+      const $currentMegaMenu = $currentTrigger.siblings(".mega-menu");
+      const isOpen = $currentMegaMenu.hasClass("is-open");
+
+      // Close ALL other open menus first
+      $(".mega-menu").not($currentMegaMenu).removeClass("is-open");
+      $(".nav-link").not($currentTrigger).attr("aria-expanded", "false");
+
+      // Toggle the clicked one
+      if (isOpen) {
+        $currentMegaMenu.removeClass("is-open");
+        $currentTrigger.attr("aria-expanded", "false");
+      } else {
+        $currentMegaMenu.addClass("is-open");
+        $currentTrigger.attr("aria-expanded", "true");
+      }
     }
   });
 
@@ -228,22 +303,6 @@ $(function () {
     requestAnimationFrame(updateOverflowState);
     setTimeout(updateOverflowState, 300);
   })();
-
-  // ================= MOBILE DROPDOWN =================
-
-  $menuTrigger.on("click", function (event) {
-    if (isMobile()) {
-      event.preventDefault();
-
-      const isOpen = $megaMenu.hasClass("is-open");
-
-      if (isOpen) {
-        closeMegaMenu();
-      } else {
-        openMegaMenu();
-      }
-    }
-  });
 
   // ================= MOBILE NAVIGATION =================
 

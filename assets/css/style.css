@@ -3412,17 +3412,22 @@ section .section-intro p {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-top: 10px;
 }
 .mega-menu__feature .store-btns > a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease;
 }
 .mega-menu__feature .store-btns > a img {
   width: auto;
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.mega-menu__feature .store-btns > a:hover {
+  transform: translateY(-2px);
 }
 
 /* =========================================
