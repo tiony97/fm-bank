@@ -126,6 +126,9 @@
 
           .tariff-list {
             gap: 8px;
+            max-height: 300px;
+            overflow-y: auto;
+
             li {
               span {
                 color: $black;

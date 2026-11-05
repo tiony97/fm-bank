@@ -2664,6 +2664,8 @@ section .section-intro p {
 }
 .product-tabs-section .tabs-layout .tabs-content .tab-panel .panel-text .tariff-list {
   gap: 8px;
+  max-height: 300px;
+  overflow-y: auto;
 }
 .product-tabs-section .tabs-layout .tabs-content .tab-panel .panel-text .tariff-list li span {
   color: #202020;
@@ -3391,7 +3393,7 @@ section .section-intro p {
   font-size: 16px;
   font-weight: 600;
 }
-.mega-menu__feature img {
+.mega-menu__feature img.feature-image {
   width: 100%;
   height: 200px;
   -o-object-fit: cover;
@@ -3405,6 +3407,22 @@ section .section-intro p {
   margin: 9px 0 12px;
   color: #64748b;
   font-size: 11px;
+}
+.mega-menu__feature .store-btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mega-menu__feature .store-btns > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.mega-menu__feature .store-btns > a img {
+  width: auto;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 /* =========================================

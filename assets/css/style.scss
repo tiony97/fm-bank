@@ -409,7 +409,7 @@
     font-weight: 600;
   }
 
-  img {
+  img.feature-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -422,6 +422,24 @@
     margin: 9px 0 12px;
     color: $text-secondary;
     font-size: 11px;
+  }
+
+  .store-btns {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    > a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
   }
 }
 
