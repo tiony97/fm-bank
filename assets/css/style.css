@@ -1592,7 +1592,7 @@ section .section-intro p {
 .contact-forms .loan-form .loan-form-buttons {
   display: flex;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 5px;
   flex-wrap: wrap;
 }
 .contact-forms .loan-form .loan-form-buttons a,
@@ -1633,7 +1633,7 @@ section .section-intro p {
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 30px;
   outline: none;
-  font-size: 14px;
+  font-size: 16px;
 }
 .contact-forms .loan-form input::-moz-placeholder, .contact-forms .loan-form select::-moz-placeholder {
   color: #fff;

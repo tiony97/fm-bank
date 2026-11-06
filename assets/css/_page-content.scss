@@ -1574,7 +1574,7 @@ section {
     .loan-form-buttons {
       display: flex;
       gap: 10px;
-      margin-top: 15px;
+      margin-top: 5px;
       flex-wrap: wrap;
       a,
       button {
@@ -1618,7 +1618,7 @@ section {
       border: 1px solid rgb(255 255 255 / 55%);
       border-radius: 30px;
       outline: none;
-      font-size: 14px;
+      font-size: 16px;
 
       &::placeholder {
         color: #fff;
