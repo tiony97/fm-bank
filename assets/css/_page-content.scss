@@ -1559,7 +1559,7 @@ section {
     .overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.35);
       z-index: 1;
     }
 
@@ -1569,6 +1569,24 @@ section {
       position: relative;
       z-index: 2;
       max-width: 100%;
+    }
+
+    .loan-form-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+      a,
+      button {
+        transition: all 0.3s ease;
+        img {
+          height: 32px;
+          width: auto;
+        }
+        &:hover {
+          transform: translateY(-2px);
+        }
+      }
     }
 
     h2 {
@@ -1609,6 +1627,27 @@ section {
 
       &:focus {
         border-color: #fff;
+      }
+    }
+
+    .check {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        accent-color: #fff;
+        cursor: pointer;
+      }
+      label {
+        font-size: 16px;
+        line-height: 1.4;
+        a {
+          text-decoration: underline;
+        }
       }
     }
 

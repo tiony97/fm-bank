@@ -1578,7 +1578,7 @@ section .section-intro p {
 .contact-forms .loan-form .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.35);
   z-index: 1;
 }
 .contact-forms .loan-form {
@@ -1588,6 +1588,25 @@ section .section-intro p {
   position: relative;
   z-index: 2;
   max-width: 100%;
+}
+.contact-forms .loan-form .loan-form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+.contact-forms .loan-form .loan-form-buttons a,
+.contact-forms .loan-form .loan-form-buttons button {
+  transition: all 0.3s ease;
+}
+.contact-forms .loan-form .loan-form-buttons a img,
+.contact-forms .loan-form .loan-form-buttons button img {
+  height: 32px;
+  width: auto;
+}
+.contact-forms .loan-form .loan-form-buttons a:hover,
+.contact-forms .loan-form .loan-form-buttons button:hover {
+  transform: translateY(-2px);
 }
 .contact-forms .loan-form h2 {
   font-size: 30px;
@@ -1628,6 +1647,26 @@ section .section-intro p {
 .contact-forms .loan-form input:focus,
 .contact-forms .loan-form select:focus {
   border-color: #fff;
+}
+.contact-forms .loan-form .check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+.contact-forms .loan-form .check input[type=checkbox] {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  accent-color: #fff;
+  cursor: pointer;
+}
+.contact-forms .loan-form .check label {
+  font-size: 16px;
+  line-height: 1.4;
+}
+.contact-forms .loan-form .check label a {
+  text-decoration: underline;
 }
 .contact-forms .loan-form select {
   appearance: none;
@@ -2799,6 +2838,10 @@ section .section-intro p {
   margin-bottom: 10px;
   flex-grow: 1;
 }
+.similar-products-section .product-card .card-content .button {
+  position: relative;
+  z-index: 1;
+}
 
 /* =========================================
    CREDIT CARDS SECTION
@@ -3348,14 +3391,14 @@ section .section-intro p {
 }
 .mega-menu__promo p {
   margin-bottom: 18px;
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.4;
 }
 .mega-menu__promo .text-link {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
 }
 .mega-menu__promo .text-link:hover {

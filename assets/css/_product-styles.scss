@@ -278,6 +278,10 @@
         margin-bottom: 10px;
         flex-grow: 1; // Pushes the button to the bottom if text lengths differ
       }
+      .button {
+        position: relative;
+        z-index: 1;
+      }
     }
   }
 }
