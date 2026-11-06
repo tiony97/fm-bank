@@ -9,6 +9,10 @@ $secondary: #00a6e5;
 $white: #ffffff;
 $black: #202020;
 
+// Queen Banking Colors
+$queen-primary: #6a3293;
+$queen-secondary: #9b5de5; // Buttons and cards
+
 $text-primary: #1e293b;
 $text-secondary: #64748b;
 $border-color: #e5eaf1;
@@ -118,7 +122,7 @@ input:focus-visible {
   gap: 8px;
 
   padding: 9px 17px;
-  border: 1px solid transparent;
+  border: 1.5px solid transparent;
   border-radius: 30px;
 
   font-size: 14px;
@@ -134,6 +138,51 @@ input:focus-visible {
 
   &:hover {
     transform: translateY(-1px);
+  }
+
+  &--queen {
+    color: $white;
+    background: $queen-secondary;
+
+    &:hover {
+      background: $white;
+      color: $primary;
+    }
+  }
+
+  &--queen-light {
+    color: $queen-primary;
+    background: $white;
+
+    &:hover {
+      background: transparent;
+      border: 1.5px solid $white;
+      color: $white;
+    }
+  }
+
+  &--queen-outline {
+    color: $white;
+    background: transparent;
+    border: 1.5px solid $white;
+
+    &:hover {
+      background: $white;
+      color: $queen-primary;
+    }
+  }
+
+  &--queen-underline {
+    line-height: 1.1;
+    color: $white;
+    background: transparent;
+    border: none;
+    text-decoration: underline;
+
+    &:hover {
+      color: $queen-secondary;
+      text-decoration: none;
+    }
   }
 
   &--primary {

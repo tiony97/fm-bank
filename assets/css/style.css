@@ -97,7 +97,7 @@ input:focus-visible {
   justify-content: center;
   gap: 8px;
   padding: 9px 17px;
-  border: 1px solid transparent;
+  border: 1.5px solid transparent;
   border-radius: 30px;
   font-size: 14px;
   font-weight: 600;
@@ -107,6 +107,43 @@ input:focus-visible {
 }
 .button:hover {
   transform: translateY(-1px);
+}
+.button--queen {
+  color: #ffffff;
+  background: #9b5de5;
+}
+.button--queen:hover {
+  background: #ffffff;
+  color: #2d5eaa;
+}
+.button--queen-light {
+  color: #6a3293;
+  background: #ffffff;
+}
+.button--queen-light:hover {
+  background: transparent;
+  border: 1.5px solid #ffffff;
+  color: #ffffff;
+}
+.button--queen-outline {
+  color: #ffffff;
+  background: transparent;
+  border: 1.5px solid #ffffff;
+}
+.button--queen-outline:hover {
+  background: #ffffff;
+  color: #6a3293;
+}
+.button--queen-underline {
+  line-height: 1.1;
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  text-decoration: underline;
+}
+.button--queen-underline:hover {
+  color: #9b5de5;
+  text-decoration: none;
 }
 .button--primary {
   color: #ffffff;
@@ -555,6 +592,9 @@ section .section-intro p {
 .currency-marquee .marquee-cta:hover {
   color: #2a5caa;
 }
+.currency-marquee .queen-marquee-cta a:hover {
+  background: #6a3293;
+}
 
 @keyframes scrollMarquee {
   0% {
@@ -647,6 +687,47 @@ section .section-intro p {
 }
 .products .tab.active {
   display: block;
+}
+
+.queen-products .tab-links li.active, .queen-products .tab-links li:hover {
+  color: #6a3293;
+  border: 1px solid #6a3293;
+}
+.queen-products .product-card {
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.queen-products .product-card .card-img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.queen-products .product-card .card-img img {
+  width: 100%;
+  height: 210px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  border-radius: 28px;
+}
+.queen-products .product-card .card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.queen-products .product-card .card-text h3 {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 600;
+}
+.queen-products .product-card .card-text p {
+  font-size: 15px;
+}
+.queen-products .product-card .card-text .button {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
 }
 
 /* =========================================
@@ -1013,6 +1094,30 @@ section .section-intro p {
   cursor: default;
 }
 
+.queen-stories {
+  background: #f4f4f7;
+}
+.queen-stories .container .stories-carousel .stories-swiper .story-card .story-card__image .story-card__arrow {
+  color: #9b5de5;
+  background: #ffffff;
+}
+.queen-stories .container .stories-carousel .stories-swiper .story-card .story-card__image .story-card__arrow:hover {
+  color: #ffffff;
+  background: #6a3293;
+}
+.queen-stories .container .stories-carousel .stories-swiper .story-card .story-card__content {
+  color: #ffffff;
+  background: #6a3293;
+}
+.queen-stories .container .stories-navigation__button {
+  color: #9b5de5;
+  background: #ffffff;
+}
+.queen-stories .container .stories-navigation__button:hover:not(.swiper-button-disabled) {
+  color: #ffffff;
+  background: #6a3293;
+}
+
 /* =========================================
    IMPACT SECTION
 ========================================= */
@@ -1126,6 +1231,89 @@ section .section-intro p {
   color: #f0f0f0;
 }
 
+.queen-impact {
+  position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 60px 0;
+}
+.queen-impact .impact-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  z-index: -1;
+}
+.queen-impact .overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+.queen-impact .container {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+}
+.queen-impact .container * {
+  z-index: 1;
+}
+.queen-impact .container .impact-intro {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  text-align: left;
+}
+.queen-impact .container .impact-intro h3 {
+  font-size: 36px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #ffffff;
+}
+.queen-impact .container .impact-intro p {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #ffffff;
+}
+.queen-impact .container .stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.queen-impact .container .stats .stat {
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-right: 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.queen-impact .container .stats .stat:last-of-type {
+  border: none;
+}
+.queen-impact .container .stats .stat h2 {
+  font-size: 56px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #ffffff;
+}
+.queen-impact .container .stats .stat p {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #ffffff;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1231,6 +1419,26 @@ section .section-intro p {
     grid-column: 2;
     grid-row: 2;
   }
+}
+
+.queen-services .container .services-grid {
+  gap: 15px;
+}
+.queen-services .container .services-grid__card .info {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 6px 12px;
+  border: 1.5px solid #ffffff;
+  border-radius: 24px;
+  color: #ffffff;
+}
+.queen-services .container .services-grid__card .btns {
+  display: flex;
+  align-items: center;
+  gap: 4px !important;
+}
+.queen-services .container .services-grid__card--small-bottom {
+  justify-content: flex-end;
 }
 
 /* =========================================
@@ -1689,6 +1897,10 @@ section .section-intro p {
   margin-top: 15px;
 }
 
+.queen-contact .sales-form {
+  background: #9b5de5;
+}
+
 /* =========================================
    LARGE SCREENS
 ========================================= */
@@ -1839,6 +2051,40 @@ section .section-intro p {
   .impact-section .image-wrapper .glass-overlay p {
     font-size: 28px !important;
     line-height: 36px !important;
+  }
+  .queen-impact {
+    padding: 80px 0;
+  }
+  .queen-impact .container {
+    height: 60vh;
+  }
+  .queen-impact .container .impact-intro {
+    max-width: 40vw;
+    gap: 20px;
+  }
+  .queen-impact .container .impact-intro h3 {
+    font-size: 56px !important;
+    line-height: 1.1;
+  }
+  .queen-impact .container .impact-intro p {
+    font-size: 16px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+  .queen-impact .container .stats {
+    gap: 40px;
+  }
+  .queen-impact .container .stats .stat {
+    max-width: 450px;
+    padding-right: 20px;
+  }
+  .queen-impact .container .stats .stat h2 {
+    font-size: 76px !important;
+    line-height: 1.2;
+  }
+  .queen-impact .container .stats .stat p {
+    font-size: 20px;
+    line-height: 1.2;
   }
   .bank-services {
     padding: 60px 0;
@@ -2094,6 +2340,40 @@ section .section-intro p {
   }
   .impact-section .image-wrapper .glass-overlay p {
     font-size: 0.85rem;
+  }
+  .queen-impact {
+    padding: 60px 0;
+  }
+  .queen-impact .container {
+    height: 70vh;
+  }
+  .queen-impact .container .impact-intro {
+    max-width: 100%;
+    gap: 20px;
+  }
+  .queen-impact .container .impact-intro h3 {
+    font-size: 30px !important;
+    line-height: 1.1;
+  }
+  .queen-impact .container .impact-intro p {
+    font-size: 16px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+  .queen-impact .container .stats {
+    gap: 30px;
+  }
+  .queen-impact .container .stats .stat {
+    max-width: 250px;
+    padding-right: 20px;
+  }
+  .queen-impact .container .stats .stat h2 {
+    font-size: 46px !important;
+    line-height: 1.2;
+  }
+  .queen-impact .container .stats .stat p {
+    font-size: 16px;
+    line-height: 1.2;
   }
   /* =========================================
      BANK SERVICES SECTION
@@ -2445,6 +2725,49 @@ section .section-intro p {
   }
   .impact-section .image-wrapper .glass-overlay p {
     font-size: 0.8rem;
+  }
+  .queen-impact {
+    padding: 40px 0;
+  }
+  .queen-impact .container {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .queen-impact .container .impact-intro {
+    max-width: 100%;
+    gap: 20px;
+    margin-bottom: 60px;
+  }
+  .queen-impact .container .impact-intro h3 {
+    font-size: 24px !important;
+    line-height: 1.1;
+  }
+  .queen-impact .container .impact-intro p {
+    font-size: 14px !important;
+    line-height: 1.3;
+  }
+  .queen-impact .container .stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .queen-impact .container .stats .stat {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    padding-right: 0;
+    padding-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .queen-impact .container .stats .stat h2 {
+    font-size: 38px !important;
+    line-height: 1.2;
+  }
+  .queen-impact .container .stats .stat p {
+    font-size: 16px;
+    line-height: 1.2;
   }
   /* =========================================
      BANK SERVICES SECTION
@@ -3116,6 +3439,33 @@ section .section-intro p {
   background: #ffffff;
 }
 
+#queen-header .utility-bar a:hover, #queen-header .utility-bar a.active {
+  color: #6a3293;
+}
+#queen-header .main-nav {
+  background: #6a3293;
+}
+#queen-header .main-nav .main-nav__inner .brand img {
+  max-height: 55px;
+}
+#queen-header .main-nav .main-nav__inner .nav-item .nav-link:hover, #queen-header .main-nav .main-nav__inner .nav-item .nav-link[aria-expanded=true] {
+  color: #6a3293 !important;
+  background: #ffffff;
+}
+#queen-header .main-nav .main-nav__inner .nav-link:hover, #queen-header .main-nav .main-nav__inner .nav-link[aria-expanded=true] {
+  color: #6a3293 !important;
+  background: #ffffff;
+}
+#queen-header .main-nav .main-nav__inner .mega-menu .mega-menu__promo {
+  background: #9b5de5;
+}
+#queen-header .main-nav .main-nav__inner .mega-menu .mega-menu__promo a {
+  text-decoration: underline;
+}
+#queen-header .main-nav .main-nav__inner .mega-menu .mega-menu__links a:hover {
+  color: #9b5de5;
+}
+
 /* ---------- Utility navigation ---------- */
 .utility-bar {
   padding: 12px 0;
@@ -3641,6 +3991,17 @@ section .section-intro p {
   padding-bottom: 10px;
   color: #ffffff;
   background: #2d5eaa;
+}
+
+.queen-footer {
+  background: #6a3293;
+}
+.queen-footer .social-links a {
+  color: #6a3293;
+}
+.queen-footer .social-links a:hover {
+  background: #9b5de5;
+  color: #ffffff;
 }
 
 .footer-inner {
