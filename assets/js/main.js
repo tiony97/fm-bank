@@ -342,25 +342,22 @@ $(function () {
     });
 
     // ============ Sub-menu open (works for all structures) ============
-    // Match any `.has-child` click, regardless of where it lives
     $(document).on("click", ".mega-menu__links a.has-child", function (e) {
       e.preventDefault();
+      e.stopPropagation();
 
       const $link = $(this);
-      // The parent wrapper: <li>, .nav-item, or the <a>'s parent
       const $parent = $link.parent();
 
-      // Find the sibling sub-menu
       let $subMenu = $parent.find("> .sub-menu");
       if (!$subMenu.length) {
-        // Fallback: raw <a> followed by .sub-menu
         $subMenu = $link.next(".sub-menu");
       }
       if (!$subMenu.length) return;
 
       const willOpen = !$subMenu.hasClass("is-open");
 
-      // Close any other open sub-menus in the same mega menu
+      // Close other sub-menus in the SAME mega menu
       const $megaParent = $link.closest(".mega-menu");
       $megaParent
         .find(".sub-menu.is-open")
@@ -374,7 +371,6 @@ $(function () {
       $subMenu.toggleClass("is-open", willOpen);
       $link.toggleClass("is-active", willOpen);
 
-      // Inject back button once
       if (willOpen && !$subMenu.find(".back-button").length) {
         $subMenu.prepend(
           '<div class="back-button"><i class="fa-solid fa-chevron-left"></i> Back</div>',
@@ -385,10 +381,11 @@ $(function () {
     // ============ Back button ============
     $(document).on("click", ".sub-menu .back-button", function (e) {
       e.preventDefault();
+      e.stopPropagation();
+
       const $subMenu = $(this).closest(".sub-menu");
       const $parent = $subMenu.parent();
 
-      // Find the parent link
       let $parentLink = $parent.find("> a.has-child").first();
       if (!$parentLink.length) {
         $parentLink = $subMenu.siblings("a.has-child").first();

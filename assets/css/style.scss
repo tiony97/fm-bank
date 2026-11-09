@@ -301,112 +301,6 @@
   pointer-events: none !important;
 }
 
-/* Handling sub-menus inside the overflow menu */
-.mega-menu__links {
-  //   position: relative;
-  //   height: 100%;
-  position: relative;
-  height: auto;
-  /* Wrapper for items with children */
-  .menu-item-has-children {
-    border-bottom: 1px solid $border-color;
-
-    > a.has-child {
-      border-bottom: 0; /* Prevent double border */
-    }
-  }
-
-  a.has-child {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    padding: 8px 0;
-    color: $text-primary;
-    font-size: 16px;
-    font-weight: 500;
-    transition:
-      color $transition,
-      padding-left $transition,
-      0.3s;
-
-    &:hover {
-      padding-left: 5px;
-      color: $secondary;
-    }
-
-    i {
-      font-size: 12px;
-      color: $text-secondary;
-      transition: transform 0.2s ease;
-    }
-
-    &.is-active i {
-      transform: rotate(90deg);
-      color: $secondary;
-    }
-  }
-
-  .sub-menu {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: $white;
-    z-index: 2;
-    padding-left: 15px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    //border-left: 2px solid $border-color;
-
-    &.is-open {
-      display: block;
-    }
-
-    .back-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 0;
-      font-size: 16px;
-      font-weight: 600;
-      //color: $text-secondary;
-      cursor: pointer;
-      margin-bottom: 10px;
-
-      &:hover {
-        color: $primary;
-      }
-
-      i {
-        font-size: 12px;
-      }
-    }
-
-    a,
-    > li > a {
-      display: block;
-      padding: 8px 0;
-      color: $text-primary;
-      border-bottom: 1px solid $border-color;
-      font-size: 16px;
-      font-weight: 500;
-      transition: all 0.3s ease-in-out;
-
-      &:hover {
-        color: $secondary;
-        padding-left: 5px;
-      }
-
-      &:last-child {
-        border-bottom: 0;
-      }
-    }
-  }
-}
-
 /* Search, language and CTA buttons */
 .nav-actions {
   display: flex;
@@ -543,21 +437,34 @@
 
 /* Middle links panel */
 /* =========================================
-   MEGA MENU LINKS & SUB-MENU (unified)
+   MEGA MENU LINKS — unified (main + overflow)
 ========================================= */
 .mega-menu__links {
   padding: 25px 24px;
+  position: relative;
 
-  /* Top-level links (both raw <a> and WordPress <li><a>) */
+  /* Reset any leaked heights from primary-nav */
+  .nav-item,
+  .nav-item.has-mega-menu,
+  .nav-item.has-sub-menu {
+    height: auto !important;
+  }
+
+  /* Top-level items */
   > a,
   > li > a,
-  > .nav-item > a {
-    display: block;
+  > .nav-item > a,
+  > .menu-item-has-children > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 8px 0;
     color: $text-primary;
     border-bottom: 1px solid $border-color;
     font-size: 16px;
     font-weight: 500;
+    background: transparent;
+    height: auto;
     transition:
       color $transition,
       padding-left $transition;
@@ -565,16 +472,14 @@
     &:hover {
       padding-left: 5px;
       color: $secondary;
-    }
-
-    &:last-child {
-      border-bottom: 0;
+      background: transparent;
     }
   }
 
-  /* Wrappers around items with sub-menus (WP <li> or .nav-item) */
+  /* Wrappers with children */
   > .nav-item,
-  > li {
+  > li,
+  > .menu-item-has-children {
     border-bottom: 1px solid $border-color;
 
     &:last-child {
@@ -582,15 +487,12 @@
     }
 
     > a {
-      border-bottom: 0; /* parent border handles it */
+      border-bottom: 0; /* wrapper owns the border */
     }
   }
 
-  /* Clickable items with children get the chevron */
+  /* Chevron toggle */
   a.has-child {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     cursor: pointer;
 
     i {
@@ -605,8 +507,15 @@
     }
   }
 
-  /* Sub-menu: stacked inline (NOT absolute), styled like top-level */
+  /* Sub-menu */
   .sub-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $white;
+    z-index: 2;
     display: none;
     padding-left: 15px;
     margin: 4px 0 8px;
@@ -621,9 +530,9 @@
       align-items: center;
       gap: 8px;
       padding: 8px 0;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600;
-      color: $text-secondary;
+      color: $black;
       cursor: pointer;
       margin-bottom: 8px;
       transition: color $transition;
@@ -655,6 +564,18 @@
       }
 
       &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    > li {
+      border-bottom: 1px solid $border-color;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      > a {
         border-bottom: 0;
       }
     }
