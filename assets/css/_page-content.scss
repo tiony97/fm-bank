@@ -259,6 +259,9 @@ section {
     * {
       z-index: 3;
     }
+    .hero-content {
+      max-width: 600px;
+    }
     .breadcrumbs {
       width: fit-content;
       height: fit-content;
@@ -281,7 +284,6 @@ section {
       line-height: 22px;
       color: $white;
       font-weight: 500;
-      width: 40%;
       margin: 1em 0;
       span {
         font-weight: 600;

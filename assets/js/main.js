@@ -833,4 +833,78 @@ $(function () {
       },
     });
   }
+
+  // ================= RESOURCES CAROUSEL =================
+  const resourcesElement = document.querySelector(".resources-swiper");
+
+  if (resourcesElement && typeof Swiper !== "undefined") {
+    const resourcesSwiper = new Swiper(resourcesElement, {
+      // Use the actual CSS width of each story card.
+      slidesPerView: 1,
+      spaceBetween: 20,
+
+      // Smooth movement between cards.
+      speed: 500,
+
+      // Keep the first story aligned with the carousel start.
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: 0,
+
+      // Navigation buttons — scoped to this section so it
+      // doesn't collide with the second carousel's buttons.
+      navigation: {
+        prevEl: ".featured-resources .resources-prev",
+        nextEl: ".featured-resources .resources-next",
+      },
+
+      // Update navigation button states automatically.
+      watchOverflow: true,
+      watchSlidesProgress: true,
+
+      // Accessibility support.
+      a11y: {
+        prevSlideMessage: "Previous resources",
+        nextSlideMessage: "Next resources",
+        firstSlideMessage: "This is the first resources",
+        lastSlideMessage: "This is the last resources",
+      },
+
+      // Recalculate layout when the viewport changes.
+      observer: true,
+      observeParents: true,
+      resizeObserver: true,
+
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 12,
+        },
+
+        601: {
+          slidesPerView: 2,
+          spaceBetween: 12,
+        },
+
+        901: {
+          slidesPerView: 2.7,
+          spaceBetween: 20,
+        },
+      },
+    });
+
+    // Allow keyboard navigation when the carousel has focus.
+    resourcesElement.setAttribute("tabindex", "0");
+
+    resourcesElement.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        resourcesSwiper.slideNext();
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        resourcesSwiper.slidePrev();
+      }
+    });
+  }
 });

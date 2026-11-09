@@ -492,6 +492,9 @@ section .section-intro p {
 .hero .container * {
   z-index: 3;
 }
+.hero .container .hero-content {
+  max-width: 600px;
+}
 .hero .container .breadcrumbs {
   width: -moz-fit-content;
   width: fit-content;
@@ -516,7 +519,6 @@ section .section-intro p {
   line-height: 22px;
   color: #ffffff;
   font-weight: 500;
-  width: 40%;
   margin: 1em 0;
 }
 .hero .container p span {
@@ -3060,6 +3062,10 @@ section .section-intro p {
   display: grid;
 }
 
+.queen-product-tabs .tabs-nav {
+  background: #6a3293 !important;
+}
+
 /* =========================================
    SIMILAR PRODUCTS SWIPER
 ========================================= */
@@ -3108,9 +3114,9 @@ section .section-intro p {
   transition: all 0.25s ease;
 }
 .similar-products-section .similar-header .similar-nav-arrows .swiper-btn:hover {
-  background: #00a6e5;
+  background: #6a3293;
   color: #ffffff;
-  border-color: #00a6e5;
+  border-color: #6a3293;
 }
 .similar-products-section .similar-header .similar-nav-arrows .swiper-btn.swiper-button-disabled {
   opacity: 0.35;
@@ -3328,6 +3334,159 @@ section .section-intro p {
 }
 
 /* =========================================
+   CREDIT CARDS SECTION
+========================================= */
+.featured-resources {
+  padding: 70px 0;
+  overflow: hidden;
+  background: #f4f4f7;
+}
+.featured-resources .container {
+  display: grid;
+  grid-template-columns: 28% 72%;
+  min-height: 430px;
+  width: 100% !important;
+  max-width: 95% !important;
+  margin: 0 !important;
+  margin-left: auto !important;
+  /* =========================================
+  LEFT INTRODUCTION
+  ========================================= */
+}
+.featured-resources .container .resources-intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  padding-right: 24px;
+}
+.featured-resources .container .resources-intro .resources-intro__content h2 {
+  margin-bottom: 8px;
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+  margin-bottom: 0.4em !important;
+}
+.featured-resources .container .resources-intro .resources-intro__content p {
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.featured-resources .container {
+  /* =========================================
+  CAROUSEL VIEWPORT
+  ========================================= */
+}
+.featured-resources .container .resources-carousel {
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.featured-resources .container .resources-carousel .resources-swiper {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.featured-resources .container .resources-carousel .resources-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+.featured-resources .container .resources-carousel .resources-swiper .swiper-slide {
+  width: 233px;
+  height: auto;
+  flex-shrink: 0;
+}
+.featured-resources .container .resources-carousel .resources-swiper .resources-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 17px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.featured-resources .container .resources-carousel .resources-swiper .resources-card:hover {
+  transform: translateY(-3px);
+}
+.featured-resources .container .resources-carousel .resources-swiper .resources-card {
+  /* Story image */
+}
+.featured-resources .container .resources-carousel .resources-swiper .resources-card .resources-card__image {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 250px;
+  overflow: hidden;
+  background: #dbe5f0;
+}
+.featured-resources .container .resources-carousel .resources-swiper .resources-card .resources-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  min-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+  transition: transform 0.5s ease;
+}
+.resources-card:hover .featured-resources .container .resources-carousel .resources-swiper .resources-card .resources-card__image img {
+  transform: scale(1.04);
+}
+.featured-resources .container .resources-carousel .resources-swiper .resources-card .resources-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 150px;
+  padding: 8px 10px 10px;
+}
+.featured-resources .container .resources-carousel .resources-swiper .resources-card .resources-card__content h4 {
+  margin: 0 0 5px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.featured-resources .container .resources-carousel .resources-swiper .resources-card .resources-card__content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.featured-resources .container .resources-carousel .resources-swiper .resources-card .resources-card__content a {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.featured-resources .container .resources-navigation {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 25px;
+}
+.featured-resources .container .resources-navigation__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  color: #6a3293;
+  background: #ffffff;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  font-size: 18px;
+  line-height: 1;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+.featured-resources .container .resources-navigation__button:hover:not(.swiper-button-disabled) {
+  color: #ffffff;
+  background: #9b5de5;
+  transform: scale(1.05);
+}
+.featured-resources .container .resources-navigation__button.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* =========================================
    RESPONSIVE (MOBILE)
 ========================================= */
 @media (max-width: 900px) {
@@ -3423,9 +3582,42 @@ section .section-intro p {
   .credit-cards-section .credit-card-item .card-visual {
     height: 240px;
   }
+  .featured-resources {
+    padding: 60px 0;
+  }
+  .featured-resources .container {
+    grid-template-columns: 100%;
+    max-width: 90% !important;
+    margin: 0 auto !important;
+    gap: 20px;
+  }
+  .featured-resources .container .resources-intro {
+    padding-right: 24px;
+  }
+  .featured-resources .container .resources-intro .resources-intro__content h2 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .featured-resources .container .resources-intro .resources-intro__content p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .featured-resources .container .resources-carousel .resources-swiper .resources-card .resources-card__content h4 {
+    margin: 0 0 5px;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .featured-resources .container .resources-carousel .resources-swiper .resources-card .resources-card__content p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.4;
+  }
 }
 .container {
   width: 90%;
+  max-width: 2500px;
   margin: 0 auto;
 }
 
@@ -3515,7 +3707,7 @@ section .section-intro p {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 60px;
+  min-height: 75px;
   padding-right: 5%;
   min-width: 0;
 }
@@ -3529,7 +3721,7 @@ section .section-intro p {
   display: flex;
   align-items: center;
   background: #f4f4f7;
-  height: 60px;
+  height: 75px;
   width: -moz-fit-content;
   width: fit-content;
   padding-left: 5%;
@@ -3555,7 +3747,7 @@ section .section-intro p {
 }
 
 .nav-link {
-  height: 60px;
+  height: 75px;
   display: inline-flex;
   align-items: center;
   gap: 2px;
