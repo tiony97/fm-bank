@@ -1894,6 +1894,9 @@ section {
   .hero {
     height: 70vh;
     padding: 10vh 0;
+    .hero-content {
+      max-width: 50vw;
+    }
     h2 {
       font-size: 90px !important;
       line-height: 102px !important;

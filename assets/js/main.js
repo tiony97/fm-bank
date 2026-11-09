@@ -79,14 +79,16 @@ $(function () {
 
   // Keep the dropdown open while moving between
   // the trigger and the dropdown itself.
+  // Keep the dropdown open while moving between
+  // the trigger and the dropdown itself.
   $megaMenu.on("mouseenter", function () {
-    if (!isMobile()) {
+    if (!isMobile() && !$(this).hasClass("mega-menu--overflow")) {
       clearTimeout(closeTimer);
     }
   });
 
   $megaMenu.on("mouseleave", function () {
-    if (!isMobile()) {
+    if (!isMobile() && !$(this).hasClass("mega-menu--overflow")) {
       const $currentMegaMenu = $(this);
       const $currentTrigger = $(this).siblings(".nav-link");
 
@@ -135,11 +137,17 @@ $(function () {
 
   $(document).on("keydown", function (event) {
     if (event.key === "Escape") {
-      // Close all menus
       $(".mega-menu").removeClass("is-open");
       $(".has-mega-menu > .nav-link").attr("aria-expanded", "false");
 
-      // Optionally, focus the trigger that was open
+      // Reset overflow trigger
+      $(".mega-menu--overflow").removeClass("is-open");
+      $(".nav-overflow-trigger")
+        .attr("aria-expanded", "false")
+        .find("i")
+        .removeClass("fa-xmark")
+        .addClass("fa-bars");
+
       $(".nav-link").trigger("focus");
     }
   });
@@ -226,82 +234,189 @@ $(function () {
     }
   });
 
-  // ================= PRIMARY NAV OVERFLOW SCROLLER =================
-  (function initNavScroller() {
+  // ================= NAV OVERFLOW (CAP + WIDTH SAFETY NET) =================
+  (function initNavOverflow() {
     const $nav = $(".primary-nav");
-    if (!$nav.length) return;
+    const $trigger = $(".nav-overflow-trigger");
+    const $overflowMenu = $(".mega-menu--overflow");
+    const $overflowLinks = $overflowMenu.find("[data-overflow-links]");
 
-    const navEl = $nav[0];
-    const $wrap = $(".nav-scroll-wrap");
-    const $prevBtn = $(".nav-scroll-btn--prev");
-    const $nextBtn = $(".nav-scroll-btn--next");
+    if (!$nav.length || !$trigger.length || !$overflowMenu.length) return;
 
-    const SCROLL_STEP = 200;
+    // Snapshot original items so we can restore on resize
+    const originalItems = $nav.children().toArray();
 
-    function updateOverflowState() {
-      // Mobile: hamburger drawer handles nav, no scroller needed.
+    function getCap() {
+      if (mobileQuery.matches) return 0;
+      return window.innerWidth >= 1441 ? 5 : 4;
+    }
+
+    function restoreAllItems() {
+      originalItems.forEach((el) => $nav.append(el));
+      $overflowLinks.empty();
+    }
+
+    // Move an item (and any nested sub-menu) into the overflow container
+    function moveToOverflow($item) {
+      // Reset any open sub-menu state before moving
+      $item.find(".sub-menu").removeClass("is-open").removeAttr("style");
+      $item.find("a.has-child").removeClass("is-active");
+      $overflowLinks.append($item);
+    }
+
+    function distributeItems() {
       if (mobileQuery.matches) {
-        $wrap.removeClass("has-nav-overflow");
-        $nav.removeClass("has-overflow-right");
-        $prevBtn.prop("disabled", true);
-        $nextBtn.prop("disabled", true);
+        restoreAllItems();
+        $trigger.hide();
+        $overflowMenu.removeClass("is-open");
+        $trigger
+          .attr("aria-expanded", "false")
+          .find("i, svg")
+          .removeClass("fa-xmark")
+          .addClass("fa-bars");
         return;
       }
 
-      const scrollLeft = navEl.scrollLeft;
-      const scrollWidth = navEl.scrollWidth;
-      const clientWidth = navEl.clientWidth;
+      restoreAllItems();
 
-      // Everything fits — hide buttons entirely.
-      if (scrollWidth <= clientWidth + 1) {
-        $wrap.removeClass("has-nav-overflow");
-        $nav.removeClass("has-overflow-right");
-        $prevBtn.prop("disabled", true);
-        $nextBtn.prop("disabled", true);
-        return;
+      const cap = getCap();
+      const items = $nav.children().toArray();
+
+      const visibleItems = items.slice(0, cap);
+      const overflowItems = items.slice(cap);
+
+      overflowItems.forEach((el) => moveToOverflow($(el)));
+
+      // Width safety net
+      let safetyCount = 0;
+      while (
+        $nav[0].scrollWidth > $nav[0].clientWidth + 1 &&
+        visibleItems.length > 1 &&
+        safetyCount < 20
+      ) {
+        const last = visibleItems.pop();
+        moveToOverflow($(last));
+        safetyCount++;
       }
 
-      // Overflow exists — show buttons and enable based on position.
-      $wrap.addClass("has-nav-overflow");
+      const hasOverflow = $overflowLinks.children().length > 0;
+      $trigger.toggle(hasOverflow);
 
-      const atStart = scrollLeft <= 1;
-      const atEnd = scrollLeft + clientWidth >= scrollWidth - 1;
-
-      $prevBtn.prop("disabled", atStart);
-      $nextBtn.prop("disabled", atEnd);
-
-      $nav.toggleClass("has-overflow-right", !atEnd);
+      if (!hasOverflow) {
+        $overflowMenu.removeClass("is-open");
+        $trigger
+          .attr("aria-expanded", "false")
+          .find("i, svg")
+          .removeClass("fa-xmark")
+          .addClass("fa-bars");
+      }
     }
-
-    function scrollNav(direction) {
-      navEl.scrollBy({
-        left: direction * SCROLL_STEP,
-        behavior: "smooth",
-      });
-    }
-
-    $prevBtn.on("click", function () {
-      if ($(this).prop("disabled")) return;
-      scrollNav(-1);
-    });
-
-    $nextBtn.on("click", function () {
-      if ($(this).prop("disabled")) return;
-      scrollNav(1);
-    });
-
-    navEl.addEventListener("scroll", updateOverflowState, { passive: true });
 
     let resizeTimer;
-    window.addEventListener("resize", function () {
+    $(window).on("resize", function () {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(updateOverflowState, 120);
+      resizeTimer = setTimeout(distributeItems, 150);
     });
 
-    $(".mobile-toggle").on("click", updateOverflowState);
+    setTimeout(distributeItems, 200);
 
-    requestAnimationFrame(updateOverflowState);
-    setTimeout(updateOverflowState, 300);
+    // ============ Trigger toggle ============
+    $trigger.on("click", function (e) {
+      e.preventDefault();
+      const isOpen = $overflowMenu.hasClass("is-open");
+
+      $overflowMenu.toggleClass("is-open", !isOpen);
+      $(this).attr("aria-expanded", String(!isOpen));
+
+      const $icon = $(this).find("i, svg");
+      if (!isOpen) {
+        $icon.removeClass("fa-bars").addClass("fa-xmark");
+      } else {
+        $icon.removeClass("fa-xmark").addClass("fa-bars");
+      }
+
+      if (!isOpen) {
+        $(".mega-menu").not($overflowMenu).removeClass("is-open");
+        $(".has-mega-menu > .nav-link").attr("aria-expanded", "false");
+      }
+    });
+
+    // ============ Sub-menu open (works for all structures) ============
+    // Match any `.has-child` click, regardless of where it lives
+    $(document).on("click", ".mega-menu__links a.has-child", function (e) {
+      e.preventDefault();
+
+      const $link = $(this);
+      // The parent wrapper: <li>, .nav-item, or the <a>'s parent
+      const $parent = $link.parent();
+
+      // Find the sibling sub-menu
+      let $subMenu = $parent.find("> .sub-menu");
+      if (!$subMenu.length) {
+        // Fallback: raw <a> followed by .sub-menu
+        $subMenu = $link.next(".sub-menu");
+      }
+      if (!$subMenu.length) return;
+
+      const willOpen = !$subMenu.hasClass("is-open");
+
+      // Close any other open sub-menus in the same mega menu
+      const $megaParent = $link.closest(".mega-menu");
+      $megaParent
+        .find(".sub-menu.is-open")
+        .not($subMenu)
+        .removeClass("is-open");
+      $megaParent
+        .find("a.has-child.is-active")
+        .not($link)
+        .removeClass("is-active");
+
+      $subMenu.toggleClass("is-open", willOpen);
+      $link.toggleClass("is-active", willOpen);
+
+      // Inject back button once
+      if (willOpen && !$subMenu.find(".back-button").length) {
+        $subMenu.prepend(
+          '<div class="back-button"><i class="fa-solid fa-chevron-left"></i> Back</div>',
+        );
+      }
+    });
+
+    // ============ Back button ============
+    $(document).on("click", ".sub-menu .back-button", function (e) {
+      e.preventDefault();
+      const $subMenu = $(this).closest(".sub-menu");
+      const $parent = $subMenu.parent();
+
+      // Find the parent link
+      let $parentLink = $parent.find("> a.has-child").first();
+      if (!$parentLink.length) {
+        $parentLink = $subMenu.siblings("a.has-child").first();
+      }
+
+      $subMenu.removeClass("is-open");
+      $parentLink.removeClass("is-active");
+    });
+
+    // ============ Outside click ============
+    $(document).on("click", function (event) {
+      if (
+        !$(event.target).closest(
+          ".nav-links-container, .mega-menu--overflow, .nav-overflow-trigger",
+        ).length
+      ) {
+        $overflowMenu.removeClass("is-open");
+        $trigger
+          .attr("aria-expanded", "false")
+          .find("i, svg")
+          .removeClass("fa-xmark")
+          .addClass("fa-bars");
+      }
+    });
+
+    if (mobileQuery.addEventListener) {
+      mobileQuery.addEventListener("change", distributeItems);
+    }
   })();
 
   // ================= MOBILE NAVIGATION =================
