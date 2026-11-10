@@ -148,8 +148,9 @@ section {
   width: 100%;
   .section-intro {
     text-align: center;
+    margin: 0 auto;
     margin-bottom: 50px;
-
+    max-width: 800px;
     h2 {
       font-size: 36px;
       line-height: 44px;
@@ -280,8 +281,8 @@ section {
       font-weight: 700;
     }
     p {
-      font-size: 16px;
-      line-height: 22px;
+      font-size: 18px;
+      line-height: 1.4;
       color: $white;
       font-weight: 500;
       margin: 1em 0;
@@ -471,6 +472,36 @@ section {
       display: block;
     }
   }
+
+  .pagination {
+    width: fit-content;
+    height: fit-content;
+    margin: 1em auto;
+    margin-top: 4em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .pagination-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: #f4f4f7;
+      color: $black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      line-height: 1.1;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover,
+      &.active {
+        background: $primary-dark;
+        color: $white;
+      }
+    }
+  }
 }
 .queen-products {
   .tab-links {
@@ -518,6 +549,15 @@ section {
       }
     }
   }
+
+  .pagination {
+    .pagination-link {
+      &:hover,
+      &.active {
+        background: $queen-secondary;
+      }
+    }
+  }
 }
 
 /* =========================================
@@ -559,7 +599,7 @@ section {
 
         p {
           margin-bottom: 10px;
-          font-size: 18px;
+          font-size: 16px;
           line-height: 1.5;
         }
       }
@@ -1607,6 +1647,7 @@ section {
         font-size: 36px;
         line-height: 44px;
         font-weight: 700;
+        width: 80%;
       }
     }
     .content-wrapper {
@@ -2631,6 +2672,7 @@ section {
         h2 {
           font-size: 30px;
           line-height: 38px;
+          width: 100%;
         }
       }
 

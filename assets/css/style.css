@@ -396,7 +396,9 @@ section {
 }
 section .section-intro {
   text-align: center;
+  margin: 0 auto;
   margin-bottom: 50px;
+  max-width: 800px;
 }
 section .section-intro h2 {
   font-size: 36px;
@@ -516,8 +518,8 @@ section .section-intro p {
   font-weight: 700;
 }
 .hero .container p {
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 18px;
+  line-height: 1.4;
   color: #ffffff;
   font-weight: 500;
   margin: 1em 0;
@@ -691,6 +693,36 @@ section .section-intro p {
 .products .tab.active {
   display: block;
 }
+.products .pagination {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 1em auto;
+  margin-top: 4em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.products .pagination .pagination-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #f4f4f7;
+  color: #202020;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.products .pagination .pagination-link:hover, .products .pagination .pagination-link.active {
+  background: #2a5caa;
+  color: #ffffff;
+}
 
 .queen-products .tab-links li.active, .queen-products .tab-links li:hover {
   color: #6a3293;
@@ -732,6 +764,9 @@ section .section-intro p {
   width: -moz-fit-content !important;
   width: fit-content !important;
 }
+.queen-products .pagination .pagination-link:hover, .queen-products .pagination .pagination-link.active {
+  background: #9b5de5;
+}
 
 /* =========================================
    REAL STORIES CAROUSEL
@@ -770,7 +805,7 @@ section .section-intro p {
 }
 .stories-section .container .stories-intro .stories-intro__content p {
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
 }
 .stories-section .container {
@@ -1653,6 +1688,7 @@ section .section-intro p {
   font-size: 36px;
   line-height: 44px;
   font-weight: 700;
+  width: 80%;
 }
 .overview .container .content-wrapper {
   flex: 1;
@@ -2454,6 +2490,7 @@ section .section-intro p {
   .overview .container .title-wrapper h2 {
     font-size: 30px;
     line-height: 38px;
+    width: 100%;
   }
   .overview .container .content-wrapper p {
     font-size: 15px;
@@ -3620,7 +3657,7 @@ section .section-intro p {
 }
 .container {
   width: 90%;
-  max-width: 2500px;
+  max-width: 1920px;
   margin: 0 auto;
 }
 

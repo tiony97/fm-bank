@@ -30,7 +30,7 @@
               <a href="#">Corporate</a>
               <a href="./diaspora.html">Diaspora</a>
               <a href="#">Insurance</a>
-              <a href="./queen-banking.html">Queen Banking</a>
+              <a href="./queen-banking.html" class="active">Queen Banking</a>
               <a href="#">Asset Auction</a>
             </nav>
 
@@ -49,7 +49,10 @@
       <div class="main-nav">
         <div class="main-nav__inner">
           <a class="brand" href="/" aria-label="Family Bank home">
-            <img src="./assets/images/brand-logo.png" alt="Family Bank Logo" />
+            <img
+              src="./assets/images/queen-banking-logo.png"
+              alt="Family Bank Logo"
+            />
           </a>
 
           <button
@@ -61,7 +64,7 @@
             <i class="fa-solid fa-bars"></i>
           </button>
 
-          <div class="nav-scroll-wrap">
+          <div class="nav-links-container">
             <nav class="primary-nav" aria-label="Main navigation">
               <!--Queens in Business Menu-->
               <div class="nav-item has-mega-menu">
@@ -88,10 +91,17 @@
                   </div>
 
                   <div class="mega-menu__links">
-                    <a href="./debit-cards.html">Debit Cards</a>
-                    <a href="./credit-cards.html">Credit Cards</a>
-                    <a href="#">Prepaid Cards</a>
-                    <a href="#">Virtual Cards</a>
+                    <a href="./unsecured-biashara-boost.html"
+                      >Unsecured Biashara Boost Reducing Loan (UBRL)</a
+                    >
+                    <a href="./credit-cards.html"
+                      >Biashara Boost Reducing Loan</a
+                    >
+                    <a href="#">Stock Loan</a>
+                    <a href="#">Inua Shule</a>
+                    <a href="#">Agribusiness Input Loans (AIRL)</a>
+                    <a href="#">Unsecured WASH Loan</a>
+                    <a href="#">Unsecured WASH Loan for Schools</a>
                   </div>
 
                   <div class="mega-menu__feature">
@@ -147,14 +157,25 @@
                   </div>
 
                   <div class="mega-menu__links">
-                    <a href="fuzu-premier-account.html">Fuzu Premier Account</a>
-                    <a href="fuzu-prestige-account.html"
-                      >Fuzu Prestige Account</a
-                    >
-                    <a href="#">Salary Account</a>
-                    <a href="#">Mwananchi Account</a>
-                    <a href="#">Personal Current Account</a>
-                    <a href="#">Scholar Account</a>
+                    <!--Submenu Sample-->
+                    <!-- <div class="menu-item-has-children">
+                      <a href="#" class="has-child">
+                        Virtual Cards
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </a>
+                      <div class="sub-menu">
+                        <a href="#">Virtual Debit Card</a>
+                        <a href="#">Virtual Credit Card</a>
+                        <a href="#">Prepaid Virtual Card</a>
+                      </div>
+                    </div> -->
+                    <a href="#">Banking Solutions</a>
+                    <a href="#">Unsecured Lending</a>
+                    <a href="#">Asset Finance</a>
+                    <a href="#">Investment Solutions</a>
+                    <a href="#">Insurance & Protection</a>
+                    <a href="#">Lifestyle Benefits</a>
+                    <a href="#">Digital Banking</a>
                   </div>
 
                   <div class="mega-menu__feature">
@@ -210,12 +231,11 @@
                   </div>
 
                   <div class="mega-menu__links">
-                    <a href="check-off-loans.html">Check-off Loans</a>
-                    <a href="salary-advance.html">Salary Advance</a>
-                    <a href="#">Salary Loans</a>
-                    <a href="#">PesaPap Loans</a>
-                    <a href="#">Asset Finance</a>
-                    <a href="#">Mortgages</a>
+                    <a href="#">Savings Solutions</a>
+                    <a href="#">Financing Solutions</a>
+                    <a href="#">Insurance Solutions</a>
+                    <a href="#">Digital Banking</a>
+                    <a href="#">Networking & Capacity Building</a>
                   </div>
 
                   <div class="mega-menu__feature">
@@ -271,12 +291,10 @@
                   </div>
 
                   <div class="mega-menu__links">
-                    <a href="tujenge.html">Tujenge Account</a>
-                    <a href="#">Mdosi Junior Account</a>
-                    <a href="call-and-fixed-deposits.html"
-                      >Call and Fixed Deposits</a
-                    >
-                    <a href="#">Investment Services</a>
+                    <a href="#">Life Cover</a>
+                    <a href="#">Last Expense</a>
+                    <a href="#">Personal Accident</a>
+                    <a href="#">Domestic Cover</a>
                   </div>
 
                   <div class="mega-menu__feature">
@@ -303,30 +321,72 @@
                 </div>
               </div>
 
-              <!-- <a href="#" class="nav-link">Beyond Banking</a>
-              <a href="#" class="nav-link">About Queen Banking</a>
-              <a href="#" class="nav-link">Queen Stories</a>
+              <!--Beyond Banking-->
+              <div class="nav-item has-sub-menu">
+                <a href="#" class="nav-link has-child">
+                  Beyond Banking <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <div class="sub-menu">
+                  <a href="./queen-hub.html">Queen Hub</a>
+                  <a href="./recognition-reward.html">Rewards & Wellness</a>
+                  <a href="#">Networking</a>
+                </div>
+              </div>
+
+              <a href="./about-queen-banking.html" class="nav-link"
+                >About Queen Banking</a
+              >
+              <a href="./queen-stories.html" class="nav-link">Queen Stories</a>
               <a href="#" class="nav-link">Queen Blog</a>
-              <a href="#" class="nav-link">Queen Hub</a>
-              <a href="#" class="nav-link">Rewards & Wellness</a>
-              <a href="#" class="nav-link">Networking</a> -->
             </nav>
 
-            <!--Nav Scroller buttons-->
+            <!-- New Overflow Trigger -->
             <button
-              class="nav-scroll-btn nav-scroll-btn--prev"
+              class="nav-overflow-trigger"
               type="button"
-              aria-label="Scroll navigation left"
+              aria-label="Toggle extra menu"
+              aria-expanded="false"
             >
-              <i class="fa-solid fa-chevron-left"></i>
+              <i class="fa-solid fa-bars"></i>
             </button>
-            <button
-              class="nav-scroll-btn nav-scroll-btn--next"
-              type="button"
-              aria-label="Scroll navigation right"
-            >
-              <i class="fa-solid fa-chevron-right"></i>
-            </button>
+          </div>
+
+          <!-- New Overflow Mega Menu  -->
+          <div
+            class="mega-menu mega-menu--overflow"
+            id="overflow-menu"
+            aria-label="Extra menu"
+          >
+            <div class="mega-menu__promo">
+              <h2>Queen Banking</h2>
+              <p>
+                Banking, credit, savings and protection built around her
+                journey.
+              </p>
+              <a href="#" class="text-link">Explore</a>
+            </div>
+
+            <div class="mega-menu__links" data-overflow-links></div>
+
+            <div class="mega-menu__feature">
+              <h3>Your bank in your pocket</h3>
+              <img
+                src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                alt="Customer using a mobile device"
+              />
+              <div class="store-btns">
+                <a href="#" class="store-btn"
+                  ><img
+                    src="./assets/images/mega-app-store.png"
+                    alt="App Store"
+                /></a>
+                <a href="#" class="store-btn"
+                  ><img
+                    src="./assets/images/mega-google-store.png"
+                    alt="Google Play Store"
+                /></a>
+              </div>
+            </div>
           </div>
 
           <div class="nav-actions">
