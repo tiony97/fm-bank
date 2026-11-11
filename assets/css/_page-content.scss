@@ -150,7 +150,7 @@ section {
     text-align: center;
     margin: 0 auto;
     margin-bottom: 50px;
-    max-width: 800px;
+    max-width: 700px;
     h2 {
       font-size: 36px;
       line-height: 44px;
@@ -2270,7 +2270,14 @@ section {
     height: 70vh;
     padding: 10vh 0;
     .hero-content {
-      max-width: 50vw;
+      max-width: 40vw !important;
+    }
+    .breadcrumbs {
+      font-size: 16px !important;
+      font-weight: 600;
+      span {
+        font-size: 16px !important;
+      }
     }
     h2 {
       font-size: 90px !important;

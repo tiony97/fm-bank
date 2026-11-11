@@ -246,7 +246,7 @@ input:focus-visible {
   }
   body .container {
     width: 90% !important;
-    max-width: 90% !important;
+    max-width: 1920px;
   }
   body footer h3 {
     font-size: 28px !important;
@@ -408,7 +408,7 @@ section .section-intro {
   text-align: center;
   margin: 0 auto;
   margin-bottom: 50px;
-  max-width: 800px;
+  max-width: 700px;
 }
 section .section-intro h2 {
   font-size: 36px;
@@ -2262,7 +2262,14 @@ section .section-intro p {
     padding: 10vh 0;
   }
   .hero .hero-content {
-    max-width: 50vw;
+    max-width: 40vw !important;
+  }
+  .hero .breadcrumbs {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
+  .hero .breadcrumbs span {
+    font-size: 16px !important;
   }
   .hero h2 {
     font-size: 90px !important;
@@ -3420,10 +3427,7 @@ section .section-intro p {
   padding: 60px 0;
 }
 .product-tabs-section .section-intro * {
-  text-align: left;
-}
-.product-tabs-section .section-intro p {
-  width: 70%;
+  text-align: center;
 }
 .product-tabs-section .tabs-layout {
   display: grid;
@@ -4465,18 +4469,17 @@ section .section-intro p {
 /* =========================================
    MEGA MENU LINKS — unified (main + overflow)
 ========================================= */
+/* =========================================
+   MEGA MENU — links panel + drill-in submenu
+========================================= */
 .mega-menu__links {
   padding: 25px 24px;
   position: relative;
-  /* Reset any leaked heights from primary-nav */
 }
 .mega-menu__links .nav-item,
 .mega-menu__links .nav-item.has-mega-menu,
 .mega-menu__links .nav-item.has-sub-menu {
   height: auto !important;
-}
-.mega-menu__links {
-  /* Top-level items */
 }
 .mega-menu__links > a,
 .mega-menu__links > li > a,
@@ -4502,9 +4505,6 @@ section .section-intro p {
   color: #00a6e5;
   background: transparent;
 }
-.mega-menu__links {
-  /* Wrappers with children */
-}
 .mega-menu__links > .nav-item,
 .mega-menu__links > li,
 .mega-menu__links > .menu-item-has-children {
@@ -4518,10 +4518,7 @@ section .section-intro p {
 .mega-menu__links > .nav-item > a,
 .mega-menu__links > li > a,
 .mega-menu__links > .menu-item-has-children > a {
-  border-bottom: 0; /* wrapper owns the border */
-}
-.mega-menu__links {
-  /* Chevron toggle */
+  border-bottom: 0;
 }
 .mega-menu__links a.has-child {
   cursor: pointer;
@@ -4535,21 +4532,21 @@ section .section-intro p {
   transform: rotate(90deg);
   color: #00a6e5;
 }
-.mega-menu__links {
-  /* Sub-menu */
-}
+
+/* =========================================
+   DRILL-IN SUBMENU (main nav + overflow tray)
+========================================= */
+/* Base panel (used as drill-in inside .mega-menu__links) */
 .mega-menu__links .sub-menu {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   background: #ffffff;
   z-index: 2;
   display: none;
-  padding-left: 15px;
-  margin: 4px 0 8px;
-  border-left: 2px solid #e5eaf1;
+  padding: 25px 24px;
+  overflow-y: auto;
 }
 .mega-menu__links .sub-menu.is-open {
   display: block;
@@ -4559,11 +4556,11 @@ section .section-intro p {
   align-items: center;
   gap: 8px;
   padding: 8px 0;
+  margin-bottom: 8px;
   font-size: 16px;
   font-weight: 600;
   color: #202020;
   cursor: pointer;
-  margin-bottom: 8px;
   transition: color 0.25s ease;
 }
 .mega-menu__links .sub-menu .back-button:hover {
@@ -4572,9 +4569,10 @@ section .section-intro p {
 .mega-menu__links .sub-menu .back-button i {
   font-size: 12px;
 }
-.mega-menu__links .sub-menu a,
-.mega-menu__links .sub-menu > li > a {
-  display: block;
+.mega-menu__links .sub-menu a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 8px 0;
   color: #1e293b;
   border-bottom: 1px solid #e5eaf1;
@@ -4582,23 +4580,120 @@ section .section-intro p {
   font-weight: 500;
   transition: color 0.25s ease, padding-left 0.25s ease;
 }
-.mega-menu__links .sub-menu a:hover,
-.mega-menu__links .sub-menu > li > a:hover {
+.mega-menu__links .sub-menu a:hover {
   padding-left: 5px;
   color: #00a6e5;
 }
-.mega-menu__links .sub-menu a:last-child,
-.mega-menu__links .sub-menu > li > a:last-child {
+.mega-menu__links .sub-menu a:last-child {
   border-bottom: 0;
 }
-.mega-menu__links .sub-menu > li {
+
+/* =========================================
+   OVERFLOW TRAY
+========================================= */
+/* Tray list — stacked, no promo/feature columns */
+.mega-menu--overflow {
+  /* Container for the drill-in panels */
+}
+.mega-menu--overflow [data-overflow-links] {
+  position: relative;
+  min-height: 300px; /* ensures panel has a box to fill */
+  padding: 25px 24px;
+  display: block;
+  overflow: hidden;
+}
+.mega-menu--overflow .overflow-item {
+  position: static;
   border-bottom: 1px solid #e5eaf1;
 }
-.mega-menu__links .sub-menu > li:last-child {
+.mega-menu--overflow .overflow-item:last-child {
   border-bottom: 0;
 }
-.mega-menu__links .sub-menu > li > a {
+.mega-menu--overflow .overflow-item > a.overflow-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  color: #1e293b;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.25s ease, padding-left 0.25s ease;
+}
+.mega-menu--overflow .overflow-item > a.overflow-link i {
+  font-size: 12px;
+  color: #64748b;
+  transition: transform 0.2s ease;
+}
+.mega-menu--overflow .overflow-item > a.overflow-link:hover, .mega-menu--overflow .overflow-item > a.overflow-link:focus-visible {
+  color: #00a6e5;
+  padding-left: 5px;
+}
+.mega-menu--overflow .overflow-item > a.overflow-link.is-active i {
+  transform: rotate(90deg);
+  color: #00a6e5;
+}
+.mega-menu--overflow .overflow-item > .sub-menu {
+  position: absolute;
+  inset: 0; /* anchor to [data-overflow-links] */
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  z-index: 3;
+  display: none;
+  padding: 25px 24px;
+  overflow-y: auto;
+}
+.mega-menu--overflow .overflow-item > .sub-menu.is-open {
+  display: block;
+}
+.mega-menu--overflow .overflow-item > .sub-menu .back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #202020;
+  cursor: pointer;
+}
+.mega-menu--overflow .overflow-item > .sub-menu .back-button:hover {
+  color: #2d5eaa;
+}
+.mega-menu--overflow .overflow-item > .sub-menu .back-button i {
+  font-size: 12px;
+}
+.mega-menu--overflow .overflow-item > .sub-menu .mega-menu__links {
+  padding: 0;
+  position: static;
+}
+.mega-menu--overflow .overflow-item > .sub-menu > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  color: #1e293b;
+  border: 1px solid #e5eaf1;
+  font-size: 16px;
+  font-weight: 500;
+}
+.mega-menu--overflow .overflow-item > .sub-menu > a:hover {
+  padding-left: 5px;
+  color: #00a6e5;
+}
+.mega-menu--overflow .overflow-item > .sub-menu > a:last-child {
   border-bottom: 0;
+}
+
+/* A drilled-in panel must stay visible until Back / Escape /
+   outside click. It must never be hidden by parent hover state. */
+.mega-menu--overflow .overflow-item > .sub-menu.is-open {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 
 /* Right promotional image panel */
