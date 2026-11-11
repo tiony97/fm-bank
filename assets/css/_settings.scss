@@ -57,7 +57,7 @@ html {
 body {
   position: relative;
   min-height: 100vh;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Jost", sans-serif;
 }
 
@@ -169,6 +169,18 @@ input:focus-visible {
     &:hover {
       background: $white;
       color: $queen-primary;
+    }
+  }
+
+  &--queen-outline-dark {
+    color: $queen-primary;
+    background: transparent;
+    border: 1.5px solid $queen-primary;
+
+    &:hover {
+      background: $queen-secondary;
+      color: $white;
+      border-color: $queen-secondary;
     }
   }
 
