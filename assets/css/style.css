@@ -1461,6 +1461,7 @@ section .section-intro p {
 .blog-page-content-section .container .blog-intro p {
   font-size: 18px;
   margin-bottom: 0.6em;
+  max-width: 60%;
 }
 .blog-page-content-section .container .search-filter {
   display: flex;
@@ -1722,6 +1723,130 @@ section .section-intro p {
 .blog-page-content-section .container .pagination .pagination-link:hover, .blog-page-content-section .container .pagination .pagination-link.active {
   background: #6a3293;
   color: #ffffff;
+}
+
+/* =========================================
+   SIMILAR ARTICLES SLIDER SECTION
+========================================= */
+.similar-articles-section {
+  padding: 60px 0;
+  background: #f4f4f7;
+  overflow: hidden;
+}
+.similar-articles-section .container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.similar-articles-section .similar-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+.similar-articles-section .similar-header .header-text {
+  max-width: 600px;
+}
+.similar-articles-section .similar-header .header-text h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #202020;
+}
+.similar-articles-section .similar-header .header-text p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #081222;
+}
+.similar-articles-section .similar-header .similar-nav-arrows {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.similar-articles-section .similar-header .similar-nav-arrows .swiper-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: none;
+  outline: none !important;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #9b5de5;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.similar-articles-section .similar-header .similar-nav-arrows .swiper-btn:hover:not(.swiper-button-disabled) {
+  background: #6a3293;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+.similar-articles-section .similar-header .similar-nav-arrows .swiper-btn.swiper-button-disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.similar-articles-section .similar-articles-swiper {
+  width: 100%;
+  overflow: visible;
+}
+.similar-articles-section .similar-articles-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+.similar-articles-section .similar-articles-swiper .swiper-slide {
+  height: auto;
+  flex-shrink: 0;
+}
+.similar-articles-section .similar-articles-swiper .post {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  height: 100%;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+.similar-articles-section .similar-articles-swiper .post:hover {
+  transform: translateY(-5px);
+}
+.similar-articles-section .similar-articles-swiper .post .image-wrapper {
+  width: 100%;
+  height: 220px;
+  margin-bottom: 15px;
+}
+.similar-articles-section .similar-articles-swiper .post .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+.similar-articles-section .similar-articles-swiper .post .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.similar-articles-section .similar-articles-swiper .post .content-wrapper h5 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  color: #202020;
+}
+.similar-articles-section .similar-articles-swiper .post .content-wrapper p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #081222;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.similar-articles-section .similar-articles-swiper .post .content-wrapper .button {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: auto;
 }
 
 /* =========================================
@@ -2680,6 +2805,32 @@ section .section-intro p {
     opacity: 0.35;
     cursor: default;
   }
+  .blog-page-content-section .post h5 {
+    font-size: 27px !important;
+    line-height: 1.4;
+  }
+  .blog-page-content-section .post p {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  .similar-articles-section .similar-header .header-text {
+    max-width: 40vw;
+  }
+  .similar-articles-section .similar-header .header-text h2 {
+    font-size: 42px;
+  }
+  .similar-articles-section .similar-header .header-text p {
+    font-size: 22px;
+  }
+  .similar-articles-section .similar-articles-swiper .post .image-wrapper {
+    height: 300px;
+  }
+  .similar-articles-section .similar-articles-swiper .post .content-wrapper h5 {
+    font-size: 24px;
+  }
+  .similar-articles-section .similar-articles-swiper .post .content-wrapper p {
+    font-size: 16px;
+  }
   .impact-section .section-intro p {
     font-size: 26px !important;
     margin-bottom: 1em;
@@ -3043,6 +3194,27 @@ section .section-intro p {
   }
   .blog-page-content-section .container .blog-posts {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .similar-articles-section {
+    padding: 50px 0;
+  }
+  .similar-articles-section .similar-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 25px;
+  }
+  .similar-articles-section .similar-header .header-text h2 {
+    font-size: 28px;
+  }
+  .similar-articles-section .similar-header .header-text p {
+    font-size: 15px;
+  }
+  .similar-articles-section .similar-header .similar-nav-arrows {
+    align-self: flex-end;
+    margin-top: -50px;
+  }
+  .similar-articles-section .similar-articles-swiper .post .image-wrapper {
+    height: 200px;
   }
   /* =========================================
      IMPACT SECTION
@@ -3533,6 +3705,7 @@ section .section-intro p {
   .blog-page-content-section .container .blog-intro p {
     font-size: 14px;
     line-height: 1.4;
+    max-width: 100%;
   }
   .blog-page-content-section .container .search-filter .search-wrapper input {
     font-size: 14px;
@@ -3575,6 +3748,36 @@ section .section-intro p {
   .blog-page-content-section .container .blog-posts .post p {
     font-size: 14px;
     line-height: 1.3;
+  }
+  .similar-articles-section {
+    padding: 40px 0;
+  }
+  .similar-articles-section .similar-header {
+    margin-bottom: 20px;
+  }
+  .similar-articles-section .similar-header .header-text h2 {
+    font-size: 24px;
+  }
+  .similar-articles-section .similar-header .similar-nav-arrows {
+    align-self: flex-start;
+    margin-top: 0;
+    width: 100%;
+  }
+  .similar-articles-section .similar-header .similar-nav-arrows .swiper-btn {
+    width: 40px;
+    height: 40px;
+  }
+  .similar-articles-section .similar-articles-swiper .post .image-wrapper {
+    height: 180px;
+  }
+  .similar-articles-section .similar-articles-swiper .post .image-wrapper img {
+    border-radius: 16px;
+  }
+  .similar-articles-section .similar-articles-swiper .post .content-wrapper h5 {
+    font-size: 16px;
+  }
+  .similar-articles-section .similar-articles-swiper .post .content-wrapper p {
+    font-size: 13px;
   }
   /* =========================================
      IMPACT SECTION

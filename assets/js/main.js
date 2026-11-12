@@ -1015,6 +1015,52 @@ $(function () {
     });
   }
 
+  // ================= SIMILAR ARTICLES CAROUSEL =================
+  const similarArticlesElement = document.querySelector(
+    ".similar-articles-swiper",
+  );
+
+  if (similarArticlesElement && typeof Swiper !== "undefined") {
+    const similarArticlesSwiper = new Swiper(similarArticlesElement, {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+      speed: 500,
+
+      navigation: {
+        prevEl: ".similar-articles-section .similar-articles-prev",
+        nextEl: ".similar-articles-section .similar-articles-next",
+      },
+
+      a11y: {
+        prevSlideMessage: "Previous article",
+        nextSlideMessage: "Next article",
+      },
+
+      observer: true,
+      observeParents: true,
+      resizeObserver: true,
+
+      breakpoints: {
+        0: {
+          slidesPerView: 1.2,
+          spaceBetween: 15,
+        },
+        600: {
+          slidesPerView: 2.2,
+          spaceBetween: 20,
+        },
+        900: {
+          slidesPerView: 3.2,
+          spaceBetween: 20,
+        },
+        1200: {
+          slidesPerView: 4, // Shows exactly 4 articles to match the blog grid
+          spaceBetween: 24,
+        },
+      },
+    });
+  }
+
   // ================= CREDIT CARDS CAROUSEL =================
   const creditCardsElement = document.querySelector(".credit-swiper");
 
