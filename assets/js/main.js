@@ -1130,4 +1130,143 @@ $(function () {
       }
     });
   }
+
+  // ================= CUSTOM MULTI-SELECT DROPDOWNS =================
+
+  // Toggle Dropdown Open/Close
+  $(".custom-select .select-trigger").on("click", function (e) {
+    e.stopPropagation();
+    const $parent = $(this).closest(".custom-select");
+    const $dropdown = $parent.find(".select-dropdown");
+    const $trigger = $(this);
+
+    // Close other dropdowns
+    $(".custom-select")
+      .not($parent)
+      .find(".select-dropdown")
+      .removeClass("open");
+    $(".custom-select")
+      .not($parent)
+      .find(".select-trigger")
+      .removeClass("active");
+
+    $dropdown.toggleClass("open");
+    $trigger.toggleClass("active");
+
+    // Auto-focus the search input if it exists (Year dropdown)
+    if (
+      $dropdown.hasClass("open") &&
+      $dropdown.find(".search-year-input").length
+    ) {
+      $dropdown.find(".search-year-input").trigger("focus");
+    }
+  });
+
+  // Close dropdowns when clicking outside
+  $(document).on("click", function () {
+    $(".custom-select .select-dropdown").removeClass("open");
+    $(".custom-select .select-trigger").removeClass("active");
+  });
+
+  // Prevent close when clicking inside the dropdown
+  $(".custom-select .select-dropdown").on("click", function (e) {
+    e.stopPropagation();
+  });
+
+  // ================= INJECT FA CHECK ICONS INTO CHECKBOXES =================
+  // Runs once on page load. Adds <i class="fa-solid fa-check"></i>
+  // inside every custom-select checkbox, so the icon renders via
+  // FontAwesome's normal mechanism (which we know works on this page).
+  // ================= INJECT FA CHECK ICONS INTO CHECKBOXES =================
+  $(".custom-select .option-item .checkbox").each(function () {
+    if (!$(this).find(".check-icon").length) {
+      $(this).append('<i class="fa-solid fa-check check-icon"></i>');
+    }
+  });
+
+  // Handle Option Selection
+  $(".custom-select .option-item").on("click", function () {
+    const $item = $(this);
+    const $parent = $item.closest(".custom-select");
+    const $triggerText = $parent.find(".selected-text");
+    const selectName = $parent.data("name");
+    const itemValue = $item.data("value");
+
+    // Special Logic for "All" category
+    if (selectName === "category" && itemValue === "All") {
+      const isAllSelected = $item.hasClass("selected");
+
+      if (!isAllSelected) {
+        // Select "All" and deselect others
+        $parent.find(".option-item").removeClass("selected");
+        $item.addClass("selected");
+      } else {
+        // Deselect "All"
+        $item.removeClass("selected");
+      }
+    } else {
+      // Standard Toggle Logic
+      $item.toggleClass("selected");
+
+      // If a specific category is selected, deselect "All"
+      if (selectName === "category") {
+        $parent.find('.option-item[data-value="All"]').removeClass("selected");
+      }
+    }
+
+    // Update trigger text
+    const selectedValues = $parent
+      .find(".option-item.selected")
+      .map(function () {
+        return $(this).data("value");
+      })
+      .get();
+
+    if (selectedValues.length === 0) {
+      // Reset to default labels
+      if (selectName === "category") $triggerText.text("Category");
+      if (selectName === "date") $triggerText.text("Date");
+      if (selectName === "year") $triggerText.text("Period");
+    } else if (selectedValues.length === 1) {
+      $triggerText.text(selectedValues[0]);
+    } else {
+      $triggerText.text(`${selectedValues.length} Selected`);
+    }
+  });
+
+  // Year Search Filtering
+  $(".search-year-input").on("input", function () {
+    const query = $(this).val().toLowerCase().trim();
+    const $options = $(this)
+      .closest(".select-dropdown")
+      .find(".year-options .option-item");
+
+    $options.each(function () {
+      const text = $(this).text().toLowerCase();
+      if (text.includes(query)) {
+        $(this).removeClass("hidden");
+      } else {
+        $(this).addClass("hidden");
+      }
+    });
+  });
+
+  // Clear Filters Button
+  $("#clear-filters").on("click", function () {
+    // Reset all selections
+    $(".custom-select .option-item").removeClass("selected");
+    $(".custom-select .selected-text").each(function () {
+      const name = $(this).closest(".custom-select").data("name");
+      if (name === "category") $(this).text("Category");
+      if (name === "date") $(this).text("Date");
+      if (name === "year") $(this).text("Period");
+    });
+
+    // Clear search input
+    $(".search-year-input").val("");
+    $(".search-year-input").trigger("input"); // reset list visibility
+
+    // Optional: Reset actual search input if needed
+    $("#search").val("");
+  });
 });
