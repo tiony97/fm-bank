@@ -418,6 +418,7 @@ $(function () {
      Overflow tray toggle
      -------------------------------------------------------- */
     $trigger.on("click", function (e) {
+      if (mobileQuery.matches) return; // no-op on mobile
       e.preventDefault();
       const isOpen = $overflow.hasClass("is-open");
       $overflow.toggleClass("is-open", !isOpen);

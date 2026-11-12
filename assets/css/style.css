@@ -5583,35 +5583,52 @@ section .section-intro p {
   .utility-right {
     display: none;
   }
+  .main-nav {
+    position: relative;
+  }
   .main-nav__inner {
-    flex-wrap: wrap;
-    justify-content: space-between;
+    position: relative;
     padding: 10px 16px;
+    flex-wrap: wrap;
   }
   .mobile-toggle {
     display: inline-flex;
-    margin-left: auto;
+    margin-left: auto; /* Pushes it to the far right */
+    position: absolute; /* Takes it out of flex flow so it doesn't move */
+    font-size: 24px;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    outline: none !important;
+    right: 16px;
+    top: 50px;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: #ffffff;
   }
   .nav-actions {
     order: 2;
   }
-  .nav-scroll-wrap {
-    order: 3;
+  .nav-links-container {
     flex: 0 0 100%;
     width: 100%;
-    display: block;
     margin-right: 0;
   }
+  /* 4. The Mobile Drawer */
   .primary-nav {
     display: none;
-    align-items: stretch;
     flex-direction: column;
-    gap: 0;
-    margin: 0;
-    padding: 8px 0;
+    align-items: stretch;
+    /* Pull out of the padded container to hit the screen edges */
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+    /* Reset desktop constraints */
     overflow: visible;
     mask-image: none;
     -webkit-mask-image: none;
+  }
+  .primary-nav.is-open {
+    display: flex;
   }
   .nav-scroll-btn {
     display: none !important;
@@ -5620,27 +5637,26 @@ section .section-intro p {
     display: flex;
   }
   .nav-item {
-    position: relative;
+    width: 100%;
+    position: static;
   }
   .nav-link {
     display: flex;
     justify-content: space-between;
-    padding: 13px 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    font-size: 13px;
+    width: 100%;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
   }
+  /* 6. Fix the Mega Menu inside the mobile drawer */
   .mega-menu {
-    left: 0 !important;
-    transform: none !important;
+    position: static !important; /* Stacks inline */
     width: 100% !important;
     max-width: 100% !important;
-    position: static;
+    transform: none !important;
+    box-shadow: none !important;
     display: none;
-    grid-template-columns: 1fr;
-    margin-bottom: 10px;
-    box-shadow: none;
-    border-radius: 8px;
-    transform: none;
+    grid-template-columns: 1fr; /* Stack the promo, links, feature */
   }
   .mega-menu.is-open {
     display: grid;
@@ -5656,6 +5672,23 @@ section .section-intro p {
   }
   .mega-menu__feature img {
     height: 180px;
+  }
+  /* The overflow tray is a desktop-only affordance.
+     It must be fully removed on tablet/mobile so it
+     can't inflate the header with a giant empty grid. */
+  .mega-menu--overflow,
+  .mega-menu--overflow:not(.is-open),
+  .mega-menu--overflow.is-open {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: static !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+  .nav-overflow-trigger {
+    display: none !important;
   }
   /* ---------- Footer ---------- */
   .site-footer {
