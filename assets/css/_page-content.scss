@@ -2410,7 +2410,7 @@ section {
       flex-direction: column;
       gap: 15px;
       p {
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.4;
       }
       .button {
@@ -2465,14 +2465,14 @@ section {
   // Shared heading styles
   h2 {
     margin: 0 0 10px;
-    font-size: 30px;
-    line-height: 1.2;
+    font-size: 36px;
+    line-height: 44px;
     font-weight: 700;
   }
 
   .form-description {
     margin: 0 0 12px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
     font-weight: 400;
   }
@@ -2510,7 +2510,7 @@ section {
       border-radius: 24px;
       outline: none;
       font: inherit;
-      font-size: 14px;
+      font-size: 16px;
 
       &::placeholder {
         color: #fff;
@@ -2615,7 +2615,7 @@ section {
     }
 
     h2 {
-      font-size: 30px;
+      font-size: 36px;
       line-height: 1.2;
       margin-bottom: 10px;
     }
@@ -2709,6 +2709,101 @@ section {
 .queen-contact {
   .sales-form {
     background: $queen-secondary;
+  }
+}
+
+/* =========================================
+   ABOUT STYLES (BANCASSURANCE)
+========================================= */
+.about-page-content-section {
+  padding: 70px 0;
+  background: #f4f4f7;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 3em;
+    .title-wrapper {
+      h2 {
+        font-size: 36px;
+        line-height: 44px;
+        font-weight: 700;
+      }
+    }
+    .content-wrapper {
+      p,
+      ul {
+        font-size: 16px;
+        margin-bottom: 1em;
+        color: $black;
+        &:last-of-type {
+          margin: 0;
+        }
+      }
+      ul {
+        margin-bottom: 1em;
+        list-style: none;
+        li {
+          display: flex;
+          align-items: center;
+        }
+        span {
+          font-size: 14px;
+          color: $primary;
+          margin-right: 6px;
+        }
+      }
+      .footnote {
+        font-size: 14px;
+        font-weight: 500;
+        color: #59616d;
+        position: relative;
+        display: block;
+        a {
+          text-decoration: underline;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            color: $primary;
+          }
+        }
+        &:first-of-type {
+          margin-top: 1.5em;
+        }
+      }
+    }
+  }
+}
+
+.partners-section {
+  padding: 70px 0;
+  .container {
+    .partners-intro {
+      margin-bottom: 2em;
+      h2 {
+        font-size: 36px;
+        line-height: 44px;
+        font-weight: 700;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-top: 1em;
+      }
+    }
+
+    .partners-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5em;
+      .partner {
+        width: 160px;
+        height: 100px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
   }
 }
 
@@ -3803,6 +3898,68 @@ section {
 
       .cta-btns {
         flex-wrap: wrap;
+      }
+    }
+  }
+
+  .about-page-content-section {
+    padding: 60px 0;
+    .container {
+      grid-template-columns: 100%;
+      grid-gap: 2em;
+      .title-wrapper {
+        h2 {
+          font-size: 24px;
+          line-height: 32px;
+        }
+      }
+      .content-wrapper {
+        p,
+        ul {
+          font-size: 14px;
+        }
+        ul {
+          li {
+            display: flex;
+            align-items: flex-start;
+          }
+        }
+        .footnote {
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .partners-section {
+    padding: 60px 0;
+    .container {
+      .partners-intro {
+        margin-bottom: 1em;
+        h2 {
+          font-size: 24px;
+          line-height: 32px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .partners-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5em;
+        justify-content: center;
+        .partner {
+          width: 120px;
+          height: 100px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
       }
     }
   }

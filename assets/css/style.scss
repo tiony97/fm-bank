@@ -445,6 +445,8 @@
 .mega-menu__links {
   padding: 25px 24px;
   position: relative;
+  max-height: 320px;
+  overflow-y: auto;
 
   .nav-item,
   .nav-item.has-mega-menu,

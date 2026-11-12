@@ -2390,7 +2390,7 @@ section .section-intro p {
   gap: 15px;
 }
 .overview .container .content-wrapper p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.4;
 }
 .overview .container .content-wrapper .button {
@@ -2441,13 +2441,13 @@ section .section-intro p {
 }
 .contact-forms h2 {
   margin: 0 0 10px;
-  font-size: 30px;
-  line-height: 1.2;
+  font-size: 36px;
+  line-height: 44px;
   font-weight: 700;
 }
 .contact-forms .form-description {
   margin: 0 0 12px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -2481,7 +2481,7 @@ section .section-intro p {
   border-radius: 24px;
   outline: none;
   font: inherit;
-  font-size: 14px;
+  font-size: 16px;
 }
 .contact-forms .sales-form input::-moz-placeholder, .contact-forms .sales-form select::-moz-placeholder, .contact-forms .sales-form textarea::-moz-placeholder {
   color: #fff;
@@ -2579,7 +2579,7 @@ section .section-intro p {
   transform: translateY(-2px);
 }
 .contact-forms .loan-form h2 {
-  font-size: 30px;
+  font-size: 36px;
   line-height: 1.2;
   margin-bottom: 10px;
 }
@@ -2661,6 +2661,96 @@ section .section-intro p {
 
 .queen-contact .sales-form {
   background: #9b5de5;
+}
+
+/* =========================================
+   ABOUT STYLES (BANCASSURANCE)
+========================================= */
+.about-page-content-section {
+  padding: 70px 0;
+  background: #f4f4f7;
+}
+.about-page-content-section .container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 3em;
+}
+.about-page-content-section .container .title-wrapper h2 {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+}
+.about-page-content-section .container .content-wrapper p,
+.about-page-content-section .container .content-wrapper ul {
+  font-size: 16px;
+  margin-bottom: 1em;
+  color: #202020;
+}
+.about-page-content-section .container .content-wrapper p:last-of-type,
+.about-page-content-section .container .content-wrapper ul:last-of-type {
+  margin: 0;
+}
+.about-page-content-section .container .content-wrapper ul {
+  margin-bottom: 1em;
+  list-style: none;
+}
+.about-page-content-section .container .content-wrapper ul li {
+  display: flex;
+  align-items: center;
+}
+.about-page-content-section .container .content-wrapper ul span {
+  font-size: 14px;
+  color: #2d5eaa;
+  margin-right: 6px;
+}
+.about-page-content-section .container .content-wrapper .footnote {
+  font-size: 14px;
+  font-weight: 500;
+  color: #59616d;
+  position: relative;
+  display: block;
+}
+.about-page-content-section .container .content-wrapper .footnote a {
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+.about-page-content-section .container .content-wrapper .footnote a:hover {
+  color: #2d5eaa;
+}
+.about-page-content-section .container .content-wrapper .footnote:first-of-type {
+  margin-top: 1.5em;
+}
+
+.partners-section {
+  padding: 70px 0;
+}
+.partners-section .container .partners-intro {
+  margin-bottom: 2em;
+}
+.partners-section .container .partners-intro h2 {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+}
+.partners-section .container .partners-intro p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 1em;
+}
+.partners-section .container .partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+.partners-section .container .partners-grid .partner {
+  width: 160px;
+  height: 100px;
+}
+.partners-section .container .partners-grid .partner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 /* =========================================
@@ -3476,6 +3566,58 @@ section .section-intro p {
   .hero .container .cta-btns {
     flex-wrap: wrap;
   }
+  .about-page-content-section {
+    padding: 60px 0;
+  }
+  .about-page-content-section .container {
+    grid-template-columns: 100%;
+    grid-gap: 2em;
+  }
+  .about-page-content-section .container .title-wrapper h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .about-page-content-section .container .content-wrapper p,
+  .about-page-content-section .container .content-wrapper ul {
+    font-size: 14px;
+  }
+  .about-page-content-section .container .content-wrapper ul li {
+    display: flex;
+    align-items: flex-start;
+  }
+  .about-page-content-section .container .content-wrapper .footnote {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .partners-section {
+    padding: 60px 0;
+  }
+  .partners-section .container .partners-intro {
+    margin-bottom: 1em;
+  }
+  .partners-section .container .partners-intro h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .partners-section .container .partners-intro p {
+    font-size: 14px;
+  }
+  .partners-section .container .partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
+  }
+  .partners-section .container .partners-grid .partner {
+    width: 120px;
+    height: 100px;
+  }
+  .partners-section .container .partners-grid .partner img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
   /* =========================================
      CURRENCY MARQUEE
   ========================================= */
@@ -4006,8 +4148,12 @@ section .section-intro p {
 .product-tabs-section {
   padding: 60px 0;
 }
+.product-tabs-section .section-intro {
+  margin: 0;
+  margin-bottom: 2em;
+}
 .product-tabs-section .section-intro * {
-  text-align: center;
+  text-align: left;
 }
 .product-tabs-section .tabs-layout {
   display: grid;
@@ -5055,6 +5201,8 @@ section .section-intro p {
 .mega-menu__links {
   padding: 25px 24px;
   position: relative;
+  max-height: 320px;
+  overflow-y: auto;
 }
 .mega-menu__links .nav-item,
 .mega-menu__links .nav-item.has-mega-menu,
