@@ -1,0 +1,1155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Family Bank | Banking Made Simple</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/tailwind.css" />
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+      <!-- Utility navigation -->
+      <div class="utility-bar">
+        <div class="container">
+          <div class="utility-inner">
+            <nav class="utility-left" aria-label="Banking categories">
+              <a href="./personal.html">Personal</a>
+              <a href="./msme.html">MSME</a>
+              <a href="./corporate.html">Corporate</a>
+              <a href="./diaspora.html">Diaspora</a>
+              <a href="./bancassurance.html">Bancassurance</a>
+              <a href="./queen-banking.html">Queen Banking</a>
+              <a href="./asset-auction.html">Asset Auction</a>
+            </nav>
+
+            <nav class="utility-right" aria-label="Useful links">
+              <a href="#">About Us</a>
+              <a href="#">News</a>
+              <a href="#">Talk to Us</a>
+              <a href="#">Investor Relations</a>
+              <a href="./impact.html">Our Impact</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main navigation -->
+      <div class="main-nav">
+        <div class="main-nav__inner">
+          <a class="brand" href="/" aria-label="Family Bank home">
+            <img src="./assets/images/brand-logo.png" alt="Family Bank Logo" />
+          </a>
+
+          <button
+            class="mobile-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="nav-links-container">
+            <nav class="primary-nav" aria-label="Main navigation"></nav>
+
+            <!-- New Overflow Trigger -->
+            <button
+              class="nav-overflow-trigger"
+              type="button"
+              aria-label="Toggle extra menu"
+              aria-expanded="false"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+
+          <!-- New Overflow Mega Menu  -->
+          <div
+            class="mega-menu mega-menu--overflow"
+            id="overflow-menu"
+            aria-label="Extra menu"
+          >
+            <div class="mega-menu__promo">
+              <h2>Queen Banking</h2>
+              <p>
+                Banking, credit, savings and protection built around her
+                journey.
+              </p>
+              <a href="#" class="text-link">Explore</a>
+            </div>
+
+            <div class="mega-menu__links" data-overflow-links></div>
+
+            <div class="mega-menu__feature">
+              <h3>Your bank in your pocket</h3>
+              <img
+                src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                alt="Customer using a mobile device"
+              />
+              <div class="store-btns">
+                <a href="#" class="store-btn"
+                  ><img
+                    src="./assets/images/mega-app-store.png"
+                    alt="App Store"
+                /></a>
+                <a href="#" class="store-btn"
+                  ><img
+                    src="./assets/images/mega-google-store.png"
+                    alt="Google Play Store"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-actions">
+            <button class="icon-button" aria-label="Search" type="button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button class="language-button" type="button">
+              EN <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <a href="#" class="button button--light">Open Account</a>
+            <a href="#" class="button button--cyan">Login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hover Dropdown Dock -->
+    <div class="quick-dock" id="quickDock">
+      <nav class="dock-menu" aria-label="Quick tools">
+        <!-- First item: hover trigger -->
+        <a
+          href="#calculator"
+          class="dock-item dock-trigger"
+          aria-label="Calculator"
+          data-tooltip="Loan Calculator"
+        >
+          <img src="./assets/images/dock-icon-1.png" alt="" />
+        </a>
+
+        <!-- Hidden items revealed on hover -->
+        <div class="dock-dropdown">
+          <a
+            href="#finance"
+            class="dock-item"
+            aria-label="Finance"
+            data-tooltip="Fixed Deposit"
+          >
+            <img src="./assets/images/dock-icon-2.png" alt="" />
+          </a>
+
+          <a
+            href="#payments"
+            class="dock-item"
+            aria-label="Payments"
+            data-tooltip="Savings"
+          >
+            <img src="./assets/images/dock-icon-3.png" alt="" />
+          </a>
+
+          <a
+            href="#currency"
+            class="dock-item"
+            aria-label="Currency exchange"
+            data-tooltip="FX Convertor"
+          >
+            <img src="./assets/images/dock-icon-4.png" alt="" />
+          </a>
+
+          <a
+            href="#reports"
+            class="dock-item"
+            aria-label="Reports"
+            data-tooltip="Tariff Guide"
+          >
+            <img src="./assets/images/dock-icon-5.png" alt="" />
+          </a>
+
+          <a
+            href="#locations"
+            class="dock-item"
+            aria-label="Locations"
+            data-tooltip="Locate a branch, agent or ATM"
+          >
+            <img src="./assets/images/dock-icon-6.png" alt="" />
+          </a>
+
+          <a
+            href="#account"
+            class="dock-item"
+            aria-label="Account"
+            data-tooltip="Open an account"
+          >
+            <img src="./assets/images/dock-icon-7.png" alt="" />
+          </a>
+
+          <a
+            href="#support"
+            class="dock-item"
+            aria-label="Support"
+            data-tooltip="Talk to us"
+          >
+            <img src="./assets/images/dock-icon-8.png" alt="" />
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <!--ACCESSIBILITY BUTTON -->
+    <button class="accessibility-button" aria-label="Accessibility options">
+      <img
+        src="./assets/images/accessibility.png"
+        alt="Accessibility options"
+      />
+    </button>
+
+    <!--CHATBOT BUTTON -->
+    <button class="chatbot-button" aria-label="Open chatbot">
+      <img src="./assets/images/chatbot.png" alt="Chatbot" />
+    </button>
+
+    <!-- ================= PAGE CONTENT ================= -->
+    <main class="page-content">
+      <!--Hero (Banner)-->
+      <section class="hero">
+        <video
+          class="hero_video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="./assets/images/asset-auction-hero.png"
+          aria-hidden="true"
+        >
+          <source
+            src="https://www.youtube.com/watch?v=vXlVGA1QF00&pp=ygUYZmFtaWx5IGJhbmsgaW1hcmEgcGFtb2ph"
+            type="video/mp4"
+          />
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <!-- NSE Stock Ticker Marquee -->
+        <div class="stock-marquee-container">
+          <div class="stock-marquee-track">
+            <!-- First set of items -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <!-- Duplicate set to create seamless loop -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <!-- Add more duplicates as needed to fill the screen width before looping -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="hero-content">
+            <div class="breadcrumbs">
+              Home
+              <span><i class="fa-solid fa-angle-right"></i></span>Asset Auction
+            </div>
+            <h2>Asset Auction</h2>
+            <p>
+              Browse the buildings and vehicles Family Bank is offering for
+              auction, and place your bid online.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ASSET AUCTION SECTION -->
+      <section class="asset-auction-section">
+        <div class="container">
+          <!-- Top Header -->
+          <div class="auction-header">
+            <div class="title-area">
+              <h2>I am Interested in</h2>
+            </div>
+            <div class="auction-tabs">
+              <button class="asset-tab active" data-target="tab1">
+                Buildings
+              </button>
+              <button class="asset-tab" data-target="tab2">Vehicles</button>
+            </div>
+          </div>
+
+          <!-- Tab 1: Property -->
+          <div id="tab1" class="auction-tab-panel active">
+            <!-- Filters -->
+            <div class="auction-filter-wrapper">
+              <div class="filters-header">
+                <h4>Additional Filters:</h4>
+              </div>
+              <div class="filters-group">
+                <!-- County Select -->
+                <div class="auction-select" data-name="county">
+                  <div class="auction-trigger" tabindex="0">
+                    <span class="selected-text">County</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                  <div class="auction-dropdown">
+                    <ul class="options-list">
+                      <li class="auction-option" data-value="Kiambu">
+                        <span class="auction-checkbox"></span> Kiambu
+                      </li>
+                      <li class="auction-option" data-value="Nairobi">
+                        <span class="auction-checkbox"></span> Nairobi
+                      </li>
+                      <li class="auction-option" data-value="Kisumu">
+                        <span class="auction-checkbox"></span> Kisumu
+                      </li>
+                      <li class="auction-option" data-value="Murang'a">
+                        <span class="auction-checkbox"></span> Murang'a
+                      </li>
+                      <li class="auction-option" data-value="Embu">
+                        <span class="auction-checkbox"></span> Embu
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Property Type Select -->
+                <div class="auction-select" data-name="property">
+                  <div class="auction-trigger" tabindex="0">
+                    <span class="selected-text">Property Type</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                  <div class="auction-dropdown">
+                    <ul class="options-list">
+                      <li class="auction-option" data-value="Residential">
+                        <span class="auction-checkbox"></span> Residential
+                      </li>
+                      <li class="auction-option" data-value="Commercial">
+                        <span class="auction-checkbox"></span> Commercial
+                      </li>
+                      <li class="auction-option" data-value="Industrial">
+                        <span class="auction-checkbox"></span> Industrial
+                      </li>
+                      <li class="auction-option" data-value="Land">
+                        <span class="auction-checkbox"></span> Land
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Price Range Select -->
+                <div class="auction-select price-select" data-name="price">
+                  <div class="auction-trigger" tabindex="0">
+                    <span class="selected-text">Price</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                  <div class="auction-dropdown">
+                    <div class="price-dropdown-content">
+                      <div class="slider-header">
+                        <span>Slide to set a price</span>
+                        <!-- <span class="price-values" id="price-display"
+                          >KES 0 - KES 120,000,000</span
+                        > -->
+                      </div>
+                      <div class="range-slider-wrapper">
+                        <input
+                          type="range"
+                          id="price-min"
+                          min="0"
+                          max="120000000"
+                          value="0"
+                          step="100000"
+                        />
+                        <input
+                          type="range"
+                          id="price-max"
+                          min="0"
+                          max="120000000"
+                          value="120000000"
+                          step="100000"
+                        />
+                        <div class="slider-track">
+                          <div class="slider-fill" id="slider-fill"></div>
+                        </div>
+                      </div>
+                      <div class="price-inputs">
+                        <div class="input-box">
+                          <label>Min(KES)</label>
+                          <input type="number" id="price-min-input" value="0" />
+                        </div>
+                        <div class="input-box">
+                          <label>Max(KES)</label>
+                          <input
+                            type="number"
+                            id="price-max-input"
+                            value="120000000"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Search & Actions -->
+                <div class="search-action-group">
+                  <div class="auction-search-wrapper">
+                    <input type="search" placeholder="Search..." />
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                  <div class="action-btns">
+                    <button class="button button--cyan">Apply</button>
+                    <button
+                      class="button button--cyan-outline clear-auction-btn"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buildings Grid -->
+            <div class="asset-grid">
+              <div class="asset-card">
+                <div class="card-image">
+                  <img
+                    src="./assets/images/asset-mansion.png"
+                    alt="Maisonette"
+                  />
+                </div>
+                <div class="card-details">
+                  <h3>3-Bedroom Maisonette</h3>
+                  <div class="features">
+                    <p>Location:<strong> Kiambu</strong></p>
+                    <p>Price:<strong> KES 14,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A spacious maisonette in a quiet gated estate, close to
+                    schools and the Thika Road corridor.
+                  </p>
+                  <a
+                    href="./assset-auction-house.html"
+                    class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <div class="asset-card">
+                <div class="card-image">
+                  <img
+                    src="./assets/images/asset-mansion.png"
+                    alt="Maisonette"
+                  />
+                </div>
+                <div class="card-details">
+                  <h3>3-Bedroom Maisonette</h3>
+                  <div class="features">
+                    <p>Location:<strong> Kiambu</strong></p>
+                    <p>Price:<strong> KES 14,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A spacious maisonette in a quiet gated estate, close to
+                    schools and the Thika Road corridor.
+                  </p>
+                  <a
+                    href="./assset-auction-house.html"
+                    class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <div class="asset-card">
+                <div class="card-image">
+                  <img
+                    src="./assets/images/asset-mansion.png"
+                    alt="Maisonette"
+                  />
+                </div>
+                <div class="card-details">
+                  <h3>3-Bedroom Maisonette</h3>
+                  <div class="features">
+                    <p>Location:<strong> Kiambu</strong></p>
+                    <p>Price:<strong> KES 14,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A spacious maisonette in a quiet gated estate, close to
+                    schools and the Thika Road corridor.
+                  </p>
+                  <a
+                    href="./assset-auction-house.html"
+                    class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <div class="asset-card">
+                <div class="card-image">
+                  <img
+                    src="./assets/images/asset-mansion.png"
+                    alt="Maisonette"
+                  />
+                </div>
+                <div class="card-details">
+                  <h3>3-Bedroom Maisonette</h3>
+                  <div class="features">
+                    <p>Location:<strong> Kiambu</strong></p>
+                    <p>Price:<strong> KES 14,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A spacious maisonette in a quiet gated estate, close to
+                    schools and the Thika Road corridor.
+                  </p>
+                  <a
+                    href="./assset-auction-house.html"
+                    class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <div class="asset-card">
+                <div class="card-image">
+                  <img
+                    src="./assets/images/asset-mansion.png"
+                    alt="Maisonette"
+                  />
+                </div>
+                <div class="card-details">
+                  <h3>3-Bedroom Maisonette</h3>
+                  <div class="features">
+                    <p>Location:<strong> Kiambu</strong></p>
+                    <p>Price:<strong> KES 14,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A spacious maisonette in a quiet gated estate, close to
+                    schools and the Thika Road corridor.
+                  </p>
+                  <a
+                    href="./assset-auction-house.html"
+                    class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <div class="asset-card">
+                <div class="card-image">
+                  <img
+                    src="./assets/images/asset-mansion.png"
+                    alt="Maisonette"
+                  />
+                </div>
+                <div class="card-details">
+                  <h3>3-Bedroom Maisonette</h3>
+                  <div class="features">
+                    <p>Location:<strong> Kiambu</strong></p>
+                    <p>Price:<strong> KES 14,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A spacious maisonette in a quiet gated estate, close to
+                    schools and the Thika Road corridor.
+                  </p>
+                  <a
+                    href="./assset-auction-house.html"
+                    class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <div class="asset-card">
+                <div class="card-image">
+                  <img
+                    src="./assets/images/asset-mansion.png"
+                    alt="Maisonette"
+                  />
+                </div>
+                <div class="card-details">
+                  <h3>3-Bedroom Maisonette</h3>
+                  <div class="features">
+                    <p>Location:<strong> Kiambu</strong></p>
+                    <p>Price:<strong> KES 14,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A spacious maisonette in a quiet gated estate, close to
+                    schools and the Thika Road corridor.
+                  </p>
+                  <a
+                    href="./assset-auction-house.html"
+                    class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <div class="asset-card">
+                <div class="card-image">
+                  <img
+                    src="./assets/images/asset-mansion.png"
+                    alt="Maisonette"
+                  />
+                </div>
+                <div class="card-details">
+                  <h3>3-Bedroom Maisonette</h3>
+                  <div class="features">
+                    <p>Location:<strong> Kiambu</strong></p>
+                    <p>Price:<strong> KES 14,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A spacious maisonette in a quiet gated estate, close to
+                    schools and the Thika Road corridor.
+                  </p>
+                  <a
+                    href="./assset-auction-house.html"
+                    class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Cars -->
+          <div id="tab2" class="auction-tab-panel">
+            <!-- Filters -->
+            <div class="auction-filter-wrapper">
+              <div class="filters-header">
+                <h4>Additional Filters:</h4>
+              </div>
+              <div class="filters-group">
+                <!-- County Select -->
+                <div class="auction-select" data-name="county">
+                  <div class="auction-trigger" tabindex="0">
+                    <span class="selected-text">County</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                  <div class="auction-dropdown">
+                    <ul class="options-list">
+                      <li class="auction-option" data-value="Kiambu">
+                        <span class="auction-checkbox"></span> Kiambu
+                      </li>
+                      <li class="auction-option" data-value="Nairobi">
+                        <span class="auction-checkbox"></span> Nairobi
+                      </li>
+                      <li class="auction-option" data-value="Kisumu">
+                        <span class="auction-checkbox"></span> Kisumu
+                      </li>
+                      <li class="auction-option" data-value="Murang'a">
+                        <span class="auction-checkbox"></span> Murang'a
+                      </li>
+                      <li class="auction-option" data-value="Embu">
+                        <span class="auction-checkbox"></span> Embu
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Vehicle Type Select -->
+                <div class="auction-select" data-name="vehicle-type">
+                  <div class="auction-trigger" tabindex="0">
+                    <span class="selected-text">Vehicle Type</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                  <div class="auction-dropdown">
+                    <ul class="options-list">
+                      <li class="auction-option" data-value="SUVs">
+                        <span class="auction-checkbox"></span> SUVs
+                      </li>
+                      <li class="auction-option" data-value="Pickup">
+                        <span class="auction-checkbox"></span> Pickup
+                      </li>
+                      <li class="auction-option" data-value="Vans">
+                        <span class="auction-checkbox"></span> Vans
+                      </li>
+                      <li class="auction-option" data-value="Trucks">
+                        <span class="auction-checkbox"></span> Trucks
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Year of Manufacture Select -->
+                <div class="auction-select" data-name="year">
+                  <div class="auction-trigger" tabindex="0">
+                    <span class="selected-text">Year of Manufacture</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                  <div class="auction-dropdown">
+                    <div class="search-year-wrapper">
+                      <input
+                        type="text"
+                        class="search-year-input"
+                        placeholder="Enter Year"
+                      />
+                    </div>
+                    <ul class="options-list year-options">
+                      <li class="auction-option" data-value="2024">
+                        <span class="auction-checkbox"></span> 2024
+                      </li>
+                      <li class="auction-option" data-value="2023">
+                        <span class="auction-checkbox"></span> 2023
+                      </li>
+                      <li class="auction-option" data-value="2022">
+                        <span class="auction-checkbox"></span> 2022
+                      </li>
+                      <li class="auction-option" data-value="2021">
+                        <span class="auction-checkbox"></span> 2021
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Search & Actions -->
+                <div class="search-action-group">
+                  <div class="auction-search-wrapper">
+                    <input type="search" placeholder="Search..." />
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                  <div class="action-btns">
+                    <button class="button button--cyan">Apply</button>
+                    <button
+                      class="button button--cyan-outline clear-auction-btn"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vehicles Grid -->
+            <div class="asset-grid">
+              <div class="asset-card">
+                <div class="card-image">
+                  <img src="./assets/images/asset-car.png" alt="Truck" />
+                </div>
+                <div class="card-details">
+                  <h3>Mitsubishi Canter Truck</h3>
+                  <div class="features">
+                    <p>Location:<strong> Mombasa</strong></p>
+                    <p>YOM:<strong> 2015</strong></p>
+                    <p>Price:<strong> KES 4,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A reliable light truck with a flatbed body, suited to
+                    deliveries and hauling goods.
+                  </p>
+                  <a href="./asset-auction-car.html" class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <div class="asset-card">
+                <div class="card-image">
+                  <img src="./assets/images/asset-car.png" alt="Truck" />
+                </div>
+                <div class="card-details">
+                  <h3>Mitsubishi Canter Truck</h3>
+                  <div class="features">
+                    <p>Location:<strong> Mombasa</strong></p>
+                    <p>YOM:<strong> 2015</strong></p>
+                    <p>Price:<strong> KES 4,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A reliable light truck with a flatbed body, suited to
+                    deliveries and hauling goods.
+                  </p>
+                  <a href="./asset-auction-car.html" class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <div class="asset-card">
+                <div class="card-image">
+                  <img src="./assets/images/asset-car.png" alt="Truck" />
+                </div>
+                <div class="card-details">
+                  <h3>Mitsubishi Canter Truck</h3>
+                  <div class="features">
+                    <p>Location:<strong> Mombasa</strong></p>
+                    <p>YOM:<strong> 2015</strong></p>
+                    <p>Price:<strong> KES 4,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A reliable light truck with a flatbed body, suited to
+                    deliveries and hauling goods.
+                  </p>
+                  <a href="./asset-auction-car.html" class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <div class="asset-card">
+                <div class="card-image">
+                  <img src="./assets/images/asset-car.png" alt="Truck" />
+                </div>
+                <div class="card-details">
+                  <h3>Mitsubishi Canter Truck</h3>
+                  <div class="features">
+                    <p>Location:<strong> Mombasa</strong></p>
+                    <p>YOM:<strong> 2015</strong></p>
+                    <p>Price:<strong> KES 4,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A reliable light truck with a flatbed body, suited to
+                    deliveries and hauling goods.
+                  </p>
+                  <a href="./asset-auction-car.html" class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <div class="asset-card">
+                <div class="card-image">
+                  <img src="./assets/images/asset-car.png" alt="Truck" />
+                </div>
+                <div class="card-details">
+                  <h3>Mitsubishi Canter Truck</h3>
+                  <div class="features">
+                    <p>Location:<strong> Mombasa</strong></p>
+                    <p>YOM:<strong> 2015</strong></p>
+                    <p>Price:<strong> KES 4,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A reliable light truck with a flatbed body, suited to
+                    deliveries and hauling goods.
+                  </p>
+                  <a href="./asset-auction-car.html" class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <div class="asset-card">
+                <div class="card-image">
+                  <img src="./assets/images/asset-car.png" alt="Truck" />
+                </div>
+                <div class="card-details">
+                  <h3>Mitsubishi Canter Truck</h3>
+                  <div class="features">
+                    <p>Location:<strong> Mombasa</strong></p>
+                    <p>YOM:<strong> 2015</strong></p>
+                    <p>Price:<strong> KES 4,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A reliable light truck with a flatbed body, suited to
+                    deliveries and hauling goods.
+                  </p>
+                  <a href="./asset-auction-car.html" class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <div class="asset-card">
+                <div class="card-image">
+                  <img src="./assets/images/asset-car.png" alt="Truck" />
+                </div>
+                <div class="card-details">
+                  <h3>Mitsubishi Canter Truck</h3>
+                  <div class="features">
+                    <p>Location:<strong> Mombasa</strong></p>
+                    <p>YOM:<strong> 2015</strong></p>
+                    <p>Price:<strong> KES 4,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A reliable light truck with a flatbed body, suited to
+                    deliveries and hauling goods.
+                  </p>
+                  <a href="./asset-auction-car.html" class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <div class="asset-card">
+                <div class="card-image">
+                  <img src="./assets/images/asset-car.png" alt="Truck" />
+                </div>
+                <div class="card-details">
+                  <h3>Mitsubishi Canter Truck</h3>
+                  <div class="features">
+                    <p>Location:<strong> Mombasa</strong></p>
+                    <p>YOM:<strong> 2015</strong></p>
+                    <p>Price:<strong> KES 4,500,000</strong></p>
+                  </div>
+                  <p class="description">
+                    A reliable light truck with a flatbed body, suited to
+                    deliveries and hauling goods.
+                  </p>
+                  <a href="./asset-auction-car.html" class="button button--cyan"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination">
+            <span class="pagination-link active">1</span>
+            <span class="pagination-link">2</span>
+            <span class="pagination-link">3</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
+          <!-- Footer heading -->
+          <div class="footer-heading">
+            <div>
+              <h2>Ready to Bank With Us?</h2>
+              <p>Start online in minutes and finish at your nearest branch.</p>
+            </div>
+
+            <a href="#" class="button button--light">Get Started</a>
+          </div>
+
+          <!-- Main footer columns -->
+          <div class="footer-grid">
+            <!-- Apps and social links -->
+            <div class="footer-column footer-apps">
+              <h3>Get PesaPap</h3>
+
+              <div class="app-links">
+                <a href="#" aria-label="Download on the App Store">
+                  <img
+                    src="./assets/images/foooter-appstore.png"
+                    alt="Apple store"
+                  />
+                </a>
+
+                <a href="#" aria-label="Get it on Google Play">
+                  <img
+                    src="./assets/images/footer-gstore.png"
+                    alt="Apple store"
+                  />
+                </a>
+              </div>
+
+              <h3 class="social-heading">Our Socials</h3>
+
+              <div class="social-links">
+                <a href="#" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="X">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="YouTube">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- About -->
+            <div class="footer-column">
+              <h3>About Us</h3>
+              <ul>
+                <li><a href="#">Company Profile</a></li>
+                <li><a href="#">Board of Directors</a></li>
+                <li><a href="#">Executive Committee</a></li>
+                <li><a href="#">Financials & Policies</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="./impact.html">Our Impact</a></li>
+                <li><a href="#">News & Updates</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Cost of Credit</a></li>
+              </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="footer-column resources-column">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="#">Merchant & Agent Portal</a></li>
+                <li>
+                  <a href="#"
+                    >Prepaid Cards Portal
+                    <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Access Family Pay
+                    <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li><a href="#">Tariff Guide</a></li>
+                <li><a href="#">Customer Notices</a></li>
+                <li><a href="#">Find an Agent, Branch or ATM</a></li>
+                <li><a href="#">Pepper's Agents</a></li>
+                <li><a href="#">Vehicles on Auction</a></li>
+                <li><a href="#">Documents & Forms</a></li>
+                <li><a href="#">Loan Calculator</a></li>
+                <li><a href="#">Interest Calculator</a></li>
+                <li>
+                  <a href="#"
+                    >Staff Email <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Correspondent Bank Information Family Bank Prequalification
+                    Notice 2026 - 2027</a
+                  >
+                </li>
+                <li>
+                  <a href="#">Family Bank Prequalification Registration</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="footer-column">
+              <h3>Help & Support</h3>
+              <ul>
+                <li>
+                  <a href="#"
+                    >Indemnity for Instructions Received by Email and/or
+                    Facsimile</a
+                  >
+                </li>
+                <li><a href="#">Branches and Codes</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Complaints Handling Guideline</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Cookies Guidelines</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Notice</a></li>
+                <li><a href="#">Whistle Blowing</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="newsletter">
+            <div class="newsletter__text">
+              <h3>Stay in the Loop</h3>
+              <p>
+                Get the latest updates, offers, and financial tips<br />
+                delivered straight to your inbox.
+              </p>
+            </div>
+
+            <form class="newsletter-form">
+              <label class="sr-only" for="newsletter-email">
+                Your email address
+              </label>
+
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                placeholder="Your email address"
+                required
+              />
+
+              <button type="submit" class="button button--cyan">
+                Subscribe
+              </button>
+            </form>
+          </div>
+
+          <p class="newsletter-message" aria-live="polite"></p>
+
+          <!-- Legal -->
+          <div class="footer-bottom">
+            <p>
+              Copyright © 2026 Family Bank Limited, Kenya. Regulated by the
+              Central Bank of Kenya.
+            </p>
+
+            <a href="#">Site by Bean</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

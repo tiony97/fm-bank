@@ -1316,4 +1316,215 @@ $(function () {
     // Optional: Reset actual search input if needed
     $("#search").val("");
   });
+
+  // ================= ASSET AUCTION SECTION =================
+
+  // 1. Tab Switching
+  $(".asset-tab").on("click", function () {
+    const target = $(this).data("target");
+
+    // Toggle active state on tab buttons
+    $(".asset-tab").removeClass("active");
+    $(this).addClass("active");
+
+    // Toggle active state on panels
+    $(".auction-tab-panel").removeClass("active");
+    $("#" + target).addClass("active");
+  });
+
+  // 2. Inject Check Icons into Auction Checkboxes
+  $(".auction-select .auction-option .auction-checkbox").each(function () {
+    if (!$(this).find(".check-icon").length) {
+      $(this).append('<i class="fa-solid fa-check check-icon"></i>');
+    }
+  });
+
+  // 3. Auction Dropdown Toggle Logic
+  $(".auction-select .auction-trigger").on("click", function (e) {
+    e.stopPropagation();
+    const $parent = $(this).closest(".auction-select");
+    const $dropdown = $parent.find(".auction-dropdown");
+    const $trigger = $(this);
+
+    // Close all other auction dropdowns
+    $(".auction-select")
+      .not($parent)
+      .find(".auction-dropdown")
+      .removeClass("open");
+    $(".auction-select")
+      .not($parent)
+      .find(".auction-trigger")
+      .removeClass("active");
+
+    $dropdown.toggleClass("open");
+    $trigger.toggleClass("active");
+
+    if (
+      $dropdown.hasClass("open") &&
+      $dropdown.find(".search-year-input").length
+    ) {
+      $dropdown.find(".search-year-input").trigger("focus");
+    }
+  });
+
+  // Close dropdowns on outside click
+  $(document).on("click", function () {
+    $(".auction-select .auction-dropdown").removeClass("open");
+    $(".auction-select .auction-trigger").removeClass("active");
+  });
+
+  // Prevent closing when clicking inside the dropdown
+  $(".auction-select .auction-dropdown").on("click", function (e) {
+    e.stopPropagation();
+  });
+
+  // 4. Option Selection Logic
+  $(".auction-select .auction-option").on("click", function () {
+    const $item = $(this);
+    const $parent = $item.closest(".auction-select");
+    const $triggerText = $parent.find(".selected-text");
+    const selectName = $parent.data("name");
+
+    // Toggle selection
+    $item.toggleClass("selected");
+
+    // Get all selected values
+    const selectedValues = $parent
+      .find(".auction-option.selected")
+      .map(function () {
+        return $(this).data("value");
+      })
+      .get();
+
+    // Update the trigger text based on selection state
+    if (selectedValues.length === 0) {
+      if (selectName === "county") $triggerText.text("County");
+      if (selectName === "property") $triggerText.text("Property Type");
+      if (selectName === "price") $triggerText.text("Price");
+      if (selectName === "vehicle-type") $triggerText.text("Vehicle Type");
+      if (selectName === "year") $triggerText.text("Year of Manufacture");
+    } else if (selectedValues.length === 1) {
+      $triggerText.text(selectedValues[0]);
+    } else {
+      $triggerText.text(`${selectedValues.length} Selected`);
+    }
+  });
+
+  // 5. Year Search Filtering
+  $(".auction-select .search-year-input").on("input", function () {
+    const query = $(this).val().toLowerCase().trim();
+    const $options = $(this)
+      .closest(".auction-dropdown")
+      .find(".year-options .auction-option");
+
+    $options.each(function () {
+      const text = $(this).text().toLowerCase();
+      if (text.includes(query)) {
+        $(this).removeClass("hidden");
+      } else {
+        $(this).addClass("hidden");
+      }
+    });
+  });
+
+  // 6. Price Range Slider Logic
+  const $priceMin = $("#price-min");
+  const $priceMax = $("#price-max");
+  const $priceMinInput = $("#price-min-input");
+  const $priceMaxInput = $("#price-max-input");
+  const $sliderFill = $("#slider-fill");
+  const $priceDisplay = $("#price-display");
+  const maxLimit = 120000000;
+
+  function updatePriceSlider() {
+    let minVal = parseInt($priceMin.val());
+    let maxVal = parseInt($priceMax.val());
+
+    // Ensure min doesn't exceed max by more than 1M
+    if (minVal > maxVal - 1000000) {
+      minVal = maxVal - 1000000;
+      $priceMin.val(minVal);
+    }
+
+    // Update Inputs
+    $priceMinInput.val(minVal);
+    $priceMaxInput.val(maxVal);
+
+    // Update Visuals
+    const minPercent = (minVal / maxLimit) * 100;
+    const maxPercent = (maxVal / maxLimit) * 100;
+    $sliderFill.css({
+      left: minPercent + "%",
+      right: 100 - maxPercent + "%",
+    });
+
+    // Update Text Display
+    const formatCurrency = (num) => "KES " + num.toLocaleString();
+    $priceDisplay.text(`${formatCurrency(minVal)} - ${formatCurrency(maxVal)}`);
+  }
+
+  // Bind Price Slider Events
+  if ($priceMin.length) {
+    $priceMin.on("input", updatePriceSlider);
+    $priceMax.on("input", updatePriceSlider);
+
+    $priceMinInput.on("input", function () {
+      let val = parseInt($(this).val()) || 0;
+      if (val > maxLimit) val = maxLimit;
+      $priceMin.val(val);
+      updatePriceSlider();
+    });
+
+    $priceMaxInput.on("input", function () {
+      let val = parseInt($(this).val()) || 0;
+      if (val > maxLimit) val = maxLimit;
+      $priceMax.val(val);
+      updatePriceSlider();
+    });
+
+    updatePriceSlider(); // Initialize on load
+  }
+
+  // 7. Clear Filters (Scoped to active tab)
+  $(".clear-auction-btn").on("click", function () {
+    const $panel = $(this).closest(".auction-tab-panel");
+
+    // Clear Custom Selects
+    $panel.find(".auction-option").removeClass("selected");
+    $panel.find(".selected-text").each(function () {
+      const name = $(this).closest(".auction-select").data("name");
+      if (name === "county") $(this).text("County");
+      if (name === "property") $(this).text("Property Type");
+      if (name === "price") $(this).text("Price");
+      if (name === "vehicle-type") $(this).text("Vehicle Type");
+      if (name === "year") $(this).text("Year of Manufacture");
+    });
+
+    // Clear Search Input
+    $panel.find('input[type="search"]').val("");
+
+    // Reset Year search input list
+    $panel.find(".search-year-input").val("").trigger("input");
+
+    // Reset Price Slider (if inside this panel)
+    if ($panel.find("#price-min").length) {
+      $panel.find("#price-min").val(0);
+      $panel.find("#price-max").val(maxLimit);
+      updatePriceSlider();
+    }
+  });
+
+  // ================= ASSET DETAILS GALLERY =================
+
+  $(".asset-gallery .thumbnail").on("click", function () {
+    // 1. Get the image source from the clicked thumbnail
+    const newImageSrc = $(this).find("img").attr("src");
+
+    // 2. Swap the main image source
+    $("#main-asset-image").attr("src", newImageSrc);
+
+    // 3. Remove active class from all thumbnails and add to the clicked one
+    $(".asset-gallery .thumbnail").removeClass("active");
+    $(this).addClass("active");
+  });
 });

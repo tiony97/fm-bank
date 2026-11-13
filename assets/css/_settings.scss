@@ -225,6 +225,16 @@ input:focus-visible {
       color: $secondary;
     }
   }
+  &--cyan-outline {
+    color: $secondary;
+    background: transparent;
+    border: 1.5px solid $secondary;
+
+    &:hover {
+      background: $secondary;
+      color: $white;
+    }
+  }
 
   &--light {
     color: $primary;

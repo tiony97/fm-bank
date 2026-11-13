@@ -2558,6 +2558,27 @@ section {
       border-radius: 24px;
       resize: vertical;
     }
+
+    .check {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        accent-color: #fff;
+        cursor: pointer;
+      }
+      label {
+        font-size: 16px;
+        line-height: 1.4;
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 
   // RIGHT: Loan calculator
@@ -2804,6 +2825,742 @@ section {
         }
       }
     }
+  }
+}
+
+/* =========================================
+   ASSET AUCTION SECTION
+========================================= */
+.asset-auction-section {
+  padding: 70px 0;
+  background: $white;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  // --- Header Area ---
+  .auction-header {
+    margin-bottom: 30px;
+
+    .title-area h2 {
+      font-size: 36px;
+      font-weight: 700;
+      color: $black;
+      margin-bottom: 20px;
+    }
+
+    .auction-tabs {
+      display: flex;
+      gap: 10px;
+
+      .asset-tab {
+        padding: 8px 24px;
+        border-radius: 24px;
+        border: 1px solid transparent;
+        outline: none;
+        background: #f4f4f7;
+        color: $black;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+          background: $white;
+          border-color: #08a7df; // Cyan border from design
+          color: #08a7df;
+        }
+
+        &:hover:not(.active) {
+          background: #e8e8ec;
+        }
+      }
+    }
+  }
+
+  // --- Tab Panels ---
+  .auction-tab-panel {
+    display: none;
+    &.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+  }
+
+  // --- Filters Wrapper ---
+  .auction-filter-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+
+    .filters-header h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: $black;
+      margin: 0;
+    }
+
+    .filters-group {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+
+    .search-action-group {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-left: auto;
+
+      .auction-search-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid #0812221f;
+        border-radius: 24px;
+        height: fit-content;
+        width: fit-content;
+        padding-right: 10px;
+
+        input {
+          height: 40px;
+          width: 200px;
+          padding: 0 15px 0 15px;
+          font-size: 16px;
+          color: $black;
+          border-radius: 24px;
+          font-weight: 600;
+          outline: none;
+          border: none;
+        }
+
+        i {
+          position: absolute;
+          left: 15px;
+          color: #081222;
+          font-size: 14px;
+        }
+      }
+
+      .action-btns {
+        display: flex;
+        gap: 10px;
+
+        .button {
+          padding: 0 24px;
+          height: 40px;
+          outline: none;
+        }
+      }
+    }
+  }
+
+  // --- Unique Custom Select Styling ---
+  .auction-select {
+    position: relative;
+    user-select: none;
+    min-width: 150px;
+
+    .auction-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 40px;
+      padding: 0 15px;
+      border: 1px solid #0812221f;
+      border-radius: 24px;
+      background: #f4f4f7;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 500;
+      color: #081222;
+      transition: border-color 0.2s ease;
+
+      i {
+        font-size: 12px;
+        color: #081222;
+        transition: transform 0.3s ease;
+      }
+
+      &.active i {
+        transform: rotate(180deg);
+      }
+    }
+
+    .auction-dropdown {
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 0;
+      width: 100%;
+      min-width: 220px;
+      background: #fff;
+      border: 1px solid #0812221f;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      overflow: hidden;
+
+      &.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
+    .options-list {
+      list-style: none;
+      margin: 0;
+      padding: 10px;
+      max-height: 250px;
+      overflow-y: auto;
+    }
+
+    .auction-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      font-size: 15px;
+      color: #081222;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: #f4f4f7;
+      }
+
+      .auction-checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: #fff;
+        flex-shrink: 0;
+        position: relative;
+
+        .check-icon {
+          display: none;
+          font-size: 10px;
+          color: #fff;
+          line-height: 1;
+        }
+      }
+
+      &.selected {
+        background: rgba(8, 167, 223, 0.05);
+        font-weight: 500;
+
+        .auction-checkbox {
+          background: #08a7df;
+          border-color: #08a7df;
+
+          .check-icon {
+            display: inline-block;
+          }
+        }
+      }
+
+      &.hidden {
+        display: none;
+      }
+    }
+
+    .search-year-wrapper {
+      padding: 10px 10px 0 10px;
+
+      .search-year-input {
+        width: 100%;
+        height: 36px;
+        padding: 0 12px;
+        border: 1px solid #0812221f;
+        border-radius: 20px;
+        font-size: 14px;
+        outline: none;
+
+        &:focus {
+          border-color: #08a7df;
+        }
+      }
+    }
+
+    // Price Slider Specifics
+    &.price-select {
+      .auction-dropdown {
+        min-width: 320px;
+        padding: 15px;
+      }
+
+      .price-dropdown-content {
+        .slider-header {
+          display: flex;
+          justify-content: space-between;
+          font-size: 14px;
+          color: #081222;
+          margin-bottom: 15px;
+          font-weight: 500;
+
+          .price-values {
+            color: #08a7df;
+            font-weight: 600;
+          }
+        }
+
+        .range-slider-wrapper {
+          position: relative;
+          height: 24px;
+          margin-bottom: 20px;
+
+          input[type="range"] {
+            position: absolute;
+            width: 100%;
+            pointer-events: none;
+            appearance: none;
+            -webkit-appearance: none;
+            background: transparent;
+            height: 5px;
+            top: 13px;
+            margin: 0;
+            z-index: 2;
+
+            &::-webkit-slider-thumb {
+              pointer-events: auto;
+              -webkit-appearance: none;
+              height: 16px;
+              width: 16px;
+              border-radius: 50%;
+              background: #fff;
+              border: 2px solid #08a7df;
+              cursor: pointer;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+          }
+
+          .slider-track {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            z-index: 1;
+
+            .slider-fill {
+              position: absolute;
+              height: 100%;
+              background: #08a7df;
+              border-radius: 2px;
+            }
+          }
+        }
+
+        .price-inputs {
+          display: flex;
+          gap: 10px;
+
+          .input-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            label {
+              font-size: 11px;
+              color: #081222;
+              font-weight: 500;
+            }
+
+            input {
+              width: 100%;
+              height: 36px;
+              padding: 0 10px;
+              border: 1px solid #0812221f;
+              border-radius: 8px;
+              font-size: 14px;
+              outline: none;
+
+              &:focus {
+                border-color: #08a7df;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // --- Asset Cards Grid ---
+  .asset-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+
+    .asset-card {
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .card-image {
+        width: 100%;
+        height: 220px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 15px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+      }
+
+      &:hover .card-image img {
+        transform: scale(1.03);
+      }
+
+      .card-details {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        h3 {
+          font-size: 22px;
+          font-weight: 700;
+          color: $black;
+          margin-bottom: 8px;
+        }
+
+        .features {
+          margin-bottom: 12px;
+
+          p {
+            font-size: 16px;
+            color: $black;
+            margin-bottom: 4px;
+            font-weight: 400;
+
+            strong {
+              font-weight: 600;
+            }
+          }
+        }
+
+        .description {
+          font-size: 16px;
+          line-height: 1.5;
+          color: #081222;
+          margin-bottom: 20px;
+          flex-grow: 1;
+        }
+
+        .button {
+          width: fit-content;
+          outline: none;
+          margin-top: auto;
+        }
+      }
+    }
+  }
+
+  .pagination {
+    width: fit-content;
+    height: fit-content;
+    margin: 1em auto;
+    margin-top: 4em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .pagination-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: #f4f4f7;
+      color: $black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      line-height: 1.1;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover,
+      &.active {
+        background: $primary-dark;
+        color: $white;
+      }
+    }
+  }
+}
+
+.asset-details-section {
+  padding: 60px 0;
+  background: $white;
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .asset-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  // --- Left: Image Gallery ---
+  .asset-gallery {
+    width: 100%;
+
+    .main-image-wrapper {
+      width: 100%;
+      height: 500px;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-bottom: 15px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    .thumbnail-list {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto; // Allows scrolling if many thumbnails
+      padding-bottom: 5px;
+
+      // Hide scrollbar for a cleaner look
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .thumbnail {
+        width: 80px;
+        height: 60px;
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border-color 0.3s ease;
+        flex-shrink: 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        &.active {
+          border-color: #00b4d8; // Cyan border for active
+        }
+
+        &:hover:not(.active) {
+          border-color: #e0e0e0;
+        }
+      }
+    }
+  }
+
+  // --- Right: Asset Info ---
+  .asset-info {
+    display: flex;
+    flex-direction: column;
+
+    .info-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 15px;
+
+      h1 {
+        font-size: 36px;
+        font-weight: 700;
+        color: $black;
+        line-height: 1.2;
+        margin: 0;
+      }
+    }
+
+    .description {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #4a4a4a;
+      margin-bottom: 30px;
+    }
+
+    .property-details-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 40px 0;
+      border-top: 1px solid #e0e0e0;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 15px;
+
+        .label {
+          color: #4a4a4a;
+          font-weight: 400;
+        }
+
+        .value {
+          color: $black;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 24px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        &--success {
+          background: #55c763; // WhatsApp Green
+          color: $white;
+        }
+
+        &--info {
+          background: #00b4d8; // Cyan
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.similar-assets {
+  .asset-card {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 220px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 15px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+    }
+
+    &:hover .card-image img {
+      transform: scale(1.03);
+    }
+
+    .card-details {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+
+      h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: $black;
+        margin-bottom: 8px;
+      }
+
+      .features {
+        margin-bottom: 12px;
+
+        p {
+          font-size: 16px;
+          color: $black;
+          margin-bottom: 4px;
+          font-weight: 400;
+
+          strong {
+            font-weight: 600;
+          }
+        }
+      }
+
+      .description {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #081222;
+        margin-bottom: 20px;
+        flex-grow: 1;
+      }
+
+      .button {
+        width: fit-content;
+        outline: none;
+        margin-top: auto;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -3176,6 +3933,11 @@ section {
 /* =========================================
    TABLET
 ========================================= */
+@media (max-width: 1200px) {
+  .asset-auction-section .asset-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 @media (max-width: 900px) {
   /* =========================================
@@ -3786,6 +4548,67 @@ section {
       input,
       select {
         width: 80%;
+      }
+    }
+  }
+  .asset-auction-section {
+    padding: 60px 0;
+
+    .auction-filter-wrapper {
+      flex-direction: column;
+      align-items: stretch;
+
+      .filters-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .auction-select {
+        width: 100%;
+        min-width: 100%;
+      }
+
+      .search-action-group {
+        flex-direction: column;
+        align-items: stretch;
+        margin-left: 0;
+        margin-top: 10px;
+
+        .auction-search-wrapper input {
+          width: 100%;
+        }
+
+        .action-btns {
+          justify-content: space-between;
+          .button {
+            flex: 1;
+          }
+        }
+      }
+    }
+
+    .auction-search-wrapper {
+      width: 100% !important;
+      input {
+        width: 95% !important;
+      }
+    }
+
+    .asset-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .asset-details-section {
+    padding: 40px 0;
+
+    .asset-details-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .asset-info {
+      .info-header h1 {
+        font-size: 28px;
       }
     }
   }
@@ -4657,6 +5480,52 @@ section {
 
     .button {
       margin-top: 12px;
+    }
+  }
+  .asset-auction-section {
+    padding: 40px 0;
+
+    .auction-header {
+      .title-area h2 {
+        font-size: 26px;
+      }
+      .auction-tabs .asset-tab {
+        padding: 6px 16px;
+        font-size: 14px;
+      }
+    }
+
+    .asset-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  .asset-details-section {
+    .asset-gallery {
+      .main-image-wrapper {
+        height: 300px;
+        border-radius: 16px;
+      }
+
+      .thumbnail-list .thumbnail {
+        width: 60px;
+        height: 45px;
+        border-radius: 8px;
+      }
+    }
+
+    .asset-info {
+      .info-header h1 {
+        font-size: 24px;
+      }
+
+      .action-buttons {
+        flex-direction: column;
+
+        .button {
+          width: 100%;
+          justify-content: center;
+        }
+      }
     }
   }
 }
