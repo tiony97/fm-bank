@@ -15,7 +15,7 @@
 
   .tabs-layout {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 340px 1fr;
     gap: 24px;
     align-items: stretch; // Ensures both columns are the same height
 
@@ -109,7 +109,7 @@
 
             li {
               display: flex;
-              align-items: center;
+              align-items: flex-start;
               gap: 12px;
               color: $text-primary;
               font-size: 16px;
@@ -677,10 +677,667 @@
 }
 
 /* =========================================
-   RESPONSIVE (MOBILE)
+   IMPACT PAGES SECTIONS
+========================================= */
+.impact-services {
+  padding: 70px 0;
+  .container {
+    .section-intro {
+      margin: 0;
+      margin-bottom: 3em;
+      max-width: 100% !important;
+      * {
+        text-align: left;
+      }
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.5em;
+      .impact-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .image-wrapper {
+          width: 100%;
+          height: 250px;
+          flex-shrink: 0;
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            object-fit: cover;
+          }
+        }
+
+        .content-wrapper {
+          min-height: 150px;
+          flex-grow: 1;
+          margin-top: 1em;
+          display: flex;
+          flex-direction: column;
+
+          h5 {
+            font-size: 22px;
+            line-height: 1.4;
+            font-weight: 600;
+            margin-bottom: 8px;
+          }
+
+          p {
+            font-size: 16px;
+            line-height: 1.4;
+            margin-bottom: 16px;
+          }
+
+          .button {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            gap: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =========================================
+   IMPACT STORIES SECTION
+========================================= */
+.impact-stories-section {
+  padding: 70px 0;
+  background: $white;
+
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  // --- Tab Links ---
+  .story-tabs {
+    .tab-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 40px 0;
+
+      li {
+        padding: 8px 20px;
+        border-radius: 24px;
+        border: 1px solid #e0e0e0;
+        background: transparent;
+        color: $black;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+          border-color: #00b4d8; // Cyan
+          color: #00b4d8;
+        }
+
+        &:hover:not(.active) {
+          background: #f4f4f7;
+        }
+      }
+    }
+  }
+
+  // --- Tab Content ---
+  .tab-content {
+    .tab {
+      display: none;
+      &.active {
+        display: block;
+        animation: fadeIn 0.4s ease;
+      }
+    }
+  }
+
+  // --- Cards Grid ---
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+
+    // The Card Style from your previous prompt
+    .impact-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      .image-wrapper {
+        width: 100%;
+        height: 220px;
+        flex-shrink: 0;
+        margin-bottom: 15px;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 20px;
+          object-position: top center;
+          object-fit: cover;
+        }
+      }
+
+      .content-wrapper {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        background: transparent;
+        padding: 0;
+
+        h5 {
+          font-size: 22px;
+          line-height: 1.4;
+          font-weight: 700;
+          color: $black;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 1.5;
+          color: #4a4a4a;
+          margin-bottom: 20px;
+        }
+
+        .button {
+          margin-top: auto; // Pushes button to the bottom
+          display: inline-flex;
+          align-items: center;
+          width: fit-content;
+        }
+      }
+    }
+  }
+
+  .pagination {
+    width: fit-content;
+    height: fit-content;
+    margin: 1em auto;
+    margin-top: 4em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .pagination-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: #f4f4f7;
+      color: $black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      line-height: 1.1;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover,
+      &.active {
+        background: $primary-dark;
+        color: $white;
+      }
+    }
+  }
+}
+
+/* =========================================
+   SUSTAINABILITY REPORTS SECTION
+========================================= */
+.sustainability-reports-section {
+  padding: 70px 0;
+  background: $white;
+
+  // --- Header ---
+  .reports-header {
+    margin-bottom: 30px;
+    .header-text {
+      h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color: $black;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+
+  // --- Filter Bar ---
+  .reports-filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+
+    .search-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      width: 300px;
+      height: 40px;
+      padding: 0 15px;
+      background: #f4f4f7;
+      border-radius: 24px;
+      border: 1px solid transparent;
+      transition: border-color 0.2s ease;
+
+      &:focus-within {
+        border-color: #00b4d8;
+      }
+
+      i {
+        color: #00b4d8; // Cyan magnifying glass
+        font-size: 14px;
+        margin-right: 10px;
+      }
+
+      input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-size: 16px;
+        color: $black;
+        &::placeholder {
+          color: #081222;
+        }
+      }
+    }
+
+    .sort-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      p {
+        font-size: 16px;
+        margin: 0;
+        font-weight: 500;
+      }
+
+      .sort-items {
+        display: flex;
+        gap: 10px;
+      }
+
+      .action-btns {
+        display: flex;
+        gap: 10px;
+
+        .button {
+          height: 40px;
+          padding: 0 24px;
+          border-radius: 24px;
+          font-size: 14px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+      }
+    }
+  }
+
+  .report-select {
+    position: relative;
+    user-select: none;
+    min-width: 110px;
+
+    .report-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 40px;
+      padding: 0 15px;
+      background: #f4f4f7;
+      border: 1px solid #0812221f;
+      border-radius: 24px;
+      cursor: pointer;
+      font-size: 16px;
+      color: $black;
+      transition: border-color 0.2s;
+
+      i {
+        font-size: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      &.active i {
+        transform: rotate(180deg);
+      }
+    }
+
+    .report-dropdown {
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 0;
+      width: 100%;
+      min-width: 160px;
+      background: #fff;
+      border: 1px solid #0812221f;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      overflow: hidden;
+
+      &.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
+    .report-options-list {
+      list-style: none;
+      margin: 0;
+      padding: 10px;
+    }
+
+    .report-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      font-size: 16px;
+      color: $black;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background: #f4f4f7;
+      }
+
+      .report-checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: #fff;
+        flex-shrink: 0;
+
+        .check-icon {
+          display: none;
+          font-size: 10px;
+          color: #fff;
+        }
+      }
+
+      &.selected {
+        background: rgba(#00b4d8, 0.05);
+        font-weight: 500;
+
+        .report-checkbox {
+          background: #00b4d8;
+          border-color: #00b4d8;
+
+          .check-icon {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+  // --- Reports Grid ---
+  .reports-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+
+    .report-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      .image-wrapper {
+        width: 100%;
+        height: 300px;
+        border-radius: 24px;
+        overflow: hidden;
+        margin-bottom: 15px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+      }
+
+      &:hover .image-wrapper img {
+        transform: scale(1.05);
+      }
+
+      .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        h5 {
+          font-size: 22px;
+          font-weight: 700;
+          color: $black;
+          margin-bottom: 5px;
+          line-height: 1.4;
+        }
+
+        .date {
+          font-size: 16px;
+          color: #4a4a4a;
+          margin-bottom: 15px;
+        }
+
+        .button {
+          margin-top: auto; // Pushes button to bottom
+          width: fit-content;
+        }
+      }
+    }
+  }
+
+  // --- Pagination ---
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+
+    .pagination-link {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f4f7;
+      color: $black;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: darken(#f4f4f7, 5%);
+      }
+
+      &.active {
+        background: #325b9b; // Dark blue from design
+        color: $white;
+      }
+    }
+  }
+}
+
+/* =========================================
+   SUSTAINABILITY APPROACH SECTION
+========================================= */
+.sustainability-approach {
+  padding: 70px 0;
+  background: $white;
+
+  // Intro Section
+  .section-intro {
+    margin: 0;
+    margin-bottom: 2em;
+    * {
+      text-align: left;
+    }
+  }
+
+  // Subtitle
+  .approach-intro-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: $black;
+    margin-bottom: 20px;
+  }
+
+  // Grid / Slider Layout
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1em;
+
+    // Individual Card
+    .approach-card {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; // Push text to bottom
+      padding: 20px;
+
+      // Hover effect
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      // Background Image
+      .bg-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+
+      // Dark Gradient Overlay
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 40%,
+          rgba(0, 0, 0, 0.8) 100%
+        );
+        z-index: 2;
+      }
+
+      // Text Content
+      .description {
+        position: relative;
+        z-index: 3;
+        color: $white;
+        font-size: 16px;
+        line-height: 1.4;
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* =========================================
+   SDG SECTION
+========================================= */
+.sdg-section {
+  background: $primary-dark;
+  padding: 70px 0;
+  color: $white;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  // Section Intro
+  .section-intro {
+    max-width: 1000px;
+  }
+
+  // The Grid of Icons
+  .sdg-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    .sdg-item {
+      width: 135px;
+      height: 135px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+    }
+  }
+}
+
+/* =========================================
+   LARGE SCREENS
+========================================= */
+@media (min-width: 1440px) {
+  .impact-services {
+    .impact-card {
+      h5 {
+        font-size: 28px !important;
+      }
+    }
+  }
+}
+
+/* =========================================
+   RESPONSIVE (TABLET)
 ========================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .product-tabs-section {
     .section-intro {
       p {
@@ -731,7 +1388,7 @@
         .panel-text {
           width: 100%;
           h3 {
-            font-size: 24px;
+            font-size: 18px;
             margin-bottom: 16px;
           }
         }
@@ -839,6 +1496,227 @@
             }
           }
         }
+      }
+    }
+  }
+
+  .impact-services {
+    padding: 50px 0;
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr) !important;
+      .impact-card {
+        h5 {
+          font-size: 18px !important;
+        }
+        p,
+        a {
+          font-size: 14px !important;
+        }
+      }
+    }
+  }
+
+  .impact-stories-section {
+    padding: 50px 0;
+
+    .cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .sustainability-reports-section {
+    padding: 50px 0;
+
+    .reports-filter-bar {
+      flex-direction: column;
+      align-items: stretch;
+
+      .search-wrapper {
+        width: 100%;
+      }
+
+      .sort-wrapper {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+
+    .reports-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .sdg-section {
+    padding: 60px 0;
+
+    .section-intro {
+      h2 {
+        font-size: 28px;
+      }
+    }
+
+    .sdg-grid {
+      gap: 8px;
+
+      .sdg-item {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+
+  .sustainability-approach {
+    padding: 50px 0;
+
+    .section-intro {
+      h2 {
+        font-size: 28px;
+      }
+    }
+
+    .approach-grid {
+      grid-template-columns: repeat(3, 1fr);
+      .approach-card {
+        height: 350px;
+      }
+    }
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .impact-services {
+    .services-grid {
+      grid-template-columns: 100% !important;
+      .impact-card {
+        .content-wrapper {
+          min-height: fit-content !important;
+        }
+      }
+    }
+  }
+
+  .impact-stories-section {
+    padding: 50px 0;
+
+    .section-intro h2 {
+      font-size: 26px;
+    }
+
+    .story-tabs .tab-links {
+      flex-wrap: wrap;
+      gap: 8px;
+
+      li {
+        padding: 6px 16px;
+        font-size: 14px;
+      }
+    }
+
+    .cards-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .sustainability-reports-section {
+    padding: 40px 0;
+
+    .reports-header .header-text h2 {
+      font-size: 24px;
+    }
+
+    .reports-filter-bar {
+      .sort-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+
+        .sort-items {
+          flex-direction: column;
+        }
+
+        .report-select {
+          width: 100%;
+        }
+
+        .action-btns {
+          width: 100%;
+          justify-content: space-between;
+
+          .button {
+            flex: 1;
+          }
+        }
+      }
+    }
+
+    // Make dropdowns push content down instead of absolute positioning
+    .report-select .select-dropdown {
+      position: relative;
+      top: 5px;
+      box-shadow: none;
+      border: none;
+      padding: 0;
+    }
+
+    .reports-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .sustainability-approach {
+    padding: 40px 0;
+
+    .section-intro {
+      h2 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+
+    .approach-intro-title {
+      font-size: 18px;
+    }
+
+    .approach-grid {
+      grid-template-columns: 100%;
+      .approach-card {
+        height: 320px;
+        padding: 15px;
+
+        .description {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .sdg-section {
+    padding: 40px 0;
+
+    .section-intro {
+      margin-bottom: 30px;
+
+      h2 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .sdg-grid {
+      gap: 6px;
+
+      .sdg-item {
+        width: 65px; // Smaller icons on mobile to fit multiple per row
+        height: 65px;
       }
     }
   }

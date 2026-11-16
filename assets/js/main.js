@@ -1209,10 +1209,15 @@ $(function () {
     }
   });
 
-  // Close dropdowns when clicking outside
-  $(document).on("click", function () {
-    $(".custom-select .select-dropdown").removeClass("open");
-    $(".custom-select .select-trigger").removeClass("active");
+  // Close custom dropdowns when clicking outside
+  $(document).on("click.customDropdown", function (e) {
+    $(".custom-select").each(function () {
+      const $sel = $(this);
+      if (!$sel.is(e.target) && $sel.has(e.target).length === 0) {
+        $sel.find(".select-dropdown").removeClass("open");
+        $sel.find(".select-trigger").removeClass("active");
+      }
+    });
   });
 
   // Prevent close when clicking inside the dropdown
@@ -1367,10 +1372,15 @@ $(function () {
     }
   });
 
-  // Close dropdowns on outside click
-  $(document).on("click", function () {
-    $(".auction-select .auction-dropdown").removeClass("open");
-    $(".auction-select .auction-trigger").removeClass("active");
+  // Close auction dropdowns on outside click
+  $(document).on("click.auctionDropdown", function (e) {
+    $(".auction-select").each(function () {
+      const $sel = $(this);
+      if (!$sel.is(e.target) && $sel.has(e.target).length === 0) {
+        $sel.find(".auction-dropdown").removeClass("open");
+        $sel.find(".auction-trigger").removeClass("active");
+      }
+    });
   });
 
   // Prevent closing when clicking inside the dropdown
@@ -1526,5 +1536,111 @@ $(function () {
     // 3. Remove active class from all thumbnails and add to the clicked one
     $(".asset-gallery .thumbnail").removeClass("active");
     $(this).addClass("active");
+  });
+
+  // ================= IMPACT STORIES TABS =================
+  $(".impact-stories-section .tab-links li").on("click", function () {
+    // 1. Get the target tab ID
+    const targetTab = $(this).data("tab");
+
+    // 2. Toggle active state on the list items
+    $(".impact-stories-section .tab-links li").removeClass("active");
+    $(this).addClass("active");
+
+    // 3. Hide all tab panels and show the targeted one
+    $(".impact-stories-section .tab-content .tab").removeClass("active");
+    $("#" + targetTab).addClass("active");
+  });
+
+  // ================= SUSTAINABILITY REPORTS FILTERS =================
+
+  // 1. Inject Check Icons
+  $(".report-select .report-checkbox").each(function () {
+    if (!$(this).find(".check-icon").length) {
+      $(this).append('<i class="fa-solid fa-check check-icon"></i>');
+    }
+  });
+
+  // 2. Toggle Dropdowns
+  $(".report-select .report-trigger").on("click", function (e) {
+    e.stopPropagation();
+    const $parent = $(this).closest(".report-select");
+    const $dropdown = $parent.find(".report-dropdown");
+    const $trigger = $(this);
+
+    // Close other report dropdowns
+    $(".report-select")
+      .not($parent)
+      .find(".report-dropdown")
+      .removeClass("open");
+    $(".report-select")
+      .not($parent)
+      .find(".report-trigger")
+      .removeClass("active");
+
+    $dropdown.toggleClass("open");
+    $trigger.toggleClass("active");
+  });
+
+  // 3. Close on Outside Click
+  $(document).on("click.reportClose", function (e) {
+    $(".report-select").each(function () {
+      const $sel = $(this);
+      // If the click is outside this specific dropdown
+      if (!$sel.is(e.target) && $sel.has(e.target).length === 0) {
+        $sel.find(".report-dropdown").removeClass("open");
+        $sel.find(".report-trigger").removeClass("active");
+      }
+    });
+  });
+
+  // Prevent closing when clicking inside the dropdown
+  $(".report-select .report-dropdown").on("click", function (e) {
+    e.stopPropagation();
+  });
+
+  // 4. Handle Selection
+  $(".report-select .report-option").on("click", function () {
+    const $item = $(this);
+    const $parent = $item.closest(".report-select");
+    const $triggerText = $parent.find(".report-selected-text");
+    const selectName = $parent.data("name");
+
+    // Toggle selected class
+    $item.toggleClass("selected");
+
+    // Get selected values
+    const selectedValues = $parent
+      .find(".report-option.selected")
+      .map(function () {
+        return $(this).data("value");
+      })
+      .get();
+
+    // Update trigger text
+    if (selectedValues.length === 0) {
+      if (selectName === "date") $triggerText.text("Date");
+      if (selectName === "period") $triggerText.text("Period");
+    } else if (selectedValues.length === 1) {
+      $triggerText.text(selectedValues[0]);
+    } else {
+      $triggerText.text(`${selectedValues.length} Selected`);
+    }
+  });
+
+  // 5. Clear Filters
+  $(".clear-reports-btn").on("click", function () {
+    const $section = $(this).closest(".sustainability-reports-section");
+
+    // Clear selects
+    $section.find(".report-option").removeClass("selected");
+    $section.find(".report-selected-text").each(function () {
+      const name = $(this).closest(".report-select").data("name");
+      if (name === "date") $(this).text("Date");
+      if (name === "period") $(this).text("Period");
+    });
+
+    // Clear search
+    $section.find('input[type="search"]').val("");
   });
 });
