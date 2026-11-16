@@ -1643,6 +1643,15 @@ section {
           color: $white;
         }
       }
+      &--cyan {
+        .pagination-link {
+          &:hover,
+          &.active {
+            background: $primary-dark;
+            color: $white;
+          }
+        }
+      }
     }
   }
 }

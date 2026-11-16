@@ -1738,6 +1738,10 @@ section .section-intro p {
   background: #6a3293;
   color: #ffffff;
 }
+.blog-page-content-section .container .pagination--cyan .pagination-link:hover, .blog-page-content-section .container .pagination--cyan .pagination-link.active {
+  background: #2a5caa;
+  color: #ffffff;
+}
 
 /* =========================================
    SIMILAR ARTICLES SLIDER SECTION
