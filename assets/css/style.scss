@@ -1,6 +1,7 @@
 @use "settings" as *;
 @forward "_page-content.scss";
 @forward "_product-styles.scss";
+@forward "_extra-page-content.scss";
 
 .container {
   width: 90%;

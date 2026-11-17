@@ -1643,4 +1643,236 @@ $(function () {
     // Clear search
     $section.find('input[type="search"]').val("");
   });
+
+  // ================= FX CONVERTER LOGIC =================
+
+  const $fxForm = $("#fx-converter-form");
+  const $fromCurrency = $("#from-currency");
+  const $toCurrency = $("#to-currency");
+  const $amountInput = $("#amount-input");
+  const $convertedAmount = $("#converted-amount");
+  const $convertBtn = $("#convert-btn");
+
+  // 1. Enable/Disable Submit Button based on inputs
+  function checkFormValidity() {
+    const fromVal = $fromCurrency.val();
+    const toVal = $toCurrency.val();
+    const amountVal = $amountInput.val();
+
+    // Check if all fields have values and amount is greater than 0
+    if (fromVal && toVal && amountVal && parseFloat(amountVal) > 0) {
+      $convertBtn.prop("disabled", false);
+    } else {
+      $convertBtn.prop("disabled", true);
+    }
+  }
+
+  // Attach event listeners for live validation
+  $fxForm.on("input change", "select, input", function () {
+    checkFormValidity();
+  });
+
+  // 2. Handle Form Submission (Conversion)
+  $fxForm.on("submit", function (e) {
+    e.preventDefault();
+
+    // Get rates from the selected options' data attributes
+    const fromRate = parseFloat($fromCurrency.find(":selected").data("rate"));
+    const toRate = parseFloat($toCurrency.find(":selected").data("rate"));
+    const amount = parseFloat($amountInput.val());
+
+    // Get the currency name for the placeholder text
+    const toCurrencyText = $toCurrency.find(":selected").text();
+
+    // Perform conversion (Amount * From Rate / To Rate)
+    const convertedValue = (amount * fromRate) / toRate;
+
+    // Format the output with commas and 2 decimal places
+    const formattedResult = convertedValue.toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+
+    // Display result
+    $convertedAmount.val(
+      `${toCurrencyText.split(" - ")[0]} ${formattedResult}`,
+    );
+  });
+
+  // ================= TREASURY MONEY MARKET CALCULATOR =================
+
+  const $calcForm = $("#interest-calc-form");
+  const $calcSubmitBtn = $("#calc-submit-btn");
+  const $calcFormView = $("#calc-form-view");
+  const $calcResultsView = $("#calc-results-view");
+  const $calcBackBtn = $("#calc-back-btn");
+
+  // 1. Enable/Disable Submit Button
+  function checkCalcFormValidity() {
+    const currency = $("#calc-currency").val();
+    const principal = $("#calc-principal").val();
+    const rate = $("#calc-rate").val();
+    const tenor = $("#calc-tenor").val();
+
+    if (
+      currency &&
+      principal &&
+      parseFloat(principal) > 0 &&
+      rate &&
+      parseFloat(rate) >= 0 &&
+      tenor &&
+      parseInt(tenor) > 0
+    ) {
+      $calcSubmitBtn.prop("disabled", false);
+    } else {
+      $calcSubmitBtn.prop("disabled", true);
+    }
+  }
+
+  // Listen for live changes on all inputs/selects inside the calculator
+  $calcForm.on("input change", "input, select", function () {
+    checkCalcFormValidity();
+  });
+
+  // 2. Handle Form Submit & Calculate
+  $calcForm.on("submit", function (e) {
+    e.preventDefault();
+
+    const currency = $("#calc-currency").val();
+    const principal = parseFloat($("#calc-principal").val());
+    const rate = parseFloat($("#calc-rate").val());
+    const tenor = parseInt($("#calc-tenor").val());
+
+    // Simple calculation formula: (Principal * Rate% * Days) / 365
+    const grossInterest = (principal * (rate / 100) * tenor) / 365;
+
+    // Assuming standard 15% Withholding Tax (WRH) on interest
+    const wrhTax = grossInterest * 0.15;
+    const netInterest = grossInterest - wrhTax;
+
+    // Format outputs
+    const formatCurrency = (num) => {
+      return (
+        currency +
+        " " +
+        num.toLocaleString("en-US", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })
+      );
+    };
+
+    // Inject results into DOM
+    $("#res-gross").text(formatCurrency(grossInterest));
+    $("#res-tax").text(formatCurrency(wrhTax));
+    $("#res-net").text(formatCurrency(netInterest));
+
+    // Toggle Views
+    $calcFormView.hide();
+    $calcResultsView.fadeIn(300);
+  });
+
+  // 3. Handle Back Button
+  $calcBackBtn.on("click", function () {
+    $calcResultsView.hide();
+    $calcFormView.fadeIn(300);
+
+    // Optional: Reset form on back
+    // $calcForm[0].reset();
+    // $calcSubmitBtn.prop("disabled", true);
+  });
+
+  // ================= MARKET INFORMATION FILTERS =================
+
+  // 1. Inject Check Icons
+  $(".market-select .market-checkbox").each(function () {
+    if (!$(this).find(".check-icon").length) {
+      $(this).append('<i class="fa-solid fa-check check-icon"></i>');
+    }
+  });
+
+  // 2. Toggle Dropdowns
+  $(".market-select .market-trigger").on("click", function (e) {
+    e.stopPropagation();
+    const $parent = $(this).closest(".market-select");
+    const $dropdown = $parent.find(".market-dropdown");
+    const $trigger = $(this);
+
+    // Close other market dropdowns
+    $(".market-select")
+      .not($parent)
+      .find(".market-dropdown")
+      .removeClass("open");
+    $(".market-select")
+      .not($parent)
+      .find(".market-trigger")
+      .removeClass("active");
+
+    $dropdown.toggleClass("open");
+    $trigger.toggleClass("active");
+  });
+
+  // 3. Close on Outside Click
+  $(document).on("click.marketClose", function (e) {
+    $(".market-select").each(function () {
+      const $sel = $(this);
+      // If the click is outside this specific dropdown
+      if (!$sel.is(e.target) && $sel.has(e.target).length === 0) {
+        $sel.find(".market-dropdown").removeClass("open");
+        $sel.find(".market-trigger").removeClass("active");
+      }
+    });
+  });
+
+  // Prevent closing when clicking inside the dropdown
+  $(".market-select .market-dropdown").on("click", function (e) {
+    e.stopPropagation();
+  });
+
+  // 4. Handle Selection
+  $(".market-select .market-option").on("click", function () {
+    const $item = $(this);
+    const $parent = $item.closest(".market-select");
+    const $triggerText = $parent.find(".market-selected-text");
+    const selectName = $parent.data("name");
+
+    // Toggle selected class
+    $item.toggleClass("selected");
+
+    // Get selected values
+    const selectedValues = $parent
+      .find(".market-option.selected")
+      .map(function () {
+        return $(this).data("value");
+      })
+      .get();
+
+    // Update trigger text
+    if (selectedValues.length === 0) {
+      if (selectName === "category") $triggerText.text("Category");
+      if (selectName === "date") $triggerText.text("Date");
+      if (selectName === "period") $triggerText.text("Period");
+    } else if (selectedValues.length === 1) {
+      $triggerText.text(selectedValues[0]);
+    } else {
+      $triggerText.text(`${selectedValues.length} Selected`);
+    }
+  });
+
+  // 5. Clear Filters
+  $(".clear-market-btn").on("click", function () {
+    const $section = $(this).closest(".market-info-section");
+
+    // Clear selects
+    $section.find(".market-option").removeClass("selected");
+    $section.find(".market-selected-text").each(function () {
+      const name = $(this).closest(".market-select").data("name");
+      if (name === "category") $(this).text("Category");
+      if (name === "date") $(this).text("Date");
+      if (name === "period") $(this).text("Period");
+    });
+
+    // Clear search
+    $section.find('input[type="search"]').val("");
+  });
 });

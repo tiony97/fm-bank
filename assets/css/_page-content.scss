@@ -2499,6 +2499,27 @@ section {
     background: #08a7df;
     border-radius: 27px;
 
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin: 1em 0;
+      .info-intro {
+        margin-bottom: 4px;
+      }
+      .info {
+        display: flex;
+        gap: 8px;
+        p,
+        a {
+          font-size: 16px;
+        }
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+
     .sales-form-fields {
       display: flex;
       flex-direction: column;
