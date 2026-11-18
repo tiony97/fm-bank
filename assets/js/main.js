@@ -2272,10 +2272,15 @@ $(function () {
     const journeyElement = document.querySelector(".journey-swiper");
     const $timelineLabelsContainer = $("#timelineLabels");
     const $timelineProgress = $("#timelineProgress");
+    const $nextBtn = $(".journey-next");
+    const $prevBtn = $(".journey-prev");
 
     if (journeyElement && typeof Swiper !== "undefined") {
-      // 1. Extract years from slides to build timeline labels
       const slides = journeyElement.querySelectorAll(".swiper-slide");
+      const totalSlides = slides.length;
+
+      // 1. Build Timeline Labels
+      // We use the original totalSlides to build the timeline (without the loop clones)
       slides.forEach((slide, index) => {
         const year = slide.getAttribute("data-year");
         const activeClass = index === 0 ? "active" : "";
@@ -2284,62 +2289,83 @@ $(function () {
         );
       });
 
-      // 2. Initialize Swiper
+      // 2. Initialize Swiper with Loop mode
       const journeySwiper = new Swiper(journeyElement, {
-        slidesPerView: 1.5, // Shows 1 full and half of the next on desktop
+        slidesPerView: 1.5,
         spaceBetween: 40,
         speed: 600,
-        watchSlidesProgress: true, // Required for the opacity effect
-
-        navigation: {
-          prevEl: ".journey-prev",
-          nextEl: ".journey-next",
-        },
+        loop: true, // ENABLED LOOP MODE
+        watchSlidesProgress: true,
+        // Swiper requires at least double the slidesPerView to loop smoothly
+        loopedSlides: 4,
 
         breakpoints: {
-          0: {
-            slidesPerView: 1.1, // Peek on mobile
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 1.5, // Show 1 full, peek next
-            spaceBetween: 30,
-          },
-          1200: {
-            slidesPerView: 2, // Show exactly 2 items on large screens as per design
-            spaceBetween: 50,
-          },
+          0: { slidesPerView: 1.1, spaceBetween: 20 },
+          768: { slidesPerView: 1.5, spaceBetween: 30 },
+          1200: { slidesPerView: 2, spaceBetween: 50 },
         },
 
-        // Sync custom timeline when slide changes
         on: {
           init: function () {
-            updateTimeline(this.activeIndex);
+            updateUI(this);
           },
           slideChange: function () {
-            updateTimeline(this.activeIndex);
+            updateUI(this);
+          },
+          slideChangeTransitionEnd: function () {
+            updateUI(this);
           },
         },
       });
 
-      // 3. Timeline Update Function
-      function updateTimeline(activeIndex) {
-        // Update Labels
+      // 3. Custom UI Update Function
+      function updateUI(swiper) {
+        // In loop mode, Swiper uses realIndex to track the actual slide index (0 to 5)
+        let currentIndex = swiper.realIndex;
+
+        // --- TIMELINE UPDATE ---
         $timelineLabelsContainer.find(".timeline-label").removeClass("active");
         $timelineLabelsContainer
-          .find(`.timeline-label[data-index="${activeIndex}"]`)
+          .find(`.timeline-label[data-index="${currentIndex}"]`)
           .addClass("active");
 
-        // Update Progress Bar Width
-        const totalSlides = slides.length - 1; // Subtract 1 for 0-index
-        const progressPercentage = (activeIndex / totalSlides) * 100;
+        const progressPercentage = (currentIndex / (totalSlides - 1)) * 100;
         $timelineProgress.css("width", `${progressPercentage}%`);
+
+        // --- BUTTON STATES ---
+        // Because we are looping, the buttons technically never disable,
+        // but we can disable them visually if you don't want users to click "Prev" on the very first slide
+        if (currentIndex === 0) {
+          $prevBtn.addClass("swiper-button-disabled");
+        } else {
+          $prevBtn.removeClass("swiper-button-disabled");
+        }
+
+        if (currentIndex === totalSlides - 1) {
+          $nextBtn.addClass("swiper-button-disabled");
+        } else {
+          $nextBtn.removeClass("swiper-button-disabled");
+        }
       }
 
-      // 4. Make Timeline Labels Clickable
+      // 4. Custom Next/Prev Click Handlers
+      $nextBtn.on("click", function (e) {
+        e.preventDefault();
+        // With loop: true, this will wrap around to the start automatically
+        journeySwiper.slideNext();
+      });
+
+      $prevBtn.on("click", function (e) {
+        e.preventDefault();
+        journeySwiper.slidePrev();
+      });
+
+      // 5. Timeline Label Click Handlers
       $(document).on("click", ".timeline-label", function () {
-        const targetIndex = $(this).data("index");
-        journeySwiper.slideTo(targetIndex);
+        const targetIndex = parseInt($(this).data("index"));
+
+        // slideToLoop handles jumping to the correct clone in loop mode
+        journeySwiper.slideToLoop(targetIndex);
       });
     }
   });

@@ -8791,11 +8791,12 @@ section .section-intro p {
   justify-content: center;
   font-size: 16px;
   cursor: pointer;
+  outline: none;
   transition: all 0.3s ease;
 }
 .journey-section .journey-header .journey-nav-arrows .swiper-btn:hover {
   background: #ffffff;
-  color: #21569a;
+  color: #00a6e5;
 }
 .journey-section .journey-header .journey-nav-arrows .swiper-btn.swiper-button-disabled {
   opacity: 0.3;
@@ -8909,56 +8910,6 @@ section .section-intro p {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* =========================================
-   RESPONSIVE ADJUSTMENTS
-========================================= */
-@media (max-width: 1024px) {
-  .journey-section {
-    padding: 50px 0;
-  }
-  .journey-section .journey-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-  .journey-section .journey-header h2 {
-    font-size: 28px;
-  }
-  .journey-section .journey-header .journey-nav-arrows {
-    display: none;
-  }
-  .journey-section .journey-swiper .swiper-slide .journey-card .journey-image {
-    width: 240px;
-    height: 180px;
-  }
-  .journey-section .journey-swiper .swiper-slide .journey-card .journey-content h3 {
-    font-size: 28px;
-  }
-}
-@media (max-width: 768px) {
-  .journey-section .timeline-wrapper .timeline-labels {
-    display: none;
-  }
-  .journey-section .timeline-wrapper .timeline-track {
-    top: 5px;
-  }
-  .journey-section .journey-swiper .swiper-slide .journey-card {
-    flex-direction: column;
-  }
-  .journey-section .journey-swiper .swiper-slide .journey-card .journey-image {
-    width: 100%;
-    height: 220px;
-  }
-  .journey-section .journey-swiper .swiper-slide .journey-card .journey-content {
-    padding-top: 15px;
-  }
-  .journey-section .journey-swiper .swiper-slide .journey-card .journey-content h3 {
-    font-size: 26px;
-  }
-  .journey-section .journey-swiper .swiper-slide .journey-card .journey-content p {
-    font-size: 14px;
-  }
-}
 /* =========================================
    RESPONSIVE (TABLET)
 ========================================= */
@@ -9080,6 +9031,27 @@ section .section-intro p {
   }
   .awards-section .awards-grid .award-item:nth-child(5n)::before {
     display: block; /* Reset the 5-column rule */
+  }
+  .journey-section {
+    padding: 50px 0;
+  }
+  .journey-section .journey-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .journey-section .journey-header h2 {
+    font-size: 28px;
+  }
+  .journey-section .journey-header .journey-nav-arrows {
+    display: none;
+  }
+  .journey-section .journey-swiper .swiper-slide .journey-card .journey-image {
+    width: 240px;
+    height: 180px;
+  }
+  .journey-section .journey-swiper .swiper-slide .journey-card .journey-content h3 {
+    font-size: 28px;
   }
 }
 @media (max-width: 900px) {
@@ -9248,6 +9220,28 @@ section .section-intro p {
   }
   .awards-section .awards-grid .award-item::after {
     width: 100%;
+  }
+  .journey-section .timeline-wrapper .timeline-labels {
+    display: none;
+  }
+  .journey-section .timeline-wrapper .timeline-track {
+    top: 5px;
+  }
+  .journey-section .journey-swiper .swiper-slide .journey-card {
+    flex-direction: column;
+  }
+  .journey-section .journey-swiper .swiper-slide .journey-card .journey-image {
+    width: 100%;
+    height: 220px;
+  }
+  .journey-section .journey-swiper .swiper-slide .journey-card .journey-content {
+    padding-top: 15px;
+  }
+  .journey-section .journey-swiper .swiper-slide .journey-card .journey-content h3 {
+    font-size: 26px;
+  }
+  .journey-section .journey-swiper .swiper-slide .journey-card .journey-content p {
+    font-size: 14px;
   }
 }
 .container {

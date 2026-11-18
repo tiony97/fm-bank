@@ -1719,11 +1719,12 @@
         justify-content: center;
         font-size: 16px;
         cursor: pointer;
+        outline: none;
         transition: all 0.3s ease;
 
         &:hover {
           background: #ffffff;
-          color: #21569a;
+          color: $secondary;
         }
 
         &.swiper-button-disabled {
@@ -1846,71 +1847,6 @@
             line-height: 1.6;
             color: rgba(255, 255, 255, 0.9);
           }
-        }
-      }
-    }
-  }
-}
-
-/* =========================================
-   RESPONSIVE ADJUSTMENTS
-========================================= */
-@media (max-width: 1024px) {
-  .journey-section {
-    padding: 50px 0;
-
-    .journey-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 20px;
-
-      h2 {
-        font-size: 28px;
-      }
-
-      .journey-nav-arrows {
-        display: none; // Hide arrows on tablet/mobile
-      }
-    }
-
-    .journey-swiper .swiper-slide .journey-card {
-      .journey-image {
-        width: 240px;
-        height: 180px;
-      }
-      .journey-content h3 {
-        font-size: 28px;
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .journey-section {
-    .timeline-wrapper {
-      .timeline-labels {
-        display: none; // Hide long labels on mobile
-      }
-      .timeline-track {
-        top: 5px;
-      }
-    }
-
-    .journey-swiper .swiper-slide .journey-card {
-      flex-direction: column; // Stack image and text
-
-      .journey-image {
-        width: 100%;
-        height: 220px;
-      }
-
-      .journey-content {
-        padding-top: 15px;
-        h3 {
-          font-size: 26px;
-        }
-        p {
-          font-size: 14px;
         }
       }
     }
@@ -2078,6 +2014,34 @@
             display: block; /* Reset the 5-column rule */
           }
         }
+      }
+    }
+  }
+
+  .journey-section {
+    padding: 50px 0;
+
+    .journey-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .journey-nav-arrows {
+        display: none; // Hide arrows on tablet/mobile
+      }
+    }
+
+    .journey-swiper .swiper-slide .journey-card {
+      .journey-image {
+        width: 240px;
+        height: 180px;
+      }
+      .journey-content h3 {
+        font-size: 28px;
       }
     }
   }
@@ -2314,6 +2278,36 @@
         /* Adjust bottom line width */
         &::after {
           width: 100%;
+        }
+      }
+    }
+  }
+
+  .journey-section {
+    .timeline-wrapper {
+      .timeline-labels {
+        display: none; // Hide long labels on mobile
+      }
+      .timeline-track {
+        top: 5px;
+      }
+    }
+
+    .journey-swiper .swiper-slide .journey-card {
+      flex-direction: column; // Stack image and text
+
+      .journey-image {
+        width: 100%;
+        height: 220px;
+      }
+
+      .journey-content {
+        padding-top: 15px;
+        h3 {
+          font-size: 26px;
+        }
+        p {
+          font-size: 14px;
         }
       }
     }
