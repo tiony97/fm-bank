@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Family Bank | Banking Made Simple</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/tailwind.css" />
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+      <!-- Utility navigation -->
+      <div class="utility-bar">
+        <div class="container">
+          <div class="utility-inner">
+            <nav class="utility-left" aria-label="Banking categories">
+              <a href="./personal.html">Personal</a>
+              <a href="./msme.html">MSME</a>
+              <a href="./corporate.html">Corporate</a>
+              <a href="./diaspora.html">Diaspora</a>
+              <a href="./bancassurance.html">Bancassurance</a>
+              <a href="./queen-banking.html">Queen Banking</a>
+              <a href="./asset-auction.html">Asset Auction</a>
+            </nav>
+
+            <nav class="utility-right" aria-label="Useful links">
+              <a href="./about.html" class="active">About Us</a>
+              <a href="./news.html">News</a>
+              <a href="#">Talk to Us</a>
+              <a href="#">Investor Relations</a>
+              <a href="./impact.html">Our Impact</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main navigation -->
+      <div class="main-nav">
+        <div class="main-nav__inner">
+          <a class="brand" href="/" aria-label="Family Bank home">
+            <img src="./assets/images/brand-logo.png" alt="Family Bank Logo" />
+          </a>
+
+          <button
+            class="mobile-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="nav-links-container">
+            <nav class="primary-nav" aria-label="Main navigation">
+              <a href="./our-story.html" class="nav-link">Our Story</a>
+              <a href="./executive-committee.html" class="nav-link"
+                >Executive Committee</a
+              >
+              <a href="./board-of-directors.html" class="nav-link"
+                >Board of Directors</a
+              >
+              <a href="./standards-and-policies.html" class="nav-link"
+                >Standards & Policies</a
+              >
+              <a href="./careers.html" class="nav-link">Careers</a>
+            </nav>
+
+            <!-- New Overflow Trigger -->
+            <button
+              class="nav-overflow-trigger"
+              type="button"
+              aria-label="Toggle extra menu"
+              aria-expanded="false"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+
+          <!-- New Overflow Mega Menu  -->
+          <div
+            class="mega-menu mega-menu--overflow"
+            id="overflow-menu"
+            aria-label="Extra menu"
+          >
+            <div class="mega-menu__promo">
+              <h2>Queen Banking</h2>
+              <p>
+                Banking, credit, savings and protection built around her
+                journey.
+              </p>
+              <a href="#" class="text-link">Explore</a>
+            </div>
+
+            <div class="mega-menu__links" data-overflow-links></div>
+
+            <div class="mega-menu__feature">
+              <h3>Your bank in your pocket</h3>
+              <img
+                src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                alt="Customer using a mobile device"
+              />
+              <div class="store-btns">
+                <a href="#" class="store-btn"
+                  ><img
+                    src="./assets/images/mega-app-store.png"
+                    alt="App Store"
+                /></a>
+                <a href="#" class="store-btn"
+                  ><img
+                    src="./assets/images/mega-google-store.png"
+                    alt="Google Play Store"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-actions">
+            <button class="icon-button" aria-label="Search" type="button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button class="language-button" type="button">
+              EN <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <a href="#" class="button button--light">Open Account</a>
+            <a href="#" class="button button--cyan">Login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hover Dropdown Dock -->
+    <div class="quick-dock" id="quickDock">
+      <nav class="dock-menu" aria-label="Quick tools">
+        <!-- First item: hover trigger -->
+        <a
+          href="#calculator"
+          class="dock-item dock-trigger"
+          aria-label="Calculator"
+          data-tooltip="Loan Calculator"
+        >
+          <img src="./assets/images/dock-icon-1.png" alt="" />
+        </a>
+
+        <!-- Hidden items revealed on hover -->
+        <div class="dock-dropdown">
+          <a
+            href="#finance"
+            class="dock-item"
+            aria-label="Finance"
+            data-tooltip="Fixed Deposit"
+          >
+            <img src="./assets/images/dock-icon-2.png" alt="" />
+          </a>
+
+          <a
+            href="#payments"
+            class="dock-item"
+            aria-label="Payments"
+            data-tooltip="Savings"
+          >
+            <img src="./assets/images/dock-icon-3.png" alt="" />
+          </a>
+
+          <a
+            href="#currency"
+            class="dock-item"
+            aria-label="Currency exchange"
+            data-tooltip="FX Convertor"
+          >
+            <img src="./assets/images/dock-icon-4.png" alt="" />
+          </a>
+
+          <a
+            href="#reports"
+            class="dock-item"
+            aria-label="Reports"
+            data-tooltip="Tariff Guide"
+          >
+            <img src="./assets/images/dock-icon-5.png" alt="" />
+          </a>
+
+          <a
+            href="#locations"
+            class="dock-item"
+            aria-label="Locations"
+            data-tooltip="Locate a branch, agent or ATM"
+          >
+            <img src="./assets/images/dock-icon-6.png" alt="" />
+          </a>
+
+          <a
+            href="#account"
+            class="dock-item"
+            aria-label="Account"
+            data-tooltip="Open an account"
+          >
+            <img src="./assets/images/dock-icon-7.png" alt="" />
+          </a>
+
+          <a
+            href="#support"
+            class="dock-item"
+            aria-label="Support"
+            data-tooltip="Talk to us"
+          >
+            <img src="./assets/images/dock-icon-8.png" alt="" />
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <!--ACCESSIBILITY BUTTON -->
+    <button class="accessibility-button" aria-label="Accessibility options">
+      <img
+        src="./assets/images/accessibility.png"
+        alt="Accessibility options"
+      />
+    </button>
+
+    <!--CHATBOT BUTTON -->
+    <button class="chatbot-button" aria-label="Open chatbot">
+      <img src="./assets/images/chatbot.png" alt="Chatbot" />
+    </button>
+
+    <!-- ================= PAGE CONTENT ================= -->
+    <main class="page-content">
+      <!--Hero (Banner)-->
+      <section class="hero">
+        <video
+          class="hero_video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="./assets/images/exec-hero.png"
+          aria-hidden="true"
+        >
+          <source
+            src="https://www.youtube.com/watch?v=vXlVGA1QF00&pp=ygUYZmFtaWx5IGJhbmsgaW1hcmEgcGFtb2ph"
+            type="video/mp4"
+          />
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <!-- NSE Stock Ticker Marquee -->
+        <div class="stock-marquee-container">
+          <div class="stock-marquee-track">
+            <!-- First set of items -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <!-- Duplicate set to create seamless loop -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <!-- Add more duplicates as needed to fill the screen width before looping -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="hero-content">
+            <div class="breadcrumbs">
+              Home <span><i class="fa-solid fa-angle-right"></i></span> About Us
+              <span><i class="fa-solid fa-angle-right"></i></span> Executive
+              Committee
+            </div>
+            <h2>Executive Committee</h2>
+            <p>
+              The team driving Family Bank's strategy, culture, and commitment
+              to our customers across Kenya and beyond.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= MEMBERS SECTION ================= -->
+      <section class="members-section">
+        <div class="container">
+          <!-- Members Grid -->
+          <div class="members-grid">
+            <!-- Member Card 1 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img src="./assets/images/exec-1.png" alt="Mr. Eric Murai" />
+              </div>
+              <div class="member-info">
+                <h3>Ms. Nancy Njau</h3>
+                <p>Chief Executive Officer and Managing Director</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Ms. Nancy Njau"
+                  data-role="Chief Executive Officer and Managing Director"
+                  data-image="./assets/images/exec-1.png"
+                  data-bio="Nancy Njau is an astute and seasoned banker with over 22 years of extensive experience in strategic leadership, agile business transformation, building high-performance teams, client solutions innovation, growth acceleration, assets and liabilities management, credit management, sales, customer service, coaching, training and mentorship.
+
+                    Prior to her appointment as Family Bank Chief Executive Officer, Nancy served as the Chief Commercial Officer. Having begun her career at the Bank as a Management Trainee, she has since served in numerous instrumental positions including Chief Officer- Public Sector Banking, Head of Strategic Partnerships, Head of Retail Banking, and Regional Manager- Rift and Western Kenya and Nairobi Central Business District.
+
+                    Given her vast expertise, she has garnered numerous certifications. She is a Certified Public Accountant of Kenya, Certified Executive Leadership Coach through CDI Africa and an alumnus of the Advanced Management Program from Strathmore University Business School, CEIBS Business School in Accra, Ghana, and IESE Business School in Barcelona, Spain. As a transformative leader she also holds various certifications in diverse disciplines such as coaching, customer experience and performance management.
+
+                    Nancy holds a Masters of Business Administration in Strategic Management from Jomo Kenyatta University of Agriculture and Technology, a Bachelor of Commerce (Accounting Option) from Kenyatta University and a Higher Diploma in Human Resource Management. She is also an active member of the Institute of Certified Public Accountants of Kenya (ICPAK), the Institute of Human Resource Management (IHRM), and the Kenya Institute of Management (KIM).
+
+                    Her passion, commitment to excellence and team-driven approach has been instrumental in creating a customer-centric culture within the Bank, driving business growth and profitability, and ensuring exceptional customer experience."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Member Card 2 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img
+                  src="./assets/images/exec-2.png"
+                  alt="Dr. Gilbert Mutinda"
+                />
+              </div>
+              <div class="member-info">
+                <h3>Dr. Gilbert Mutinda</h3>
+                <p>AG. Chief Commercial Officer</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Dr. Gilbert Mutinda"
+                  data-role="AG. Chief Commercial Officer"
+                  data-image="./assets/images/exec-2.png"
+                  data-bio="Eric is an experienced in-house counsel and corporate governance professional, having previously worked as the Assistant Company Secretary at Britam Holdings Plc and as Legal Counsel at Standard Chartered Bank Kenya. He has vast experience in banking and finance law, corporate finance projects, corporate governance, and regulatory compliance.||He is an Advocate of the High Court of Kenya, a member of the Law Society of Kenya and the Institute of Certified Secretaries, and a certified professional mediator. He was appointed Company Secretary and Head of Legal Services in October 2019.||Eric holds a Master of Laws (LL.M) and a Bachelor of Laws (LL.B) from the University of Nairobi and a BSc in Applied Accounting from Oxford Brookes University. He has attended the prestigious Advanced Management Programme at Strathmore Business School."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Member Card 3 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img src="./assets/images/exec-3.png" alt="Belinda Maghanga" />
+              </div>
+              <div class="member-info">
+                <h3>Belinda Maghanga</h3>
+                <p>Chief Operations Officer</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Belinda Maghanga"
+                  data-role="Chief Operations Officer"
+                  data-image="./assets/images/exec-3.png"
+                  data-bio="Eric is an experienced in-house counsel and corporate governance professional, having previously worked as the Assistant Company Secretary at Britam Holdings Plc and as Legal Counsel at Standard Chartered Bank Kenya. He has vast experience in banking and finance law, corporate finance projects, corporate governance, and regulatory compliance.||He is an Advocate of the High Court of Kenya, a member of the Law Society of Kenya and the Institute of Certified Secretaries, and a certified professional mediator. He was appointed Company Secretary and Head of Legal Services in October 2019.||Eric holds a Master of Laws (LL.M) and a Bachelor of Laws (LL.B) from the University of Nairobi and a BSc in Applied Accounting from Oxford Brookes University. He has attended the prestigious Advanced Management Programme at Strathmore Business School."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Member Card 4 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img src="./assets/images/exec-4.png" alt="Elijah Kariuki" />
+              </div>
+              <div class="member-info">
+                <h3>Elijah Kariuki</h3>
+                <p>Chief Transformation Officer</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Elijah Kariuki"
+                  data-role="Chief Transformation Officer"
+                  data-image="./assets/images/exec-4.png"
+                  data-bio="Eric is an experienced in-house counsel and corporate governance professional, having previously worked as the Assistant Company Secretary at Britam Holdings Plc and as Legal Counsel at Standard Chartered Bank Kenya. He has vast experience in banking and finance law, corporate finance projects, corporate governance, and regulatory compliance.||He is an Advocate of the High Court of Kenya, a member of the Law Society of Kenya and the Institute of Certified Secretaries, and a certified professional mediator. He was appointed Company Secretary and Head of Legal Services in October 2019.||Eric holds a Master of Laws (LL.M) and a Bachelor of Laws (LL.B) from the University of Nairobi and a BSc in Applied Accounting from Oxford Brookes University. He has attended the prestigious Advanced Management Programme at Strathmore Business School."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!--Row 2-->
+
+            <!-- Member Card 5 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img src="./assets/images/exec-5.png" alt="Mr. Eric Murai" />
+              </div>
+              <div class="member-info">
+                <h3>Mr. Eric Murai</h3>
+                <p>Company Secretary and Chief Legal Officer</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Mr. Eric Murai"
+                  data-role="Company Secretary and Chief Legal Officer"
+                  data-image="./assets/images/exec-5.png"
+                  data-bio="Eric is an experienced in-house counsel and corporate governance professional, having previously worked as the Assistant Company Secretary at Britam Holdings Plc and as Legal Counsel at Standard Chartered Bank Kenya. He has vast experience in banking and finance law, corporate finance projects, corporate governance, and regulatory compliance.||He is an Advocate of the High Court of Kenya, a member of the Law Society of Kenya and the Institute of Certified Secretaries, and a certified professional mediator. He was appointed Company Secretary and Head of Legal Services in October 2019.||Eric holds a Master of Laws (LL.M) and a Bachelor of Laws (LL.B) from the University of Nairobi and a BSc in Applied Accounting from Oxford Brookes University. He has attended the prestigious Advanced Management Programme at Strathmore Business School."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Member Card 6 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img src="./assets/images/exec-6.png" alt="Paul Ngaragari" />
+              </div>
+              <div class="member-info">
+                <h3>Paul Ngaragari</h3>
+                <p>Chief Finance Officer</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Paul Ngaragari"
+                  data-role="Chief Finance Officer"
+                  data-image="./assets/images/exec-6.png"
+                  data-bio="Paul is a seasoned finance professional with over 15 years of experience in financial management, strategic planning, and risk management. He has held various leadership roles in the banking sector.||He holds a Bachelor of Commerce degree from the University of Nairobi and is a Certified Public Accountant (CPA)."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Member Card 7 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img src="./assets/images/exec-7.png" alt="Phyllis Kimani" />
+              </div>
+              <div class="member-info">
+                <h3>Phyllis Kimani</h3>
+                <p>Chief Retail Officer</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Phyllis Kimani"
+                  data-role="Chief Retail Officer"
+                  data-image="./assets/images/exec-7.png"
+                  data-bio="Phyllis has over 18 years of experience in retail banking, customer experience, and product development. She is passionate about driving financial inclusion and delivering exceptional customer value.||She holds a Master of Business Administration from the University of Nairobi and a Bachelor of Arts degree in Economics."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Member Card 8 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img src="./assets/images/exec-8.png" alt="Carpenter Ngunuh" />
+              </div>
+              <div class="member-info">
+                <h3>Carlpeter Ngunuh</h3>
+                <p>Chief ICT Special Projects Officer</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Carlpeter Ngunuh"
+                  data-role="Chief ICT Special Projects Officer"
+                  data-image="./assets/images/exec-8.png"
+                  data-bio="Carpenter is a technology leader with extensive experience in IT strategy, digital transformation, and cybersecurity. He has successfully led large-scale technology projects across the banking industry.||He holds a Bachelor of Science in Computer Science and a Master of Science in Information Technology."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!--Row 3-->
+
+            <!-- Member Card 9 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img src="./assets/images/exec-9.png" alt="Veronica Muthara" />
+              </div>
+              <div class="member-info">
+                <h3>Veronica Muthara</h3>
+                <p>Chief Credit Officer</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Veronica Muthara"
+                  data-role="Chief Credit Officer"
+                  data-image="./assets/images/exec-9.png"
+                  data-bio="Eric is an experienced in-house counsel and corporate governance professional, having previously worked as the Assistant Company Secretary at Britam Holdings Plc and as Legal Counsel at Standard Chartered Bank Kenya. He has vast experience in banking and finance law, corporate finance projects, corporate governance, and regulatory compliance.||He is an Advocate of the High Court of Kenya, a member of the Law Society of Kenya and the Institute of Certified Secretaries, and a certified professional mediator. He was appointed Company Secretary and Head of Legal Services in October 2019.||Eric holds a Master of Laws (LL.M) and a Bachelor of Laws (LL.B) from the University of Nairobi and a BSc in Applied Accounting from Oxford Brookes University. He has attended the prestigious Advanced Management Programme at Strathmore Business School."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Member Card 10 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img src="./assets/images/exec-10.png" alt="John Wachiuri" />
+              </div>
+              <div class="member-info">
+                <h3>John Wachiuri</h3>
+                <p>Chief Risk Officer</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="John Wachiuri"
+                  data-role="Chief Risk Officer"
+                  data-image="./assets/images/exec-10.png"
+                  data-bio="Paul is a seasoned finance professional with over 15 years of experience in financial management, strategic planning, and risk management. He has held various leadership roles in the banking sector.||He holds a Bachelor of Commerce degree from the University of Nairobi and is a Certified Public Accountant (CPA)."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Member Card 11 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img src="./assets/images/exec-11.png" alt="Bildard Fwamba" />
+              </div>
+              <div class="member-info">
+                <h3>Bildard Fwamba</h3>
+                <p>Chief Internal Auditor</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Bildard Fwamba"
+                  data-role="Chief Internal Auditor"
+                  data-image="./assets/images/exec-11.png"
+                  data-bio="Phyllis has over 18 years of experience in retail banking, customer experience, and product development. She is passionate about driving financial inclusion and delivering exceptional customer value.||She holds a Master of Business Administration from the University of Nairobi and a Bachelor of Arts degree in Economics."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Member Card 12 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img src="./assets/images/exec-12.png" alt="John Kyalo" />
+              </div>
+              <div class="member-info">
+                <h3>John Kyalo</h3>
+                <p>Ag. Chief Digital & Innovation Officer</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="John Kyalo"
+                  data-role="Ag. Chief Digital & Innovation Officer"
+                  data-image="./assets/images/exec-12.png"
+                  data-bio="Carpenter is a technology leader with extensive experience in IT strategy, digital transformation, and cybersecurity. He has successfully led large-scale technology projects across the banking industry.||He holds a Bachelor of Science in Computer Science and a Master of Science in Information Technology."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= MEMBER MODAL ================= -->
+      <div class="member-modal-overlay" id="memberModal" aria-hidden="true">
+        <div
+          class="member-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modalName"
+        >
+          <!-- Modal Controls (Top) -->
+          <div class="modal-controls">
+            <div class="modal-nav">
+              <button class="nav-btn prev-btn" aria-label="Previous member">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <button class="nav-btn next-btn" aria-label="Next member">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+            <button class="nav-btn close-btn" aria-label="Close modal">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <!-- Modal Content -->
+          <div class="modal-body">
+            <div class="modal-profile-header">
+              <div class="modal-image">
+                <img src="" alt="" id="modalImage" />
+              </div>
+              <div class="modal-title">
+                <h2 id="modalName"></h2>
+                <p id="modalRole"></p>
+                <a
+                  href="http://"
+                  class="linkedin-link"
+                  id="modalLinkedin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="modal-bio" id="modalBio">
+              <!-- Bio content will be injected here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
+          <!-- Footer heading -->
+          <div class="footer-heading">
+            <div>
+              <h2>Ready to Bank With Us?</h2>
+              <p>Start online in minutes and finish at your nearest branch.</p>
+            </div>
+
+            <a href="#" class="button button--light">Get Started</a>
+          </div>
+
+          <!-- Main footer columns -->
+          <div class="footer-grid">
+            <!-- Apps and social links -->
+            <div class="footer-column footer-apps">
+              <h3>Get PesaPap</h3>
+
+              <div class="app-links">
+                <a href="#" aria-label="Download on the App Store">
+                  <img
+                    src="./assets/images/foooter-appstore.png"
+                    alt="Apple store"
+                  />
+                </a>
+
+                <a href="#" aria-label="Get it on Google Play">
+                  <img
+                    src="./assets/images/footer-gstore.png"
+                    alt="Apple store"
+                  />
+                </a>
+              </div>
+
+              <h3 class="social-heading">Our Socials</h3>
+
+              <div class="social-links">
+                <a href="#" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="X">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="YouTube">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- About -->
+            <div class="footer-column">
+              <h3>About Us</h3>
+              <ul>
+                <li><a href="#">Company Profile</a></li>
+                <li><a href="#">Board of Directors</a></li>
+                <li><a href="#">Executive Committee</a></li>
+                <li><a href="#">Financials & Policies</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="./impact.html">Our Impact</a></li>
+                <li><a href="#">News & Updates</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Cost of Credit</a></li>
+              </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="footer-column resources-column">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="#">Merchant & Agent Portal</a></li>
+                <li>
+                  <a href="#"
+                    >Prepaid Cards Portal
+                    <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Access Family Pay
+                    <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li><a href="#">Tariff Guide</a></li>
+                <li><a href="#">Customer Notices</a></li>
+                <li><a href="#">Find an Agent, Branch or ATM</a></li>
+                <li><a href="#">Pepper's Agents</a></li>
+                <li><a href="#">Vehicles on Auction</a></li>
+                <li><a href="#">Documents & Forms</a></li>
+                <li><a href="#">Loan Calculator</a></li>
+                <li><a href="#">Interest Calculator</a></li>
+                <li>
+                  <a href="#"
+                    >Staff Email <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Correspondent Bank Information Family Bank Prequalification
+                    Notice 2026 - 2027</a
+                  >
+                </li>
+                <li>
+                  <a href="#">Family Bank Prequalification Registration</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="footer-column">
+              <h3>Help & Support</h3>
+              <ul>
+                <li>
+                  <a href="#"
+                    >Indemnity for Instructions Received by Email and/or
+                    Facsimile</a
+                  >
+                </li>
+                <li><a href="#">Branches and Codes</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Complaints Handling Guideline</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Cookies Guidelines</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Notice</a></li>
+                <li><a href="#">Whistle Blowing</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="newsletter">
+            <div class="newsletter__text">
+              <h3>Stay in the Loop</h3>
+              <p>
+                Get the latest updates, offers, and financial tips<br />
+                delivered straight to your inbox.
+              </p>
+            </div>
+
+            <form class="newsletter-form">
+              <label class="sr-only" for="newsletter-email">
+                Your email address
+              </label>
+
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                placeholder="Your email address"
+                required
+              />
+
+              <button type="submit" class="button button--cyan">
+                Subscribe
+              </button>
+            </form>
+          </div>
+
+          <p class="newsletter-message" aria-live="polite"></p>
+
+          <!-- Legal -->
+          <div class="footer-bottom">
+            <p>
+              Copyright © 2026 Family Bank Limited, Kenya. Regulated by the
+              Central Bank of Kenya.
+            </p>
+
+            <a href="#">Site by Bean</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

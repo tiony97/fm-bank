@@ -1848,7 +1848,7 @@ section {
       .stat-number {
         font-size: 3rem;
         font-weight: 700;
-        color: $primary-dark; // Inactive color
+        color: $secondary; // Inactive color
         line-height: 1;
         margin-bottom: 5px;
       }
@@ -2450,7 +2450,7 @@ section {
             font-size: 42px;
             line-height: 1.2;
             font-weight: 700;
-            color: $queen-primary;
+            color: $secondary;
           }
           h5 {
             font-size: 17px;
@@ -2460,6 +2460,14 @@ section {
           }
         }
       }
+    }
+  }
+}
+
+.queen-overview {
+  .stat {
+    h2 {
+      color: $queen-primary !important;
     }
   }
 }
@@ -4727,7 +4735,7 @@ section {
      HERO SECTION
   ========================================= */
   .hero {
-    height: 75vh;
+    height: 60vh;
     padding: 18vh 0 8vh;
 
     .stock-marquee-container {

@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Family Bank | Banking Made Simple</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/tailwind.css" />
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+      <!-- Utility navigation -->
+      <div class="utility-bar">
+        <div class="container">
+          <div class="utility-inner">
+            <nav class="utility-left" aria-label="Banking categories">
+              <a href="./personal.html">Personal</a>
+              <a href="./msme.html">MSME</a>
+              <a href="./corporate.html">Corporate</a>
+              <a href="./diaspora.html">Diaspora</a>
+              <a href="./bancassurance.html">Bancassurance</a>
+              <a href="./queen-banking.html">Queen Banking</a>
+              <a href="./asset-auction.html">Asset Auction</a>
+            </nav>
+
+            <nav class="utility-right" aria-label="Useful links">
+              <a href="./about.html" class="active">About Us</a>
+              <a href="./news.html">News</a>
+              <a href="#">Talk to Us</a>
+              <a href="#">Investor Relations</a>
+              <a href="./impact.html">Our Impact</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main navigation -->
+      <div class="main-nav">
+        <div class="main-nav__inner">
+          <a class="brand" href="/" aria-label="Family Bank home">
+            <img src="./assets/images/brand-logo.png" alt="Family Bank Logo" />
+          </a>
+
+          <button
+            class="mobile-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="nav-links-container">
+            <nav class="primary-nav" aria-label="Main navigation">
+              <a href="./our-story.html" class="nav-link">Our Story</a>
+              <a href="./executive-committee.html" class="nav-link"
+                >Executive Committee</a
+              >
+              <a href="./board-of-directors.html" class="nav-link"
+                >Board of Directors</a
+              >
+              <a href="./standards-and-policies.html" class="nav-link"
+                >Standards & Policies</a
+              >
+              <a href="./careers.html" class="nav-link">Careers</a>
+            </nav>
+
+            <!-- New Overflow Trigger -->
+            <button
+              class="nav-overflow-trigger"
+              type="button"
+              aria-label="Toggle extra menu"
+              aria-expanded="false"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+
+          <!-- New Overflow Mega Menu  -->
+          <div
+            class="mega-menu mega-menu--overflow"
+            id="overflow-menu"
+            aria-label="Extra menu"
+          >
+            <div class="mega-menu__promo">
+              <h2>Queen Banking</h2>
+              <p>
+                Banking, credit, savings and protection built around her
+                journey.
+              </p>
+              <a href="#" class="text-link">Explore</a>
+            </div>
+
+            <div class="mega-menu__links" data-overflow-links></div>
+
+            <div class="mega-menu__feature">
+              <h3>Your bank in your pocket</h3>
+              <img
+                src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                alt="Customer using a mobile device"
+              />
+              <div class="store-btns">
+                <a href="#" class="store-btn"
+                  ><img
+                    src="./assets/images/mega-app-store.png"
+                    alt="App Store"
+                /></a>
+                <a href="#" class="store-btn"
+                  ><img
+                    src="./assets/images/mega-google-store.png"
+                    alt="Google Play Store"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-actions">
+            <button class="icon-button" aria-label="Search" type="button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button class="language-button" type="button">
+              EN <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <a href="#" class="button button--light">Open Account</a>
+            <a href="#" class="button button--cyan">Login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hover Dropdown Dock -->
+    <div class="quick-dock" id="quickDock">
+      <nav class="dock-menu" aria-label="Quick tools">
+        <!-- First item: hover trigger -->
+        <a
+          href="#calculator"
+          class="dock-item dock-trigger"
+          aria-label="Calculator"
+          data-tooltip="Loan Calculator"
+        >
+          <img src="./assets/images/dock-icon-1.png" alt="" />
+        </a>
+
+        <!-- Hidden items revealed on hover -->
+        <div class="dock-dropdown">
+          <a
+            href="#finance"
+            class="dock-item"
+            aria-label="Finance"
+            data-tooltip="Fixed Deposit"
+          >
+            <img src="./assets/images/dock-icon-2.png" alt="" />
+          </a>
+
+          <a
+            href="#payments"
+            class="dock-item"
+            aria-label="Payments"
+            data-tooltip="Savings"
+          >
+            <img src="./assets/images/dock-icon-3.png" alt="" />
+          </a>
+
+          <a
+            href="#currency"
+            class="dock-item"
+            aria-label="Currency exchange"
+            data-tooltip="FX Convertor"
+          >
+            <img src="./assets/images/dock-icon-4.png" alt="" />
+          </a>
+
+          <a
+            href="#reports"
+            class="dock-item"
+            aria-label="Reports"
+            data-tooltip="Tariff Guide"
+          >
+            <img src="./assets/images/dock-icon-5.png" alt="" />
+          </a>
+
+          <a
+            href="#locations"
+            class="dock-item"
+            aria-label="Locations"
+            data-tooltip="Locate a branch, agent or ATM"
+          >
+            <img src="./assets/images/dock-icon-6.png" alt="" />
+          </a>
+
+          <a
+            href="#account"
+            class="dock-item"
+            aria-label="Account"
+            data-tooltip="Open an account"
+          >
+            <img src="./assets/images/dock-icon-7.png" alt="" />
+          </a>
+
+          <a
+            href="#support"
+            class="dock-item"
+            aria-label="Support"
+            data-tooltip="Talk to us"
+          >
+            <img src="./assets/images/dock-icon-8.png" alt="" />
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <!--ACCESSIBILITY BUTTON -->
+    <button class="accessibility-button" aria-label="Accessibility options">
+      <img
+        src="./assets/images/accessibility.png"
+        alt="Accessibility options"
+      />
+    </button>
+
+    <!--CHATBOT BUTTON -->
+    <button class="chatbot-button" aria-label="Open chatbot">
+      <img src="./assets/images/chatbot.png" alt="Chatbot" />
+    </button>
+
+    <!-- ================= PAGE CONTENT ================= -->
+    <main class="page-content">
+      <!--Hero (Banner)-->
+      <section class="hero">
+        <video
+          class="hero_video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="./assets/images/directors-hero.png"
+          aria-hidden="true"
+        >
+          <source
+            src="https://www.youtube.com/watch?v=vXlVGA1QF00&pp=ygUYZmFtaWx5IGJhbmsgaW1hcmEgcGFtb2ph"
+            type="video/mp4"
+          />
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <!-- NSE Stock Ticker Marquee -->
+        <div class="stock-marquee-container">
+          <div class="stock-marquee-track">
+            <!-- First set of items -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <!-- Duplicate set to create seamless loop -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <!-- Add more duplicates as needed to fill the screen width before looping -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="hero-content">
+            <div class="breadcrumbs">
+              Home <span><i class="fa-solid fa-angle-right"></i></span> About Us
+              <span><i class="fa-solid fa-angle-right"></i></span> Board of
+              Directors
+            </div>
+            <h2>Board of Directors</h2>
+            <p>
+              Our Board of Directors provides crucial oversight, strategic
+              guidance, and independent judgment, ensuring that Family Bank
+              operates in the best interests of its stakeholders.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= BOARD OF DIRECTORS SECTION ================= -->
+      <section class="members-section">
+        <div class="container">
+          <div class="members-grid">
+            <!-- Director 1 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img
+                  src="./assets/images/direct-1.png"
+                  alt="Mr. Lazarus Muema"
+                />
+              </div>
+              <div class="member-info">
+                <h3>Mr. Lazarus Muema</h3>
+                <p>Board Chairman</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Mr. Lazarus Muema"
+                  data-role="Board Chairman"
+                  data-image="./assets/images/direct-1.png"
+                  data-bio="Lazarus was appointed to the Family Bank Board in 2017. He is a highly respected professional in the Finance/Pensions sector with experience spanning over 30 years.||He has held senior positions in multinational corporations both in Kenya and Europe. He has been a Finance Manager at Shell Exploration in Kenya and Uganda, a Financial Controller at Kenyatta and a finance advisor at Shell International Limited.||He is a pension consultant with Penplan Services Limited, a Pensions Consultancy Firm that he founded in 2011."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Director 2 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img src="./assets/images/direct-2.png" alt="Ms. Nancy Njau" />
+              </div>
+              <div class="member-info">
+                <h3>Ms. Nancy Njau</h3>
+                <p>Chief Executive Officer & Managing Director</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Ms. Nancy Njau"
+                  data-role="Chief Executive Officer & Managing Director"
+                  data-image="./assets/images/direct-2.png"
+                  data-bio="Nancy Njau is an astute and seasoned banker with over 22 years of extensive experience in strategic leadership, agile business transformation, building high-performance teams, client solutions innovation, growth acceleration, assets and liabilities management, credit management, sales, customer service, coaching, training and mentorship.||Prior to her appointment as Family Bank Chief Executive Officer, Nancy served as the Chief Commercial Officer. Having begun her career at the Bank as a Management Trainee, she has since served in numerous instrumental positions including Chief Officer- Public Sector Banking, Head of Strategic Partnerships, Head of Retail Banking, and Regional Manager- Rift and Western Kenya and Nairobi Central Business District."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Director 3 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img
+                  src="./assets/images/direct-3.png"
+                  alt="Mr. Titus K. Muya"
+                />
+              </div>
+              <div class="member-info">
+                <h3>Mr. Titus K. Muya</h3>
+                <p>Non-Executive Director</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Mr. Titus K. Muya"
+                  data-role="Non-Executive Director"
+                  data-image="./assets/images/direct-3.png"
+                  data-bio="Mr Titus Kiondo Muya, popularly known as TK, is one of Kenya's most outstanding and visionary entrepreneurs and the founder of several successful businesses spanning the banking, insurance, real estate and agriculture sectors.||After a successful career in public service in the 1960s, 1970s and early 1980s, TK ventured into entrepreneurship. He founded Family Bank in 1984 and served as the Bank's Chief Executive Officer until June 2006. From 2006 to 2012, he served as a Non-Executive Chairman of the Bank."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Director 4 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img
+                  src="./assets/images/direct-4.png"
+                  alt="Ms. Mary N. Mburu"
+                />
+              </div>
+              <div class="member-info">
+                <h3>Ms. Mary N. Mburu</h3>
+                <p>Independent Non-Executive Member</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Ms. Mary N. Mburu"
+                  data-role="Independent Non-Executive Member"
+                  data-image="./assets/images/direct-4.png"
+                  data-bio="Ms Mburu was appointed to the Board of Family Bank in October 2020. She has vast experience in project management. Ms. Mburu has been a Senior Acquisition and Assistance Specialist (Senior A&A Specialist) at USAID Overseas Missions designated as a Third Country National (TCN) for six years.||Before her overseas assignment, she worked the USAID Regional Mission in Nairobi serving South Sudan, DR Congo for 7 years as an Acquisition and Assistance Specialist (A&A Specialist). Presently, Mburu worked for the Kenya Pipeline Company as a Senior Officer in Procurement."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Director 5 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img src="./assets/images/direct-5.png" alt="Mr. Eric Murai" />
+              </div>
+              <div class="member-info">
+                <h3>Mr. Eric Murai</h3>
+                <p>Company Secretary & Chief Legal Officer</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Mr. Eric Murai"
+                  data-role="Company Secretary & Chief Legal Officer"
+                  data-image="./assets/images/direct-5.png"
+                  data-bio="Eric is an experienced in-house counsel and corporate governance professional, having previously worked as the Assistant Company Secretary at Britam Holdings Plc and as Legal Counsel at Standard Chartered Bank Kenya. He has vast experience in banking and finance law, corporate finance projects, corporate governance, and regulatory compliance.||He is an Advocate of the High Court of Kenya, a member of the Law Society of Kenya and the Institute of Certified Secretaries, and a certified professional mediator. He was appointed Company Secretary and Head of Legal Services in October 2019."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Director 6 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img src="./assets/images/direct-6.png" alt="Mr. Mark Keriri" />
+              </div>
+              <div class="member-info">
+                <h3>Mr. Mark Keriri</h3>
+                <p>Non-Executive Director</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Mr. Mark Keriri"
+                  data-role="Non-Executive Director"
+                  data-image="./assets/images/direct-6.png"
+                  data-bio="Mr. Mark Keriri has over twenty years' experience in Information Technology both in Kenya and the United States.||Mr. Keriri previously worked with Family Bank between 2002 and 2015. Before joining Family Bank, Mr. Keriri worked as a programmer with PNC Bank in Pittsburgh, Pennsylvania, USA.||Mr. Keriri is also a director at Daykio Plantations Ltd, Kenya Orient Insurance Ltd and Kenya Orient Life Assurance Limited. He holds a Bachelor of Science (Information Major) from Duquesne University in Pittsburgh, Pennsylvania."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Director 7 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img
+                  src="./assets/images/direct-7.png"
+                  alt="Ms. Peninah W. Kariuki"
+                />
+              </div>
+              <div class="member-info">
+                <h3>Ms. Peninah W. Kariuki</h3>
+                <p>Independent Non-Executive Member</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Ms. Peninah W. Kariuki"
+                  data-role="Independent Non-Executive Member"
+                  data-image="./assets/images/direct-7.png"
+                  data-bio="Peninah has over 35 years of work experience working in various capacities within the banking and finance industry. She began her career as a research manager at the Central Bank of Kenya after which she took on the role of Assistant to the Senior Resident Representative for the International Monetary Fund (IMF) Country Office in Nairobi.||She has held senior positions at the African Development Bank (AfDB) having served as a Senior Country Economist, Principal Country Economist & Chief Country Economist before ascending to the Country Manager position at the Sierra Leone Country Office of the AfDB."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Director 8 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img
+                  src="./assets/images/direct-8.png"
+                  alt="Ms. Hannah N. Mbugua"
+                />
+              </div>
+              <div class="member-info">
+                <h3>Ms. Hannah N. Mbugua</h3>
+                <p>Independent Non-Executive Member</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Ms. Hannah N. Mbugua"
+                  data-role="Independent Non-Executive Member"
+                  data-image="./assets/images/direct-8.png"
+                  data-bio="Hannah is a seasoned banker with over 30 years of banking experience. She has an extensive track record working with cross functional teams, strategy formulation and execution, and people management.||She joined Family Finance Building Society in 1990 as a Teller, growing through the ranks and serving in various capacities. Before she left Family Bank in 2020, she was a Senior Corporate Branch Manager.||Hannah holds a Bachelor of Arts Degree in Social Sciences from The Catholic University of Eastern Africa (CUEA)."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Director 9 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img
+                  src="./assets/images/direct-9.png"
+                  alt="Prof. Winnie I. Nyamute"
+                />
+              </div>
+              <div class="member-info">
+                <h3>Prof. Winnie I. Nyamute</h3>
+                <p>Independent Non-Executive Member</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Prof. Winnie I. Nyamute"
+                  data-role="Independent Non-Executive Member"
+                  data-image="./assets/images/direct-9.png"
+                  data-bio="Prof. Winnie is an accounting professional with over 30 years' experience. She is a professor in Finance and Accounting at the University of Nairobi. Previously she served as a lecturer at the Catholic University of Eastern Africa. She began her career as a Finance Officer at Kenya Water Institute.||She holds a PhD in Business Administration, an MBA in Finance and a Bachelor of Commerce in Accounting. She is a Certified Public Accountant and a fellow of the Institute of Certified Public Accountants of Kenya (ICPAK)."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Director 10 -->
+            <div class="member-card">
+              <div class="member-image">
+                <img
+                  src="./assets/images/direct-10.png"
+                  alt="Mr. Baptista M. Kanyaru"
+                />
+              </div>
+              <div class="member-info">
+                <h3>Mr. Baptista M. Kanyaru</h3>
+                <p>Independent Non-Executive Member</p>
+                <button
+                  class="button button--underline view-profile-btn"
+                  data-name="Mr. Baptista M. Kanyaru"
+                  data-role="Independent Non-Executive Member"
+                  data-image="./assets/images/direct-10.png"
+                  data-bio="Mr. Kanyaru is a seasoned legal professional with over a decade of experience. He holds a Bachelor of Laws degree from Moi University and a Postgraduate Diploma from the Kenya School of Law, and is currently pursuing a Masters Degree in Strategic Management at Kenya Methodist University.||He is an Advocate of the High Court of Kenya and a member of the Law Society of Kenya. In addition to his legal practice, Mr. Kanyaru currently serves as a Director at KTDA Holdings and as a Director at Kiegou and Igembe Tea Factories, where he contributes to strategic oversight and leadership."
+                  data-linkedin="#"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= MEMBER MODAL ================= -->
+      <div class="member-modal-overlay" id="memberModal" aria-hidden="true">
+        <div
+          class="member-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modalName"
+        >
+          <!-- Modal Controls (Top) -->
+          <div class="modal-controls">
+            <div class="modal-nav">
+              <button class="nav-btn prev-btn" aria-label="Previous member">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <button class="nav-btn next-btn" aria-label="Next member">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+            <button class="nav-btn close-btn" aria-label="Close modal">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <!-- Modal Content -->
+          <div class="modal-body">
+            <div class="modal-profile-header">
+              <div class="modal-image">
+                <img src="" alt="" id="modalImage" />
+              </div>
+              <div class="modal-title">
+                <h2 id="modalName"></h2>
+                <p id="modalRole"></p>
+                <a
+                  href="http://"
+                  class="linkedin-link"
+                  id="modalLinkedin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="modal-bio" id="modalBio">
+              <!-- Bio content will be injected here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
+          <!-- Footer heading -->
+          <div class="footer-heading">
+            <div>
+              <h2>Ready to Bank With Us?</h2>
+              <p>Start online in minutes and finish at your nearest branch.</p>
+            </div>
+
+            <a href="#" class="button button--light">Get Started</a>
+          </div>
+
+          <!-- Main footer columns -->
+          <div class="footer-grid">
+            <!-- Apps and social links -->
+            <div class="footer-column footer-apps">
+              <h3>Get PesaPap</h3>
+
+              <div class="app-links">
+                <a href="#" aria-label="Download on the App Store">
+                  <img
+                    src="./assets/images/foooter-appstore.png"
+                    alt="Apple store"
+                  />
+                </a>
+
+                <a href="#" aria-label="Get it on Google Play">
+                  <img
+                    src="./assets/images/footer-gstore.png"
+                    alt="Apple store"
+                  />
+                </a>
+              </div>
+
+              <h3 class="social-heading">Our Socials</h3>
+
+              <div class="social-links">
+                <a href="#" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="X">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="YouTube">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- About -->
+            <div class="footer-column">
+              <h3>About Us</h3>
+              <ul>
+                <li><a href="#">Company Profile</a></li>
+                <li><a href="#">Board of Directors</a></li>
+                <li><a href="#">Executive Committee</a></li>
+                <li><a href="#">Financials & Policies</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="./impact.html">Our Impact</a></li>
+                <li><a href="#">News & Updates</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Cost of Credit</a></li>
+              </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="footer-column resources-column">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="#">Merchant & Agent Portal</a></li>
+                <li>
+                  <a href="#"
+                    >Prepaid Cards Portal
+                    <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Access Family Pay
+                    <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li><a href="#">Tariff Guide</a></li>
+                <li><a href="#">Customer Notices</a></li>
+                <li><a href="#">Find an Agent, Branch or ATM</a></li>
+                <li><a href="#">Pepper's Agents</a></li>
+                <li><a href="#">Vehicles on Auction</a></li>
+                <li><a href="#">Documents & Forms</a></li>
+                <li><a href="#">Loan Calculator</a></li>
+                <li><a href="#">Interest Calculator</a></li>
+                <li>
+                  <a href="#"
+                    >Staff Email <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Correspondent Bank Information Family Bank Prequalification
+                    Notice 2026 - 2027</a
+                  >
+                </li>
+                <li>
+                  <a href="#">Family Bank Prequalification Registration</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="footer-column">
+              <h3>Help & Support</h3>
+              <ul>
+                <li>
+                  <a href="#"
+                    >Indemnity for Instructions Received by Email and/or
+                    Facsimile</a
+                  >
+                </li>
+                <li><a href="#">Branches and Codes</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Complaints Handling Guideline</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Cookies Guidelines</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Notice</a></li>
+                <li><a href="#">Whistle Blowing</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="newsletter">
+            <div class="newsletter__text">
+              <h3>Stay in the Loop</h3>
+              <p>
+                Get the latest updates, offers, and financial tips<br />
+                delivered straight to your inbox.
+              </p>
+            </div>
+
+            <form class="newsletter-form">
+              <label class="sr-only" for="newsletter-email">
+                Your email address
+              </label>
+
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                placeholder="Your email address"
+                required
+              />
+
+              <button type="submit" class="button button--cyan">
+                Subscribe
+              </button>
+            </form>
+          </div>
+
+          <p class="newsletter-message" aria-live="polite"></p>
+
+          <!-- Legal -->
+          <div class="footer-bottom">
+            <p>
+              Copyright © 2026 Family Bank Limited, Kenya. Regulated by the
+              Central Bank of Kenya.
+            </p>
+
+            <a href="#">Site by Bean</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

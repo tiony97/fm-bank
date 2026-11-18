@@ -1875,4 +1875,472 @@ $(function () {
     // Clear search
     $section.find('input[type="search"]').val("");
   });
+
+  // ================= MEMBERS DIRECTORY MODAL =================
+  $(function () {
+    const $modalOverlay = $("#memberModal");
+    const $modalImage = $("#modalImage");
+    const $modalName = $("#modalName");
+    const $modalRole = $("#modalRole");
+    const $modalLinkedin = $("#modalLinkedin");
+    const $modalBio = $("#modalBio");
+    const $profileBtns = $(".view-profile-btn");
+
+    let currentIndex = 0;
+    let membersData = [];
+
+    // 1. Extract data from all buttons on page load
+    $profileBtns.each(function (index) {
+      const $btn = $(this);
+      membersData.push({
+        name: $btn.data("name"),
+        role: $btn.data("role"),
+        image: $btn.data("image"),
+        bio: $btn.data("bio"),
+        linkedin: $btn.data("linkedin"),
+        element: $btn, // Store the button to reference for focus return
+      });
+    });
+
+    // 2. Function to populate and open the modal
+    function openModal(index) {
+      currentIndex = index;
+      const member = membersData[currentIndex];
+
+      // Populate content
+      $modalName.text(member.name);
+      $modalRole.text(member.role);
+      $modalImage.attr("src", member.image).attr("alt", member.name);
+
+      // Handle LinkedIn link (hide if not provided)
+      //   if (member.linkedin && member.linkedin !== "#") {
+      //     $modalLinkedin.attr("href", member.linkedin).show();
+      //   } else {
+      //     $modalLinkedin.hide();
+      //   }
+      // Always show LinkedIn and set the href
+      $modalLinkedin.attr("href", member.linkedin || "#").show();
+
+      // Handle Bio (Split by "||" if you used the delimiter for paragraphs)
+      let bioHtml = "";
+      if (member.bio) {
+        const paragraphs = member.bio.split("||");
+        paragraphs.forEach((p) => {
+          bioHtml += `<p>${p.trim()}</p>`;
+        });
+      }
+      $modalBio.html(bioHtml);
+
+      // Show modal
+      $modalOverlay.addClass("is-active").attr("aria-hidden", "false");
+      $("body").css("overflow", "hidden"); // Prevent background scrolling
+    }
+
+    // 3. Function to close the modal
+    function closeModal() {
+      $modalOverlay.removeClass("is-active").attr("aria-hidden", "true");
+      $("body").css("overflow", "");
+
+      // Return focus to the button that opened the modal
+      if (membersData[currentIndex]) {
+        membersData[currentIndex].element.trigger("focus");
+      }
+    }
+
+    // 4. Event Listeners
+
+    // Open Modal
+    $profileBtns.on("click", function (e) {
+      e.preventDefault();
+      const index = $profileBtns.index(this);
+      openModal(index);
+    });
+
+    // Close Modal (Button, Overlay click, or Escape key)
+    $modalOverlay.find(".close-btn").on("click", closeModal);
+
+    $modalOverlay.on("click", function (e) {
+      if (e.target === this) closeModal();
+    });
+
+    $(document).on("keydown", function (e) {
+      if (e.key === "Escape" && $modalOverlay.hasClass("is-active")) {
+        closeModal();
+      }
+    });
+
+    // Next / Previous Navigation
+    $modalOverlay.find(".next-btn").on("click", function () {
+      let nextIndex = (currentIndex + 1) % membersData.length;
+      openModal(nextIndex);
+    });
+
+    $modalOverlay.find(".prev-btn").on("click", function () {
+      let prevIndex =
+        (currentIndex - 1 + membersData.length) % membersData.length;
+      openModal(prevIndex);
+    });
+  });
+
+  // ================= GLOBAL FILTER COMPONENT =================
+  $(function () {
+    const $globalFilters = $(".global-filter");
+
+    if (!$globalFilters.length) return;
+
+    // 1. Inject Check Icons into Checkboxes
+    $globalFilters.find(".gf-option .gf-checkbox").each(function () {
+      if (!$(this).find(".check-icon").length) {
+        $(this).append('<i class="fa-solid fa-check check-icon"></i>');
+      }
+    });
+
+    // 2. Toggle Dropdown Open/Close
+    $globalFilters.find(".gf-trigger").on("click", function (e) {
+      e.stopPropagation();
+      const $parent = $(this).closest(".gf-select");
+      const $dropdown = $parent.find(".gf-dropdown");
+      const $trigger = $(this);
+
+      // Close all other global dropdowns
+      $globalFilters
+        .find(".gf-select")
+        .not($parent)
+        .find(".gf-dropdown")
+        .removeClass("open");
+      $globalFilters
+        .find(".gf-select")
+        .not($parent)
+        .find(".gf-trigger")
+        .removeClass("active");
+
+      // Toggle current
+      $dropdown.toggleClass("open");
+      $trigger.toggleClass("active");
+    });
+
+    // 3. Close dropdowns when clicking outside
+    $(document).on("click.gfClose", function (e) {
+      if (!$(e.target).closest(".gf-select").length) {
+        $globalFilters.find(".gf-dropdown").removeClass("open");
+        $globalFilters.find(".gf-trigger").removeClass("active");
+      }
+    });
+
+    // 4. Prevent closing when clicking inside the dropdown menu
+    $globalFilters.find(".gf-dropdown").on("click", function (e) {
+      e.stopPropagation();
+    });
+
+    // 5. Handle Option Selection
+    $globalFilters.find(".gf-option").on("click", function () {
+      const $item = $(this);
+      const $parent = $item.closest(".gf-select");
+      const $triggerText = $parent.find(".gf-selected-text");
+      const selectName = $parent.data("name");
+
+      // Toggle selection state
+      $item.toggleClass("selected");
+
+      // Get all currently selected values in this dropdown
+      const selectedValues = $parent
+        .find(".gf-option.selected")
+        .map(function () {
+          return $(this).data("value");
+        })
+        .get();
+
+      // Update Trigger Text
+      if (selectedValues.length === 0) {
+        // Reset to default based on the data-name attribute
+        if (selectName === "category") $triggerText.text("Category");
+        else if (selectName === "date") $triggerText.text("Date");
+        else if (selectName === "period") $triggerText.text("Period");
+        else $triggerText.text("Select...");
+      } else if (selectedValues.length === 1) {
+        $triggerText.text(selectedValues[0]);
+      } else {
+        $triggerText.text(`${selectedValues.length} Selected`);
+      }
+    });
+
+    // 6. Handle Clear Button
+    $globalFilters.find(".gf-clear-btn").on("click", function (e) {
+      e.preventDefault();
+      const $filterContainer = $(this).closest(".global-filter");
+
+      // Clear search input
+      $filterContainer.find('input[type="search"]').val("");
+
+      // Clear all selected options
+      $filterContainer.find(".gf-option").removeClass("selected");
+
+      // Reset all trigger texts to default
+      $filterContainer.find(".gf-selected-text").each(function () {
+        const name = $(this).closest(".gf-select").data("name");
+        if (name === "category") $(this).text("Category");
+        else if (name === "date") $(this).text("Date");
+        else if (name === "period") $(this).text("Period");
+        else $(this).text("Select...");
+      });
+    });
+
+    // 7. Handle Apply Button (Optional - add your filter logic here)
+    $globalFilters.find(".gf-apply-btn").on("click", function (e) {
+      e.preventDefault();
+      // Example: Collect all selected data to filter your grid
+      const selectedFilters = {};
+      $(this)
+        .closest(".global-filter")
+        .find(".gf-select")
+        .each(function () {
+          const name = $(this).data("name");
+          const values = $(this)
+            .find(".gf-option.selected")
+            .map(function () {
+              return $(this).data("value");
+            })
+            .get();
+          if (values.length > 0) selectedFilters[name] = values;
+        });
+
+      console.log("Applying filters:", selectedFilters);
+      // Add your AJAX call or frontend filtering logic here
+    });
+  });
+
+  // ================= JOB DETAILS FORM LOGIC =================
+  $(function () {
+    const $jobForm = $(".job-application-form");
+
+    if (!$jobForm.length) return;
+
+    // 1. Handle File Upload UI
+    const $fileInput = $("#resume");
+    const $dropZone = $("#drop-zone");
+    const $uploadContent = $dropZone.find(".upload-content");
+    const $fileInfo = $dropZone.find(".file-info");
+
+    $fileInput.on("change", function () {
+      const file = this.files[0];
+
+      if (file) {
+        // Show file name and hide the default upload UI
+        $uploadContent.hide();
+        $fileInfo.text(`Selected: ${file.name}`).fadeIn(200);
+      } else {
+        // Reset if no file is selected
+        $fileInfo.hide();
+        $uploadContent.fadeIn(200);
+      }
+    });
+
+    // Add drag and drop styling
+    $dropZone.on("dragover dragenter", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      $(this).addClass("dragover");
+    });
+
+    $dropZone.on("dragleave drop", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      $(this).removeClass("dragover");
+    });
+
+    // 2. Handle Phone Number Country Code
+    const $countrySelect = $("#country-code");
+    const $phoneInput = $("#phone-number");
+
+    $countrySelect.on("change", function () {
+      const selectedCode = $(this).val();
+
+      // Update the placeholder to show the country code
+      $phoneInput.attr("placeholder", selectedCode);
+
+      // Optional: If the input is empty, pre-fill the country code
+      if ($phoneInput.val() === "" || $phoneInput.val().startsWith("+")) {
+        $phoneInput.val(selectedCode + " ");
+      }
+    });
+
+    // Trigger change on load to set initial placeholder
+    $countrySelect.trigger("change");
+  });
+
+  // ================= SIMILAR JOBS SWIPER =================
+  const similarJobsElement = document.querySelector(".similar-jobs-swiper");
+
+  if (similarJobsElement && typeof Swiper !== "undefined") {
+    const similarJobsSwiper = new Swiper(similarJobsElement, {
+      slidesPerView: 1.1, // Shows a tiny peek of the next slide on mobile
+      spaceBetween: 20,
+      speed: 500,
+
+      // Connect to our custom navigation buttons
+      navigation: {
+        prevEl: ".similar-jobs-section .similar-prev",
+        nextEl: ".similar-jobs-section .similar-next",
+      },
+
+      // Accessibility
+      a11y: {
+        prevSlideMessage: "Previous job",
+        nextSlideMessage: "Next job",
+      },
+
+      // Recalculate layout when viewport changes
+      observer: true,
+      observeParents: true,
+      resizeObserver: true,
+
+      // Responsive Breakpoints
+      breakpoints: {
+        // Mobile (0px and up)
+        0: {
+          slidesPerView: 1.1,
+          spaceBetween: 15,
+        },
+        // Tablet (600px and up)
+        600: {
+          slidesPerView: 2.2,
+          spaceBetween: 20,
+        },
+        // Small Desktop (900px and up)
+        900: {
+          slidesPerView: 2.8, // Shows 2 full cards and a peek of the 3rd
+          spaceBetween: 24,
+        },
+        // Large Desktop (1200px and up)
+        1200: {
+          slidesPerView: 3.5, // Shows 3 full cards and a half card, matching the image
+          spaceBetween: 30,
+        },
+      },
+    });
+  }
+
+  // ================= CAREERS VIDEO MODAL =================
+  $(function () {
+    const $videoPreview = $("#openVideoModal");
+    const $videoModal = $("#videoModal");
+    const $closeBtn = $("#closeVideoModal");
+    const $videoPlayer = $("#videoPlayer");
+
+    // REPLACE THIS with your actual YouTube embed link or MP4 URL
+    const videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
+
+    // Open Modal
+    $videoPreview.on("click", function (e) {
+      // Prevent opening if they clicked the "Read Transcript" button
+      if ($(e.target).closest(".transcript-btn").length) {
+        return;
+      }
+
+      $videoPlayer.attr("src", videoUrl); // Load video
+      $videoModal.addClass("is-active");
+      $("body").css("overflow", "hidden"); // Prevent background scrolling
+    });
+
+    // Close Modal Function
+    function closeVideoModal() {
+      $videoModal.removeClass("is-active");
+      $videoPlayer.attr("src", ""); // Stop video playback
+      $("body").css("overflow", "");
+    }
+
+    // Close on Button Click
+    $closeBtn.on("click", closeVideoModal);
+
+    // Close on Overlay Click
+    $videoModal.on("click", function (e) {
+      if (e.target === this) {
+        closeVideoModal();
+      }
+    });
+
+    // Close on Escape Key
+    $(document).on("keydown", function (e) {
+      if (e.key === "Escape" && $videoModal.hasClass("is-active")) {
+        closeVideoModal();
+      }
+    });
+  });
+
+  // ================= OUR JOURNEY SWIPER =================
+  $(function () {
+    const journeyElement = document.querySelector(".journey-swiper");
+    const $timelineLabelsContainer = $("#timelineLabels");
+    const $timelineProgress = $("#timelineProgress");
+
+    if (journeyElement && typeof Swiper !== "undefined") {
+      // 1. Extract years from slides to build timeline labels
+      const slides = journeyElement.querySelectorAll(".swiper-slide");
+      slides.forEach((slide, index) => {
+        const year = slide.getAttribute("data-year");
+        const activeClass = index === 0 ? "active" : "";
+        $timelineLabelsContainer.append(
+          `<span class="timeline-label ${activeClass}" data-index="${index}">${year}</span>`,
+        );
+      });
+
+      // 2. Initialize Swiper
+      const journeySwiper = new Swiper(journeyElement, {
+        slidesPerView: 1.5, // Shows 1 full and half of the next on desktop
+        spaceBetween: 40,
+        speed: 600,
+        watchSlidesProgress: true, // Required for the opacity effect
+
+        navigation: {
+          prevEl: ".journey-prev",
+          nextEl: ".journey-next",
+        },
+
+        breakpoints: {
+          0: {
+            slidesPerView: 1.1, // Peek on mobile
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 1.5, // Show 1 full, peek next
+            spaceBetween: 30,
+          },
+          1200: {
+            slidesPerView: 2, // Show exactly 2 items on large screens as per design
+            spaceBetween: 50,
+          },
+        },
+
+        // Sync custom timeline when slide changes
+        on: {
+          init: function () {
+            updateTimeline(this.activeIndex);
+          },
+          slideChange: function () {
+            updateTimeline(this.activeIndex);
+          },
+        },
+      });
+
+      // 3. Timeline Update Function
+      function updateTimeline(activeIndex) {
+        // Update Labels
+        $timelineLabelsContainer.find(".timeline-label").removeClass("active");
+        $timelineLabelsContainer
+          .find(`.timeline-label[data-index="${activeIndex}"]`)
+          .addClass("active");
+
+        // Update Progress Bar Width
+        const totalSlides = slides.length - 1; // Subtract 1 for 0-index
+        const progressPercentage = (activeIndex / totalSlides) * 100;
+        $timelineProgress.css("width", `${progressPercentage}%`);
+      }
+
+      // 4. Make Timeline Labels Clickable
+      $(document).on("click", ".timeline-label", function () {
+        const targetIndex = $(this).data("index");
+        journeySwiper.slideTo(targetIndex);
+      });
+    }
+  });
 });

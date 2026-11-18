@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Family Bank | Banking Made Simple</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/tailwind.css" />
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+      <!-- Utility navigation -->
+      <div class="utility-bar">
+        <div class="container">
+          <div class="utility-inner">
+            <nav class="utility-left" aria-label="Banking categories">
+              <a href="./personal.html">Personal</a>
+              <a href="./msme.html">MSME</a>
+              <a href="./corporate.html">Corporate</a>
+              <a href="./diaspora.html">Diaspora</a>
+              <a href="./bancassurance.html">Bancassurance</a>
+              <a href="./queen-banking.html">Queen Banking</a>
+              <a href="./asset-auction.html">Asset Auction</a>
+            </nav>
+
+            <nav class="utility-right" aria-label="Useful links">
+              <a href="./about.html" class="active">About Us</a>
+              <a href="./news.html">News</a>
+              <a href="#">Talk to Us</a>
+              <a href="#">Investor Relations</a>
+              <a href="./impact.html">Our Impact</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main navigation -->
+      <div class="main-nav">
+        <div class="main-nav__inner">
+          <a class="brand" href="/" aria-label="Family Bank home">
+            <img src="./assets/images/brand-logo.png" alt="Family Bank Logo" />
+          </a>
+
+          <button
+            class="mobile-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="nav-links-container">
+            <nav class="primary-nav" aria-label="Main navigation">
+              <a href="./our-story.html" class="nav-link">Our Story</a>
+              <a href="./executive-committee.html" class="nav-link"
+                >Executive Committee</a
+              >
+              <a href="./board-of-directors.html" class="nav-link"
+                >Board of Directors</a
+              >
+              <a href="./standards-and-policies.html" class="nav-link"
+                >Standards & Policies</a
+              >
+              <a href="./careers.html" class="nav-link">Careers</a>
+            </nav>
+
+            <!-- New Overflow Trigger -->
+            <button
+              class="nav-overflow-trigger"
+              type="button"
+              aria-label="Toggle extra menu"
+              aria-expanded="false"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+
+          <!-- New Overflow Mega Menu  -->
+          <div
+            class="mega-menu mega-menu--overflow"
+            id="overflow-menu"
+            aria-label="Extra menu"
+          >
+            <div class="mega-menu__promo">
+              <h2>Queen Banking</h2>
+              <p>
+                Banking, credit, savings and protection built around her
+                journey.
+              </p>
+              <a href="#" class="text-link">Explore</a>
+            </div>
+
+            <div class="mega-menu__links" data-overflow-links></div>
+
+            <div class="mega-menu__feature">
+              <h3>Your bank in your pocket</h3>
+              <img
+                src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                alt="Customer using a mobile device"
+              />
+              <div class="store-btns">
+                <a href="#" class="store-btn"
+                  ><img
+                    src="./assets/images/mega-app-store.png"
+                    alt="App Store"
+                /></a>
+                <a href="#" class="store-btn"
+                  ><img
+                    src="./assets/images/mega-google-store.png"
+                    alt="Google Play Store"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-actions">
+            <button class="icon-button" aria-label="Search" type="button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button class="language-button" type="button">
+              EN <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <a href="#" class="button button--light">Open Account</a>
+            <a href="#" class="button button--cyan">Login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hover Dropdown Dock -->
+    <div class="quick-dock" id="quickDock">
+      <nav class="dock-menu" aria-label="Quick tools">
+        <!-- First item: hover trigger -->
+        <a
+          href="#calculator"
+          class="dock-item dock-trigger"
+          aria-label="Calculator"
+          data-tooltip="Loan Calculator"
+        >
+          <img src="./assets/images/dock-icon-1.png" alt="" />
+        </a>
+
+        <!-- Hidden items revealed on hover -->
+        <div class="dock-dropdown">
+          <a
+            href="#finance"
+            class="dock-item"
+            aria-label="Finance"
+            data-tooltip="Fixed Deposit"
+          >
+            <img src="./assets/images/dock-icon-2.png" alt="" />
+          </a>
+
+          <a
+            href="#payments"
+            class="dock-item"
+            aria-label="Payments"
+            data-tooltip="Savings"
+          >
+            <img src="./assets/images/dock-icon-3.png" alt="" />
+          </a>
+
+          <a
+            href="#currency"
+            class="dock-item"
+            aria-label="Currency exchange"
+            data-tooltip="FX Convertor"
+          >
+            <img src="./assets/images/dock-icon-4.png" alt="" />
+          </a>
+
+          <a
+            href="#reports"
+            class="dock-item"
+            aria-label="Reports"
+            data-tooltip="Tariff Guide"
+          >
+            <img src="./assets/images/dock-icon-5.png" alt="" />
+          </a>
+
+          <a
+            href="#locations"
+            class="dock-item"
+            aria-label="Locations"
+            data-tooltip="Locate a branch, agent or ATM"
+          >
+            <img src="./assets/images/dock-icon-6.png" alt="" />
+          </a>
+
+          <a
+            href="#account"
+            class="dock-item"
+            aria-label="Account"
+            data-tooltip="Open an account"
+          >
+            <img src="./assets/images/dock-icon-7.png" alt="" />
+          </a>
+
+          <a
+            href="#support"
+            class="dock-item"
+            aria-label="Support"
+            data-tooltip="Talk to us"
+          >
+            <img src="./assets/images/dock-icon-8.png" alt="" />
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <!--ACCESSIBILITY BUTTON -->
+    <button class="accessibility-button" aria-label="Accessibility options">
+      <img
+        src="./assets/images/accessibility.png"
+        alt="Accessibility options"
+      />
+    </button>
+
+    <!--CHATBOT BUTTON -->
+    <button class="chatbot-button" aria-label="Open chatbot">
+      <img src="./assets/images/chatbot.png" alt="Chatbot" />
+    </button>
+
+    <!-- ================= PAGE CONTENT ================= -->
+    <main class="page-content">
+      <!--Hero (Banner)-->
+      <section class="hero">
+        <video
+          class="hero_video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="./assets/images/our-story-hero.png"
+          aria-hidden="true"
+        >
+          <source
+            src="https://www.youtube.com/watch?v=vXlVGA1QF00&pp=ygUYZmFtaWx5IGJhbmsgaW1hcmEgcGFtb2ph"
+            type="video/mp4"
+          />
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <!-- NSE Stock Ticker Marquee -->
+        <div class="stock-marquee-container">
+          <div class="stock-marquee-track">
+            <!-- First set of items -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <!-- Duplicate set to create seamless loop -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <!-- Add more duplicates as needed to fill the screen width before looping -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="hero-content">
+            <div class="breadcrumbs">
+              Home <span><i class="fa-solid fa-angle-right"></i></span> About Us
+              <span><i class="fa-solid fa-angle-right"></i></span> Our Story
+            </div>
+            <h2>Our Story</h2>
+            <p>
+              Since 1984, we have worked to positively transform people's lives
+              through quality financial services.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!--Overview Section-->
+      <section class="overview">
+        <div class="container">
+          <div class="title-wrapper">
+            <h2>Who We Are</h2>
+          </div>
+          <div class="content-wrapper">
+            <p>
+              Family Bank was established in 1984 as Family Bank Building
+              Society with just one branch. It has since grown and became a
+              fully-fledged commercial bank in May 2007. The Bank is regulated
+              by the Central Bank of Kenya (CBK).
+            </p>
+            <p>
+              Family Bank has a strong retail customer base, focuses on SME
+              banking and has a vision to positively transform people's lives in
+              Africa.
+            </p>
+            <p>
+              The Bank is renowned for its digital innovation, being the first
+              to introduce paperless banking through smart card technology. This
+              allows customers to transact without filling in deposit or
+              withdrawal slips. Family Bank is also a pioneer in mobile banking
+              with its PesaPap mobile app, which is unparalleled in the market.
+            </p>
+            <p>
+              Family Bank provides retail and consumer products, SME,
+              agribusiness, corporate banking, trade finance, and insurance
+              products. In line with its county banking roadmap, the Bank is
+              leveraging the country’s devolved governance system to attract
+              more customers. This strategy aims to utilise the opportunities
+              the devolved governance structure offers, positioning Family Bank
+              as a one-stop-shop for all banking needs
+            </p>
+
+            <div class="stats">
+              <div class="stat">
+                <h2 class="stat-number">1.3M</h2>
+                <h5 class="stat-title">Customers</h5>
+              </div>
+              <div class="stat">
+                <h2 class="stat-number">98</h2>
+                <h5 class="stat-title">Branches</h5>
+              </div>
+              <div class="stat">
+                <h2 class="stat-number">208.7B</h2>
+                <h5 class="stat-title">In Assets</h5>
+              </div>
+              <div class="stat">
+                <h2 class="stat-number">42</h2>
+                <h5 class="stat-title">Years of Service</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= OUR JOURNEY SECTION ================= -->
+      <section class="journey-section">
+        <div class="container">
+          <!-- Header Area -->
+          <div class="journey-header">
+            <div class="header-text">
+              <h2>Our Journey Since 1984</h2>
+              <p>
+                Family Bank began in 1984 with one branch and a clear vision: to
+                be the institution of choice for people the mainstream banks had
+                ignored. Follow the milestones that have shaped us, from our
+                first customers to the bank we are today, and the people and
+                purpose that have carried us.
+              </p>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <div class="journey-nav-arrows">
+              <button
+                class="swiper-btn journey-prev"
+                aria-label="Previous milestone"
+              >
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <button
+                class="swiper-btn journey-next"
+                aria-label="Next milestone"
+              >
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Custom Timeline Bar -->
+          <div class="timeline-wrapper">
+            <div class="timeline-track">
+              <div class="timeline-progress" id="timelineProgress"></div>
+            </div>
+            <div class="timeline-labels" id="timelineLabels">
+              <!-- Labels will be injected via JS based on slides, but you can hardcode them -->
+              <!-- Example: <span class="timeline-label active">1984</span> -->
+            </div>
+          </div>
+
+          <!-- Swiper Container -->
+          <div class="swiper journey-swiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1: 1984 -->
+              <div class="swiper-slide" data-year="1984">
+                <div class="journey-card">
+                  <div class="journey-image">
+                    <img src="./assets/images/1984.png" alt="1984 Journey" />
+                  </div>
+                  <div class="journey-content">
+                    <h3>1984</h3>
+                    <p>
+                      Family Finance Building Society was started in 1984 to be
+                      the institution of choice for the unbanked, serving the
+                      mass market the mainstream banks ignored: small
+                      businesses, jua kali artisans, farmers, teachers, junior
+                      government employees and NGOs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2: Our Mission -->
+              <div class="swiper-slide" data-year="Our Mission">
+                <div class="journey-card">
+                  <div class="journey-image">
+                    <img
+                      src="./assets/images/our-mission.png"
+                      alt="Our Mission"
+                    />
+                  </div>
+                  <div class="journey-content">
+                    <h3>Our Mission</h3>
+                    <p>
+                      Our mission has been to liberate the unbanked from
+                      financial bondage and the cycle of poverty, without
+                      discrimination as to creed, race, age or gender.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3: Today -->
+              <div class="swiper-slide" data-year="Today">
+                <div class="journey-card">
+                  <div class="journey-image">
+                    <img src="./assets/images/today.png" alt="Today" />
+                  </div>
+                  <div class="journey-content">
+                    <h3>Today</h3>
+                    <p>
+                      Today, Family Bank is a top tier bank with over 90
+                      branches and an extensive digital network. We are listed
+                      on the Nairobi Securities Exchange, serving millions of
+                      customers across the region.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 4: As We Grew -->
+              <div class="swiper-slide" data-year="As We Grew">
+                <div class="journey-card">
+                  <div class="journey-image">
+                    <img
+                      src="./assets/images/as-we-grew.png"
+                      alt="As We Grew"
+                    />
+                  </div>
+                  <div class="journey-content">
+                    <h3>As We Grew</h3>
+                    <p>
+                      As we grew, we expanded our services to include
+                      microfinance, SME banking, and digital banking solutions.
+                      We established partnerships that allowed us to reach more
+                      communities.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 5: Our People -->
+              <div class="swiper-slide" data-year="Our People">
+                <div class="journey-card">
+                  <div class="journey-image">
+                    <img
+                      src="./assets/images/our-people.png"
+                      alt="Our People"
+                    />
+                  </div>
+                  <div class="journey-content">
+                    <h3>Our People</h3>
+                    <p>
+                      Our people have been the cornerstone of our success.
+                      Through continuous training and a customer-first culture,
+                      we have built a team that is passionate about transforming
+                      lives.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 6: The Road Ahead -->
+              <div class="swiper-slide" data-year="The Road Ahead">
+                <div class="journey-card">
+                  <div class="journey-image">
+                    <img
+                      src="./assets/images/road-ahead.png"
+                      alt="The Road Ahead"
+                    />
+                  </div>
+                  <div class="journey-content">
+                    <h3>The Road Ahead</h3>
+                    <p>
+                      The future is filled with endless possibilities. We remain
+                      committed to empowering our customers and driving
+                      sustainable growth in the communities we serve.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Story Tabs-->
+      <section class="product-tabs-section our-story-tabs">
+        <div class="container">
+          <!-- Section Heading -->
+          <div class="section-intro">
+            <h2>What Guides Us</h2>
+            <p>
+              Our vision, mission and purpose set the direction. Our core values
+              shape how we get there, every day, with our customers.
+            </p>
+          </div>
+
+          <!-- Tabs Layout -->
+          <div class="tabs-layout">
+            <!-- Left Side: Navigation -->
+            <div class="tabs-nav" role="tablist" aria-label="Account Details">
+              <button
+                class="tab-btn active"
+                id="tab-vision"
+                role="tab"
+                aria-selected="true"
+                aria-controls="panel-vision"
+                data-tab="panel-vision"
+              >
+                <span class="tab-num">01</span> Our Vision
+              </button>
+              <button
+                class="tab-btn"
+                id="tab-mission"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-mission"
+                data-tab="panel-mission"
+              >
+                <span class="tab-num">02</span> Our Mission
+              </button>
+              <button
+                class="tab-btn"
+                id="tab-purpose"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-purpose"
+                data-tab="panel-purpose"
+              >
+                <span class="tab-num">03</span> Our Purpose
+              </button>
+              <button
+                class="tab-btn"
+                id="tab-values"
+                role="tab"
+                aria-selected="true"
+                aria-controls="panel-values"
+                data-tab="panel-values"
+              >
+                <span class="tab-num">04</span> Core Values
+              </button>
+            </div>
+
+            <!-- Right Side: Content Panels -->
+            <div class="tabs-content">
+              <!-- Panel 1: Our Vision -->
+              <div
+                class="tab-panel active"
+                id="panel-vision"
+                role="tabpanel"
+                aria-labelledby="tab-vision"
+              >
+                <div class="panel-text">
+                  <h3>Our Vision</h3>
+                  <p>
+                    To be the financial institution that leads in the positive
+                    transformation of people’s lives in Africa.
+                  </p>
+                </div>
+                <div class="panel-image">
+                  <img
+                    src="./assets/images/Values.png"
+                    alt="Customer shopping"
+                  />
+                </div>
+              </div>
+
+              <!-- Panel 2: Our Mission -->
+              <div
+                class="tab-panel"
+                id="panel-mission"
+                role="tabpanel"
+                aria-labelledby="tab-mission"
+              >
+                <div class="panel-text">
+                  <h3>Our Mission</h3>
+                  <p>
+                    We positively transform people's lives by providing quality
+                    financial services through innovative, efficient and
+                    reputable practices
+                  </p>
+                </div>
+                <div class="panel-image">
+                  <img
+                    src="./assets/images/Values.png"
+                    alt="Customer handing over ID"
+                  />
+                </div>
+              </div>
+
+              <!-- Panel 3: Our Purpose -->
+              <div
+                class="tab-panel"
+                id="panel-purpose"
+                role="tabpanel"
+                aria-labelledby="tab-purpose"
+              >
+                <div class="panel-text">
+                  <h3>Our Purpose</h3>
+                  <p class="panel-description">
+                    To enable people create and sustain wealth through access to
+                    flexible, affordable financial services.
+                  </p>
+                  <p>
+                    To enable people create and sustain wealth through access to
+                    flexible, affordable financial services.
+                  </p>
+                </div>
+                <div class="panel-image">
+                  <img
+                    src="./assets/images/Values.png"
+                    alt="Customer reviewing pricing"
+                  />
+                </div>
+              </div>
+
+              <!--Panel  4: Core Values-->
+              <div
+                class="tab-panel"
+                id="panel-values"
+                role="tabpanel"
+                aria-labelledby="tab-values"
+              >
+                <div class="panel-text">
+                  <h3>Core Values</h3>
+                  <div class="values-grid">
+                    <div class="value-card">
+                      <img
+                        src="./assets/images/Values-icon-1.png"
+                        alt="value-image"
+                      />
+                      <h5>Winning Together</h5>
+                      <p>
+                        Within ourselves and with our customers, we work
+                        together and we win together
+                      </p>
+                    </div>
+                    <div class="value-card">
+                      <img
+                        src="./assets/images/Values-icon-2.png"
+                        alt="value-image"
+                      />
+                      <h5>Self Belief</h5>
+                      <p>
+                        in ourselves and our customers’ ability to change the
+                        world
+                      </p>
+                    </div>
+                    <div class="value-card">
+                      <img
+                        src="./assets/images/Values-icon-3.png"
+                        alt="value-image"
+                      />
+                      <h5>Transparency</h5>
+                      <p>our customers will trust and reward us for it</p>
+                    </div>
+                    <div class="value-card">
+                      <img
+                        src="./assets/images/Values-icon-4.png"
+                        alt="value-image"
+                      />
+                      <h5>Humility</h5>
+                      <p>it’s not about us, it’s about our customers</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-image">
+                  <img
+                    src="./assets/images/Values.png"
+                    alt="Customer shopping"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Awards & Recognition -->
+      <section class="awards-section">
+        <div class="container">
+          <div class="section-intro text-center">
+            <h2>Awards & Recognitions</h2>
+            <p>
+              The most recent and notable awards the Bank has received include:
+            </p>
+          </div>
+
+          <div class="awards-grid">
+            <!-- Row 1 -->
+            <div class="award-item">
+              <p>
+                Service Excellence award, in the inaugural category CX Social
+                Impact & Sustainability. 2024 (October)
+              </p>
+              <span>Institute of Customer Experience</span>
+            </div>
+            <div class="award-item">
+              <p>
+                Winner, for the Queen Banking product, recognised for the Bank's
+                commitment to women's financial empowerment. 2024
+              </p>
+              <span>Banking on Women Awards</span>
+            </div>
+            <div class="award-item">
+              <p>Winner, Battle of the Banks Africa. 2023</p>
+              <span>ICAP Training Solutions</span>
+            </div>
+            <div class="award-item">
+              <p>
+                Most Aggressive Bank (special award. Battle of the Banks
+                Africa). 2023
+              </p>
+              <span>ICAP Training Solutions</span>
+            </div>
+            <div class="award-item">
+              <p>
+                Best Risk Managed Bank (special award. Battle of the Banks
+                Africa). 2023
+              </p>
+              <span>ICAP Training Solutions</span>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="award-item">
+              <p>
+                Best Team Presentations (special award, Battle of the Banks
+                Africa). 2023
+              </p>
+              <span>ICAP Training Solutions</span>
+            </div>
+            <div class="award-item">
+              <p>Best internal customer experience in Kenya. 2023</p>
+              <span>ICX Service Excellence Awards</span>
+            </div>
+            <div class="award-item">
+              <p>Top Tier II Bank in customer experience. 2023</p>
+              <span>KBA Awards</span>
+            </div>
+            <div class="award-item">
+              <p>Second-best bank overall. 2022</p>
+              <span>Kenya Bankers Association survey</span>
+            </div>
+            <div class="award-item">
+              <p>
+                Best Tier Two bank in customer responsiveness and digital
+                banking experience. 2022
+              </p>
+              <span>Kenya Bankers Association survey</span>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="award-item">
+              <p>
+                Bank of the Year for High-Impact Agricultural Lending to SMEs.
+                2022
+              </p>
+              <span>Aceli Africa Convention</span>
+            </div>
+            <div class="award-item">
+              <p>
+                Best Tier Two Bank in Customer Responsiveness and Digital
+                Banking Experience. 2021
+              </p>
+              <span
+                >Kenya Bankers Association (KBA) Customer Satisfaction
+                Survey</span
+              >
+            </div>
+            <div class="award-item">
+              <p>Best Tier Two Bank in Digital and Customer Experience. 2020</p>
+              <span
+                >Kenya Bankers Association Customer Satisfaction Survey</span
+              >
+            </div>
+            <div class="award-item">
+              <p>
+                Overall second-best bank in Digital and Customer Experience.
+                2020
+              </p>
+              <span
+                >Kenya Bankers Association Customer Satisfaction Survey</span
+              >
+            </div>
+            <div class="award-item">
+              <p>Best SME Bank in Kenya. 2017</p>
+              <span>Banker Africa East Africa Awards</span>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="award-item">
+              <p>Fastest Growing Bank based on Financials. 2015</p>
+              <span></span>
+              <!-- Empty span to maintain height if needed -->
+            </div>
+            <div class="award-item">
+              <p>Best Bank in Micro-Finance.</p>
+              <span></span>
+            </div>
+            <div class="award-item">
+              <p>1st Runner-up. 2013 & 2014</p>
+              <span>Think Business Magazine Awards</span>
+            </div>
+            <div class="award-item">
+              <p>Best Farmers Bank in Kiambu and Laikipia counties.</p>
+              <span></span>
+            </div>
+            <div class="award-item">
+              <p>2nd best financial services provider in Kitui County.</p>
+              <span>Kitui Agricultural Trade Fair</span>
+            </div>
+
+            <!-- Row 5 -->
+            <div class="award-item">
+              <p>
+                Best VISA Marketing/VISA Brand Awareness Campaign, with the
+                tagline "The way to pay everyday", for the EMV Visa Card.
+              </p>
+              <span>VISA International</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
+          <!-- Footer heading -->
+          <div class="footer-heading">
+            <div>
+              <h2>Ready to Bank With Us?</h2>
+              <p>Start online in minutes and finish at your nearest branch.</p>
+            </div>
+
+            <a href="#" class="button button--light">Get Started</a>
+          </div>
+
+          <!-- Main footer columns -->
+          <div class="footer-grid">
+            <!-- Apps and social links -->
+            <div class="footer-column footer-apps">
+              <h3>Get PesaPap</h3>
+
+              <div class="app-links">
+                <a href="#" aria-label="Download on the App Store">
+                  <img
+                    src="./assets/images/foooter-appstore.png"
+                    alt="Apple store"
+                  />
+                </a>
+
+                <a href="#" aria-label="Get it on Google Play">
+                  <img
+                    src="./assets/images/footer-gstore.png"
+                    alt="Apple store"
+                  />
+                </a>
+              </div>
+
+              <h3 class="social-heading">Our Socials</h3>
+
+              <div class="social-links">
+                <a href="#" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="X">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="YouTube">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- About -->
+            <div class="footer-column">
+              <h3>About Us</h3>
+              <ul>
+                <li><a href="#">Company Profile</a></li>
+                <li><a href="#">Board of Directors</a></li>
+                <li><a href="#">Executive Committee</a></li>
+                <li><a href="#">Financials & Policies</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="./impact.html">Our Impact</a></li>
+                <li><a href="#">News & Updates</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Cost of Credit</a></li>
+              </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="footer-column resources-column">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="#">Merchant & Agent Portal</a></li>
+                <li>
+                  <a href="#"
+                    >Prepaid Cards Portal
+                    <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Access Family Pay
+                    <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li><a href="#">Tariff Guide</a></li>
+                <li><a href="#">Customer Notices</a></li>
+                <li><a href="#">Find an Agent, Branch or ATM</a></li>
+                <li><a href="#">Pepper's Agents</a></li>
+                <li><a href="#">Vehicles on Auction</a></li>
+                <li><a href="#">Documents & Forms</a></li>
+                <li><a href="#">Loan Calculator</a></li>
+                <li><a href="#">Interest Calculator</a></li>
+                <li>
+                  <a href="#"
+                    >Staff Email <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Correspondent Bank Information Family Bank Prequalification
+                    Notice 2026 - 2027</a
+                  >
+                </li>
+                <li>
+                  <a href="#">Family Bank Prequalification Registration</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="footer-column">
+              <h3>Help & Support</h3>
+              <ul>
+                <li>
+                  <a href="#"
+                    >Indemnity for Instructions Received by Email and/or
+                    Facsimile</a
+                  >
+                </li>
+                <li><a href="#">Branches and Codes</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Complaints Handling Guideline</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Cookies Guidelines</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Notice</a></li>
+                <li><a href="#">Whistle Blowing</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="newsletter">
+            <div class="newsletter__text">
+              <h3>Stay in the Loop</h3>
+              <p>
+                Get the latest updates, offers, and financial tips<br />
+                delivered straight to your inbox.
+              </p>
+            </div>
+
+            <form class="newsletter-form">
+              <label class="sr-only" for="newsletter-email">
+                Your email address
+              </label>
+
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                placeholder="Your email address"
+                required
+              />
+
+              <button type="submit" class="button button--cyan">
+                Subscribe
+              </button>
+            </form>
+          </div>
+
+          <p class="newsletter-message" aria-live="polite"></p>
+
+          <!-- Legal -->
+          <div class="footer-bottom">
+            <p>
+              Copyright © 2026 Family Bank Limited, Kenya. Regulated by the
+              Central Bank of Kenya.
+            </p>
+
+            <a href="#">Site by Bean</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
