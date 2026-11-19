@@ -2369,4 +2369,228 @@ $(function () {
       });
     }
   });
+
+  // ================= FAQ SECTION LOGIC =================
+  $(function () {
+    // 1. Tab Switching
+    $(".faq-tab-btn").on("click", function () {
+      const targetPanelId = $(this).data("tab");
+
+      // Remove active from all buttons
+      $(".faq-tab-btn").removeClass("active").attr("aria-selected", "false");
+      // Add active to clicked button
+      $(this).addClass("active").attr("aria-selected", "true");
+
+      // Hide all panels
+      $(".faq-panel").removeClass("active").hide();
+
+      // Show targeted panel
+      $("#" + targetPanelId)
+        .addClass("active")
+        .fadeIn(300);
+    });
+
+    // 2. Accordion Logic
+    $(".faq-question").on("click", function () {
+      const $parentItem = $(this).closest(".faq-item");
+      const $answer = $parentItem.find(".faq-answer");
+      const $icon = $(this).find(".faq-icon");
+
+      // Check if this item is currently open
+      const isOpen = $parentItem.hasClass("active");
+
+      // Optional: Close all other items in the same tab (Accordion style)
+      $parentItem
+        .siblings(".faq-item")
+        .removeClass("active")
+        .find(".faq-answer")
+        .slideUp(300);
+      $parentItem
+        .siblings(".faq-item")
+        .find(".faq-icon")
+        .removeClass("fa-chevron-up")
+        .addClass("fa-chevron-down");
+
+      // Toggle the clicked item
+      if (isOpen) {
+        $parentItem.removeClass("active");
+        $answer.slideUp(300);
+        $icon.removeClass("fa-chevron-up").addClass("fa-chevron-down");
+      } else {
+        $parentItem.addClass("active");
+        $answer.slideDown(300);
+        $icon.removeClass("fa-chevron-down").addClass("fa-chevron-up");
+      }
+    });
+  });
+
+  // ================= LOCATIONS MAP LOGIC (LEAFLET) =================
+  let map;
+  let markers = [];
+
+  // --- 1. Dummy Data (Keep your existing array here) ---
+  const locationData = {
+    branch: [
+      {
+        name: "Family Bank Towers - 001",
+        lat: -1.2845,
+        lng: 36.8235,
+        address: "Family Bank Towers, Muindi Mbingu Street, Nairobi",
+        hours: "Retail: Mon-Fri 8:00am – 4:00pm; Sat 8:00am – 12:00pm",
+      },
+      {
+        name: "Wote Branch - 088",
+        lat: -1.7833,
+        lng: 37.6333,
+        address: "Junction Mall, along Wote – Makindu Road",
+        hours: "Retail: Mon-Fri 8:00am – 5:00pm; Sat 8:00am – 1:00pm",
+      },
+      // ... other branches
+    ],
+    agent: [
+      {
+        name: "PesaPap Agent - Kajiado",
+        lat: -1.8522,
+        lng: 36.7768,
+        address: "Kitengela Town, Kajiado",
+        hours: "Mon-Sat: 8:00am – 6:00pm",
+      },
+      // ... other agents
+    ],
+    atm: [
+      {
+        name: "ATM - JKIA",
+        lat: -1.3191,
+        lng: 36.9278,
+        address: "4th Season Centre Building, JKIA, Nairobi",
+        hours: "24/7",
+      },
+      // ... other ATMs
+    ],
+  };
+
+  // --- 2. Initialize Leaflet Map ---
+  function initMap() {
+    // Set default view to Kenya
+    map = L.map("googleMap").setView([-1.286389, 36.817223], 7);
+
+    // Add OpenStreetMap Tile Layer (Completely Free, No API Key)
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19,
+    }).addTo(map);
+
+    // Load initial markers (Branches)
+    updateMarkers("branch");
+  }
+
+  // --- 3. Function to Update Markers based on Tab ---
+  function updateMarkers(type) {
+    // Clear existing markers from the map
+    markers.forEach((marker) => map.removeLayer(marker));
+    markers = [];
+
+    const locations = locationData[type] || [];
+
+    // Add new markers
+    locations.forEach((loc) => {
+      // You can use custom icons here if you want different colors per type
+      const marker = L.marker([loc.lat, loc.lng]).addTo(map);
+
+      // Add click event to open your custom modal
+      marker.on("click", () => {
+        showLocationModal(loc);
+        map.panTo([loc.lat, loc.lng]);
+      });
+
+      markers.push(marker);
+    });
+
+    // Adjust map bounds to fit all markers
+    if (markers.length > 0) {
+      const group = new L.featureGroup(markers);
+      map.fitBounds(group.getBounds());
+
+      // Prevent zooming in too much if there's only one marker
+      if (markers.length === 1) {
+        map.setZoom(15);
+      }
+    }
+  }
+
+  // --- 4. Popup Modal Logic (Unchanged) ---
+  const $locationModal = $("#locationModal");
+  const $closeLocationModal = $("#closeLocationModal");
+
+  function showLocationModal(loc) {
+    $("#locName").text(loc.name);
+    $("#locHours").text(loc.hours);
+    $("#locAddress").text(loc.address);
+
+    // Generate Google Maps directions link (still works for navigating)
+    const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${loc.lat},${loc.lng}`;
+    $("#locDirections").attr("href", directionsUrl);
+
+    $locationModal.addClass("is-active");
+    $("body").css("overflow", "hidden");
+  }
+
+  function closeLocationModal() {
+    $locationModal.removeClass("is-active");
+    $("body").css("overflow", "");
+  }
+
+  // Close Modal Listeners
+  $closeLocationModal.on("click", closeLocationModal);
+  $locationModal.on("click", function (e) {
+    if (e.target === this) closeLocationModal();
+  });
+  $(document).on("keydown", function (e) {
+    if (e.key === "Escape" && $locationModal.hasClass("is-active")) {
+      closeLocationModal();
+    }
+  });
+
+  // --- 5. Event Listeners for Tabs & Load ---
+  $(function () {
+    // Initialize map on page load
+    initMap();
+
+    // Tab Switching
+    $(".loc-tab-btn").on("click", function () {
+      const type = $(this).data("type");
+
+      $(".loc-tab-btn").removeClass("active").attr("aria-selected", "false");
+      $(this).addClass("active").attr("aria-selected", "true");
+
+      updateMarkers(type);
+    });
+
+    // Get Current Location Button
+    $("#getLocationBtn").on("click", function () {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const userPos = [
+              position.coords.latitude,
+              position.coords.longitude,
+            ];
+
+            map.setView(userPos, 14);
+
+            // Add a marker for user
+            L.marker(userPos).addTo(map).bindPopup("You are here").openPopup();
+          },
+          () => {
+            alert(
+              "Unable to retrieve your location. Please check your browser permissions.",
+            );
+          },
+        );
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    });
+  });
 });

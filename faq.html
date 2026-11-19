@@ -1,0 +1,1343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Family Bank | Banking Made Simple</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/tailwind.css" />
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+      <!-- Utility navigation -->
+      <div class="utility-bar">
+        <div class="container">
+          <div class="utility-inner">
+            <nav class="utility-left" aria-label="Banking categories">
+              <a href="./personal.html">Personal</a>
+              <a href="./msme.html">MSME</a>
+              <a href="./corporate.html">Corporate</a>
+              <a href="./diaspora.html">Diaspora</a>
+              <a href="./bancassurance.html">Bancassurance</a>
+              <a href="./queen-banking.html">Queen Banking</a>
+              <a href="./asset-auction.html">Asset Auction</a>
+            </nav>
+
+            <nav class="utility-right" aria-label="Useful links">
+              <a href="./about.html">About Us</a>
+              <a href="./news.html">News</a>
+              <a href="./help-and-support.html" class="active"
+                >Help & Support</a
+              >
+              <a href="#">Investor Relations</a>
+              <a href="./impact.html">Our Impact</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main navigation -->
+      <div class="main-nav">
+        <div class="main-nav__inner">
+          <a class="brand" href="/" aria-label="Family Bank home">
+            <img src="./assets/images/brand-logo.png" alt="Family Bank Logo" />
+          </a>
+
+          <button
+            class="mobile-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="nav-links-container">
+            <nav class="primary-nav" aria-label="Main navigation">
+              <a href="#" class="nav-link">Contact Us</a>
+              <a href="./faq.html" class="nav-link">FAQs</a>
+              <a href="./find-agent.html" class="nav-link"
+                >Find an Agent/Branch/ATM</a
+              >
+              <a href="./downloads.html" class="nav-link">Downloads</a>
+            </nav>
+
+            <!-- New Overflow Trigger -->
+            <button
+              class="nav-overflow-trigger"
+              type="button"
+              aria-label="Toggle extra menu"
+              aria-expanded="false"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+
+          <!-- New Overflow Mega Menu  -->
+          <div
+            class="mega-menu mega-menu--overflow"
+            id="overflow-menu"
+            aria-label="Extra menu"
+          >
+            <div class="mega-menu__promo">
+              <h2>Queen Banking</h2>
+              <p>
+                Banking, credit, savings and protection built around her
+                journey.
+              </p>
+              <a href="#" class="text-link">Explore</a>
+            </div>
+
+            <div class="mega-menu__links" data-overflow-links></div>
+
+            <div class="mega-menu__feature">
+              <h3>Your bank in your pocket</h3>
+              <img
+                src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                alt="Customer using a mobile device"
+              />
+              <div class="store-btns">
+                <a href="#" class="store-btn"
+                  ><img
+                    src="./assets/images/mega-app-store.png"
+                    alt="App Store"
+                /></a>
+                <a href="#" class="store-btn"
+                  ><img
+                    src="./assets/images/mega-google-store.png"
+                    alt="Google Play Store"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-actions">
+            <button class="icon-button" aria-label="Search" type="button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button class="language-button" type="button">
+              EN <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <a href="#" class="button button--light">Open Account</a>
+            <a href="#" class="button button--cyan">Login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hover Dropdown Dock -->
+    <div class="quick-dock" id="quickDock">
+      <nav class="dock-menu" aria-label="Quick tools">
+        <!-- First item: hover trigger -->
+        <a
+          href="#calculator"
+          class="dock-item dock-trigger"
+          aria-label="Calculator"
+          data-tooltip="Loan Calculator"
+        >
+          <img src="./assets/images/dock-icon-1.png" alt="" />
+        </a>
+
+        <!-- Hidden items revealed on hover -->
+        <div class="dock-dropdown">
+          <a
+            href="#finance"
+            class="dock-item"
+            aria-label="Finance"
+            data-tooltip="Fixed Deposit"
+          >
+            <img src="./assets/images/dock-icon-2.png" alt="" />
+          </a>
+
+          <a
+            href="#payments"
+            class="dock-item"
+            aria-label="Payments"
+            data-tooltip="Savings"
+          >
+            <img src="./assets/images/dock-icon-3.png" alt="" />
+          </a>
+
+          <a
+            href="#currency"
+            class="dock-item"
+            aria-label="Currency exchange"
+            data-tooltip="FX Convertor"
+          >
+            <img src="./assets/images/dock-icon-4.png" alt="" />
+          </a>
+
+          <a
+            href="#reports"
+            class="dock-item"
+            aria-label="Reports"
+            data-tooltip="Tariff Guide"
+          >
+            <img src="./assets/images/dock-icon-5.png" alt="" />
+          </a>
+
+          <a
+            href="#locations"
+            class="dock-item"
+            aria-label="Locations"
+            data-tooltip="Locate a branch, agent or ATM"
+          >
+            <img src="./assets/images/dock-icon-6.png" alt="" />
+          </a>
+
+          <a
+            href="#account"
+            class="dock-item"
+            aria-label="Account"
+            data-tooltip="Open an account"
+          >
+            <img src="./assets/images/dock-icon-7.png" alt="" />
+          </a>
+
+          <a
+            href="#support"
+            class="dock-item"
+            aria-label="Support"
+            data-tooltip="Talk to us"
+          >
+            <img src="./assets/images/dock-icon-8.png" alt="" />
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <!--ACCESSIBILITY BUTTON -->
+    <button class="accessibility-button" aria-label="Accessibility options">
+      <img
+        src="./assets/images/accessibility.png"
+        alt="Accessibility options"
+      />
+    </button>
+
+    <!--CHATBOT BUTTON -->
+    <button class="chatbot-button" aria-label="Open chatbot">
+      <img src="./assets/images/chatbot.png" alt="Chatbot" />
+    </button>
+
+    <!-- ================= PAGE CONTENT ================= -->
+    <main class="page-content">
+      <!--Hero (Banner)-->
+      <section class="hero">
+        <video
+          class="hero_video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="./assets/images/faq-hero.png"
+          aria-hidden="true"
+        >
+          <source
+            src="https://www.youtube.com/watch?v=vXlVGA1QF00&pp=ygUYZmFtaWx5IGJhbmsgaW1hcmEgcGFtb2ph"
+            type="video/mp4"
+          />
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <!-- NSE Stock Ticker Marquee -->
+        <div class="stock-marquee-container">
+          <div class="stock-marquee-track">
+            <!-- First set of items -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <!-- Duplicate set to create seamless loop -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <!-- Add more duplicates as needed to fill the screen width before looping -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="hero-content">
+            <div class="breadcrumbs">
+              Home <span><i class="fa-solid fa-angle-right"></i></span> Help &
+              Support
+              <span><i class="fa-solid fa-angle-right"></i></span> Frequently
+              Asked Questions
+            </div>
+            <h2>FAQ’s</h2>
+            <p>
+              Find clear, quick answers about accounts, cards, loans, mobile
+              banking and more.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Faqs Section -->
+      <section class="faq-section">
+        <div class="container">
+          <!-- Section Intro -->
+          <div class="section-intro">
+            <h2>Got Questions? We've Got Answers.</h2>
+            <p>
+              We've gathered the questions customers ask us most. Search or
+              browse by topic. Each answer is written in plain language, with
+              links to the next step.
+            </p>
+          </div>
+
+          <!-- Tab Navigation -->
+          <div class="faq-tabs-nav" role="tablist">
+            <button
+              class="faq-tab-btn active"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-accounts"
+              id="tab-accounts"
+              data-tab="panel-accounts"
+            >
+              Accounts
+            </button>
+            <button
+              class="faq-tab-btn"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-cards"
+              id="tab-cards"
+              data-tab="panel-cards"
+            >
+              Cards & ATMs
+            </button>
+            <button
+              class="faq-tab-btn"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-pesapap"
+              id="tab-pesapap"
+              data-tab="panel-pesapap"
+            >
+              PesaPap
+            </button>
+            <button
+              class="faq-tab-btn"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-loans"
+              id="tab-loans"
+              data-tab="panel-loans"
+            >
+              Loans & Mortgages
+            </button>
+            <button
+              class="faq-tab-btn"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-diaspora"
+              id="tab-diaspora"
+              data-tab="panel-diaspora"
+            >
+              Diaspora
+            </button>
+            <button
+              class="faq-tab-btn"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-queen"
+              id="tab-queen"
+              data-tab="panel-queen"
+            >
+              Queen Banking
+            </button>
+          </div>
+
+          <!-- Tab Panels Container -->
+          <div class="faq-tabs-content">
+            <!-- ================= TAB 1: ACCOUNTS ================= -->
+            <div
+              class="faq-panel active"
+              id="panel-accounts"
+              role="tabpanel"
+              aria-labelledby="tab-accounts"
+            >
+              <!-- FAQ Item 1 (Open by default) -->
+              <div class="faq-item active">
+                <button class="faq-question">
+                  How do I open a Family Bank account?
+                  <i class="fa-solid fa-chevron-up faq-icon"></i>
+                </button>
+                <div class="faq-answer" style="display: block">
+                  <p>You can open an account from your phone or at a branch.</p>
+                  <p>
+                    <strong>On your phone (PesaPap):</strong> Download the
+                    PesaPap app, or dial *325# and choose "Open Account". Pick
+                    your account type, accept the terms and fill in your
+                    details. Take a selfie, then upload a clear photo of your ID
+                    (front and back) and your signature. Review your
+                    application, then deposit cash to activate the account, or
+                    save it for 30 days if you don't have cash yet. You'll get a
+                    one-time password, then reset your PIN and set your security
+                    questions.
+                  </p>
+                  <p>
+                    What to have ready: your original ID, your KRA PIN, your
+                    mobile number, KES 100 and a smartphone
+                  </p>
+                  <p>
+                    <strong>At a branch:</strong> Bring a photocopy of your
+                    national ID or valid passport, any amount of cash to open
+                    the account and a passport photo. Business accounts also
+                    need KRA PIN certificates [Confirm the documents required on
+                    the individual account's page].
+                  </p>
+                  <div class="faq-actions">
+                    <a href="#" class="button button--light">Open Account</a>
+                    <a href="#" class="button button--cyan">Find a Branch</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="faq-item">
+                <button class="faq-question">
+                  What types of accounts can I open (personal, student,
+                  business, chama)?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Family Bank offers a variety of accounts to suit your needs,
+                    including personal current and savings accounts, student
+                    accounts, business accounts, and group accounts for chamas
+                    and other organizations.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="faq-item">
+                <button class="faq-question">
+                  Are there minimum balances or monthly fees on my account?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Minimum balances and monthly fees vary depending on the
+                    specific account type you choose. Please refer to our Tariff
+                    Guide or speak to a customer service representative for
+                    detailed information.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="faq-item">
+                <button class="faq-question">
+                  How do I check my balance and get a bank statement?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    You can check your balance via the PesaPap app, by dialing
+                    *325#, at any ATM, or by visiting a branch. Bank statements
+                    can be requested at a branch or downloaded via our internet
+                    banking portal.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="faq-item">
+                <button class="faq-question">
+                  How do I update my phone number, email or other personal
+                  details?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    To update your personal details, please visit any Family
+                    Bank branch near you with your original ID and the relevant
+                    supporting documents.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 6 -->
+              <div class="faq-item">
+                <button class="faq-question">
+                  How do I close or reactivate an account?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    To close or reactivate your account, please visit your
+                    nearest branch with your original ID. Ensure all outstanding
+                    balances are cleared before closure.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ================= TAB 2: CARDS & ATMs ================= -->
+            <div
+              class="faq-panel"
+              id="panel-cards"
+              role="tabpanel"
+              aria-labelledby="tab-cards"
+              style="display: none"
+            >
+              <div class="faq-item active">
+                <button class="faq-question">
+                  What types of cards does Family Bank offer?
+                  <i class="fa-solid fa-chevron-up faq-icon"></i>
+                </button>
+                <div class="faq-answer" style="display: block">
+                  <p>
+                    Family Bank customers use Visa debit and credit cards to
+                    access their money at ATMs worldwide and pay at merchants.
+                    The main options are:
+                  </p>
+                  <ul>
+                    <li>
+                      <i class="fa-solid fa-arrow-right"></i> Debit card: linked
+                      to your account, for ATM withdrawals and purchases.
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-arrow-right"></i> Credit card:
+                      available as Classic and Gold, with online purchases
+                      allowed and up to 50 interest-free days
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-arrow-right"></i> Prepaid card: open
+                      to all Family Bank customers, and designed to be safer
+                      than carrying cash
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-arrow-right"></i> Virtual Cards
+                    </li>
+                  </ul>
+                  <p>
+                    Eligibility and documents differ by card. A credit card
+                    application typically needs a signed form, ID, KRA PIN,
+                    recent pay slip and employer letter.
+                  </p>
+                  <div class="faq-actions">
+                    <a href="#" class="button button--light">Compare Cards</a>
+                    <a href="#" class="button button--cyan">Apply for a Card</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  What should I do if my card is lost, stolen or swallowed by an
+                  ATM?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Immediately contact our customer care line to block your
+                    card. If swallowed by an ATM, contact the branch where the
+                    ATM is located or our support team for assistance.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  How do I activate my card and set or change my PIN?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    You can activate your card and set/change your PIN at any
+                    Family Bank ATM or via the PesaPap app. Follow the prompts
+                    on the screen/app for secure setup.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  What are the ATM withdrawal limits and charges?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    ATM withdrawal limits and charges depend on your account
+                    type and card tier. Please refer to our Tariff Guide for the
+                    specific limits and fees applicable to you.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  Can I use my card abroad or for online payments?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Yes, Visa cards can be used internationally at any ATM or
+                    merchant that accepts Visa. For online payments, ensure your
+                    card is enabled for e-commerce transactions (contact support
+                    if unsure).
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  How do I dispute a card transaction I don't recognise?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Please contact our customer service immediately to report
+                    the unrecognized transaction. Our team will guide you
+                    through the dispute resolution process.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ================= TAB 3: PESAPAP ================= -->
+            <div
+              class="faq-panel"
+              id="panel-pesapap"
+              role="tabpanel"
+              aria-labelledby="tab-pesapap"
+              style="display: none"
+            >
+              <div class="faq-item active">
+                <button class="faq-question">
+                  How do I register for PesaPap?
+                  <i class="fa-solid fa-chevron-up faq-icon"></i>
+                </button>
+                <div class="faq-answer" style="display: block">
+                  <p>
+                    Family Bank customers use Visa debit and credit cards to
+                    access their money at ATMs worldwide and pay at merchants.
+                    The main options are:
+                  </p>
+                  <ul>
+                    <li>
+                      <i class="fa-solid fa-arrow-right"></i> Download the
+                      PesaPap app from the App Store or Google Play, or dial
+                      *325#
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-arrow-right"></i> Have your account
+                      number, the National ID you used to open the account and
+                      your registered mobile number ready
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-arrow-right"></i> Accept the terms
+                      and conditions, enter your National ID number to verify,
+                      then create your secret PesaPap PIN.
+                    </li>
+                  </ul>
+                  <p>
+                    If the app or USSD doesn't recognise your details, visit any
+                    branch with your original National ID and ask the customer
+                    service desk to link your account
+                  </p>
+                  <div class="faq-actions">
+                    <a href="#" class="button button--light"
+                      >Download PesaPap</a
+                    >
+                    <a href="#" class="button button--cyan">Open an Account</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  How do I reset a forgotten PesaPap PIN?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Open the PesaPap app, select "Forgot PIN" on the login
+                    screen, and follow the instructions to verify your identity
+                    and set a new PIN.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  How do I send money between my account and M-Pesa?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Use the PesaPap app or dial *325# to access the mobile money
+                    transfer menu. Select M-Pesa and follow the prompts to send
+                    or receive money.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  How do I apply for a PesaPap loan?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Log in to the PesaPap app, navigate to the Loans section,
+                    and follow the application steps to see your eligibility and
+                    apply.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  What are the PesaPap transaction limits and charges?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Transaction limits and charges are detailed in our Tariff
+                    Guide and are also available within the PesaPap app under
+                    "Fees & Limits".
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  How do I keep PesaPap safe, and what should I do if I suspect
+                  fraud?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Never share your PIN with anyone. If you suspect fraud,
+                    immediately change your PIN, contact our customer service to
+                    block the app, and report the incident.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ================= TAB 4: LOANS & MORTGAGES ================= -->
+            <div
+              class="faq-panel"
+              id="panel-loans"
+              role="tabpanel"
+              aria-labelledby="tab-loans"
+              style="display: none"
+            >
+              <div class="faq-item active">
+                <button class="faq-question">
+                  What types of loans does Family Bank offer?
+                  <i class="fa-solid fa-chevron-up faq-icon"></i>
+                </button>
+                <div class="faq-answer" style="display: block">
+                  <p>
+                    We offer a range of loan products including personal loans,
+                    business loans, asset finance, mortgages, and agricultural
+                    loans. Visit our Loans page to explore the options.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  How do I apply for a mortgage?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    To apply for a mortgage, you will need to provide proof of
+                    income, a property sale agreement, and other relevant
+                    documents. Visit your nearest branch or contact our mortgage
+                    team.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ================= TAB 5: DIASPORA ================= -->
+            <div
+              class="faq-panel"
+              id="panel-diaspora"
+              role="tabpanel"
+              aria-labelledby="tab-diaspora"
+              style="display: none"
+            >
+              <div class="faq-item active">
+                <button class="faq-question">
+                  Who can open a Mkenya Daima account, and what do I need?
+                  <i class="fa-solid fa-chevron-up faq-icon"></i>
+                </button>
+                <div class="faq-answer" style="display: block">
+                  <p>
+                    Mkenya Daima is a tailor-made account available only to
+                    Kenyans living abroad, with savings and lending solutions
+                    under the call to "live abroad, invest at home." Check the
+                    Diaspora page for more details.
+                  </p>
+                  <p>
+                    Diaspora clients can also invest in Treasury bills, bonds
+                    and shares of companies listed on the NSE, and can join the
+                    Business Club
+                  </p>
+                  <div class="faq-actions">
+                    <a href="#" class="button button--light"
+                      >Open a Mkenya Daima account</a
+                    >
+                    <a href="#" class="button button--cyan"
+                      >Talk to a Diaspora advisor</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  Can I open my account from abroad, and how do I send my
+                  documents?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Yes, you can start the process online or via email. Our
+                    diaspora team will guide you on how to securely send
+                    notarized copies of your documents.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  How do I send money to my Family Bank account from overseas?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    You can send money via international wire transfers (SWIFT)
+                    or through various remittance partners. Contact us for the
+                    specific correspondent bank details.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  Can I invest in Treasury bills, bonds or NSE shares from
+                  abroad?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Yes, Family Bank offers investment services for diaspora
+                    clients. Please speak to our investment advisors for more
+                    details on how to participate.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  Can I get a loan or mortgage in Kenya while living abroad?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Yes, we offer tailored lending solutions for the diaspora,
+                    including mortgages and development loans, subject to credit
+                    approval and provision of required documents.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  Can my family in Kenya access or manage my account for me?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    You can add authorized signatories or set up a power of
+                    attorney. Please consult with our customer service team to
+                    understand the legal requirements.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ================= TAB 6: QUEEN BANKING ================= -->
+            <div
+              class="faq-panel"
+              id="panel-queen"
+              role="tabpanel"
+              aria-labelledby="tab-queen"
+              style="display: none"
+            >
+              <div class="faq-item active">
+                <button class="faq-question">
+                  What is Queen Banking, and who is it for?
+                  <i class="fa-solid fa-chevron-up faq-icon"></i>
+                </button>
+                <div class="faq-answer" style="display: block">
+                  <p>
+                    Queen Banking is Family Bank's proposition for women,
+                    offering both financial and non-financial support. It
+                    launched on 22 September 2023 and serves women in business,
+                    professional women, chama women and Diaspora Queens, with a
+                    focus on the woman and her community.
+                  </p>
+                  <p><strong>What do you get:</strong></p>
+                  <ul>
+                    <li>
+                      <i class="fa-solid fa-arrow-right"></i> Financial:
+                      transactional and savings accounts, payment solutions,
+                      secured and unsecured credit, chama savings and investment
+                      options, and tailor-made insurance
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-arrow-right"></i> Beyond money:
+                      financial education, recognition and wellness, and
+                      networking.
+                    </li>
+                  </ul>
+                  <p>
+                    Who counts as a "woman in business"? A business at least 51%
+                    owned by women, a business where women hold over 30% of the
+                    board or over 25% of senior management, or one with products
+                    or services built for women
+                  </p>
+                  <div class="faq-actions">
+                    <a href="#" class="button button--light"
+                      >Explore Queen Banking</a
+                    >
+                    <a href="#" class="button button--cyan"
+                      >Join Queen Banking</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  How do I join Queen Banking, and what do I need?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    To join, visit any Family Bank branch or contact our Queen
+                    Banking team. You will need your ID, KRA PIN, and to
+                    complete a short application form.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  Which accounts and loans are available under Queen Banking?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Queen Banking offers tailored current and savings accounts,
+                    as well as personal and business loans with favorable terms
+                    for women.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  How does my business qualify as women-owned or women-led?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Your business qualifies if it is at least 51% owned by
+                    women, or if women hold over 30% of the board or over 25% of
+                    senior management.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  What training, networking and wellness benefits do members
+                  receive?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Members gain access to exclusive financial education
+                    webinars, networking events, mentorship programs, and
+                    wellness initiatives designed for women.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  Can chama groups and women living abroad join Queen Banking?
+                  <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Yes, chama groups and women in the diaspora are welcome to
+                    join and can access tailored savings and investment
+                    products.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Other Help Options-->
+      <section class="other-help-options">
+        <div class="container">
+          <div class="section-intro">
+            <h2>Other Ways to Reach Us</h2>
+            <p>
+              Whether you’re at home, at work or on the go, you can reach Family
+              Bank in the way that suits you best
+            </p>
+          </div>
+
+          <div class="help-grid">
+            <!-- Help Card 1 -->
+            <div class="help-card">
+              <div class="help-image">
+                <img src="./assets/images/help-contact.png" alt="Contact Us" />
+              </div>
+              <div class="help-content">
+                <h3>Contact Us</h3>
+                <p>
+                  Call, chat on WhatsApp or send an email and we'll point you in
+                  the right direction.
+                </p>
+                <a href="#" class="button button--cyan">Contact Us</a>
+              </div>
+            </div>
+
+            <!-- Help Card 2 -->
+            <div class="help-card">
+              <div class="help-image">
+                <img src="./assets/images/help-faqs.png" alt="FAQs" />
+              </div>
+              <div class="help-content">
+                <h3>FAQs</h3>
+                <p>Find clear answers to the questions customers ask most</p>
+                <a href="./faq.html" class="button button--cyan">Learn More</a>
+              </div>
+            </div>
+
+            <!-- Help Card 3 -->
+            <div class="help-card">
+              <div class="help-image">
+                <img
+                  src="./assets/images/help-agent.png"
+                  alt="Find an Agent/Branch"
+                />
+              </div>
+              <div class="help-content">
+                <h3>Find an Agent/Branch</h3>
+                <p>
+                  Locate the nearest branch, ATM or agent, with directions and
+                  opening hours
+                </p>
+                <a href="./find-agent.html" class="button button--cyan"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+
+            <!-- Help Card 4 -->
+            <div class="help-card">
+              <div class="help-image">
+                <img src="./assets/images/help-downloads.png" alt="Downloads" />
+              </div>
+              <div class="help-content">
+                <h3>Downloads</h3>
+                <p>
+                  Get account forms, product brochures, tariffs and guides to
+                  download
+                </p>
+                <a href="./downloads.html" class="button button--cyan"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
+          <!-- Footer heading -->
+          <div class="footer-heading">
+            <div>
+              <h2>Ready to Bank With Us?</h2>
+              <p>Start online in minutes and finish at your nearest branch.</p>
+            </div>
+
+            <a href="#" class="button button--light">Get Started</a>
+          </div>
+
+          <!-- Main footer columns -->
+          <div class="footer-grid">
+            <!-- Apps and social links -->
+            <div class="footer-column footer-apps">
+              <h3>Get PesaPap</h3>
+
+              <div class="app-links">
+                <a href="#" aria-label="Download on the App Store">
+                  <img
+                    src="./assets/images/foooter-appstore.png"
+                    alt="Apple store"
+                  />
+                </a>
+
+                <a href="#" aria-label="Get it on Google Play">
+                  <img
+                    src="./assets/images/footer-gstore.png"
+                    alt="Apple store"
+                  />
+                </a>
+              </div>
+
+              <h3 class="social-heading">Our Socials</h3>
+
+              <div class="social-links">
+                <a href="#" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="X">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="YouTube">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- About -->
+            <div class="footer-column">
+              <h3>About Us</h3>
+              <ul>
+                <li><a href="#">Company Profile</a></li>
+                <li><a href="#">Board of Directors</a></li>
+                <li><a href="#">Executive Committee</a></li>
+                <li><a href="#">Financials & Policies</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="./impact.html">Our Impact</a></li>
+                <li><a href="#">News & Updates</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Cost of Credit</a></li>
+              </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="footer-column resources-column">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="#">Merchant & Agent Portal</a></li>
+                <li>
+                  <a href="#"
+                    >Prepaid Cards Portal
+                    <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Access Family Pay
+                    <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li><a href="#">Tariff Guide</a></li>
+                <li><a href="#">Customer Notices</a></li>
+                <li><a href="#">Find an Agent, Branch or ATM</a></li>
+                <li><a href="#">Pepper's Agents</a></li>
+                <li><a href="#">Vehicles on Auction</a></li>
+                <li><a href="#">Documents & Forms</a></li>
+                <li><a href="#">Loan Calculator</a></li>
+                <li><a href="#">Interest Calculator</a></li>
+                <li>
+                  <a href="#"
+                    >Staff Email <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Correspondent Bank Information Family Bank Prequalification
+                    Notice 2026 - 2027</a
+                  >
+                </li>
+                <li>
+                  <a href="#">Family Bank Prequalification Registration</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="footer-column">
+              <h3>Help & Support</h3>
+              <ul>
+                <li>
+                  <a href="#"
+                    >Indemnity for Instructions Received by Email and/or
+                    Facsimile</a
+                  >
+                </li>
+                <li><a href="#">Branches and Codes</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Complaints Handling Guideline</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Cookies Guidelines</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Notice</a></li>
+                <li><a href="#">Whistle Blowing</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="newsletter">
+            <div class="newsletter__text">
+              <h3>Stay in the Loop</h3>
+              <p>
+                Get the latest updates, offers, and financial tips<br />
+                delivered straight to your inbox.
+              </p>
+            </div>
+
+            <form class="newsletter-form">
+              <label class="sr-only" for="newsletter-email">
+                Your email address
+              </label>
+
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                placeholder="Your email address"
+                required
+              />
+
+              <button type="submit" class="button button--cyan">
+                Subscribe
+              </button>
+            </form>
+          </div>
+
+          <p class="newsletter-message" aria-live="polite"></p>
+
+          <!-- Legal -->
+          <div class="footer-bottom">
+            <p>
+              Copyright © 2026 Family Bank Limited, Kenya. Regulated by the
+              Central Bank of Kenya.
+            </p>
+
+            <a href="#">Site by Bean</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
