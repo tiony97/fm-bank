@@ -372,17 +372,9 @@ $(function () {
       // Start from a pristine nav every time.
       restoreAllItems();
 
-      const cap = getCap();
-      const items = $nav.children().toArray();
+      // Width-only: move items to the tray until the nav fits.
+      const visibleItems = $nav.children().toArray();
 
-      // 1) Cap-based split.
-      const visibleItems = items.slice(0, cap);
-      const overflowItems = items.slice(cap);
-
-      overflowItems.forEach((el) => moveToOverflow($(el)));
-
-      // 2) Width safety net — remove visible items until the
-      //    remaining ones fit, then move them to the tray.
       let safety = 0;
       while (
         $nav[0].scrollWidth > $nav[0].clientWidth + 1 &&
