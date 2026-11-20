@@ -234,12 +234,12 @@ input:focus-visible {
 ========================================= */
 @media (min-width: 1440px) {
   body h1 {
-    font-size: 84px !important;
+    font-size: 80px !important;
     line-height: 92px !important;
   }
   body h2 {
-    font-size: 66px !important;
-    line-height: 74px !important;
+    font-size: 52px !important;
+    line-height: 64px !important;
   }
   body h3 {
     font-size: 38px !important;
@@ -254,8 +254,8 @@ input:focus-visible {
   body span,
   body a,
   body label {
-    font-size: 24px !important;
-    line-height: 32px !important;
+    font-size: 22px !important;
+    line-height: 37px !important;
   }
   body button,
   body .btn,
@@ -263,8 +263,8 @@ input:focus-visible {
   body input,
   body textarea,
   body select {
-    font-size: 24px !important;
-    line-height: 32px !important;
+    font-size: 22px !important;
+    line-height: 37px !important;
   }
   body .container {
     width: 90% !important;
@@ -276,9 +276,40 @@ input:focus-visible {
   body footer a {
     font-size: 16px !important;
   }
+  body footer .app-links a img {
+    height: 50px;
+  }
   body footer .footer-bottom a,
   body footer .footer-bottom p {
     font-size: 15px !important;
+  }
+  body footer .newsletter h3 {
+    font-size: 32px !important;
+  }
+  body footer .newsletter p {
+    font-size: 18px !important;
+    line-height: 24px !important;
+  }
+  header .utility-bar a {
+    font-size: 18px !important;
+    line-height: 25px !important;
+  }
+  header .main-nav .primary-nav h2 {
+    font-size: 44px !important;
+  }
+  header .main-nav .primary-nav p,
+  header .main-nav .primary-nav a {
+    font-size: 18px !important;
+    line-height: 26px !important;
+  }
+  header .main-nav .mega-menu__feature img.feature-image {
+    height: 350px;
+  }
+  header .nav-actions button,
+  header .nav-actions .button,
+  header .nav-actions a {
+    font-size: 18px !important;
+    line-height: 26px !important;
   }
 }
 /* =========================================
@@ -412,7 +443,7 @@ input:focus-visible {
   border-radius: 50%;
   outline: none;
   border: none;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1;
   color: #2d5eaa;
   margin: 0;
@@ -438,7 +469,7 @@ section .section-intro {
   text-align: center;
   margin: 0 auto;
   margin-bottom: 50px;
-  max-width: 700px;
+  max-width: 1000px;
 }
 section .section-intro h2 {
   font-size: 36px;
@@ -447,8 +478,18 @@ section .section-intro h2 {
   margin-bottom: 0.4em !important;
 }
 section .section-intro p {
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 0.6em;
+}
+section .intro-left {
+  margin: 0;
+  margin-bottom: 40px;
+  text-align: left;
+  align-items: flex-start;
+  max-width: 1000px;
+}
+section .intro-left * {
+  text-align: left !important;
 }
 
 /* Hero Section */
@@ -558,7 +599,7 @@ section .section-intro p {
   font-weight: 700;
 }
 .hero .container p {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.4;
   color: #ffffff;
   font-weight: 500;
@@ -948,7 +989,7 @@ section .section-intro p {
 .stories-section .container .stories-carousel .stories-swiper .story-card .story-card__content h3 {
   margin: 0 0 5px;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   line-height: 1.4;
 }
@@ -976,7 +1017,7 @@ section .section-intro p {
   border: none;
   outline: none;
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1;
   transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
@@ -1026,7 +1067,7 @@ section .section-intro p {
 }
 .stories-section-2 .container .stories-intro .stories-intro__content p {
   flex: 0.6;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.5;
 }
 .stories-section-2 .container {
@@ -1105,7 +1146,7 @@ section .section-intro p {
   color: #00a6e5;
   background: #ffffff;
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1;
   transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
@@ -1129,7 +1170,7 @@ section .section-intro p {
 .stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card .story-card__content h3 {
   margin: 0 0 5px;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   line-height: 1.4;
 }
@@ -1159,7 +1200,7 @@ section .section-intro p {
   border: none;
   outline: none;
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1;
   transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
@@ -1375,7 +1416,7 @@ section .section-intro p {
 .stories-page-section .container .stories .story-card .story-card__content h3 {
   margin: 0 0 5px;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   line-height: 1.4;
 }
@@ -1436,7 +1477,7 @@ section .section-intro p {
   border-radius: 24px;
 }
 .single-story-content-section .container .story-poster .name {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   margin-top: 1em;
 }
@@ -1494,7 +1535,7 @@ section .section-intro p {
   margin-bottom: 0.4em !important;
 }
 .blog-page-content-section .container .blog-intro p {
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 0.6em;
   max-width: 60%;
 }
@@ -1869,7 +1910,7 @@ section .section-intro p {
   flex-grow: 1;
 }
 .similar-articles-section .similar-articles-swiper .post .content-wrapper h5 {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   line-height: 1.4;
   margin-bottom: 10px;
@@ -2078,7 +2119,7 @@ section .section-intro p {
   color: #ffffff;
 }
 .queen-impact .container .stats .stat p {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.2;
   font-weight: 600;
   color: #ffffff;
@@ -2429,7 +2470,7 @@ section .section-intro p {
   gap: 15px;
 }
 .overview .container .content-wrapper p {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.4;
 }
 .overview .container .content-wrapper .button {
@@ -2490,7 +2531,7 @@ section .section-intro p {
 }
 .contact-forms .form-description {
   margin: 0 0 12px;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -2816,7 +2857,7 @@ section .section-intro p {
   font-weight: 700;
 }
 .partners-section .container .partners-intro p {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.5;
   margin-top: 1em;
 }
@@ -3490,8 +3531,8 @@ section .section-intro p {
     font-size: 16px !important;
   }
   .hero h2 {
-    font-size: 90px !important;
-    line-height: 102px !important;
+    font-size: 80px !important;
+    line-height: 92px !important;
   }
   .hero p {
     font-size: 24px !important;
@@ -3600,7 +3641,7 @@ section .section-intro p {
     outline: none;
     border: 1px solid rgba(0, 0, 0, 0.1803921569);
     border-radius: 50%;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1;
     transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
   }
@@ -3954,7 +3995,7 @@ section .section-intro p {
     /* Blue caption panel */
   }
   .stories-page-section .container .stories .story-card .story-card__content h3 {
-    font-size: 18px;
+    font-size: 17px;
   }
   .stories-page-section .container .stories .story-card .story-card__content p {
     font-size: 14px;
@@ -4160,7 +4201,7 @@ section .section-intro p {
     border-radius: 20px;
   }
   .news-updates .container .news-grid .update .update-content h4 {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 25px;
   }
   /* =========================================
@@ -4283,7 +4324,7 @@ section .section-intro p {
     gap: 14px;
   }
   .routing .routing-container .page-intro .lower h3 {
-    font-size: 18px;
+    font-size: 17px;
   }
   .routing .routing-container .route-grid {
     grid-template-columns: 1fr;
@@ -4562,7 +4603,7 @@ section .section-intro p {
     /* Blue caption panel */
   }
   .stories-page-section .container .stories .story-card .story-card__content h3 {
-    font-size: 18px;
+    font-size: 17px;
   }
   .stories-page-section .container .stories .story-card .story-card__content p {
     font-size: 14px;
@@ -4656,7 +4697,7 @@ section .section-intro p {
     grid-template-columns: 100%;
   }
   .blog-page-content-section .container .blog-posts .post h5 {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.4;
   }
   .blog-page-content-section .container .blog-posts .post p {
@@ -5123,7 +5164,7 @@ section .section-intro p {
   margin-bottom: 0.4em !important;
 }
 .similar-products-section .similar-header .header-text p {
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 0.6em;
 }
 .similar-products-section .similar-header {
@@ -5229,7 +5270,7 @@ section .section-intro p {
   margin-bottom: 0.4em !important;
 }
 .credit-cards-section .credit-header .header-text p {
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 0.6em;
 }
 .credit-cards-section .credit-header .credit-nav-arrows {
@@ -5404,7 +5445,7 @@ section .section-intro p {
 }
 .featured-resources .container .resources-intro .resources-intro__content p {
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.5;
 }
 .featured-resources .container {
@@ -5506,7 +5547,7 @@ section .section-intro p {
   border: none;
   outline: none;
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1;
   transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
@@ -5728,7 +5769,7 @@ section .section-intro p {
   margin-bottom: 10px;
 }
 .sustainability-reports-section .reports-header .header-text p {
-  font-size: 18px;
+  font-size: 17px;
 }
 .sustainability-reports-section .reports-filter-bar {
   display: flex;
@@ -6338,7 +6379,7 @@ section .section-intro p {
   color: #202020;
 }
 .section-header-split p {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.5;
   max-width: 600px;
 }
@@ -6590,7 +6631,7 @@ section .section-intro p {
   white-space: nowrap;
 }
 .money-market-section .interest-calculator-wrapper .calc-results-view .results-cta h4 {
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 5px;
 }
 .money-market-section .interest-calculator-wrapper .calc-results-view .results-cta p {
@@ -6793,7 +6834,7 @@ section .section-intro p {
      object-fit: contain;
 }
 .market-info-section .documents-grid .doc-card .doc-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   color: #202020;
   margin-bottom: 40px;
@@ -6906,7 +6947,7 @@ section .section-intro p {
     width: 100%;
   }
   .product-tabs-section .tabs-layout .tab-panel .panel-text h3 {
-    font-size: 18px;
+    font-size: 17px;
     margin-bottom: 16px;
   }
   .product-tabs-section .tabs-layout .tab-panel .panel-image {
@@ -7155,7 +7196,7 @@ section .section-intro p {
     font-size: 15px;
   }
   .sustainability-approach .approach-intro-title {
-    font-size: 18px;
+    font-size: 17px;
   }
   .sustainability-approach .approach-grid {
     grid-template-columns: 100%;
@@ -7515,7 +7556,8 @@ section .section-intro p {
 }
 .members-section .members-grid .member-card .member-image {
   width: 100%;
-  height: 240px;
+  height: auto;
+  min-height: 240px;
   border-radius: 12px;
   overflow: hidden;
   background-color: #f4f4f4;
@@ -7722,13 +7764,13 @@ section .section-intro p {
   line-height: 1.2;
 }
 .policies-section .policies-header .header-text p {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.5;
   max-width: 800px;
   margin: 0;
 }
 .policies-section .documents-grid .doc-card .doc-title {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.4;
   margin-bottom: 30px;
   display: -webkit-box;
@@ -7756,7 +7798,7 @@ section .section-intro p {
   line-height: 1.2;
 }
 .jobs-section .jobs-header .header-text p {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.5;
   max-width: 900px;
   margin: 0;
@@ -7813,7 +7855,7 @@ section .section-intro p {
   font-size: 15px;
 }
 .jobs-section .jobs-grid .job-card .job-footer .deadline i {
-  font-size: 18px;
+  font-size: 17px;
 }
 .jobs-section .jobs-grid .job-card .job-footer .button {
   width: -moz-fit-content;
@@ -7861,7 +7903,7 @@ section .section-intro p {
   line-height: 1.2;
 }
 .job-details-section .jobs-header .header-text p {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.5;
   max-width: 900px;
   margin: 0;
@@ -7895,7 +7937,7 @@ section .section-intro p {
   font-weight: 500;
 }
 .job-details-section .job-details-grid .job-info-column .job-main-header .deadline i {
-  font-size: 18px;
+  font-size: 17px;
 }
 .job-details-section .job-details-grid .job-info-column .job-divider {
   width: 100%;
@@ -8242,7 +8284,7 @@ section .section-intro p {
   color: #202020;
 }
 .similar-jobs-section .similar-header .header-text p {
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 0;
 }
 .similar-jobs-section .similar-header .similar-nav-arrows {
@@ -8323,7 +8365,7 @@ section .section-intro p {
   font-size: 15px;
 }
 .similar-jobs-section .job-card .job-footer .deadline i {
-  font-size: 18px;
+  font-size: 17px;
 }
 .similar-jobs-section .job-card .job-footer .button {
   width: -moz-fit-content;
@@ -8771,7 +8813,7 @@ section .section-intro p {
   margin-bottom: 15px;
 }
 .journey-section .journey-header .header-text p {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.6;
 }
 .journey-section .journey-header .journey-nav-arrows {
@@ -8928,7 +8970,7 @@ section .section-intro p {
   margin-bottom: 8px;
 }
 .downloads-section .section-header-split p {
-  font-size: 18px;
+  font-size: 17px;
   color: #4a4a4a;
   line-height: 1.5;
   max-width: 800px;
@@ -9149,7 +9191,7 @@ section .section-intro p {
   border: none;
   outline: none;
   padding: 15px 0;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: #202020;
   text-align: left;
@@ -9260,7 +9302,7 @@ section .section-intro p {
 .locations-section .map-wrapper {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 500px;
   border-radius: 24px;
   overflow: hidden;
   background: #e5e3df;
@@ -9382,6 +9424,586 @@ section .section-intro p {
 }
 
 /* =========================================
+   DIVIDENDS TABLE SECTION
+========================================= */
+.dividends-section {
+  padding: 70px 0;
+  background: #ffffff;
+}
+.dividends-section .section-intro-split {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 70px;
+}
+.dividends-section .section-intro-split h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #202020;
+  max-width: 40%;
+  line-height: 1.2;
+}
+.dividends-section .section-intro-split p {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 45%;
+  margin: 0;
+}
+.dividends-section {
+  /* Wrapper for horizontal scrolling on mobile */
+}
+.dividends-section .table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #d4d9e0;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  -webkit-overflow-scrolling: touch;
+  /* Custom Scrollbar for better UX */
+}
+.dividends-section .table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+.dividends-section .table-responsive::-webkit-scrollbar-track {
+  background: #f4f4f7;
+  border-radius: 16px;
+}
+.dividends-section .table-responsive::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 16px;
+}
+.dividends-section .dividends-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  text-align: left;
+  /* --- Header --- */
+}
+.dividends-section .dividends-table thead {
+  background: #f4f4f7;
+}
+.dividends-section .dividends-table thead th {
+  padding: 18px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2a5caa;
+  white-space: nowrap;
+}
+.dividends-section .dividends-table thead th:first-child {
+  border-top-left-radius: 24x;
+}
+.dividends-section .dividends-table thead th:last-child {
+  border-top-right-radius: 24px;
+}
+.dividends-section .dividends-table {
+  /* --- Body --- */
+}
+.dividends-section .dividends-table tbody tr {
+  border-bottom: 1px solid #d4d9e0;
+  transition: background-color 0.2s ease;
+}
+.dividends-section .dividends-table tbody tr:hover {
+  background-color: #fafbfc;
+}
+.dividends-section .dividends-table tbody tr:last-child {
+  border-bottom: none;
+}
+.dividends-section .dividends-table tbody td {
+  padding: 18px 24px;
+  font-size: 16px;
+  color: #202020;
+  white-space: nowrap;
+  /* Style the Period links */
+}
+.dividends-section .dividends-table tbody td a {
+  color: #2a5caa;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.dividends-section .dividends-table tbody td a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   ESSENTIAL GOVERNANCE SECTION
+========================================= */
+.governance-section {
+  padding: 70px 0;
+  background: #ffffff;
+}
+.governance-section .governance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: stretch;
+  /* --- Left Side: Blue Card --- */
+}
+.governance-section .governance-grid .gov-content-card {
+  width: 100%;
+  height: 100%;
+  background: #2a5caa;
+  border-radius: 24px;
+  padding: 40px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.governance-section .governance-grid .gov-content-card h3 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.governance-section .governance-grid .gov-content-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.governance-section .governance-grid .gov-content-card .gov-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.governance-section .governance-grid .gov-content-card .gov-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+.governance-section .governance-grid .gov-content-card .gov-list li i {
+  color: #ffffff;
+  font-size: 14px;
+}
+.governance-section .governance-grid .gov-content-card .gov-list li:last-child {
+  margin-bottom: 0;
+}
+.governance-section .governance-grid {
+  /* --- Right Side: Image --- */
+}
+.governance-section .governance-grid .gov-image {
+  width: 100%;
+  height: 600px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.governance-section .governance-grid .gov-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* =========================================
+   REGISTRAR DETAILS SECTION
+========================================= */
+.registrar-section {
+  padding: 70px 0;
+  background: #ffffff;
+}
+.registrar-section .registrar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  /* --- Left Side: Content --- */
+}
+.registrar-section .registrar-grid .registrar-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #202020;
+  margin-bottom: 10px;
+}
+.registrar-section .registrar-grid .registrar-content .registrar-intro {
+  font-size: 17px;
+  margin-bottom: 25px;
+}
+.registrar-section .registrar-grid .registrar-content .registrar-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 30px;
+  border-top: 1px solid #e0e0e0;
+}
+.registrar-section .registrar-grid .registrar-content .registrar-details-list .detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.registrar-section .registrar-grid .registrar-content .registrar-details-list .detail-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.registrar-section .registrar-grid .registrar-content .registrar-details-list .detail-item .detail-icon {
+  flex-shrink: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.registrar-section .registrar-grid .registrar-content .registrar-details-list .detail-item .detail-icon i {
+  font-size: 24px;
+  color: #202020;
+}
+.registrar-section .registrar-grid .registrar-content .registrar-details-list .detail-item .detail-text h4 {
+  font-size: 17px;
+  font-weight: 500;
+  color: #202020;
+  margin-bottom: 8px;
+}
+.registrar-section .registrar-grid .registrar-content .registrar-details-list .detail-item .detail-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+.registrar-section .registrar-grid .registrar-content .registrar-details-list .detail-item .detail-text p a {
+  color: #202020;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.registrar-section .registrar-grid .registrar-content .registrar-details-list .detail-item .detail-text p a:hover {
+  color: #2d5eaa;
+}
+.registrar-section .registrar-grid {
+  /* --- Right Side: Image --- */
+}
+.registrar-section .registrar-grid .registrar-image {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.registrar-section .registrar-grid .registrar-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+/* =========================================
+   SHAREHOLDER STRUCTURE SECTION
+========================================= */
+.profile-intro {
+  padding: 70px 0 10px 0;
+}
+
+.shareholder-section {
+  padding: 10px 0 40px 0;
+  background: #ffffff;
+  background: #f4f4f7;
+  /* --- Main Card Wrapper --- */
+}
+.shareholder-section .shareholder-table-card {
+  border-radius: 24px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  /* Centered Title inside the grey box */
+}
+.shareholder-section .shareholder-table-card .table-header-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.shareholder-section .shareholder-table-card .table-header-title h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #202020;
+  line-height: 1.3;
+  margin: 0;
+}
+.shareholder-section .shareholder-table-card {
+  /* Responsive Wrapper */
+}
+.shareholder-section .shareholder-table-card .table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 12px;
+  -webkit-overflow-scrolling: touch;
+  /* Custom Scrollbar */
+}
+.shareholder-section .shareholder-table-card .table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+.shareholder-section .shareholder-table-card .table-responsive::-webkit-scrollbar-track {
+  background: #f4f4f7;
+}
+.shareholder-section .shareholder-table-card .table-responsive::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 6px;
+}
+.shareholder-section .shareholder-table-card {
+  /* --- Table Styling --- */
+}
+.shareholder-section .shareholder-table-card .shareholder-table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  text-align: left;
+  /* Header Row */
+}
+.shareholder-section .shareholder-table-card .shareholder-table thead {
+  background: #2d5eaa;
+}
+.shareholder-section .shareholder-table-card .shareholder-table thead th {
+  padding: 18px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+}
+.shareholder-section .shareholder-table-card .shareholder-table thead th.text-right {
+  text-align: right;
+}
+.shareholder-section .shareholder-table-card .shareholder-table {
+  /* Body Rows */
+}
+.shareholder-section .shareholder-table-card .shareholder-table tbody tr {
+  border-bottom: 1px solid #eef2f5;
+  transition: background-color 0.2s ease;
+}
+.shareholder-section .shareholder-table-card .shareholder-table tbody tr:hover {
+  background-color: #fafbfc;
+}
+.shareholder-section .shareholder-table-card .shareholder-table tbody tr:last-child {
+  border-bottom: none;
+}
+.shareholder-section .shareholder-table-card .shareholder-table tbody td {
+  padding: 18px 24px;
+  font-size: 16px;
+  white-space: nowrap;
+}
+.shareholder-section .shareholder-table-card .shareholder-table tbody td.text-right {
+  text-align: right;
+}
+.shareholder-section .shareholder-table-card .shareholder-table tbody td {
+  /* Blue links for Shareholder names */
+}
+.shareholder-section .shareholder-table-card .shareholder-table tbody td a {
+  color: #2d5eaa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 400;
+}
+.shareholder-section .shareholder-table-card .shareholder-table tbody td a:hover {
+  text-decoration: underline;
+  color: #00a6e5;
+}
+
+.share-information {
+  padding-top: 70px;
+}
+.share-information .share-info-chart {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.share-information .share-info-chart img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+/* =========================================
+   ANNUAL REPORTS SECTION
+========================================= */
+.annual-reports-section {
+  padding: 70px 0;
+  background: #ffffff;
+  /* --- Custom Split Header --- */
+}
+.annual-reports-section .reports-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.annual-reports-section .reports-header .header-title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #202020;
+  margin: 0;
+  line-height: 1.2;
+}
+.annual-reports-section .reports-header p {
+  font-size: 17px;
+  line-height: 1.5;
+  max-width: 550px;
+  margin: 0;
+}
+.annual-reports-section {
+  /* --- Reports Grid --- */
+}
+.annual-reports-section .reports-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 70px;
+}
+.annual-reports-section .reports-grid .report-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.annual-reports-section .reports-grid .report-card .report-image {
+  width: 100%;
+  height: auto;
+  min-height: 350px;
+  border-radius: 22px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.annual-reports-section .reports-grid .report-card .report-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.annual-reports-section .reports-grid .report-card:hover .report-image img {
+  transform: scale(1.05);
+}
+.annual-reports-section .reports-grid .report-card .report-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.annual-reports-section .reports-grid .report-card .report-info h4 {
+  font-size: 17px;
+  font-weight: 500;
+  color: #202020;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.annual-reports-section .reports-grid .report-card .report-info .report-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: auto;
+  gap: 5px;
+}
+.annual-reports-section .reports-grid .report-card .report-info .report-footer .date {
+  font-size: 14px;
+}
+.annual-reports-section {
+  /* --- Pagination --- */
+}
+.annual-reports-section .pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.annual-reports-section .pagination .pagination-link {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f7;
+  color: #202020;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.annual-reports-section .pagination .pagination-link:hover, .annual-reports-section .pagination .pagination-link.active {
+  background: #2a5caa;
+  color: #ffffff;
+}
+
+/* =========================================
+   404 ERROR PAGE SECTION
+========================================= */
+.error-404-section {
+  padding: 100px 0;
+  background: #ffffff;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error-404-section .container {
+  display: flex;
+  justify-content: center;
+}
+.error-404-section .error-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  /* --- Illustration --- */
+}
+.error-404-section .error-content .error-illustration {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+.error-404-section .error-content .error-illustration svg {
+  width: auto;
+  height: auto;
+}
+.error-404-section .error-content {
+  /* --- Typography --- */
+}
+.error-404-section .error-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #202020;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+.error-404-section .error-content p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  padding: 0 20px;
+}
+.error-404-section .error-content {
+  /* --- Action Buttons --- */
+}
+.error-404-section .error-content .error-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* =========================================
+   RESPONSIVE (LARGE SCREENS)
+========================================= */
+@media (min-width: 1440px) {
+  .governance-section .governance-grid {
+    /* --- Right Side: Image --- */
+  }
+  .governance-section .governance-grid .gov-image {
+    height: 700px;
+  }
+  .share-information .share-info-chart {
+    max-width: 1200px;
+  }
+  .error-404-section .error-content {
+    max-width: 1100px;
+  }
+}
+/* =========================================
    RESPONSIVE (TABLET)
 ========================================= */
 @media (max-width: 1024px) {
@@ -9420,7 +10042,7 @@ section .section-intro p {
     min-height: 150px;
   }
   .about-cards-section .container .card-grid .about-card .content-wrapper h5 {
-    font-size: 18px;
+    font-size: 17px;
     margin-bottom: 6px;
   }
   .about-cards-section .container .card-grid .about-card .content-wrapper p {
@@ -9486,7 +10108,7 @@ section .section-intro p {
     height: 40px;
   }
   .our-story-tabs .panel-text .values-grid .value-card h5 {
-    font-size: 18px;
+    font-size: 17px;
   }
   .our-story-tabs .panel-text .values-grid .value-card p {
     font-size: 14px;
@@ -9550,6 +10172,44 @@ section .section-intro p {
   }
   .other-help-options .container .help-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .governance-section .governance-grid {
+    gap: 20px;
+  }
+  .governance-section .governance-grid .gov-content-card {
+    padding: 30px;
+  }
+  .governance-section .governance-grid .gov-content-card h3 {
+    font-size: 28px;
+  }
+  .registrar-section .registrar-grid {
+    gap: 40px;
+  }
+  .profile-intro {
+    padding: 50px 0 10px 0;
+  }
+  .shareholder-section .shareholder-table-card {
+    padding: 30px 20px;
+  }
+  .shareholder-section .shareholder-table-card .table-header-title h3 {
+    font-size: 26px;
+  }
+  .share-information {
+    padding-top: 50px;
+  }
+  .annual-reports-section {
+    padding: 50px 0;
+  }
+  .annual-reports-section .reports-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .annual-reports-section .reports-header .header-title h2 {
+    font-size: 28px;
+  }
+  .annual-reports-section .reports-header p {
+    max-width: 100%;
   }
 }
 @media (max-width: 900px) {
@@ -9841,6 +10501,251 @@ section .section-intro p {
     left: 10px;
     padding: 8px 14px;
     font-size: 12px;
+  }
+  .dividends-section {
+    padding: 50px 0;
+  }
+  .dividends-section .section-intro-split {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .dividends-section .section-intro-split h2,
+  .dividends-section .section-intro-split p {
+    max-width: 100%;
+  }
+  .dividends-section .section-intro-split h2 {
+    font-size: 28px;
+  }
+  .dividends-section .dividends-table thead th,
+  .dividends-section .dividends-table tbody td {
+    padding: 15px 18px;
+    font-size: 14px;
+  }
+  .governance-section {
+    padding: 40px 0;
+  }
+  .governance-section .governance-grid {
+    grid-template-columns: 1fr;
+  }
+  .governance-section .governance-grid .gov-image {
+    height: 300px;
+  }
+  .registrar-section {
+    padding: 40px 0;
+  }
+  .registrar-section .registrar-grid {
+    grid-template-columns: 1fr;
+  }
+  .registrar-section .registrar-grid .registrar-content h2 {
+    font-size: 24px;
+  }
+  .registrar-section .registrar-grid .registrar-image {
+    min-height: 300px;
+  }
+  .registrar-section .registrar-grid .detail-icon {
+    font-size: 17px;
+  }
+  .profile-intro {
+    padding: 40px 0 10px 0;
+  }
+  .shareholder-section .section-intro h2 {
+    font-size: 28px;
+  }
+  .shareholder-section .shareholder-table-card {
+    border-radius: 16px;
+  }
+  .shareholder-section .shareholder-table-card .table-header-title h3 {
+    font-size: 22px;
+  }
+  .shareholder-section .shareholder-table-card .shareholder-table thead th,
+  .shareholder-section .shareholder-table-card .shareholder-table tbody td {
+    padding: 15px 18px;
+    font-size: 14px;
+  }
+  .share-information {
+    padding-top: 40px;
+  }
+  .annual-reports-section {
+    padding: 40px 0;
+  }
+  .annual-reports-section .reports-header .header-title h2 {
+    font-size: 24px;
+  }
+  .annual-reports-section .reports-grid {
+    grid-template-columns: 1fr;
+  }
+  .annual-reports-section .reports-grid .report-card .report-image {
+    height: 350px;
+  }
+  .error-404-section {
+    padding: 60px 0;
+  }
+  .error-404-section .error-content h1 {
+    font-size: 32px;
+  }
+  .error-404-section .error-content p {
+    font-size: 15px;
+    padding: 0;
+  }
+  .error-404-section .error-content .error-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .error-404-section .error-content .error-actions .button {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+/* =========================================
+   CARD SECTIONS (E.G. HELP, ABOUT, PERSONAL)
+========================================= */
+.cards-section {
+  padding: 70px 0;
+  background: #ffffff;
+}
+.cards-section .section-intro {
+  max-width: 1000px;
+}
+.cards-section .section-intro-full {
+  max-width: 90%;
+}
+.cards-section .section-intro-split {
+  display: flex;
+  justify-content: space-between;
+}
+.cards-section .section-intro-split h2 {
+  flex: 1;
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+  width: 80%;
+}
+.cards-section .section-intro-split p {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.cards-section .card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.cards-section .card-grid-3-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+.cards-section .card-grid-3-col .card .card-image {
+  height: 250px;
+}
+.cards-section .card-grid .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.cards-section .card-grid .card .card-image {
+  width: 100%;
+  height: 220px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.cards-section .card-grid .card .card-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: transform 0.4s ease;
+}
+.cards-section .card-grid .card:hover .card-image img {
+  transform: scale(1.05);
+}
+.cards-section .card-grid .card .card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.cards-section .card-grid .card .card-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #202020;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.cards-section .card-grid .card .card-content p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.cards-section .card-grid .card .card-content .button {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+/* =========================================
+   RESPONSIVE 
+========================================= */
+@media (max-width: 1024px) {
+  .cards-section {
+    padding: 50px 0;
+  }
+  .cards-section .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .cards-section .card-grid .card .card-image {
+    height: 220px;
+    margin-bottom: 20px;
+  }
+  .cards-section .card-grid .card .card-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .cards-section .card-grid .card .card-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .cards-section {
+    padding: 40px 0;
+  }
+  .cards-section .section-intro h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .cards-section .section-intro p {
+    font-size: 16px;
+  }
+  .cards-section .section-intro-split {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cards-section .section-intro-split h2 {
+    flex: 1;
+    width: 100%;
+  }
+  .cards-section .section-intro-split p {
+    flex: 1;
+  }
+  .cards-section .card-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .cards-section .card-grid .card .card-image {
+    height: 220px;
+    margin-bottom: 20px;
+  }
+  .cards-section .card-grid .card .card-content h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+  .cards-section .card-grid .card .card-content p {
+    font-size: 14px;
+    margin-bottom: 20px;
   }
 }
 .container {
@@ -10438,7 +11343,7 @@ section .section-intro p {
 }
 .mega-menu__feature img.feature-image {
   width: 100%;
-  height: 200px;
+  height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: top center;
@@ -10696,7 +11601,7 @@ section .section-intro p {
 }
 .footer-column h3 {
   margin-bottom: 12px;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
 }
 .footer-column ul li {

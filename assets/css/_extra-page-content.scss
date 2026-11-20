@@ -280,7 +280,8 @@
 
       .member-image {
         width: 100%;
-        height: 240px;
+        height: auto;
+        min-height: 240px;
         border-radius: 12px;
         overflow: hidden;
         background-color: #f4f4f4;
@@ -511,7 +512,7 @@
       }
 
       p {
-        font-size: 18px;
+        font-size: 17px;
         line-height: 1.5;
         max-width: 800px;
         margin: 0;
@@ -521,7 +522,7 @@
 
   // Adjust the card title to handle longer text strings
   .documents-grid .doc-card .doc-title {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.4;
     margin-bottom: 30px;
     display: -webkit-box;
@@ -553,7 +554,7 @@
       }
 
       p {
-        font-size: 18px;
+        font-size: 17px;
         line-height: 1.5;
         max-width: 900px;
         margin: 0;
@@ -620,7 +621,7 @@
           font-size: 15px;
 
           i {
-            font-size: 18px;
+            font-size: 17px;
           }
         }
 
@@ -680,7 +681,7 @@
       }
 
       p {
-        font-size: 18px;
+        font-size: 17px;
         line-height: 1.5;
         max-width: 900px;
         margin: 0;
@@ -718,7 +719,7 @@
           font-weight: 500;
 
           i {
-            font-size: 18px;
+            font-size: 17px;
           }
         }
       }
@@ -1100,7 +1101,7 @@
         color: $black;
       }
       p {
-        font-size: 18px;
+        font-size: 17px;
         margin-bottom: 0;
       }
     }
@@ -1195,7 +1196,7 @@
         font-size: 15px;
 
         i {
-          font-size: 18px;
+          font-size: 17px;
         }
       }
 
@@ -1697,7 +1698,7 @@
       }
 
       p {
-        font-size: 18px;
+        font-size: 17px;
         line-height: 1.6;
       }
     }
@@ -1872,7 +1873,7 @@
     }
 
     p {
-      font-size: 18px;
+      font-size: 17px;
       color: #4a4a4a;
       line-height: 1.5;
       max-width: 800px;
@@ -2109,7 +2110,7 @@
       border: none;
       outline: none;
       padding: 15px 0;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
       color: $black;
       text-align: left;
@@ -2231,7 +2232,7 @@
   .map-wrapper {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: 500px;
     border-radius: 24px;
     overflow: hidden;
     background: #e5e3df;
@@ -2364,6 +2365,652 @@
 }
 
 /* =========================================
+   DIVIDENDS TABLE SECTION
+========================================= */
+.dividends-section {
+  padding: 70px 0;
+  background: $white;
+
+  .section-intro-split {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 70px;
+
+    h2 {
+      font-size: 36px;
+      font-weight: 700;
+      color: $black;
+      max-width: 40%;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      max-width: 45%;
+      margin: 0;
+    }
+  }
+
+  /* Wrapper for horizontal scrolling on mobile */
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid #d4d9e0; // Very subtle border around the whole table
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    -webkit-overflow-scrolling: touch;
+
+    /* Custom Scrollbar for better UX */
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #f4f4f7;
+      border-radius: 16px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 16px;
+    }
+  }
+
+  .dividends-table {
+    width: 100%;
+    min-width: 900px; // Prevents squishing on smaller screens
+    border-collapse: collapse;
+    text-align: left;
+
+    /* --- Header --- */
+    thead {
+      background: #f4f4f7;
+
+      th {
+        padding: 18px 24px;
+        font-size: 16px;
+        font-weight: 600;
+        color: $primary-dark; // Dark blue text
+        white-space: nowrap;
+
+        // Rounded top corners for the first and last header cell
+        &:first-child {
+          border-top-left-radius: 24x;
+        }
+        &:last-child {
+          border-top-right-radius: 24px;
+        }
+      }
+    }
+
+    /* --- Body --- */
+    tbody {
+      tr {
+        border-bottom: 1px solid #d4d9e0;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: #fafbfc;
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      td {
+        padding: 18px 24px;
+        font-size: 16px;
+        color: $black;
+        white-space: nowrap;
+
+        /* Style the Period links */
+        a {
+          color: $primary-dark;
+          font-weight: 500;
+          text-decoration: none;
+          transition: color 0.2s ease;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =========================================
+   ESSENTIAL GOVERNANCE SECTION
+========================================= */
+.governance-section {
+  padding: 70px 0;
+  background: $white;
+
+  .governance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+
+    /* --- Left Side: Blue Card --- */
+    .gov-content-card {
+      width: 100%;
+      height: 100%;
+      background: $primary-dark;
+      border-radius: 24px;
+      padding: 40px;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      h3 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+
+      .gov-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+          font-size: 16px;
+          line-height: 1.4;
+          margin-bottom: 15px;
+
+          i {
+            color: #ffffff;
+            font-size: 14px;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    /* --- Right Side: Image --- */
+    .gov-image {
+      width: 100%;
+      height: 600px;
+      border-radius: 24px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+/* =========================================
+   REGISTRAR DETAILS SECTION
+========================================= */
+.registrar-section {
+  padding: 70px 0;
+  background: $white;
+
+  .registrar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+
+    /* --- Left Side: Content --- */
+    .registrar-content {
+      h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color: $black;
+        margin-bottom: 10px;
+      }
+
+      .registrar-intro {
+        font-size: 17px;
+        margin-bottom: 25px;
+      }
+
+      .registrar-details-list {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding-top: 30px;
+        border-top: 1px solid #e0e0e0;
+
+        .detail-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 20px;
+          padding-bottom: 25px;
+          border-bottom: 1px solid #e0e0e0;
+
+          &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+
+          .detail-icon {
+            flex-shrink: 0;
+            width: fit-content;
+            height: fit-content;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            i {
+              font-size: 24px;
+              color: $black;
+            }
+          }
+
+          .detail-text {
+            h4 {
+              font-size: 17px;
+              font-weight: 500;
+              color: $black;
+              margin-bottom: 8px;
+            }
+
+            p {
+              font-size: 16px;
+              line-height: 1.6;
+              margin: 0;
+
+              a {
+                color: $black;
+                text-decoration: none;
+                transition: color 0.2s;
+
+                &:hover {
+                  color: $primary;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* --- Right Side: Image --- */
+    .registrar-image {
+      width: 100%;
+      height: 100%;
+      min-height: 500px; // Ensures it looks substantial
+      border-radius: 24px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+}
+
+/* =========================================
+   SHAREHOLDER STRUCTURE SECTION
+========================================= */
+.profile-intro {
+  padding: 70px 0 10px 0;
+}
+
+.shareholder-section {
+  padding: 10px 0 40px 0;
+  background: $white;
+  background: #f4f4f7;
+
+  /* --- Main Card Wrapper --- */
+  .shareholder-table-card {
+    border-radius: 24px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+
+    /* Centered Title inside the grey box */
+    .table-header-title {
+      text-align: center;
+      margin-bottom: 50px;
+
+      h3 {
+        font-size: 36px;
+        font-weight: 700;
+        color: $black;
+        line-height: 1.3;
+        margin: 0;
+      }
+    }
+
+    /* Responsive Wrapper */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      background: #fff;
+      border-radius: 12px;
+      -webkit-overflow-scrolling: touch;
+
+      /* Custom Scrollbar */
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f4f4f7;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 6px;
+      }
+    }
+
+    /* --- Table Styling --- */
+    .shareholder-table {
+      width: 100%;
+      min-width: 800px; // Prevents squishing on mobile
+      border-collapse: collapse;
+      text-align: left;
+
+      /* Header Row */
+      thead {
+        background: $primary; // Deep blue header
+
+        th {
+          padding: 18px 24px;
+          font-size: 16px;
+          font-weight: 600;
+          color: #ffffff;
+          white-space: nowrap;
+
+          &.text-right {
+            text-align: right;
+          }
+        }
+      }
+
+      /* Body Rows */
+      tbody {
+        tr {
+          border-bottom: 1px solid #eef2f5;
+          transition: background-color 0.2s ease;
+
+          &:hover {
+            background-color: #fafbfc;
+          }
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+
+        td {
+          padding: 18px 24px;
+          font-size: 16px;
+          white-space: nowrap;
+
+          &.text-right {
+            text-align: right;
+          }
+
+          /* Blue links for Shareholder names */
+          a {
+            color: $primary;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-weight: 400;
+
+            &:hover {
+              text-decoration: underline;
+              color: $secondary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.share-information {
+  padding-top: 70px;
+  .share-info-chart {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 30px;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: fill;
+    }
+  }
+}
+
+/* =========================================
+   ANNUAL REPORTS SECTION
+========================================= */
+.annual-reports-section {
+  padding: 70px 0;
+  background: $white;
+
+  /* --- Custom Split Header --- */
+  .reports-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 30px;
+
+    .header-title {
+      h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color: $black;
+        margin: 0;
+        line-height: 1.2;
+      }
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.5;
+      max-width: 550px;
+      margin: 0;
+    }
+  }
+
+  /* --- Reports Grid --- */
+  .reports-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 70px;
+
+    .report-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      .report-image {
+        width: 100%;
+        height: auto;
+        min-height: 350px;
+        border-radius: 22px;
+        overflow: hidden;
+        margin-bottom: 15px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+      }
+
+      &:hover .report-image img {
+        transform: scale(1.05);
+      }
+
+      .report-info {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        h4 {
+          font-size: 17px;
+          font-weight: 500;
+          color: $black;
+          line-height: 1.4;
+          margin-bottom: 20px;
+          flex-grow: 1;
+        }
+
+        .report-footer {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-top: auto;
+          gap: 5px;
+          .date {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  /* --- Pagination --- */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    .pagination-link {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f4f7;
+      color: $black;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover,
+      &.active {
+        background: $primary-dark;
+        color: $white;
+      }
+    }
+  }
+}
+
+/* =========================================
+   404 ERROR PAGE SECTION
+========================================= */
+.error-404-section {
+  padding: 100px 0;
+  background: $white;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .error-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+
+    /* --- Illustration --- */
+    .error-illustration {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+
+      svg {
+        width: auto;
+        height: auto;
+      }
+    }
+
+    /* --- Typography --- */
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: $black;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 35px;
+      padding: 0 20px;
+    }
+
+    /* --- Action Buttons --- */
+    .error-actions {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+/* =========================================
+   RESPONSIVE (LARGE SCREENS)
+========================================= */
+@media (min-width: 1440px) {
+  .governance-section {
+    .governance-grid {
+      /* --- Right Side: Image --- */
+      .gov-image {
+        height: 700px;
+      }
+    }
+  }
+
+  .share-information {
+    .share-info-chart {
+      max-width: 1200px;
+    }
+  }
+
+  .error-404-section {
+    .error-content {
+      max-width: 1100px;
+    }
+  }
+}
+
+/* =========================================
    RESPONSIVE (TABLET)
 ========================================= */
 
@@ -2405,7 +3052,7 @@
             flex-direction: column;
             min-height: 150px;
             h5 {
-              font-size: 18px;
+              font-size: 17px;
               margin-bottom: 6px;
             }
             p {
@@ -2498,7 +3145,7 @@
             height: 40px;
           }
           h5 {
-            font-size: 18px;
+            font-size: 17px;
           }
           p {
             font-size: 14px;
@@ -2589,6 +3236,59 @@
       }
       .help-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  .governance-section {
+    .governance-grid {
+      gap: 20px;
+      .gov-content-card {
+        padding: 30px;
+        h3 {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+
+  .registrar-section {
+    .registrar-grid {
+      gap: 40px;
+    }
+  }
+
+  .profile-intro {
+    padding: 50px 0 10px 0;
+  }
+
+  .shareholder-section {
+    .shareholder-table-card {
+      padding: 30px 20px;
+
+      .table-header-title h3 {
+        font-size: 26px;
+      }
+    }
+  }
+
+  .share-information {
+    padding-top: 50px;
+  }
+
+  .annual-reports-section {
+    padding: 50px 0;
+
+    .reports-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+
+      .header-title h2 {
+        font-size: 28px;
+      }
+      p {
+        max-width: 100%;
       }
     }
   }
@@ -2988,6 +3688,137 @@
           left: 10px;
           padding: 8px 14px;
           font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .dividends-section {
+    padding: 50px 0;
+
+    .section-intro-split {
+      flex-direction: column;
+      gap: 15px;
+
+      h2,
+      p {
+        max-width: 100%;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+    }
+
+    .dividends-table {
+      thead th,
+      tbody td {
+        padding: 15px 18px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .governance-section {
+    padding: 40px 0;
+
+    .governance-grid {
+      grid-template-columns: 1fr; // Stack on mobile
+
+      .gov-image {
+        height: 300px;
+      }
+    }
+  }
+
+  .registrar-section {
+    padding: 40px 0;
+
+    .registrar-grid {
+      grid-template-columns: 1fr; // Stack on mobile
+
+      .registrar-content {
+        h2 {
+          font-size: 24px;
+        }
+      }
+
+      .registrar-image {
+        min-height: 300px;
+      }
+      .detail-icon {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .profile-intro {
+    padding: 40px 0 10px 0;
+  }
+
+  .shareholder-section {
+    .section-intro h2 {
+      font-size: 28px;
+    }
+
+    .shareholder-table-card {
+      border-radius: 16px;
+
+      .table-header-title h3 {
+        font-size: 22px;
+      }
+
+      .shareholder-table {
+        thead th,
+        tbody td {
+          padding: 15px 18px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .share-information {
+    padding-top: 40px;
+  }
+
+  .annual-reports-section {
+    padding: 40px 0;
+
+    .reports-header .header-title h2 {
+      font-size: 24px;
+    }
+
+    .reports-grid {
+      grid-template-columns: 1fr;
+
+      .report-card .report-image {
+        height: 350px;
+      }
+    }
+  }
+
+  .error-404-section {
+    padding: 60px 0;
+
+    .error-content {
+      h1 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 15px;
+        padding: 0;
+      }
+
+      .error-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        .button {
+          width: 100%;
+          max-width: 250px;
         }
       }
     }

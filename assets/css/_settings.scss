@@ -288,12 +288,12 @@ input:focus-visible {
 @media (min-width: 1440px) {
   body {
     h1 {
-      font-size: 84px !important;
+      font-size: 80px !important;
       line-height: 92px !important;
     }
     h2 {
-      font-size: 66px !important;
-      line-height: 74px !important;
+      font-size: 52px !important;
+      line-height: 64px !important;
     }
     h3 {
       font-size: 38px !important;
@@ -309,8 +309,8 @@ input:focus-visible {
     span,
     a,
     label {
-      font-size: 24px !important;
-      line-height: 32px !important;
+      font-size: 22px !important;
+      line-height: 37px !important;
     }
 
     button,
@@ -319,8 +319,8 @@ input:focus-visible {
     input,
     textarea,
     select {
-      font-size: 24px !important;
-      line-height: 32px !important;
+      font-size: 22px !important;
+      line-height: 37px !important;
     }
 
     .container {
@@ -335,11 +335,65 @@ input:focus-visible {
       a {
         font-size: 16px !important;
       }
+      .app-links {
+        a {
+          img {
+            height: 50px;
+          }
+        }
+      }
       .footer-bottom {
         a,
         p {
           font-size: 15px !important;
         }
+      }
+
+      .newsletter {
+        h3 {
+          font-size: 32px !important;
+        }
+        p {
+          font-size: 18px !important;
+          line-height: 24px !important;
+        }
+      }
+    }
+  }
+
+  header {
+    .utility-bar {
+      a {
+        font-size: 18px !important;
+        line-height: 25px !important;
+      }
+    }
+
+    .main-nav {
+      .primary-nav {
+        h2 {
+          font-size: 44px !important;
+        }
+        p,
+        a {
+          font-size: 18px !important;
+          line-height: 26px !important;
+        }
+      }
+
+      .mega-menu__feature {
+        img.feature-image {
+          height: 350px;
+        }
+      }
+    }
+
+    .nav-actions {
+      button,
+      .button,
+      a {
+        font-size: 18px !important;
+        line-height: 26px !important;
       }
     }
   }
