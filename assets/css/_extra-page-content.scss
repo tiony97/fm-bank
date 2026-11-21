@@ -1601,72 +1601,233 @@
   }
 }
 
+/* =========================================
+   AWARDS & RECOGNITION SECTION (ACCORDION)
+========================================= */
 .awards-section {
+  position: relative;
   padding: 70px 0;
-  background: $secondary;
-  color: #ffffff;
+  overflow: hidden;
+  background-color: $primary-dark; // Fallback color
+  color: $white;
 
-  .awards-grid {
+  /* --- Background Image --- */
+  .awards-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* --- Main Layout Grid --- */
+  .awards-layout {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: flex-start;
 
-    .award-item {
-      position: relative;
-      padding: 15px 20px 30px 20px;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
 
-      /* Bottom line (on all items) */
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80%;
-        height: 1px;
-        background-color: #ffffff29;
+  /* --- Left Side: Trophy Image --- */
+  //   .awards-visual {
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: flex-start;
+  //     position: sticky;
+  //     top: 40px;
+
+  //     .trophy-img {
+  //       width: 100%;
+  //       max-width: 380px;
+  //       height: auto;
+  //       object-fit: contain;
+  //       filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+  //     }
+
+  //     @media (max-width: 1024px) {
+  //       display: none;
+  //     }
+  //   }
+
+  /* --- Right Side: Content --- */
+  .awards-content {
+    width: 100%;
+
+    .awards-header {
+      margin-bottom: 30px;
+
+      h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color: $white;
+        margin-bottom: 20px;
+        line-height: 1.2;
       }
 
-      /* Right line (on middle items only) */
-      &::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        right: 0;
-        width: 1px;
-        height: 80%;
-        transform: translateY(-50%);
-        background-color: #ffffff29;
-      }
-
-      /* Remove the right line for the last item in each row */
-      &:nth-child(5n),
-      &:last-child {
-        &::before {
-          display: none;
-        }
-      }
-      &:last-of-type {
-        &::after {
-          display: none;
-        }
-      }
-
-      /* Typography */
       p {
-        font-size: 16px;
-        line-height: 1.5;
-        margin-bottom: 15px;
-        color: #ffffff;
+        font-size: 17px;
+        margin: 0;
+      }
+    }
+
+    /* --- Accordion Container (Fixed Height & Scrollbar) --- */
+    .awards-accordion {
+      max-height: 400px; // Fixed height as requested
+      overflow-y: auto;
+      padding-right: 15px; // Space for custom scrollbar
+
+      /* Custom Scrollbar */
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+      &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0);
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 10px;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.6);
+        }
+      }
+    }
+
+    /* --- Individual Accordion Item --- */
+    .accordion-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+      &:last-child {
+        border-bottom: none;
       }
 
-      span {
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.8);
-        margin-top: auto;
-        display: block;
+      /* --- Header (Button) --- */
+      .accordion-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 20px 0;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        text-align: left;
+        transition: all 0.3s ease;
+
+        .year {
+          font-size: 28px;
+          font-weight: 700;
+          color: $secondary;
+          transition: color 0.3s ease;
+        }
+
+        .icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          border: 1px solid rgb(255, 255, 255);
+          outline: none;
+          color: $white;
+          font-size: 14px;
+          transition: all 0.3s ease;
+        }
+
+        &:hover {
+          .year {
+            color: #fff;
+          }
+          .icon {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: $white;
+          }
+        }
+      }
+
+      /* --- Active State Adjustments --- */
+      &.active {
+        .accordion-header {
+          .year {
+            color: $secondary;
+          }
+          .icon {
+            background: transparent;
+            color: $secondary;
+            border-color: $secondary;
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      /* --- Content Panel --- */
+      .accordion-content {
+        display: none;
+        padding-bottom: 20px;
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+
+          li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding-left: 5px;
+
+            > span {
+              color: $white;
+              font-size: 12px;
+              margin-top: 6px;
+              flex-shrink: 0;
+            }
+
+            div {
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+
+              p {
+                font-size: 16px;
+                line-height: 1.5;
+                color: #fff;
+                margin: 0;
+              }
+
+              .note {
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.5);
+                font-style: italic;
+                margin-top: 2px;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -3008,6 +3169,22 @@
       max-width: 1100px;
     }
   }
+
+  .awards-section {
+    min-height: 60vh;
+    .awards-accordion {
+      max-height: 45vh;
+      p,
+      ul,
+      a {
+        font-size: 18px !important;
+      }
+      .arrow {
+        font-size: 17px !important;
+        margin-top: 4px;
+      }
+    }
+  }
 }
 
 /* =========================================
@@ -3155,26 +3332,6 @@
     }
   }
 
-  .awards-section {
-    .awards-grid {
-      grid-template-columns: repeat(4, 1fr);
-
-      .award-item {
-        /* Adjust borders for 4 columns */
-        &:nth-child(4n) {
-          &::before {
-            display: none;
-          }
-        }
-        &:nth-child(5n) {
-          &::before {
-            display: block; /* Reset the 5-column rule */
-          }
-        }
-      }
-    }
-  }
-
   .journey-section {
     padding: 50px 0;
 
@@ -3313,29 +3470,6 @@
     }
   }
 
-  .awards-section {
-    padding: 60px 0;
-
-    .awards-grid {
-      grid-template-columns: repeat(2, 1fr);
-
-      .award-item {
-        /* Adjust borders for 2 columns */
-        &:nth-child(even) {
-          &::before {
-            display: none;
-          }
-        }
-        &:nth-child(4n),
-        &:nth-child(5n) {
-          &::before {
-            display: block; /* Reset previous rules */
-          }
-        }
-      }
-    }
-  }
-
   .downloads-section {
     .documents-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -3348,6 +3482,61 @@
 ========================================= */
 
 @media (max-width: 600px) {
+  .awards-section {
+    padding: 40px 0;
+
+    /* --- Right Side: Content --- */
+    .awards-content {
+      width: 100%;
+
+      .awards-header {
+        margin-bottom: 30px;
+
+        h2 {
+          font-size: 28px;
+          margin-bottom: 20px;
+          line-height: 1.2;
+        }
+
+        p {
+          font-size: 16px;
+          margin: 0;
+        }
+      }
+
+      .awards-accordion {
+        max-height: 400px;
+      }
+
+      .accordion-item {
+        /* --- Header (Button) --- */
+        .accordion-header {
+          .year {
+            font-size: 22px;
+          }
+
+          .icon {
+            width: 30px;
+            height: 30px;
+          }
+        }
+
+        /* --- Content Panel --- */
+        .accordion-content {
+          ul {
+            li {
+              div {
+                p {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
   .global-filter {
     .gf-controls {
       flex-direction: column;
@@ -3505,32 +3694,6 @@
           &:nth-of-type(3) {
             border-bottom: 1px solid #08122241;
           }
-        }
-      }
-    }
-  }
-
-  .awards-section {
-    padding: 50px 0;
-
-    .section-intro h2 {
-      font-size: 28px;
-    }
-
-    .awards-grid {
-      grid-template-columns: 1fr;
-
-      .award-item {
-        padding: 20px 0;
-
-        /* Remove all vertical lines on mobile */
-        &::before {
-          display: none !important;
-        }
-
-        /* Adjust bottom line width */
-        &::after {
-          width: 100%;
         }
       }
     }

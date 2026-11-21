@@ -2672,6 +2672,30 @@ $(function () {
         .html('<i class="fa-solid fa-magnifying-glass"></i>');
     }
   });
+
+  // Awards Accordion functionality
+  $(".awards-accordion .accordion-header").on("click", function () {
+    var $item = $(this).parent(".accordion-item");
+    var $content = $item.find(".accordion-content");
+    var $icon = $(this).find(".icon i");
+    var isActive = $item.hasClass("active");
+
+    // 1. Close all other items
+    $(".awards-accordion .accordion-item").removeClass("active");
+    $(".awards-accordion .accordion-content").slideUp(300);
+    $(".awards-accordion .accordion-header .icon i")
+      .removeClass("fa-arrow-up")
+      .addClass("fa-arrow-down");
+    $(".awards-accordion .accordion-header").attr("aria-expanded", "false");
+
+    // 2. Toggle the clicked item
+    if (!isActive) {
+      $item.addClass("active");
+      $content.slideDown(300);
+      $icon.removeClass("fa-arrow-down").addClass("fa-arrow-up");
+      $(this).attr("aria-expanded", "true");
+    }
+  });
 });
 
 // =========================================

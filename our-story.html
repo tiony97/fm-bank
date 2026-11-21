@@ -412,7 +412,7 @@
         </div>
       </section>
 
-      <!-- ================= OUR JOURNEY SECTION ================= -->
+      <!-- Our Journey -->
       <section class="journey-section">
         <div class="container">
           <!-- Header Area -->
@@ -440,7 +440,9 @@
                 class="swiper-btn journey-next"
                 aria-label="Next milestone"
               >
-                <i class="fa-solid fa-arrow-right"></i>
+                <span class="arrow"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></span>
               </button>
             </div>
           </div>
@@ -777,145 +779,481 @@
 
       <!-- Awards & Recognition -->
       <section class="awards-section">
+        <!-- Background Image Element -->
+        <div class="awards-bg">
+          <img
+            src="./assets/images/awards-full-image.png"
+            alt="Awaards background image"
+            aria-hidden="true"
+          />
+        </div>
+
         <div class="container">
-          <div class="section-intro text-center">
-            <h2>Awards & Recognitions</h2>
-            <p>
-              The most recent and notable awards the Bank has received include:
-            </p>
-          </div>
-
-          <div class="awards-grid">
-            <!-- Row 1 -->
-            <div class="award-item">
-              <p>
-                Service Excellence award, in the inaugural category CX Social
-                Impact & Sustainability. 2024 (October)
-              </p>
-              <span>Institute of Customer Experience</span>
-            </div>
-            <div class="award-item">
-              <p>
-                Winner, for the Queen Banking product, recognised for the Bank's
-                commitment to women's financial empowerment. 2024
-              </p>
-              <span>Banking on Women Awards</span>
-            </div>
-            <div class="award-item">
-              <p>Winner, Battle of the Banks Africa. 2023</p>
-              <span>ICAP Training Solutions</span>
-            </div>
-            <div class="award-item">
-              <p>
-                Most Aggressive Bank (special award. Battle of the Banks
-                Africa). 2023
-              </p>
-              <span>ICAP Training Solutions</span>
-            </div>
-            <div class="award-item">
-              <p>
-                Best Risk Managed Bank (special award. Battle of the Banks
-                Africa). 2023
-              </p>
-              <span>ICAP Training Solutions</span>
+          <div class="awards-layout">
+            <!-- Left Side: Trophy Image -->
+            <div class="awards-visual">
+              <!-- <img
+                src="./assets/images/trophy.png"
+                alt="Awards Trophy"
+                class="trophy-img"
+              /> -->
             </div>
 
-            <!-- Row 2 -->
-            <div class="award-item">
-              <p>
-                Best Team Presentations (special award, Battle of the Banks
-                Africa). 2023
-              </p>
-              <span>ICAP Training Solutions</span>
-            </div>
-            <div class="award-item">
-              <p>Best internal customer experience in Kenya. 2023</p>
-              <span>ICX Service Excellence Awards</span>
-            </div>
-            <div class="award-item">
-              <p>Top Tier II Bank in customer experience. 2023</p>
-              <span>KBA Awards</span>
-            </div>
-            <div class="award-item">
-              <p>Second-best bank overall. 2022</p>
-              <span>Kenya Bankers Association survey</span>
-            </div>
-            <div class="award-item">
-              <p>
-                Best Tier Two bank in customer responsiveness and digital
-                banking experience. 2022
-              </p>
-              <span>Kenya Bankers Association survey</span>
-            </div>
+            <!-- Right Side: Content & Accordion -->
+            <div class="awards-content">
+              <div class="awards-header">
+                <h2>Awards & Recognitions</h2>
+                <p>
+                  The most recent and notable awards the Bank has received
+                  include:
+                </p>
+              </div>
 
-            <!-- Row 3 -->
-            <div class="award-item">
-              <p>
-                Bank of the Year for High-Impact Agricultural Lending to SMEs.
-                2022
-              </p>
-              <span>Aceli Africa Convention</span>
-            </div>
-            <div class="award-item">
-              <p>
-                Best Tier Two Bank in Customer Responsiveness and Digital
-                Banking Experience. 2021
-              </p>
-              <span
-                >Kenya Bankers Association (KBA) Customer Satisfaction
-                Survey</span
-              >
-            </div>
-            <div class="award-item">
-              <p>Best Tier Two Bank in Digital and Customer Experience. 2020</p>
-              <span
-                >Kenya Bankers Association Customer Satisfaction Survey</span
-              >
-            </div>
-            <div class="award-item">
-              <p>
-                Overall second-best bank in Digital and Customer Experience.
-                2020
-              </p>
-              <span
-                >Kenya Bankers Association Customer Satisfaction Survey</span
-              >
-            </div>
-            <div class="award-item">
-              <p>Best SME Bank in Kenya. 2017</p>
-              <span>Banker Africa East Africa Awards</span>
-            </div>
+              <!-- Accordion Container -->
+              <div class="awards-accordion">
+                <!-- 2024 (Open by default) -->
+                <div class="accordion-item active">
+                  <button class="accordion-header" aria-expanded="true">
+                    <span class="year">2024</span>
+                    <span class="icon"
+                      ><i class="fa-solid fa-arrow-up"></i
+                    ></span>
+                  </button>
+                  <div class="accordion-content" style="display: block">
+                    <ul>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Service Excellence Award, inaugural CX Social Impact
+                            & Sustainability category, from the Institute of
+                            Customer Experience (October).
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Access to Funding Award, Banking on Women Awards.
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Best Mentorship for Women and Networking Award,
+                            Banking on Women Awards.
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Excellence in Customer Responsiveness Award,
+                            Innovation & Excellence Awards East Africa.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
 
-            <!-- Row 4 -->
-            <div class="award-item">
-              <p>Fastest Growing Bank based on Financials. 2015</p>
-              <span></span>
-              <!-- Empty span to maintain height if needed -->
-            </div>
-            <div class="award-item">
-              <p>Best Bank in Micro-Finance.</p>
-              <span></span>
-            </div>
-            <div class="award-item">
-              <p>1st Runner-up. 2013 & 2014</p>
-              <span>Think Business Magazine Awards</span>
-            </div>
-            <div class="award-item">
-              <p>Best Farmers Bank in Kiambu and Laikipia counties.</p>
-              <span></span>
-            </div>
-            <div class="award-item">
-              <p>2nd best financial services provider in Kitui County.</p>
-              <span>Kitui Agricultural Trade Fair</span>
-            </div>
+                <!-- 2023 -->
+                <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                    <span class="year">2023</span>
+                    <span class="icon"
+                      ><i class="fa-solid fa-arrow-down"></i
+                    ></span>
+                  </button>
+                  <div class="accordion-content">
+                    <ul>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Winner (Overall Champion), Battle of the Banks
+                            Africa, ICAP Training Solutions.
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Most Aggressive Bank, special award, Battle of the
+                            Banks Africa.
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Best Risk Managed Bank, special award, Battle of the
+                            Banks Africa.
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Best Team Presentations, special award, Battle of
+                            the Banks Africa.
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Best internal customer experience in Kenya, ICX
+                            Service Excellence Awards.
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Top Tier II Bank in customer experience, KBA Awards.
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Excellence Award in Customer Responsiveness, 11th
+                            Connected Banking Summit.
+                          </p>
+                          <span class="note"
+                            >Image only, and the year is my reading of where the
+                            box sits.</span
+                          >
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
 
-            <!-- Row 5 -->
-            <div class="award-item">
-              <p>
-                Best VISA Marketing/VISA Brand Awareness Campaign, with the
-                tagline "The way to pay everyday", for the EMV Visa Card.
-              </p>
-              <span>VISA International</span>
+                <!-- 2022 -->
+                <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                    <span class="year">2022</span>
+                    <span class="icon"
+                      ><i class="fa-solid fa-arrow-down"></i
+                    ></span>
+                  </button>
+                  <div class="accordion-content">
+                    <ul>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Second-best bank overall, Kenya Bankers Association
+                            survey.
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Best Tier Two bank in customer responsiveness and
+                            digital banking experience, Kenya Bankers
+                            Association survey.
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Bank of the Year for High-Impact Agricultural
+                            Lending to SMEs, Aceli Africa Convention.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- 2021 -->
+                <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                    <span class="year">2021</span>
+                    <span class="icon"
+                      ><i class="fa-solid fa-arrow-down"></i
+                    ></span>
+                  </button>
+                  <div class="accordion-content">
+                    <ul>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Best Tier Two Bank in Customer Responsiveness and
+                            Digital Banking Experience, KBA Customer
+                            Satisfaction Survey.
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Overall Best Bank in Digital Experience and Customer
+                            Responsiveness, KBA survey.
+                          </p>
+                          <span class="note">Image only.</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- 2020 -->
+                <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                    <span class="year">2020</span>
+                    <span class="icon"
+                      ><i class="fa-solid fa-arrow-down"></i
+                    ></span>
+                  </button>
+                  <div class="accordion-content">
+                    <ul>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Best Tier Two Bank in Digital and Customer
+                            Experience, KBA Customer Satisfaction Survey.
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Overall second-best bank in Digital and Customer
+                            Experience, KBA Customer Satisfaction Survey.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- 2017 -->
+                <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                    <span class="year">2017</span>
+                    <span class="icon"
+                      ><i class="fa-solid fa-arrow-down"></i
+                    ></span>
+                  </button>
+                  <div class="accordion-content">
+                    <ul>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Best SME Bank in Kenya, Banker Africa East Africa
+                            Awards.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- 2015 -->
+                <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                    <span class="year">2015</span>
+                    <span class="icon"
+                      ><i class="fa-solid fa-arrow-down"></i
+                    ></span>
+                  </button>
+                  <div class="accordion-content">
+                    <ul>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Fastest Growing Bank based on Financials, Think
+                            Business Awards.
+                          </p>
+                          <span class="note"
+                            >Our Story has no awarding body, so the Image and
+                            homepage supply it.</span
+                          >
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- 2013 and 2014 -->
+                <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                    <span class="year">2013 and 2014</span>
+                    <span class="icon"
+                      ><i class="fa-solid fa-arrow-down"></i
+                    ></span>
+                  </button>
+                  <div class="accordion-content">
+                    <ul>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>1st Runner-up, Think Business Magazine Awards.</p>
+                          <span class="note">The category isn't stated.</span>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            2013: Best Company to Work For, Think Business
+                            Awards.
+                          </p>
+                          <span class="note">Image only.</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- 2011 -->
+                <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                    <span class="year">2011</span>
+                    <span class="icon"
+                      ><i class="fa-solid fa-arrow-down"></i
+                    ></span>
+                  </button>
+                  <div class="accordion-content">
+                    <ul>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>Best Bank Product Marketing.</p>
+                          <span class="note"
+                            >Image only, and no awarding body is stated.</span
+                          >
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Others -->
+                <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                    <span class="year">Others</span>
+                    <span class="icon"
+                      ><i class="fa-solid fa-arrow-down"></i
+                    ></span>
+                  </button>
+                  <div class="accordion-content">
+                    <ul>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>Best Bank in Micro-Finance.</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Best Farmers Bank in Kiambu and Laikipia counties.
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            2nd best financial services provider in Kitui
+                            County, Kitui Agricultural Trade Fair.
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="arrow"
+                          ><i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                        <div>
+                          <p>
+                            Best VISA Marketing / Brand Awareness Campaign, "The
+                            way to pay everyday", EMV Visa Card, VISA
+                            International.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

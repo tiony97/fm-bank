@@ -151,7 +151,7 @@
         /* Image styling */
         .panel-image {
           height: 100%;
-          min-height: 300px;
+          min-height: 340px;
 
           img {
             width: 100%;
@@ -2182,6 +2182,11 @@
       }
     }
   }
+  .product-tabs-section {
+    .tabs-content {
+      height: 500px !important;
+    }
+  }
 }
 
 /* =========================================
@@ -2226,6 +2231,7 @@
       .tabs-content {
         border-radius: 16px;
         padding: 0;
+        height: fit-content !important;
       }
       .tab-panel {
         grid-template-columns: 1fr !important;
