@@ -2586,3 +2586,279 @@ $(function () {
     });
   });
 });
+
+$(function () {
+  // =========================================
+  // CALCULATOR MODALS LOGIC
+  // =========================================
+
+  const $mortgageModal = $("#mortgage-calculator");
+  const $loanModal = $("#loan-calculator");
+  const $fullResultsModal = $("#full-results-modal");
+  const $body = $("body");
+
+  // 1. OPEN MAIN MODALS
+  $('a[href="#mortgage-calculator"]').on("click", function (e) {
+    e.preventDefault();
+    openModal($mortgageModal);
+  });
+
+  $('a[href="#loan-calculator"]').on("click", function (e) {
+    e.preventDefault();
+    openModal($loanModal);
+  });
+
+  function openModal($modal) {
+    $modal.find(".calc-view").removeClass("active");
+    $modal.find(".calc-input-view").addClass("active");
+    $modal.find("form")[0].reset();
+    $modal.find(".calc-submit-btn").prop("disabled", true);
+
+    $modal.addClass("is-open");
+    $body.css("overflow", "hidden");
+  }
+
+  // 2. CLOSE MAIN MODALS
+  $(".calculator-modal").on(
+    "click",
+    ".calc-modal-overlay, .calc-close-btn",
+    function () {
+      const $modal = $(this).closest(".calculator-modal");
+      $modal.removeClass("is-open");
+      $body.css("overflow", "");
+    },
+  );
+
+  // 3. LIVE FORM VALIDATION
+  $(".calculator-form").on("input", "input", function () {
+    const $form = $(this).closest("form");
+    const inputs = $form.find("input[required]");
+    let allFilled = true;
+
+    inputs.each(function () {
+      const val = $(this).val().trim();
+      if (val === "" || parseFloat(val) <= 0) {
+        allFilled = false;
+        return false;
+      }
+    });
+
+    $form.find(".calc-submit-btn").prop("disabled", !allFilled);
+  });
+
+  // 4. CALCULATION & PRIMARY RESULTS
+  $(".calculator-form").on("submit", function (e) {
+    e.preventDefault();
+
+    const $form = $(this);
+    const $modal = $form.closest(".calculator-modal");
+    const isMortgage = $modal.attr("id") === "mortgage-calculator";
+
+    // Get values
+    const loanAmount = parseFloat(
+      $form.find('input[name="loan_amount"]').val(),
+    );
+    const durationMonths = parseFloat(
+      $form.find('input[name="duration"]').val(),
+    );
+    const annualRate = parseFloat(
+      $form.find('input[name="interest_rate"]').val(),
+    );
+    const propertyValue = isMortgage
+      ? parseFloat($form.find('input[name="property_value"]').val())
+      : 0;
+
+    // Math logic
+    const monthlyRate = annualRate / 100 / 12;
+    const durationYears = (durationMonths / 12).toFixed(1);
+
+    let monthlyRepayment = 0;
+    let totalRepayment = 0;
+    let totalInterest = 0;
+
+    if (monthlyRate === 0) {
+      monthlyRepayment = loanAmount / durationMonths;
+      totalRepayment = loanAmount;
+    } else {
+      const factor = Math.pow(1 + monthlyRate, durationMonths);
+      monthlyRepayment = (loanAmount * (monthlyRate * factor)) / (factor - 1);
+      totalRepayment = monthlyRepayment * durationMonths;
+      totalInterest = totalRepayment - loanAmount;
+    }
+
+    const formatCurrency = (num) =>
+      num.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+
+    // Populate Blue Results View
+    const prefix = isMortgage ? "#mortgage-res" : "#loan-res";
+    $modal.find(`${prefix}-loan-amount`).text(formatCurrency(loanAmount));
+    $modal.find(`${prefix}-interest`).text(annualRate);
+    $modal.find(`${prefix}-years`).text(durationYears);
+    $modal.find(`${prefix}-monthly`).text(formatCurrency(monthlyRepayment));
+    $modal.find(`${prefix}-total-interest`).text(formatCurrency(totalInterest));
+    $modal.find(`${prefix}-total`).text(formatCurrency(totalRepayment));
+
+    // Switch to Results View
+    $modal.find(".calc-view").removeClass("active");
+    $modal.find(".calc-results-view").addClass("active");
+  });
+
+  // 5. OPEN FULL RESULTS MODAL
+  $(".view-full-results-btn").on("click", function () {
+    const type = $(this).data("type"); // "mortgage" or "loan"
+    const isMortgage = type === "mortgage";
+    const $sourceModal = isMortgage ? $mortgageModal : $loanModal;
+
+    // Get fresh values from the source form
+    const $form = $sourceModal.find("form");
+    const loanAmount = parseFloat(
+      $form.find('input[name="loan_amount"]').val(),
+    );
+    const durationMonths = parseFloat(
+      $form.find('input[name="duration"]').val(),
+    );
+    const annualRate = parseFloat(
+      $form.find('input[name="interest_rate"]').val(),
+    );
+    const propertyValue = isMortgage
+      ? parseFloat($form.find('input[name="property_value"]').val())
+      : 0;
+
+    // Recalculate to ensure accuracy
+    const monthlyRate = annualRate / 100 / 12;
+    const durationYears = (durationMonths / 12).toFixed(1);
+    let monthlyRepayment = 0;
+    let totalRepayment = 0;
+    let totalInterest = 0;
+
+    if (monthlyRate === 0) {
+      monthlyRepayment = loanAmount / durationMonths;
+      totalRepayment = loanAmount;
+    } else {
+      const factor = Math.pow(1 + monthlyRate, durationMonths);
+      monthlyRepayment = (loanAmount * (monthlyRate * factor)) / (factor - 1);
+      totalRepayment = monthlyRepayment * durationMonths;
+      totalInterest = totalRepayment - loanAmount;
+    }
+
+    const formatCurrency = (num) =>
+      num.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+
+    // --- POPULATE NEW MODAL ---
+
+    // 1. Update Text based on type
+    if (isMortgage) {
+      $fullResultsModal
+        .find("#fr-type-title")
+        .text("Mortgage Repayment Estimate");
+      $fullResultsModal
+        .find("#fr-main-title")
+        .text("Mortgage Repayment Results");
+      $fullResultsModal
+        .find("#fr-footer-title")
+        .text("Ready to own your home?");
+      $fullResultsModal
+        .find("#fr-footer-desc")
+        .text(
+          "Talk to our mortgage team about your options and the next steps.",
+        );
+      $fullResultsModal.find("#fr-mortgage-costs").show();
+    } else {
+      $fullResultsModal.find("#fr-type-title").text("Loan Repayment Estimate");
+      $fullResultsModal.find("#fr-main-title").text("Loan Repayment Results");
+      $fullResultsModal.find("#fr-footer-title").text("Ready to apply?");
+      $fullResultsModal
+        .find("#fr-footer-desc")
+        .text("Call us to take the next step and apply for your loan.");
+      $fullResultsModal.find("#fr-mortgage-costs").hide();
+    }
+
+    // 2. Date
+    const dateOptions = { day: "numeric", month: "short", year: "numeric" };
+    $fullResultsModal
+      .find("#fr-date")
+      .text(new Date().toLocaleDateString("en-GB", dateOptions));
+
+    // 3. Summary Cards
+    $fullResultsModal
+      .find("#fr-monthly-val")
+      .text(formatCurrency(monthlyRepayment));
+    $fullResultsModal
+      .find("#fr-total-val")
+      .text(formatCurrency(totalRepayment));
+
+    // 4. Inputs Section
+    $fullResultsModal.find("#fr-input-amount").text(formatCurrency(loanAmount));
+    $fullResultsModal.find("#fr-input-rate").text(annualRate.toFixed(2));
+    $fullResultsModal
+      .find("#fr-input-term")
+      .text(`${durationMonths} months (${durationYears} years)`);
+    $fullResultsModal
+      .find("#fr-input-interest")
+      .text(formatCurrency(totalInterest));
+
+    // 5. Progress Bar
+    const loanPercent = ((loanAmount / totalRepayment) * 100).toFixed(1);
+    const interestPercent = ((totalInterest / totalRepayment) * 100).toFixed(1);
+    $fullResultsModal.find("#fr-progress-fill").css("width", `${loanPercent}%`);
+    $fullResultsModal.find("#fr-percent-loan").text(`${loanPercent}%`);
+    $fullResultsModal.find("#fr-percent-interest").text(`${interestPercent}%`);
+
+    // 6. Mortgage Specific Upfront Costs
+    if (isMortgage) {
+      // Assuming standard rates for estimation as per image
+      const stampRate = 0.04;
+      const appraisalRate = 0.01;
+      const stampDuty = propertyValue * stampRate;
+      const appraisalFee = propertyValue * appraisalRate;
+      const deposit = propertyValue - loanAmount;
+      const ltv = ((loanAmount / propertyValue) * 100).toFixed(1);
+      const totalUpfront = stampDuty + appraisalFee + deposit;
+
+      $fullResultsModal
+        .find("#fr-prop-val")
+        .text(formatCurrency(propertyValue));
+      $fullResultsModal.find("#fr-stamp-val").text(formatCurrency(stampDuty));
+      $fullResultsModal
+        .find("#fr-appraisal-val")
+        .text(formatCurrency(appraisalFee));
+      $fullResultsModal
+        .find("#fr-deposit-val")
+        .text(formatCurrency(deposit > 0 ? deposit : 0));
+      $fullResultsModal.find("#fr-ltv-val").text(`${ltv}%`);
+      $fullResultsModal
+        .find("#fr-total-upfront")
+        .text(formatCurrency(totalUpfront));
+    }
+
+    // Open Modal
+    $fullResultsModal.addClass("is-open");
+  });
+
+  // 6. CLOSE FULL RESULTS MODAL
+  $(".full-results-close-btn, .full-results-overlay").on("click", function () {
+    $fullResultsModal.removeClass("is-open");
+    // Note: We don't remove overflow from body because the main calculator modal is still open underneath
+  });
+
+  // 7. ESCAPE KEY
+  $(document).on("keydown", function (e) {
+    if (e.key === "Escape") {
+      if ($fullResultsModal.hasClass("is-open")) {
+        $fullResultsModal.removeClass("is-open");
+      } else {
+        const $openMainModal = $(".calculator-modal.is-open");
+        if ($openMainModal.length) {
+          $openMainModal.removeClass("is-open");
+          $body.css("overflow", "");
+        }
+      }
+    }
+  });
+});

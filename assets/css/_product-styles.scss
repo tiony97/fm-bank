@@ -74,12 +74,14 @@
       background: #f4f4f7; // Light grey background matching the image
       border-radius: 24px;
       overflow: hidden;
+      height: 70vh;
       .tab-panel {
         display: none; // Hide all panels by default
         grid-template-columns: 1fr 400px;
         gap: 40px;
         height: 100%;
         padding: 2em;
+        overflow: auto;
 
         .panel-text {
           display: flex;
@@ -125,7 +127,7 @@
 
           .tariff-list {
             gap: 8px;
-            max-height: 300px;
+            max-height: 200px;
             overflow-y: auto;
 
             li {
