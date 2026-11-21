@@ -2585,13 +2585,99 @@ $(function () {
       }
     });
   });
+
+  // =========================================
+  // HEADER DROPDOWNS (Login & Search)
+  // =========================================
+
+  // --- 1. Login Dropdown ---
+  const $loginTrigger = $(".login-trigger");
+  const $loginDropdown = $(".login-dropdown");
+
+  $loginTrigger.on("click", function (e) {
+    e.stopPropagation();
+    const isOpen = $loginDropdown.hasClass("is-open");
+
+    // Close search if open
+    $(".header-search-dropdown").removeClass("is-open");
+    $(".search-trigger")
+      .removeClass("is-active")
+      .html('<i class="fa-solid fa-magnifying-glass"></i>');
+
+    // Toggle Login
+    $loginDropdown.toggleClass("is-open", !isOpen);
+
+    // Update Text
+    $(this).text(isOpen ? "Login" : "Close");
+  });
+
+  // --- 2. Search Dropdown ---
+  const $searchTrigger = $(".search-trigger");
+  const $searchDropdown = $(".header-search-dropdown");
+
+  $searchTrigger.on("click", function (e) {
+    e.stopPropagation();
+    const isOpen = $searchDropdown.hasClass("is-open");
+
+    // Close login if open
+    $loginDropdown.removeClass("is-open");
+    $loginTrigger.text("Login");
+
+    // Toggle Search
+    $searchDropdown.toggleClass("is-open", !isOpen);
+
+    // Update Icon
+    if (isOpen) {
+      $(this)
+        .removeClass("is-active")
+        .html('<i class="fa-solid fa-magnifying-glass"></i>');
+    } else {
+      $(this).addClass("is-active").html('<i class="fa-solid fa-xmark"></i>');
+      // Optional: Focus the input when opened
+      setTimeout(() => {
+        $searchDropdown.find("input").trigger("focus");
+      }, 300);
+    }
+  });
+
+  // --- 3. Close on Outside Click ---
+  $(document).on("click", function (e) {
+    // Close Login Dropdown
+    if (!$(e.target).closest(".login-dropdown-wrapper").length) {
+      $loginDropdown.removeClass("is-open");
+      $loginTrigger.text("Login");
+    }
+
+    // Close Search Dropdown
+    if (
+      !$(e.target).closest(".header-search-dropdown").length &&
+      !$(e.target).closest(".search-trigger").length
+    ) {
+      $searchDropdown.removeClass("is-open");
+      $searchTrigger
+        .removeClass("is-active")
+        .html('<i class="fa-solid fa-magnifying-glass"></i>');
+    }
+  });
+
+  // --- 4. Close on Escape Key ---
+  $(document).on("keydown", function (e) {
+    if (e.key === "Escape") {
+      $loginDropdown.removeClass("is-open");
+      $loginTrigger.text("Login");
+
+      $searchDropdown.removeClass("is-open");
+      $searchTrigger
+        .removeClass("is-active")
+        .html('<i class="fa-solid fa-magnifying-glass"></i>');
+    }
+  });
 });
 
+// =========================================
+// CALCULATOR MODALS LOGIC
+// =========================================
 $(function () {
-  // =========================================
-  // CALCULATOR MODALS LOGIC
-  // =========================================
-
   const $mortgageModal = $("#mortgage-calculator");
   const $loanModal = $("#loan-calculator");
   const $fullResultsModal = $("#full-results-modal");

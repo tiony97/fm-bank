@@ -311,6 +311,205 @@
   gap: 9px;
 }
 
+/* =========================================
+   HEADER DROPDOWNS (Login & Search)
+========================================= */
+
+/* --- Login Dropdown --- */
+.login-dropdown-wrapper {
+  position: relative;
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
+
+  .login-trigger {
+    min-width: 80px; // Prevents layout shift when text changes to "Close"
+  }
+
+  .login-dropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 0;
+    width: 220px;
+    background: #f4f4f7;
+    border-radius: 12px;
+    padding: 10px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 300;
+
+    // Arrow pointing up
+    &::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      right: 25px;
+      width: 16px;
+      height: 16px;
+      background: #f4f4f7;
+      transform: rotate(45deg);
+      border-radius: 2px;
+    }
+
+    &.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .login-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      color: $black;
+      font-size: 14px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      transition: color 0.2s ease;
+
+      i {
+        color: #8c9db3;
+        font-size: 14px;
+        transition: color 0.2s ease;
+      }
+
+      &:hover {
+        color: $primary;
+        i {
+          color: $primary;
+        }
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+/* --- Search Dropdown Overlay --- */
+.header-search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  transform: translateX(-50%);
+  width: 40%;
+  max-width: 800px;
+  background: $secondary;
+  padding: 20px 30px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  z-index: 250;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .search-dropdown-content {
+    max-width: 900px;
+    margin: 0 auto;
+
+    h3 {
+      color: $white;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .search-input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2px;
+      width: 100%;
+      border: 1px solid #ffffff;
+      padding: 0 15px;
+      border-radius: 24px;
+      margin-bottom: 25px;
+
+      span {
+        color: #fff;
+        font-size: 17px;
+      }
+
+      input {
+        width: 98%;
+        height: 40px;
+        background: transparent;
+        border: none;
+        outline: none !important;
+        padding: 0 10px 0 20px;
+        color: $white;
+        font-size: 15px;
+        outline: none;
+        transition: border-color 0.2s ease;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.6);
+        }
+
+        &:focus {
+          border-color: $white;
+        }
+      }
+    }
+
+    .search-suggestions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      span {
+        color: $white;
+        font-size: 15px;
+        font-weight: 600;
+        margin-right: 5px;
+      }
+
+      .suggestion-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+        padding: 0 15px;
+        background: $white;
+        color: $black;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 20px;
+        text-decoration: none;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease;
+
+        &:hover {
+          background: #f0f0f0;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}
+
+/* Adjust search icon button when active */
+.icon-button.search-trigger.is-active {
+  background: $white;
+  color: $primary;
+}
+
 .icon-button,
 .language-button {
   display: inline-flex;
@@ -1257,6 +1456,18 @@
     padding: 0 1em;
     margin-left: 5%;
   }
+  .header-search-dropdown {
+    h3 {
+      font-size: 28px !important;
+      line-height: 1.2 !important;
+    }
+    p,
+    a,
+    input,
+    span {
+      font-size: 18px !important;
+    }
+  }
   footer {
     .newsletter-form {
       width: 400px;
@@ -1324,6 +1535,81 @@
 ========================================= */
 
 @media (max-width: 900px) {
+  /* Ensure the search dropdown is full width on mobile */
+  .header-search-dropdown {
+    padding: 20px;
+    width: 90%;
+    left: 5%;
+    .search-dropdown-content {
+      h3 {
+        font-size: 20px;
+      }
+      .search-input-wrapper input {
+        height: 45px;
+      }
+      .search-suggestions {
+        flex-direction: column;
+        align-items: flex-start;
+        .suggestion-pill {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  .nav-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .login-dropdown-wrapper {
+      display: flex;
+      flex-direction: column; // Stacks the button and dropdown
+      width: 100%; // Forces full width
+      margin-top: 10px;
+      position: relative; // Reset positioning context
+
+      .login-trigger {
+        width: 100%; // Full width button
+      }
+
+      .login-dropdown {
+        position: static; // Removes absolute positioning so it flows below the button
+        width: 100%;
+        box-shadow: none;
+        background: rgba(0, 0, 0, 0.2); // Subtle dark background for mobile
+        border-radius: 12px;
+        display: none; // Hidden by default
+        margin-top: 10px;
+        padding: 10px 0;
+
+        &::before {
+          display: none; // Hide the desktop arrow
+        }
+
+        &.is-open {
+          display: block; // Show when toggled
+        }
+
+        .login-link {
+          color: $white;
+          border-bottom-color: rgba(255, 255, 255, 0.1);
+
+          i {
+            color: rgba(255, 255, 255, 0.6);
+          }
+
+          &:hover {
+            color: $secondary;
+            i {
+              color: $secondary;
+            }
+          }
+        }
+      }
+    }
+  }
   .utility-bar {
     padding: 10px 16px;
   }
