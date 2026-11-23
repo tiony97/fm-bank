@@ -1,0 +1,321 @@
+@use "settings" as *;
+
+/* =========================================
+   GRAVITY FORMS STYLING (.contact-forms)
+========================================= */
+.contact-forms {
+  .sales-form {
+    .gform_wrapper {
+      margin: 0;
+      width: 100%;
+
+      /* --- Global Error Banner --- */
+      .gform_validation_errors {
+        background: rgba(220, 53, 69, 0.15); /* Subtle red background */
+        border: 1px solid #dc3545;
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin-bottom: 25px;
+        color: #fff;
+
+        .gform_submission_error {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 16px;
+          font-weight: 600;
+          color: #fff;
+          margin: 0 0 10px 0;
+        }
+
+        ol {
+          margin: 0;
+          padding-left: 20px;
+
+          li {
+            font-size: 14px;
+            margin-bottom: 5px;
+
+            a {
+              color: #fff;
+              text-decoration: underline;
+              &:hover {
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+
+      /* Success Message */
+      .gform_confirmation_wrapper,
+      .gform_confirmation_message {
+        display: block;
+        padding: 20px 24px;
+        margin-top: 10px;
+        background: rgba(255, 255, 255, 0.15); /* Glassmorphism effect */
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        border-radius: 24px;
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.5;
+        font-weight: 500;
+        animation: gfSuccessFadeIn 0.4s ease forwards;
+
+        /* If the success message contains links */
+        a {
+          color: #fff;
+          font-weight: 600;
+          text-decoration: underline;
+          transition: opacity 0.2s ease;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        /* In case GF adds a specific icon or heading inside the message */
+        .gform_confirmation_icon {
+          display: inline-block;
+          margin-right: 8px;
+          color: #58c86e; /* Green checkmark color if used */
+        }
+      }
+
+      /* --- Headings --- */
+      .gform_heading {
+        margin-bottom: 25px;
+
+        .gform_title {
+          color: #fff;
+          font-size: 36px;
+          font-weight: 700;
+          line-height: 1.2;
+          margin-bottom: 10px;
+        }
+        .gform_description {
+          color: #fff;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+
+      /* --- 2-Column Grid Layout --- */
+      .gform_fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 15px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .gfield {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-width: 0;
+
+        &--width-full {
+          grid-column: 1 / -1;
+        }
+
+        /* Labels */
+        .gfield_label,
+        .gform-field-label {
+          display: block;
+          margin-bottom: 8px;
+          color: #fff;
+          font-size: 15px;
+          font-weight: 500;
+        }
+
+        .gform-field-label--type-sub {
+          display: block;
+          margin-bottom: 6px;
+          color: #fff;
+          font-size: 15px;
+          font-weight: 500;
+        }
+      }
+
+      /* --- Base Input Styles --- */
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      select,
+      textarea {
+        width: 100%;
+        height: 48px;
+        padding: 0 16px;
+        color: #fff;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        border-radius: 24px;
+        outline: none;
+        font: inherit;
+        font-size: 16px;
+        transition: all 0.2s ease;
+
+        &::placeholder {
+          color: #fff;
+          opacity: 0.7;
+        }
+        &:focus {
+          border-color: #fff;
+        }
+      }
+
+      textarea {
+        height: auto;
+        min-height: 120px;
+        padding: 14px 16px;
+        resize: vertical;
+      }
+
+      /* =========================================
+         INLINE VALIDATION ERRORS
+      ========================================= */
+      .gfield_error {
+        /* Highlight the input */
+        input,
+        select,
+        textarea {
+          border-color: #ffb3b8 !important;
+          background: rgba(220, 53, 69, 0.1);
+        }
+
+        /* Style the error text */
+        .validation_message {
+          display: block;
+          color: #ffb3b8;
+          font-size: 13px;
+          font-weight: 500;
+          margin-bottom: 6px; /* Sits between label and input */
+          margin-top: -2px; /* Pulls it up closer to label */
+        }
+      }
+
+      /* =========================================
+         SELECT DROPDOWNS & WHITE ARROWS
+      ========================================= */
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+        padding-right: 40px;
+
+        /* White SVG Arrow */
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        background-size: 12px 8px;
+
+        option {
+          color: #222;
+          background: #fff;
+        }
+      }
+
+      /* =========================================
+         PHONE & COUNTRY GROUP
+      ========================================= */
+      .custom-phone-grid {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 10px;
+        align-items: end;
+      }
+
+      .gform-phone__country-select {
+        padding-left: 12px;
+        font-size: 16px;
+        color: transparent; /* Hide text */
+
+        option {
+          color: #222;
+        }
+      }
+
+      .phone-col-country {
+        position: relative;
+
+        /* Displays the default +254 text */
+        &::before {
+          content: "+254";
+          position: absolute;
+          bottom: 14px;
+          left: 14px;
+          color: #fff;
+          font-size: 16px;
+          pointer-events: none;
+        }
+
+        /* If there's an error, highlight the pseudo-element too */
+        .gfield_error &::before {
+          color: #ffb3b8;
+        }
+      }
+
+      /* --- Submit Button --- */
+      .gform_footer {
+        margin-top: 25px;
+
+        .gform_button {
+          width: fit-content;
+        }
+      }
+    }
+  }
+}
+
+/* Animation for the success message appearing */
+@keyframes gfSuccessFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   Mobile Responsiveness
+========================================= */
+@media (max-width: 900px) {
+  .contact-forms {
+    .container {
+      grid-template-columns: 1fr;
+    }
+
+    .sales-form {
+      .gform_wrapper {
+        .gform_heading {
+          .gform_title {
+            font-size: 28px;
+          }
+        }
+
+        .gform_fields {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .custom-phone-grid {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+
+        .gform_footer {
+          .gform_button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

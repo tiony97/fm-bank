@@ -177,11 +177,12 @@ section {
 /* Hero Section */
 .hero {
   position: relative;
-  height: 85vh;
+  height: 82vh;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  padding: 15vh 0;
+  padding-top: 15vh;
+  padding-bottom: 10vh;
 
   // --- Stock Marquee ---
   .stock-marquee-container {
@@ -254,6 +255,7 @@ section {
     object-fit: cover;
     object-position: center;
   }
+
   .hero-overlay {
     position: absolute;
     top: 0;
@@ -262,8 +264,21 @@ section {
     height: 100%;
     inset: 0;
     z-index: -1;
-    background: #202020a0;
+
+    /* 
+      Diagonal Gradient: 
+      - Starts dark (80% opacity black) at the bottom-left (0%)
+      - Transitions to a mid-tone at the center (50%)
+      - Becomes very light (10% opacity black) at the top-right (100%)
+    */
+    background: linear-gradient(
+      to top right,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.5) 45%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
   }
+
   .container {
     height: fit-content;
     z-index: 3;
@@ -309,7 +324,7 @@ section {
 }
 
 .home-hero {
-    height: 100vh;
+  height: 100vh;
 }
 
 .currency-marquee {
@@ -2372,7 +2387,8 @@ section {
       .update {
         .update-image {
           width: 100%;
-          height: 300px;
+          height: auto;
+          min-height: 300px;
           overflow: hidden;
           border-radius: 24px;
           margin-bottom: 15px;
@@ -2657,6 +2673,7 @@ section {
       object-fit: cover;
       object-position: center top;
       z-index: 0;
+      filter: blur(2px);
     }
 
     .overlay {
@@ -3967,7 +3984,8 @@ section {
       .news-grid {
         .update {
           .update-image {
-            height: 500px;
+            height: auto;
+            min-height: 500px;
             margin-bottom: 15px;
             object-fit: cover;
           }

@@ -70,7 +70,7 @@
               <div class="nav-item has-mega-menu">
                 <a
                   class="nav-link"
-                  href="#cards"
+                  href="./cards.html"
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
@@ -886,47 +886,116 @@
               need to know.
             </p>
 
-            <form class="sales-form-fields">
-              <div class="sales-fields-grid">
-                <input
-                  type="text"
-                  name="full_name"
-                  placeholder="Full name"
-                  required
-                />
+            <form method="post" id="gform_2">
+              <div class="gform-body gform_body">
+                <div id="gform_fields_2" class="gform_fields top_label">
+                  <!-- First Name -->
+                  <div class="gfield gfield--type-text gfield--width-half">
+                    <label class="gfield_label" for="input_2_1">First</label>
+                    <div class="ginput_container ginput_container_text">
+                      <input
+                        type="text"
+                        id="input_2_1"
+                        placeholder="First Name"
+                      />
+                    </div>
+                  </div>
 
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone number"
-                  required
-                />
+                  <!-- Last Name -->
+                  <div class="gfield gfield--type-text gfield--width-half">
+                    <label class="gfield_label" for="input_2_2">Last</label>
+                    <div class="ginput_container ginput_container_text">
+                      <input
+                        type="text"
+                        id="input_2_2"
+                        placeholder="Last Name"
+                      />
+                    </div>
+                  </div>
 
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email address"
-                  required
-                />
+                  <!-- Phone Field with Grouped Country Selector -->
+                  <div class="gfield gfield--type-phone gfield--width-half">
+                    <div class="custom-phone-grid">
+                      <div class="phone-col-country">
+                        <label
+                          class="gform-field-label--type-sub"
+                          for="input_country_4"
+                          >Country</label
+                        >
+                        <!-- Dropdown -->
+                        <select
+                          id="input_country_4"
+                          class="gform-phone__country-select"
+                          name="input_country"
+                        >
+                          <option value="KE" data-code="+254">🇰🇪 +254</option>
+                          <option value="UG" data-code="+256">🇺🇬 +256</option>
+                          <option value="TZ" data-code="+255">🇹🇿 +255</option>
+                          <option value="RW" data-code="+250">🇷🇼 +250</option>
+                          <option value="US" data-code="+1">🇺🇸 +1</option>
+                          <option value="GB" data-code="+44">🇬🇧 +44</option>
+                        </select>
+                      </div>
 
-                <select name="contact_time" required>
-                  <option value="" selected disabled>
-                    Preferred contact time
-                  </option>
-                  <option value="morning">Morning</option>
-                  <option value="afternoon">Afternoon</option>
-                  <option value="evening">Evening</option>
-                </select>
+                      <div class="phone-col-input">
+                        <label
+                          class="gform-field-label--type-sub"
+                          for="input_2_4"
+                          >Phone Number</label
+                        >
+                        <input
+                          type="tel"
+                          id="input_2_4"
+                          placeholder="020 2012345"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Email -->
+                  <div class="gfield gfield--type-email gfield--width-half">
+                    <label class="gfield_label" for="input_2_3">Email</label>
+                    <div class="ginput_container ginput_container_email">
+                      <input
+                        type="email"
+                        id="input_2_3"
+                        placeholder="Email Address"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Preferred Contact Time -->
+                  <div class="gfield gfield--type-select gfield--width-full">
+                    <label class="gfield_label" for="input_2_5"
+                      >Preferred Contact Time
+                      <span class="gfield_required">(Required)</span></label
+                    >
+                    <div class="ginput_container ginput_container_select">
+                      <select id="input_2_5">
+                        <option value="Morning">Morning</option>
+                        <option value="Afternoon">Afternoon</option>
+                        <option value="Evening">Evening</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Additional Info -->
+                  <div class="gfield gfield--type-textarea gfield--width-full">
+                    <label class="gfield_label" for="input_2_6"
+                      >Additional Information (optional)</label
+                    >
+                    <div class="ginput_container ginput_container_textarea">
+                      <textarea id="input_2_6" rows="5"></textarea>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <textarea
-                name="message"
-                placeholder="Additional message(optional)"
-              ></textarea>
-
-              <button type="submit" class="button button--light">
-                Request Call Back
-              </button>
+              <div class="gform_footer">
+                <button type="submit" class="gform_button button button--light">
+                  Request Callback
+                </button>
+              </div>
             </form>
           </div>
 

@@ -1,0 +1,171 @@
+@use "settings" as *;
+
+.quick-dock {
+  $dock-width: 60px;
+  $icon-size: 30px;
+  $item-height: 60px;
+
+  position: fixed;
+  top: 10em;
+  right: 40px;
+  z-index: 10000;
+
+  width: $dock-width;
+  box-sizing: border-box;
+
+  .dock-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    padding: 0;
+
+    background: #fff;
+    border: 1px solid #e0e4ea;
+    border-radius: 999px;
+
+    box-shadow: 0 4px 20px rgb(0 0 0 / 5%);
+    // overflow: hidden removed so tooltips can escape
+  }
+
+  // All icon items
+  .dock-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 100%;
+    height: $item-height;
+
+    text-decoration: none;
+
+    img {
+      display: block;
+      width: $icon-size;
+      height: $icon-size;
+      object-fit: contain;
+
+      transition: transform 0.2s ease;
+    }
+
+    // Tooltip
+    &::before {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: 50%;
+      right: calc(100% + 12px);
+      transform: translateY(-50%) translateX(4px);
+
+      padding: 6px 10px;
+      border-radius: 15px;
+
+      background: $white;
+      color: $primary-dark;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.2;
+      white-space: nowrap;
+
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0s linear 0.2s;
+
+      z-index: 10;
+    }
+
+    &:hover::before {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-50%) translateX(0);
+
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0s;
+    }
+
+    &:hover img {
+      transform: scale(1.08);
+    }
+  }
+
+  // Separators — moved to a wrapper div or use border-bottom instead of ::after
+  .dock-item {
+    border-top: 1px solid #d3def0;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  // Calculator stays visible
+  .dock-trigger {
+    height: 65px;
+    flex-shrink: 0;
+
+    img {
+      width: $icon-size;
+      height: $icon-size;
+    }
+  }
+
+  // Collapsed dropdown
+  .dock-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-height: 0;
+    // overflow: hidden removed — clipping was hiding the tooltip
+    overflow: visible;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-8px);
+
+    transition:
+      max-height 0.4s ease,
+      opacity 0.25s ease,
+      transform 0.3s ease,
+      visibility 0s linear 0.4s;
+  }
+
+  // Reveal the other items when hovering the calculator/dock
+  .dock-menu:hover,
+  .dock-menu:focus-within {
+    .dock-dropdown {
+      max-height: 540px;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+
+      transition:
+        max-height 0.4s ease,
+        opacity 0.25s ease,
+        transform 0.3s ease,
+        visibility 0s;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .quick-dock {
+    top: 28vh;
+    right: 10px;
+    transform: scale(0.9);
+    transform-origin: top right;
+  }
+}
