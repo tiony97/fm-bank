@@ -2718,6 +2718,19 @@ $(function () {
     openModal($loanModal);
   });
 
+  // --- OPEN FX MODAL ---
+  $('a[href="#currency"]').on("click", function (e) {
+    e.preventDefault();
+    const $fxModal = $("#currency");
+    $fxModal.find(".calc-view").removeClass("active");
+    $fxModal.find(".calc-input-view").addClass("active");
+    $fxModal.find("form")[0].reset();
+    $fxModal.find("#convert-btn").prop("disabled", true);
+    $fxModal.find("#converted-amount").val("");
+    $fxModal.addClass("is-open");
+    $body.css("overflow", "hidden");
+  });
+
   function openModal($modal) {
     $modal.find(".calc-view").removeClass("active");
     $modal.find(".calc-input-view").addClass("active");
@@ -2970,6 +2983,60 @@ $(function () {
         }
       }
     }
+  });
+});
+
+// =========================================
+// FX CONVERTER MODAL — submit + results view
+// =========================================
+$(function () {
+  const $fxModal = $("#currency");
+
+  $("#fx-converter-form").on("submit", function (e) {
+    e.preventDefault();
+    if (!$(this).closest(".fx-converter-modal").length) return; // only the modal copy
+
+    const $from = $("#from-currency");
+    const $to = $("#to-currency");
+    const fromRate = parseFloat($from.find(":selected").data("rate"));
+    const toRate = parseFloat($to.find(":selected").data("rate"));
+    const amount = parseFloat($("#amount-input").val());
+    const fromCode = $from.val();
+    const toCode = $to.val();
+    const fromText = $from.find(":selected").text();
+    const toText = $to.find(":selected").text();
+
+    if (!fromRate || !toRate || isNaN(amount)) return;
+
+    const converted = (amount * fromRate) / toRate;
+
+    const fmt = (num) =>
+      num.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+
+    // Populate the blue results view
+    // Trim the currency text so we don't inject weird hidden spaces
+    const cleanToCode = toCode.trim();
+
+    $fxModal.find("#fx-res-from").text(`${fromCode} ${fmt(amount)}`);
+    $fxModal
+      .find("#fx-res-rate")
+      .text(`1 ${fromCode} = ${fmt(toRate / fromRate)} ${cleanToCode}`);
+
+    // Use .val() and ensure there is no leading whitespace
+    $fxModal.find("#converted-amount").val(`${cleanToCode} ${fmt(converted)}`);
+
+    // Switch views
+    $fxModal.find(".calc-view").removeClass("active");
+    $fxModal.find(".calc-results-view").addClass("active");
+  });
+
+  // "Convert Again" — go back to the form view
+  $fxModal.on("click", ".fx-convert-again-btn", function () {
+    $fxModal.find(".calc-view").removeClass("active");
+    $fxModal.find(".calc-input-view").addClass("active");
   });
 });
 

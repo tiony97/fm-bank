@@ -236,30 +236,10 @@
 
   .calc-input-view {
     position: relative;
+    background: $primary-dark;
     color: #fff;
     overflow-y: auto;
     //max-height: 90vh;
-
-    .calc-bg-image {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: blur(2px);
-        transform: scale(1.04);
-      }
-      .overlay {
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.6);
-      }
-    }
 
     .calc-form-content {
       position: relative;
@@ -391,6 +371,159 @@
         width: fit-content;
       }
     }
+  }
+}
+
+/* =========================================
+   FX CONVERTER MODAL
+========================================= */
+.calculator-modal.fx-converter-modal {
+  .calc-form-content {
+    // Two-column rows for the FX form
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      width: 100%;
+      margin-bottom: 18px; // space between rows
+
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+      width: 100%;
+
+      label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+      }
+
+      // ---- SELECTS ----
+      .select-wrapper {
+        position: relative;
+        width: 100%;
+        display: block;
+
+        select {
+          width: 100%;
+          height: 44px;
+          padding: 0 40px 0 15px;
+          border-radius: 30px;
+          border: 1px solid rgba(255, 255, 255, 0.6);
+          background: transparent;
+          color: #fff;
+          font-size: 15px;
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          display: block;
+          min-width: 0;
+          box-sizing: border-box;
+          outline: none;
+          cursor: pointer;
+          transition: border-color 0.2s ease;
+
+          option {
+            color: $black;
+            background: $white;
+          }
+
+          &:focus {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+          }
+        }
+
+        .select-icon {
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          pointer-events: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          i {
+            font-size: 12px;
+            color: #fff;
+          }
+        }
+      }
+
+      // ---- INPUTS (Amount + Converted Amount) ----
+      input {
+        width: 100%;
+        height: 44px;
+        // Force left padding and disable any inherited right-alignment
+        padding: 0 15px !important;
+        text-align: left !important;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: 30px;
+        color: #fff;
+        font-size: 15px;
+        outline: none;
+        box-sizing: border-box;
+        display: block;
+        min-width: 0;
+        transition: border-color 0.2s ease;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.7);
+          text-align: left;
+        }
+
+        &:focus {
+          border-color: #fff;
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        // Read-only Converted Amount - Force left alignment regardless of global CSS
+        &#converted-amount,
+        &:read-only {
+          background: rgba(255, 255, 255, 0.1);
+          cursor: default;
+          caret-color: transparent;
+          pointer-events: none;
+
+          // Bulletproof overrides
+          text-align: left !important;
+          padding-left: 15px !important;
+          padding-right: 15px !important;
+          direction: ltr !important; // Ensures text flows left-to-right
+
+          &:focus {
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.1);
+          }
+        }
+
+        // Kill the browser number-spinner white box on the Amount field
+        &[type="number"] {
+          appearance: textfield;
+          -moz-appearance: textfield;
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+  .calc-note {
+    font-style: italic;
+    font-size: 15px;
+    margin-bottom: 1em;
   }
 }
 

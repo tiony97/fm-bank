@@ -249,6 +249,455 @@
       </nav>
     </div>
 
+    <!-- Mortgage Calculator -->
+    <div class="calculator-modal" id="mortgage-calculator">
+      <div class="calc-modal-overlay"></div>
+      <div class="calc-modal-content">
+        <button class="calc-close-btn" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- MORTGAGE INPUT VIEW -->
+        <div class="calc-view calc-input-view active">
+          <div class="calc-bg-image">
+            <img
+              src="./assets/images/mortgage-calc-image.png"
+              alt="Mortgage Calculator Background"
+            />
+            <div class="overlay"></div>
+          </div>
+          <div class="calc-form-content">
+            <h2>Estimate Your Mortgage</h2>
+            <p class="calc-description">
+              Use our mortgage calculator to see what your monthly repayments
+              could look like.
+            </p>
+
+            <form class="mortgage-form calculator-form">
+              <div class="form-group">
+                <label>Loan Amount</label>
+                <input
+                  type="number"
+                  name="loan_amount"
+                  placeholder="e.g. 1,000,000"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Duration terms</label>
+                <input
+                  type="number"
+                  name="duration"
+                  placeholder="months"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Property Value</label>
+                <input
+                  type="number"
+                  name="property_value"
+                  placeholder="e.g. 850,000"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Annual Interest Rate</label>
+                <input
+                  type="number"
+                  name="interest_rate"
+                  placeholder="13%"
+                  min="0"
+                  step="0.01"
+                  required
+                />
+              </div>
+
+              <p class="calc-note">
+                Max term 300 months (25 yrs), subject to retirement age at age
+                65.
+              </p>
+
+              <button
+                type="submit"
+                class="button button--cyan calc-submit-btn"
+                disabled
+              >
+                Calculate
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- MORTGAGE RESULTS VIEW (Blue Screen) -->
+        <div class="calc-view calc-results-view">
+          <h2>Estimation Results</h2>
+
+          <div class="results-list">
+            <div class="result-item">
+              <span class="result-label">Loan Amount Requested (KES)</span>
+              <span class="result-value" id="mortgage-res-loan-amount"
+                >10,000,000</span
+              >
+            </div>
+            <div class="result-item">
+              <span class="result-label">Annual Interest %</span>
+              <span class="result-value" id="mortgage-res-interest">13</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Repayment period (years)</span>
+              <span class="result-value" id="mortgage-res-years">20</span>
+            </div>
+            <div class="result-item highlight">
+              <span class="result-label">Monthly Repayment (KES)</span>
+              <span class="result-value" id="mortgage-res-monthly"
+                >117,157.57</span
+              >
+            </div>
+            <div class="result-item">
+              <span class="result-label">Total Interest Payable (KES)</span>
+              <span class="result-value" id="mortgage-res-total-interest"
+                >18,117,817.07</span
+              >
+            </div>
+            <div class="result-item highlight">
+              <span class="result-label">Total Repayment (KES)</span>
+              <span class="result-value" id="mortgage-res-total"
+                >28,117,817.07</span
+              >
+            </div>
+          </div>
+
+          <p class="calc-disclaimer">
+            This calculator is made available to you as a self-help tool for
+            your independent use. The repayment results in every case are an
+            approximate guide only. All borrowing rates used in this tool are
+            indicative.
+          </p>
+
+          <div class="calc-actions">
+            <a href="/open-account" class="button button--light">Apply</a>
+            <button
+              class="button button--cyan view-full-results-btn"
+              data-type="mortgage"
+            >
+              Download Full Results
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loan Calculator -->
+    <div class="calculator-modal" id="loan-calculator">
+      <div class="calc-modal-overlay"></div>
+      <div class="calc-modal-content">
+        <button class="calc-close-btn" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- LOAN INPUT VIEW -->
+        <div class="calc-view calc-input-view active">
+          <div class="calc-bg-image">
+            <img
+              src="./assets/images/loan-calc-image.png"
+              alt="Loan Calculator Background"
+            />
+            <div class="overlay"></div>
+          </div>
+          <div class="calc-form-content">
+            <h2>See What You Could Borrow</h2>
+            <p class="calc-description">
+              Use our loan calculator to estimate your repayments before you
+              apply.
+            </p>
+
+            <form class="loan-form calculator-form">
+              <div class="form-group">
+                <label>Loan Amount</label>
+                <input
+                  type="number"
+                  name="loan_amount"
+                  placeholder="e.g. 1,000,000"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Duration terms</label>
+                <input
+                  type="number"
+                  name="duration"
+                  placeholder="months"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Annual Interest Rate</label>
+                <input
+                  type="number"
+                  name="interest_rate"
+                  placeholder="13%"
+                  min="0"
+                  step="0.01"
+                  required
+                />
+              </div>
+
+              <p class="calc-note">
+                Max term 300 months (25 yrs), subject to retirement age at age
+                65.
+              </p>
+
+              <button
+                type="submit"
+                class="button button--cyan calc-submit-btn"
+                disabled
+              >
+                Calculate
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- LOAN RESULTS VIEW (Blue Screen) -->
+        <div class="calc-view calc-results-view">
+          <h2>Estimation Results</h2>
+
+          <div class="results-list">
+            <div class="result-item">
+              <span class="result-label">Loan Amount Requested (KES)</span>
+              <span class="result-value" id="loan-res-loan-amount"
+                >500,000</span
+              >
+            </div>
+            <div class="result-item">
+              <span class="result-label">Annual Interest %</span>
+              <span class="result-value" id="loan-res-interest">13</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Repayment period (years)</span>
+              <span class="result-value" id="loan-res-years">2</span>
+            </div>
+            <div class="result-item highlight">
+              <span class="result-label">Monthly Repayment (KES)</span>
+              <span class="result-value" id="loan-res-monthly">23,770.91</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Total Interest payable (KES)</span>
+              <span class="result-value" id="loan-res-total-interest"
+                >70,501.87</span
+              >
+            </div>
+            <div class="result-item highlight">
+              <span class="result-label">Total Repayment (KES)</span>
+              <span class="result-value" id="loan-res-total">570,501.87</span>
+            </div>
+          </div>
+
+          <p class="calc-disclaimer">
+            This calculator is made available to you as a self-help tool for
+            your independent use. The repayment results in every case are an
+            approximate guide only. All borrowing rates used in this tool are
+            indicative.
+          </p>
+
+          <div class="calc-actions">
+            <a href="/open-account" class="button button--light">Apply</a>
+            <button
+              class="button button--cyan view-full-results-btn"
+              data-type="loan"
+            >
+              Download Full Results
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full Results Modal (Shared for Both) -->
+    <div class="full-results-modal" id="full-results-modal">
+      <div class="full-results-overlay"></div>
+      <div class="full-results-content">
+        <button class="full-results-close-btn" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="fr-scroll-wrapper">
+          <!-- Header -->
+          <div class="fr-header">
+            <img
+              src="./assets/images/FAMILY BANK LOGO-1 1.svg"
+              alt="Family Bank"
+              class="fr-logo"
+            />
+            <div class="fr-header-right">
+              <span class="fr-title" id="fr-type-title"
+                >Mortgage Repayment Estimate</span
+              >
+              <span class="fr-date"
+                >Generated on <span id="fr-date"></span
+              ></span>
+            </div>
+          </div>
+
+          <!-- Main Title -->
+          <div class="fr-page-title">
+            <h2 id="fr-main-title">Mortgage Repayment Results</h2>
+            <p>
+              Your estimated monthly repayment, based on the details you
+              entered.
+            </p>
+          </div>
+
+          <!--Summary Title-->
+          <h6 class="summary-title">RESULTS</h6>
+
+          <!-- Top Summary Cards -->
+          <div class="fr-results-summary">
+            <div class="fr-summary-card">
+              <span class="fr-card-label">MONTHLY REPAYMENT</span>
+              <div class="fr-card-value">
+                <span class="fr-currency">KES</span>
+                <span id="fr-monthly-val">117,157.57</span>
+              </div>
+            </div>
+            <div class="fr-summary-card">
+              <span class="fr-card-label">TOTAL REPAYMENT</span>
+              <div class="fr-card-value">
+                <span class="fr-currency">KES</span>
+                <span id="fr-total-val">28,117,817.07</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Your Inputs Section -->
+          <div class="fr-section">
+            <h3 class="fr-section-title">YOUR INPUTS</h3>
+            <div class="fr-inputs-table">
+              <div class="fr-row">
+                <span>Loan Amount (KES)</span>
+                <strong id="fr-input-amount">10,000,000.00</strong>
+              </div>
+              <div class="fr-row">
+                <span>Annual Interest Rate (%)</span>
+                <strong id="fr-input-rate">13.00</strong>
+              </div>
+              <div class="fr-row">
+                <span>Term</span>
+                <strong id="fr-input-term">240 months (20.0 years)</strong>
+              </div>
+              <div class="fr-row highlight">
+                <strong>Total Interest (KES)</strong>
+                <strong id="fr-input-interest">18,117,817.07</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Where Your Repayment Goes (Progress Bar) -->
+          <div class="fr-section">
+            <h3 class="fr-section-title">WHERE YOUR REPAYMENT GOES</h3>
+            <div class="fr-progress-bar">
+              <div
+                class="fr-progress-fill"
+                id="fr-progress-fill"
+                style="width: 35.6%"
+              ></div>
+            </div>
+            <div class="fr-progress-labels">
+              <span
+                ><span class="dot dot-blue"></span> Loan amount
+                <span id="fr-percent-loan">35.6%</span></span
+              >
+              <span
+                ><span class="dot dot-light"></span> Interest
+                <span id="fr-percent-interest">64.4%</span></span
+              >
+            </div>
+          </div>
+
+          <!-- Mortgage Specific: Upfront Costs -->
+          <div class="fr-section mortgage-only-section" id="fr-mortgage-costs">
+            <h3 class="fr-section-title">UPFRONT COSTS</h3>
+            <div class="fr-inputs-table">
+              <div class="fr-row">
+                <span>Property Value (KES)</span>
+                <strong id="fr-prop-val">12,000,000.00</strong>
+              </div>
+              <div class="fr-row">
+                <span>Stamp Duty rate</span>
+                <strong id="fr-stamp-rate">4.0%</strong>
+              </div>
+              <div class="fr-row">
+                <span>Appraisal Fee rate</span>
+                <strong id="fr-appraisal-rate">1.0%</strong>
+              </div>
+              <div class="fr-row">
+                <span>Stamp Duty (KES)</span>
+                <strong id="fr-stamp-val">480,000.00</strong>
+              </div>
+              <div class="fr-row">
+                <span>Appraisal Fee (KES)</span>
+                <strong id="fr-appraisal-val">100,000.00</strong>
+              </div>
+              <div class="fr-row">
+                <span>Deposit / Own Contribution (KES)</span>
+                <strong id="fr-deposit-val">2,000,000.00</strong>
+              </div>
+              <div class="fr-row">
+                <span>Loan-to-Value</span>
+                <strong id="fr-ltv-val">83.3%</strong>
+              </div>
+              <div class="fr-row highlight">
+                <span>Total Cash Needed Upfront (KES)</span>
+                <strong id="fr-total-upfront">2,580,000.00</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notes & Disclaimer -->
+          <div class="fr-notes">
+            <p>
+              Maximum term is 300 months (25 years), subject to retirement age
+              or age 65.
+            </p>
+            <div class="fr-disclaimer-box">
+              <p>
+                Disclaimer: This calculator is made available to you as a
+                self-help tool for your independent use. The repayment results
+                in every case are an approximate guide only. All borrowing rates
+                used in this tool are indicative.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="fr-footer">
+          <div class="fr-footer-content">
+            <div class="fr-footer-left">
+              <h4 id="fr-footer-title">Ready to own your home?</h4>
+              <p id="fr-footer-desc">
+                Talk to our mortgage team about your options and the next steps.
+              </p>
+            </div>
+            <div class="fr-footer-middle">
+              <h5>CALL US</h5>
+              <p>+254 (0) 703 095 445</p>
+              <p>+254 (0) 703 095 000</p>
+              <p>020 3252 000</p>
+            </div>
+            <div class="fr-footer-right">
+              <h5>VISIT</h5>
+              <p>familybank.co.ke</p>
+            </div>
+          </div>
+          <div class="fr-footer-bottom">
+            <p>Family Bank is regulated by the Central Bank of Kenya.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--ACCESSIBILITY BUTTON -->
     <button class="accessibility-button" aria-label="Accessibility options">
       <img
@@ -1095,455 +1544,6 @@
         </div>
       </section>
     </main>
-
-    <!-- Mortgage Calculator -->
-    <div class="calculator-modal" id="mortgage-calculator">
-      <div class="calc-modal-overlay"></div>
-      <div class="calc-modal-content">
-        <button class="calc-close-btn" aria-label="Close modal">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-
-        <!-- MORTGAGE INPUT VIEW -->
-        <div class="calc-view calc-input-view active">
-          <div class="calc-bg-image">
-            <img
-              src="./assets/images/mortgage-calc-image.png"
-              alt="Mortgage Calculator Background"
-            />
-            <div class="overlay"></div>
-          </div>
-          <div class="calc-form-content">
-            <h2>Estimate Your Mortgage</h2>
-            <p class="calc-description">
-              Use our mortgage calculator to see what your monthly repayments
-              could look like.
-            </p>
-
-            <form class="mortgage-form calculator-form">
-              <div class="form-group">
-                <label>Loan Amount</label>
-                <input
-                  type="number"
-                  name="loan_amount"
-                  placeholder="e.g. 1,000,000"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label>Duration terms</label>
-                <input
-                  type="number"
-                  name="duration"
-                  placeholder="months"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label>Property Value</label>
-                <input
-                  type="number"
-                  name="property_value"
-                  placeholder="e.g. 850,000"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label>Annual Interest Rate</label>
-                <input
-                  type="number"
-                  name="interest_rate"
-                  placeholder="13%"
-                  min="0"
-                  step="0.01"
-                  required
-                />
-              </div>
-
-              <p class="calc-note">
-                Max term 300 months (25 yrs), subject to retirement age at age
-                65.
-              </p>
-
-              <button
-                type="submit"
-                class="button button--cyan calc-submit-btn"
-                disabled
-              >
-                Calculate
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <!-- MORTGAGE RESULTS VIEW (Blue Screen) -->
-        <div class="calc-view calc-results-view">
-          <h2>Estimation Results</h2>
-
-          <div class="results-list">
-            <div class="result-item">
-              <span class="result-label">Loan Amount Requested (KES)</span>
-              <span class="result-value" id="mortgage-res-loan-amount"
-                >10,000,000</span
-              >
-            </div>
-            <div class="result-item">
-              <span class="result-label">Annual Interest %</span>
-              <span class="result-value" id="mortgage-res-interest">13</span>
-            </div>
-            <div class="result-item">
-              <span class="result-label">Repayment period (years)</span>
-              <span class="result-value" id="mortgage-res-years">20</span>
-            </div>
-            <div class="result-item highlight">
-              <span class="result-label">Monthly Repayment (KES)</span>
-              <span class="result-value" id="mortgage-res-monthly"
-                >117,157.57</span
-              >
-            </div>
-            <div class="result-item">
-              <span class="result-label">Total Interest Payable (KES)</span>
-              <span class="result-value" id="mortgage-res-total-interest"
-                >18,117,817.07</span
-              >
-            </div>
-            <div class="result-item highlight">
-              <span class="result-label">Total Repayment (KES)</span>
-              <span class="result-value" id="mortgage-res-total"
-                >28,117,817.07</span
-              >
-            </div>
-          </div>
-
-          <p class="calc-disclaimer">
-            This calculator is made available to you as a self-help tool for
-            your independent use. The repayment results in every case are an
-            approximate guide only. All borrowing rates used in this tool are
-            indicative.
-          </p>
-
-          <div class="calc-actions">
-            <a href="/open-account" class="button button--light">Apply</a>
-            <button
-              class="button button--cyan view-full-results-btn"
-              data-type="mortgage"
-            >
-              Download Full Results
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Loan Calculator -->
-    <div class="calculator-modal" id="loan-calculator">
-      <div class="calc-modal-overlay"></div>
-      <div class="calc-modal-content">
-        <button class="calc-close-btn" aria-label="Close modal">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-
-        <!-- LOAN INPUT VIEW -->
-        <div class="calc-view calc-input-view active">
-          <div class="calc-bg-image">
-            <img
-              src="./assets/images/loan-calc-image.png"
-              alt="Loan Calculator Background"
-            />
-            <div class="overlay"></div>
-          </div>
-          <div class="calc-form-content">
-            <h2>See What You Could Borrow</h2>
-            <p class="calc-description">
-              Use our loan calculator to estimate your repayments before you
-              apply.
-            </p>
-
-            <form class="loan-form calculator-form">
-              <div class="form-group">
-                <label>Loan Amount</label>
-                <input
-                  type="number"
-                  name="loan_amount"
-                  placeholder="e.g. 1,000,000"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label>Duration terms</label>
-                <input
-                  type="number"
-                  name="duration"
-                  placeholder="months"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label>Annual Interest Rate</label>
-                <input
-                  type="number"
-                  name="interest_rate"
-                  placeholder="13%"
-                  min="0"
-                  step="0.01"
-                  required
-                />
-              </div>
-
-              <p class="calc-note">
-                Max term 300 months (25 yrs), subject to retirement age at age
-                65.
-              </p>
-
-              <button
-                type="submit"
-                class="button button--cyan calc-submit-btn"
-                disabled
-              >
-                Calculate
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <!-- LOAN RESULTS VIEW (Blue Screen) -->
-        <div class="calc-view calc-results-view">
-          <h2>Estimation Results</h2>
-
-          <div class="results-list">
-            <div class="result-item">
-              <span class="result-label">Loan Amount Requested (KES)</span>
-              <span class="result-value" id="loan-res-loan-amount"
-                >500,000</span
-              >
-            </div>
-            <div class="result-item">
-              <span class="result-label">Annual Interest %</span>
-              <span class="result-value" id="loan-res-interest">13</span>
-            </div>
-            <div class="result-item">
-              <span class="result-label">Repayment period (years)</span>
-              <span class="result-value" id="loan-res-years">2</span>
-            </div>
-            <div class="result-item highlight">
-              <span class="result-label">Monthly Repayment (KES)</span>
-              <span class="result-value" id="loan-res-monthly">23,770.91</span>
-            </div>
-            <div class="result-item">
-              <span class="result-label">Total Interest payable (KES)</span>
-              <span class="result-value" id="loan-res-total-interest"
-                >70,501.87</span
-              >
-            </div>
-            <div class="result-item highlight">
-              <span class="result-label">Total Repayment (KES)</span>
-              <span class="result-value" id="loan-res-total">570,501.87</span>
-            </div>
-          </div>
-
-          <p class="calc-disclaimer">
-            This calculator is made available to you as a self-help tool for
-            your independent use. The repayment results in every case are an
-            approximate guide only. All borrowing rates used in this tool are
-            indicative.
-          </p>
-
-          <div class="calc-actions">
-            <a href="/open-account" class="button button--light">Apply</a>
-            <button
-              class="button button--cyan view-full-results-btn"
-              data-type="loan"
-            >
-              Download Full Results
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Full Results Modal (Shared for Both) -->
-    <div class="full-results-modal" id="full-results-modal">
-      <div class="full-results-overlay"></div>
-      <div class="full-results-content">
-        <button class="full-results-close-btn" aria-label="Close">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-
-        <div class="fr-scroll-wrapper">
-          <!-- Header -->
-          <div class="fr-header">
-            <img
-              src="./assets/images/FAMILY BANK LOGO-1 1.svg"
-              alt="Family Bank"
-              class="fr-logo"
-            />
-            <div class="fr-header-right">
-              <span class="fr-title" id="fr-type-title"
-                >Mortgage Repayment Estimate</span
-              >
-              <span class="fr-date"
-                >Generated on <span id="fr-date"></span
-              ></span>
-            </div>
-          </div>
-
-          <!-- Main Title -->
-          <div class="fr-page-title">
-            <h2 id="fr-main-title">Mortgage Repayment Results</h2>
-            <p>
-              Your estimated monthly repayment, based on the details you
-              entered.
-            </p>
-          </div>
-
-          <!--Summary Title-->
-          <h6 class="summary-title">RESULTS</h6>
-
-          <!-- Top Summary Cards -->
-          <div class="fr-results-summary">
-            <div class="fr-summary-card">
-              <span class="fr-card-label">MONTHLY REPAYMENT</span>
-              <div class="fr-card-value">
-                <span class="fr-currency">KES</span>
-                <span id="fr-monthly-val">117,157.57</span>
-              </div>
-            </div>
-            <div class="fr-summary-card">
-              <span class="fr-card-label">TOTAL REPAYMENT</span>
-              <div class="fr-card-value">
-                <span class="fr-currency">KES</span>
-                <span id="fr-total-val">28,117,817.07</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Your Inputs Section -->
-          <div class="fr-section">
-            <h3 class="fr-section-title">YOUR INPUTS</h3>
-            <div class="fr-inputs-table">
-              <div class="fr-row">
-                <span>Loan Amount (KES)</span>
-                <strong id="fr-input-amount">10,000,000.00</strong>
-              </div>
-              <div class="fr-row">
-                <span>Annual Interest Rate (%)</span>
-                <strong id="fr-input-rate">13.00</strong>
-              </div>
-              <div class="fr-row">
-                <span>Term</span>
-                <strong id="fr-input-term">240 months (20.0 years)</strong>
-              </div>
-              <div class="fr-row highlight">
-                <strong>Total Interest (KES)</strong>
-                <strong id="fr-input-interest">18,117,817.07</strong>
-              </div>
-            </div>
-          </div>
-
-          <!-- Where Your Repayment Goes (Progress Bar) -->
-          <div class="fr-section">
-            <h3 class="fr-section-title">WHERE YOUR REPAYMENT GOES</h3>
-            <div class="fr-progress-bar">
-              <div
-                class="fr-progress-fill"
-                id="fr-progress-fill"
-                style="width: 35.6%"
-              ></div>
-            </div>
-            <div class="fr-progress-labels">
-              <span
-                ><span class="dot dot-blue"></span> Loan amount
-                <span id="fr-percent-loan">35.6%</span></span
-              >
-              <span
-                ><span class="dot dot-light"></span> Interest
-                <span id="fr-percent-interest">64.4%</span></span
-              >
-            </div>
-          </div>
-
-          <!-- Mortgage Specific: Upfront Costs -->
-          <div class="fr-section mortgage-only-section" id="fr-mortgage-costs">
-            <h3 class="fr-section-title">UPFRONT COSTS</h3>
-            <div class="fr-inputs-table">
-              <div class="fr-row">
-                <span>Property Value (KES)</span>
-                <strong id="fr-prop-val">12,000,000.00</strong>
-              </div>
-              <div class="fr-row">
-                <span>Stamp Duty rate</span>
-                <strong id="fr-stamp-rate">4.0%</strong>
-              </div>
-              <div class="fr-row">
-                <span>Appraisal Fee rate</span>
-                <strong id="fr-appraisal-rate">1.0%</strong>
-              </div>
-              <div class="fr-row">
-                <span>Stamp Duty (KES)</span>
-                <strong id="fr-stamp-val">480,000.00</strong>
-              </div>
-              <div class="fr-row">
-                <span>Appraisal Fee (KES)</span>
-                <strong id="fr-appraisal-val">100,000.00</strong>
-              </div>
-              <div class="fr-row">
-                <span>Deposit / Own Contribution (KES)</span>
-                <strong id="fr-deposit-val">2,000,000.00</strong>
-              </div>
-              <div class="fr-row">
-                <span>Loan-to-Value</span>
-                <strong id="fr-ltv-val">83.3%</strong>
-              </div>
-              <div class="fr-row highlight">
-                <span>Total Cash Needed Upfront (KES)</span>
-                <strong id="fr-total-upfront">2,580,000.00</strong>
-              </div>
-            </div>
-          </div>
-
-          <!-- Notes & Disclaimer -->
-          <div class="fr-notes">
-            <p>
-              Maximum term is 300 months (25 years), subject to retirement age
-              or age 65.
-            </p>
-            <div class="fr-disclaimer-box">
-              <p>
-                Disclaimer: This calculator is made available to you as a
-                self-help tool for your independent use. The repayment results
-                in every case are an approximate guide only. All borrowing rates
-                used in this tool are indicative.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="fr-footer">
-          <div class="fr-footer-content">
-            <div class="fr-footer-left">
-              <h4 id="fr-footer-title">Ready to own your home?</h4>
-              <p id="fr-footer-desc">
-                Talk to our mortgage team about your options and the next steps.
-              </p>
-            </div>
-            <div class="fr-footer-middle">
-              <h5>CALL US</h5>
-              <p>+254 (0) 703 095 445</p>
-              <p>+254 (0) 703 095 000</p>
-              <p>020 3252 000</p>
-            </div>
-            <div class="fr-footer-right">
-              <h5>VISIT</h5>
-              <p>familybank.co.ke</p>
-            </div>
-          </div>
-          <div class="fr-footer-bottom">
-            <p>Family Bank is regulated by the Central Bank of Kenya.</p>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- ================= FOOTER ================= -->
     <footer class="site-footer">
