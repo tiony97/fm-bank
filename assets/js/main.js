@@ -2972,3 +2972,82 @@ $(function () {
     }
   });
 });
+
+// =========================================
+// OPEN ACCOUNT FORM FUNCTIONALITY (SIMULATION)
+// =========================================
+$(function () {
+  /* =========================================
+     1. MULTI-STEP NAVIGATION
+  ========================================= */
+  function goToStep(step) {
+    var percent = Math.round((step / 3) * 100);
+    $(".gf_progressbar_percentage").css("width", percent + "%");
+    $(".current-step-text").text(step);
+    $(".gform_page").hide();
+    $("#gform_page_5_" + step).fadeIn(300);
+    $("html, body").animate(
+      { scrollTop: $("#gform_wrapper_5").offset().top - 50 },
+      300,
+    );
+  }
+
+  $(document).on("click", ".gform_next_button", function (e) {
+    e.preventDefault();
+    goToStep(parseInt($(this).data("current-step")) + 1);
+  });
+
+  $(document).on("click", ".gform_previous_button", function (e) {
+    e.preventDefault();
+    goToStep(parseInt($(this).data("target-step")));
+  });
+
+  /* =========================================
+     2. DYNAMIC KIN INFORMATION DUPLICATION
+  ========================================= */
+  let kinCount = 1;
+
+  $("#add-kin-btn").on("click", function (e) {
+    e.preventDefault();
+
+    if (kinCount >= 3) {
+      alert("You can only add up to 3 next of kin.");
+      return;
+    }
+
+    kinCount++;
+
+    // Clone the entire first group
+    let newGroup = $(".kin-group").first().clone();
+
+    // Update the section title to reflect the new number
+    newGroup
+      .find(".gsection_title")
+      .first()
+      .text("Next of Kin Information " + kinCount);
+
+    // Clear the inputs in the cloned group so they are empty for the user
+    newGroup.find("input").val("");
+    newGroup.find("select").prop("selectedIndex", 0);
+
+    // Append the new group to the container
+    $("#all-kin-groups").append(newGroup);
+  });
+
+  /* =========================================
+     3. FORM SUBMISSION SIMULATION
+  ========================================= */
+  $(document).on("click", '.gform_button[type="submit"]', function (e) {
+    e.preventDefault();
+    $(".gform_page").hide();
+    $(".gf_progressbar_wrapper").hide();
+    if ($(".gform_description").length) {
+      $(".gform_description").hide();
+    }
+    $("#gform_confirmation_wrapper_5").fadeIn(400);
+    $("html, body").animate(
+      { scrollTop: $("#gform_wrapper_5").offset().top - 50 },
+      300,
+    );
+  });
+});

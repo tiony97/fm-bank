@@ -2185,6 +2185,10 @@
   .product-tabs-section {
     .tabs-content {
       height: 500px !important;
+      .panel-text {
+        height: 100%;
+        overflow-y: auto;
+      }
     }
   }
 }

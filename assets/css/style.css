@@ -232,33 +232,49 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
+.container {
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 /* =========================================
    LARGE SCREENS
 ========================================= */
+@media (min-width: 2560px) {
+  header .brand {
+    padding: 0 1.5em;
+  }
+  header .main-nav__inner {
+    max-width: 1920px;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+}
 @media (min-width: 1440px) {
   body h1 {
-    font-size: 80px !important;
-    line-height: 92px !important;
+    font-size: 72px !important;
+    line-height: 81px !important;
   }
   body h2 {
-    font-size: 52px !important;
-    line-height: 64px !important;
+    font-size: 48px !important;
+    line-height: 56px !important;
   }
   body h3 {
-    font-size: 38px !important;
-    line-height: 46px !important;
+    font-size: 32px !important;
+    line-height: 43px !important;
   }
   body h4 {
-    font-size: 28px !important;
-    line-height: 36px !important;
+    font-size: 26px !important;
+    line-height: 35px !important;
   }
   body p,
   body li,
   body span,
   body a,
   body label {
-    font-size: 22px !important;
-    line-height: 37px !important;
+    font-size: 20px !important;
+    line-height: 30px !important;
   }
   body button,
   body .btn,
@@ -266,8 +282,8 @@ input:focus-visible {
   body input,
   body textarea,
   body select {
-    font-size: 22px !important;
-    line-height: 37px !important;
+    font-size: 20px !important;
+    line-height: 30px !important;
   }
   body .container {
     width: 90% !important;
@@ -294,16 +310,16 @@ input:focus-visible {
     line-height: 24px !important;
   }
   header .utility-bar a {
-    font-size: 18px !important;
+    font-size: 17px !important;
     line-height: 25px !important;
   }
   header .main-nav .primary-nav h2 {
-    font-size: 44px !important;
+    font-size: 42px !important;
   }
   header .main-nav .primary-nav p,
   header .main-nav .primary-nav a {
-    font-size: 18px !important;
-    line-height: 26px !important;
+    font-size: 17px !important;
+    line-height: 25px !important;
   }
   header .main-nav .mega-menu__feature img.feature-image {
     height: 350px;
@@ -311,7 +327,7 @@ input:focus-visible {
   header .nav-actions button,
   header .nav-actions .button,
   header .nav-actions a {
-    font-size: 18px !important;
+    font-size: 17px !important;
     line-height: 26px !important;
   }
 }
@@ -577,6 +593,69 @@ section .intro-left * {
     - Becomes very light (10% opacity black) at the top-right (100%)
   */
   background: linear-gradient(to top right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 45%, rgba(0, 0, 0, 0.1) 100%);
+}
+.hero .qr-download-widget {
+  position: absolute;
+  bottom: 20px;
+  right: 5%;
+  z-index: 10;
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  padding: 24px;
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 260px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  /* Typography */
+}
+.hero .qr-download-widget h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+.hero .qr-download-widget p {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+.hero .qr-download-widget {
+  /* QR Image Container */
+}
+.hero .qr-download-widget .qr-image-wrapper {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+.hero .qr-download-widget .qr-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.hero .qr-download-widget {
+  /* Hide on Mobile */
+}
+@media (max-width: 900px) {
+  .hero .qr-download-widget {
+    display: none !important;
+  }
 }
 .hero .container {
   height: -moz-fit-content;
@@ -2492,6 +2571,9 @@ section .intro-left * {
   width: -moz-fit-content;
   width: fit-content;
 }
+.overview .container .content-wrapper .queen-stats .stat h2 {
+  color: #6a3293 !important;
+}
 .overview .container .content-wrapper .stats {
   display: flex;
   flex-wrap: wrap;
@@ -2540,7 +2622,7 @@ section .intro-left * {
 }
 .contact-forms h2 {
   margin: 0 0 10px;
-  font-size: 36px;
+  font-size: 32px;
   line-height: 44px;
   font-weight: 700;
 }
@@ -2688,7 +2770,7 @@ section .intro-left * {
 .contact-forms .loan-form .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 .contact-forms .loan-form {
@@ -3536,6 +3618,26 @@ section .intro-left * {
     height: 70vh;
     padding: 10vh 0;
   }
+  .hero .qr-download-widget {
+    padding: 20px;
+    width: 320px;
+    /* Typography */
+  }
+  .hero .qr-download-widget h4 {
+    font-size: 24px !important;
+  }
+  .hero .qr-download-widget p {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+  .hero .qr-download-widget {
+    /* QR Image Container */
+  }
+  .hero .qr-download-widget .qr-image-wrapper {
+    width: 60%;
+    padding: 10px;
+    border-radius: 12px;
+  }
   .hero .hero-content {
     max-width: 40vw !important;
   }
@@ -3547,26 +3649,26 @@ section .intro-left * {
     font-size: 16px !important;
   }
   .hero h2 {
-    font-size: 80px !important;
-    line-height: 92px !important;
+    font-size: 72px !important;
+    line-height: 81px !important;
   }
   .hero p {
-    font-size: 24px !important;
-    line-height: 32px !important;
+    font-size: 22px !important;
+    line-height: 31px !important;
   }
   section .section-intro {
     text-align: center;
   }
   section .section-intro p {
-    font-size: 26px !important;
+    font-size: 20px !important;
     margin-bottom: 0.6em;
   }
   .products .section-intro p {
-    font-size: 26px !important;
+    font-size: 20px !important;
   }
   .products .tab-links li {
     padding: 8px 16px;
-    font-size: 24px !important;
+    font-size: 18px !important;
   }
   .products .product-card .card-img {
     margin-bottom: 15px;
@@ -3580,7 +3682,7 @@ section .intro-left * {
     gap: 15px;
   }
   .products .product-card .card-text p {
-    font-size: 24px !important;
+    font-size: 20px !important;
   }
   .stories-section .container {
     grid-template-columns: 28% 72%;
@@ -3616,7 +3718,7 @@ section .intro-left * {
   }
   .stories-section-2 .container .stories-intro .stories-intro__content p {
     flex: 0.6;
-    font-size: 26px !important;
+    font-size: 20px !important;
     line-height: 1.5;
   }
   .stories-section-2 .container .stories-carousel .stories-swiper-2 .story-card {
@@ -3697,11 +3799,11 @@ section .intro-left * {
     font-size: 16px;
   }
   .impact-section .section-intro p {
-    font-size: 26px !important;
+    font-size: 22px !important;
     margin-bottom: 1em;
   }
   .impact-section .tab-nav .tab-btn .stat-number {
-    font-size: 66px !important;
+    font-size: 62px !important;
     line-height: 1.5 !important;
   }
   .impact-section .tab-nav .tab-btn .stat-label {
@@ -3711,8 +3813,8 @@ section .intro-left * {
     max-height: 750px;
   }
   .impact-section .image-wrapper .glass-overlay p {
-    font-size: 28px !important;
-    line-height: 36px !important;
+    font-size: 26px !important;
+    line-height: 35px !important;
   }
   .queen-impact {
     padding: 80px 0;
@@ -3725,7 +3827,7 @@ section .intro-left * {
     gap: 20px;
   }
   .queen-impact .container .impact-intro h3 {
-    font-size: 56px !important;
+    font-size: 48px !important;
     line-height: 1.1;
   }
   .queen-impact .container .impact-intro p {
@@ -3741,7 +3843,7 @@ section .intro-left * {
     padding-right: 20px;
   }
   .queen-impact .container .stats .stat h2 {
-    font-size: 76px !important;
+    font-size: 72px !important;
     line-height: 1.2;
   }
   .queen-impact .container .stats .stat p {
@@ -3768,12 +3870,12 @@ section .intro-left * {
     height: 70vh;
   }
   .sustainability-slider-section .slide-title {
-    font-size: 84px !important;
-    line-height: 92px !important;
+    font-size: 72px !important;
+    line-height: 81px !important;
   }
   .sustainability-slider-section .slide-description {
-    font-size: 26px !important;
-    line-height: 34px !important;
+    font-size: 22px !important;
+    line-height: 32px !important;
   }
   .news-updates {
     padding: 60px 0;
@@ -6918,6 +7020,10 @@ section .intro-left * {
   .product-tabs-section .tabs-content {
     height: 500px !important;
   }
+  .product-tabs-section .tabs-content .panel-text {
+    height: 100%;
+    overflow-y: auto;
+  }
 }
 /* =========================================
    RESPONSIVE (TABLET)
@@ -7849,7 +7955,6 @@ section .intro-left * {
 .jobs-section .jobs-grid .job-card .job-title {
   font-size: 20px;
   font-weight: 600;
-  text-transform: uppercase;
   line-height: 1.3;
   margin-bottom: 15px;
   min-height: 52px;
@@ -7951,7 +8056,6 @@ section .intro-left * {
   color: #202020;
   line-height: 1.2;
   margin-bottom: 15px;
-  text-transform: uppercase;
 }
 .job-details-section .job-details-grid .job-info-column .job-main-header .deadline {
   display: flex;
@@ -8359,7 +8463,6 @@ section .intro-left * {
 .similar-jobs-section .job-card .job-title {
   font-size: 20px;
   font-weight: 600;
-  text-transform: uppercase;
   line-height: 1.3;
   margin-bottom: 15px;
   min-height: 52px;
@@ -12065,6 +12168,446 @@ section .intro-left * {
   }
 }
 /* =========================================
+   OPEN ACCOUNT (MULTI-STEP FORM)
+========================================= */
+.open-account-section {
+  padding: 70px 0;
+  background: #ffffff;
+}
+.open-account-section .gform_wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #2a5caa;
+  border-radius: 24px;
+  padding: 20px;
+  color: #ffffff;
+}
+.open-account-section {
+  /* Headings */
+}
+.open-account-section .gform_heading {
+  margin-bottom: 30px;
+}
+.open-account-section .gform_heading .gform_title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.open-account-section .gform_heading .gform_description {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.open-account-section {
+  /* Progress Bar */
+}
+.open-account-section .gf_progressbar_wrapper {
+  margin-bottom: 40px;
+}
+.open-account-section .gf_progressbar_wrapper .gf_progressbar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.open-account-section .gf_progressbar_wrapper .gf_progressbar .gf_progressbar_percentage {
+  height: 100%;
+  background: #fff;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+.open-account-section {
+  /* Grid Layout */
+}
+.open-account-section .gform_fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.open-account-section .gform_fields .gfield--width-full {
+  grid-column: 1/-1;
+}
+.open-account-section .gform_fields .gfield--width-half {
+  grid-column: span 1;
+}
+.open-account-section .gform_fields {
+  /* Handle fieldsets specifically */
+}
+.open-account-section .gform_fields fieldset.gfield {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.open-account-section {
+  /* Labels */
+}
+.open-account-section .gfield_label,
+.open-account-section .gform-field-label--type-sub {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+}
+.open-account-section .gfield_required {
+  color: #ffb3b8;
+  font-size: 14px;
+  font-weight: 400;
+}
+.open-account-section {
+  /* Section Titles */
+}
+.open-account-section .gsection {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.open-account-section .gsection_title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
+  margin: 0;
+}
+.open-account-section {
+  /* Base Inputs */
+}
+.open-account-section input[type=text],
+.open-account-section input[type=email],
+.open-account-section input[type=tel],
+.open-account-section input[type=date],
+.open-account-section select {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.open-account-section input[type=text]::-moz-placeholder, .open-account-section input[type=email]::-moz-placeholder, .open-account-section input[type=tel]::-moz-placeholder, .open-account-section input[type=date]::-moz-placeholder, .open-account-section select::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.open-account-section input[type=text]::placeholder,
+.open-account-section input[type=email]::placeholder,
+.open-account-section input[type=tel]::placeholder,
+.open-account-section input[type=date]::placeholder,
+.open-account-section select::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.open-account-section input[type=text]:focus,
+.open-account-section input[type=email]:focus,
+.open-account-section input[type=tel]:focus,
+.open-account-section input[type=date]:focus,
+.open-account-section select:focus {
+  border-color: #fff;
+}
+.open-account-section input[type=date],
+.open-account-section input[type=datetime-local] {
+  position: relative;
+  /* Hide the native icon and replace it with a white SVG */
+}
+.open-account-section input[type=date]::-webkit-calendar-picker-indicator,
+.open-account-section input[type=datetime-local]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  /* The SVG below is a white calendar icon */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px 18px;
+  /* If the browser adds a default background color, remove it */
+  background-color: transparent;
+  opacity: 1;
+}
+.open-account-section {
+  /* Safari and Firefox often don't support ::-webkit-calendar-picker-indicator natively 
+     for styling, but this ensures we remove any default native styling */
+}
+.open-account-section::-webkit-inner-spin-button, .open-account-section::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.open-account-section label a {
+  text-decoration: underline;
+  transition: all 0.3s ease-in;
+}
+.open-account-section label a:hover {
+  text-decoration: none;
+}
+.open-account-section {
+  /* Select Dropdowns */
+}
+.open-account-section select {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px 8px;
+  cursor: pointer;
+}
+.open-account-section select option {
+  color: #222;
+  background: #fff;
+}
+.open-account-section {
+  /* Server Name Group (.ginput_complex) */
+}
+.open-account-section .ginput_complex {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.open-account-section .ginput_complex .name_first,
+.open-account-section .ginput_complex .name_last {
+  width: 100%;
+}
+.open-account-section {
+  /* Server Phone Group (.gform-phone) */
+}
+.open-account-section .gform-phone__input-wrapper {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 15px;
+  align-items: end;
+}
+.open-account-section .ginput_country-selector_container {
+  position: relative;
+}
+.open-account-section .ginput_country-selector_container .gform-phone__country-selector {
+  width: 100%;
+  height: 48px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+.open-account-section .ginput_country-selector_container .gform-phone__country-selector .gform-phone__flag-icon {
+  display: none !important;
+}
+.open-account-section .ginput_country-selector_container .gform-phone__country-selector .gform-phone__dial-code {
+  font-weight: 500;
+}
+.open-account-section .ginput_country-selector_container .gform-phone__country-selector::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 6px;
+  margin-left: auto;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.open-account-section {
+  /* Custom Checkboxes */
+}
+.open-account-section .gfield--type-checkbox .gfield_checkbox {
+  display: flex;
+  gap: 20px;
+}
+.open-account-section .gfield--type-checkbox .gfield_checkbox.gfield--choice-align-vertical {
+  flex-direction: column;
+  gap: 15px;
+}
+.open-account-section .gfield--type-checkbox .gchoice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+}
+.open-account-section .gfield--type-checkbox .gchoice input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.open-account-section .gfield--type-checkbox .gchoice label::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  margin-right: 10px;
+  vertical-align: middle;
+  background: transparent;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+.open-account-section .gfield--type-checkbox .gchoice input:checked + label::before {
+  background: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2308a7df' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.open-account-section .gfield--type-checkbox .gchoice label {
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.open-account-section .gfield--type-checkbox .terms-label {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+.open-account-section {
+  /* Pagination Footer */
+}
+.open-account-section .gform_page_footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+.open-account-section .gform_page_footer button {
+  height: 40px;
+  padding: 0 32px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+.open-account-section .gform_page_footer .gform_next_button,
+.open-account-section .gform_page_footer .gform_button {
+  background: #fff;
+  color: #00a6e5;
+}
+.open-account-section .gform_page_footer .gform_next_button:hover,
+.open-account-section .gform_page_footer .gform_button:hover {
+  background: #00a6e5;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+.open-account-section .gform_page_footer .gform_previous_button {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.open-account-section .gform_page_footer .gform_previous_button:hover {
+  background: #ffffff;
+  color: #00a6e5;
+  border-color: #ffffff;
+}
+.open-account-section #add-kin-btn {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  color: #fff !important;
+  transition: all 0.3s ease;
+}
+.open-account-section #add-kin-btn:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+.open-account-section {
+  /* =========================================
+     ERROR & SUCCESS MESSAGES
+  ========================================= */
+}
+.open-account-section .gform_validation_errors {
+  background: rgba(220, 53, 69, 0.15);
+  border: 1px solid #ffb3b8;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+.open-account-section .gform_validation_errors .gform_submission_error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 15px 0;
+}
+.open-account-section .gform_validation_errors .gform_submission_error .gform-icon--circle-error {
+  color: #ffb3b8;
+  font-size: 20px;
+}
+.open-account-section .gform_validation_errors ol {
+  margin: 0;
+  padding-left: 20px;
+}
+.open-account-section .gform_validation_errors ol li {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+.open-account-section .gform_validation_errors ol li a {
+  color: #ffb3b8;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.open-account-section .gform_validation_errors ol li a:hover {
+  color: #fff;
+}
+.open-account-section .gfield_error input,
+.open-account-section .gfield_error select {
+  border-color: #ffb3b8 !important;
+  background: rgba(220, 53, 69, 0.1) !important;
+}
+.open-account-section .gfield_error .validation_message {
+  color: #ffb3b8;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+.open-account-section .gfield_error .gfield_checkbox label::before {
+  border-color: #ffb3b8 !important;
+}
+.open-account-section .gform_confirmation_wrapper {
+  margin-top: 30px;
+}
+.open-account-section .gform_confirmation_wrapper .gform_confirmation_message {
+  display: block;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .open-account-section .gform_fields {
+    grid-template-columns: 1fr;
+  }
+  .open-account-section .ginput_complex {
+    grid-template-columns: 1fr;
+  }
+  .open-account-section .gform-phone__input-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .open-account-section .gform_page_footer {
+    flex-direction: column-reverse;
+  }
+  .open-account-section .gform_page_footer button {
+    width: 100%;
+  }
+}
+/* =========================================
    Mobile Responsiveness
 ========================================= */
 @media (max-width: 900px) {
@@ -12198,12 +12741,6 @@ section .intro-left * {
     transform-origin: top right;
   }
 }
-.container {
-  width: 90%;
-  max-width: 1920px;
-  margin: 0 auto;
-}
-
 /* =========================================
    HEADER
 ========================================= */
@@ -13107,7 +13644,7 @@ section .intro-left * {
 }
 .footer-heading p {
   color: #d5e2f5;
-  font-size: 14px;
+  font-size: 16px;
 }
 .footer-heading > .button {
   margin-top: 5px;
@@ -13136,13 +13673,12 @@ section .intro-left * {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #d5e2f5;
+  color: #ffffff;
   font-size: 14px;
   line-height: 1.45;
-  transition: color 0.25s ease;
+  transition: all 0.3s 0.25s ease;
 }
 .footer-column ul a:hover {
-  color: #ffffff;
   text-decoration: underline;
 }
 
@@ -13297,9 +13833,12 @@ section .intro-left * {
    LARGE SCREENS
 ========================================= */
 @media (min-width: 1440px) {
-  .brand {
-    padding: 0 1em;
-    margin-left: 5%;
+  header a,
+  header p,
+  header input,
+  header button,
+  header span {
+    font-size: 17px !important;
   }
   .header-search-dropdown h3 {
     font-size: 28px !important;

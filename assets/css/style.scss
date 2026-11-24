@@ -7,12 +7,6 @@
 
 @forward "_quick-dock.scss";
 
-.container {
-  width: 90%;
-  max-width: 1920px;
-  margin: 0 auto;
-}
-
 /* =========================================
    HEADER
 ========================================= */
@@ -1067,7 +1061,7 @@
 
   p {
     color: $light-blue;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   > .button {
@@ -1100,14 +1094,13 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    color: $light-blue;
+    color: $white;
     font-size: 14px;
     line-height: 1.45;
 
-    transition: color $transition;
+    transition: all 0.3s $transition;
 
     &:hover {
-      color: $white;
       text-decoration: underline;
     }
   }
@@ -1294,9 +1287,14 @@
    LARGE SCREENS
 ========================================= */
 @media (min-width: 1440px) {
-  .brand {
-    padding: 0 1em;
-    margin-left: 5%;
+  header {
+    a,
+    p,
+    input,
+    button,
+    span {
+      font-size: 17px !important;
+    }
   }
   .header-search-dropdown {
     h3 {

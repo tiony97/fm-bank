@@ -1,0 +1,1737 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Family Bank | Banking Made Simple</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/tailwind.css" />
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+      <!-- Utility navigation -->
+      <div class="utility-bar">
+        <div class="container">
+          <div class="utility-inner">
+            <nav class="utility-left" aria-label="Banking categories">
+              <a href="./personal.html">Personal</a>
+              <a href="./msme.html">MSME</a>
+              <a href="./corporate.html">Corporate</a>
+              <a href="./diaspora.html">Diaspora</a>
+              <a href="./bancassurance.html">Bancassurance</a>
+              <a href="./queen-banking.html">Queen Banking</a>
+              <a href="./asset-auction.html">Asset Auction</a>
+            </nav>
+
+            <nav class="utility-right" aria-label="Useful links">
+              <a href="./about.html">About Us</a>
+              <a href="./news.html">News</a>
+              <a href="./help-and-support.html">Help & Support</a>
+              <a href="./investor-relations.html">Investor Relations</a>
+              <a href="./impact.html">Our Impact</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main navigation -->
+      <div class="main-nav">
+        <div class="main-nav__inner">
+          <a class="brand" href="/home.html" aria-label="Family Bank home">
+            <img
+              src="./assets/images/FAMILY BANK LOGO-1 1.svg"
+              alt="Family Bank Logo"
+            />
+          </a>
+
+          <button
+            class="mobile-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="nav-links-container">
+            <nav class="primary-nav" aria-label="Main navigation"></nav>
+
+            <!-- New Overflow Trigger -->
+            <button
+              class="nav-overflow-trigger"
+              type="button"
+              aria-label="Toggle extra menu"
+              aria-expanded="false"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+
+          <!-- New Overflow Mega Menu  -->
+          <div
+            class="mega-menu mega-menu--overflow"
+            id="overflow-menu"
+            aria-label="Extra menu"
+          >
+            <div class="mega-menu__promo">
+              <h2>Personal Banking</h2>
+              <p>
+                Banking, credit, savings and protection built around her
+                journey.
+              </p>
+              <a href="#" class="text-link">Explore</a>
+            </div>
+
+            <div class="mega-menu__links" data-overflow-links></div>
+
+            <div class="mega-menu__feature">
+              <h3>Your bank in your pocket</h3>
+              <img
+                src="./assets/images/aa8456e69225c0aa96ac16c3d870d5d5e62a5acf.jpg"
+                alt="Customer using a mobile device"
+              />
+              <div class="store-btns">
+                <a href="#" class="store-btn"
+                  ><img
+                    src="./assets/images/mega-app-store.png"
+                    alt="App Store"
+                /></a>
+                <a href="#" class="store-btn"
+                  ><img
+                    src="./assets/images/mega-google-store.png"
+                    alt="Google Play Store"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-actions">
+            <!-- SEARCH BUTTON -->
+            <button
+              class="icon-button search-trigger"
+              aria-label="Search"
+              type="button"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button class="language-button" type="button">
+              EN <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <a href="#" class="button button--light">Open Account</a>
+
+            <!-- LOGIN DROPDOWN WRAPPER -->
+            <div class="login-dropdown-wrapper">
+              <button class="button button--cyan login-trigger" type="button">
+                Login
+              </button>
+
+              <div class="login-dropdown">
+                <a href="#" class="login-link"
+                  >Internet Banking
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i
+                ></a>
+                <a href="#" class="login-link"
+                  >Family Pay
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i
+                ></a>
+                <a href="#" class="login-link"
+                  >Prepaid Cards Portal
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEARCH DROPDOWN OVERLAY -->
+      <div class="header-search-dropdown">
+        <div class="container">
+          <div class="search-dropdown-content">
+            <h3>Let's help you find it</h3>
+            <div class="search-input-wrapper">
+              <span><i class="fa-solid fa-magnifying-glass"></i></span>
+              <input type="text" placeholder="Search" />
+            </div>
+            <div class="search-suggestions">
+              <span>Suggestions</span>
+              <a href="#" class="suggestion-pill">FAQs</a>
+              <a href="#" class="suggestion-pill">Diaspora Agents</a>
+              <a href="#" class="suggestion-pill">Mortgage</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hover Dropdown Dock -->
+    <div class="quick-dock" id="quickDock">
+      <nav class="dock-menu" aria-label="Quick tools">
+        <!-- First item: hover trigger -->
+        <a
+          href="#loan-calculator"
+          class="dock-item dock-trigger"
+          aria-label="Loan Calculator"
+          data-tooltip="Loan Calculator"
+        >
+          <img src="./assets/images/dock-icon-1.png" alt="" />
+        </a>
+
+        <!-- Hidden items revealed on hover -->
+        <div class="dock-dropdown">
+          <a
+            href="#mortgage-calculator"
+            class="dock-item"
+            aria-label="Mortgage Calculator"
+            data-tooltip="Mortgage Calculator"
+          >
+            <img src="./assets/images/dock-icon-2.png" alt="" />
+          </a>
+
+          <a
+            href="#currency"
+            class="dock-item"
+            aria-label="Currency exchange"
+            data-tooltip="FX Convertor"
+          >
+            <img src="./assets/images/dock-icon-4.png" alt="" />
+          </a>
+
+          <a
+            href="#reports"
+            class="dock-item"
+            aria-label="Reports"
+            data-tooltip="Tariff Guide"
+          >
+            <img src="./assets/images/dock-icon-5.png" alt="" />
+          </a>
+
+          <a
+            href="#locations"
+            class="dock-item"
+            aria-label="Locations"
+            data-tooltip="Locate a branch, agent or ATM"
+          >
+            <img src="./assets/images/dock-icon-6.png" alt="" />
+          </a>
+
+          <a
+            href="#account"
+            class="dock-item"
+            aria-label="Account"
+            data-tooltip="Open an account"
+          >
+            <img src="./assets/images/dock-icon-7.png" alt="" />
+          </a>
+
+          <a
+            href="#support"
+            class="dock-item"
+            aria-label="Support"
+            data-tooltip="Talk to us"
+          >
+            <img src="./assets/images/dock-icon-8.png" alt="" />
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <!--ACCESSIBILITY BUTTON -->
+    <button class="accessibility-button" aria-label="Accessibility options">
+      <img
+        src="./assets/images/accessibility.png"
+        alt="Accessibility options"
+      />
+    </button>
+
+    <!--CHATBOT BUTTON -->
+    <button class="chatbot-button" aria-label="Open chatbot">
+      <img src="./assets/images/chatbot.png" alt="Chatbot" />
+    </button>
+
+    <!-- ================= PAGE CONTENT ================= -->
+    <main class="page-content">
+      <!--Hero (Banner)-->
+      <section class="hero">
+        <video
+          class="hero_video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="./assets/images/open-account-hero.png"
+          aria-hidden="true"
+        >
+          <source
+            src="https://www.youtube.com/watch?v=vXlVGA1QF00&pp=ygUYZmFtaWx5IGJhbmsgaW1hcmEgcGFtb2ph"
+            type="video/mp4"
+          />
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <!-- NSE Stock Ticker Marquee -->
+        <div class="stock-marquee-container">
+          <div class="stock-marquee-track">
+            <!-- First set of items -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <!-- Duplicate set to create seamless loop -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <!-- Add more duplicates as needed to fill the screen width before looping -->
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name">FBL KES 24.50</span>
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+            <div class="stock-item">
+              <span class="stock-name"
+                >Nairobi Securities Exchange FBL KES 24.50</span
+              >
+              <span class="stock-up"
+                >▲ <span class="stock-number">+0.35 (1.45%)</span></span
+              >
+              <span class="stock-separator">|</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating QR App Download  -->
+        <div class="qr-download-widget">
+          <h4>Get the Family Bank App</h4>
+          <p>Scan the code with your phone to download the app.</p>
+          <div class="qr-image-wrapper">
+            <!-- Replace src with your actual QR code image path -->
+            <img
+              src="assets/images/open-aacount-qr.png"
+              alt="Family Bank App QR Code"
+            />
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="hero-content">
+            <div class="breadcrumbs">
+              Home <span><i class="fa-solid fa-angle-right"></i></span> Open
+              Account
+            </div>
+            <h2>Open Account</h2>
+            <p>
+              Tell us what you need and we will point you to the right next
+              step.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!--Open Account Form Section-->
+      <section class="open-account-section">
+        <div class="container">
+          <div class="section-intro">
+            <h2>Start Your Application</h2>
+            <p>
+              Choose what you need and share a few details. Our team will guide
+              you to the right next step, whether that is a visit to your
+              closest branch or a call from an advisor.
+            </p>
+          </div>
+
+          <div class="gform_wrapper" id="gform_wrapper_5">
+            <!-- <div class="gform_heading">
+              <h2 class="gform_title">Open An Account</h2>
+              <p class="gform_description">
+                Step <span class="current-step-text">1</span> of 3
+              </p>
+            </div> -->
+
+            <!-- Progress Bar -->
+            <div class="gf_progressbar_wrapper">
+              <div class="gf_progressbar">
+                <div class="gf_progressbar_percentage" style="width: 33%">
+                  <span class="progress-text">33%</span>
+                </div>
+              </div>
+            </div>
+
+            <form method="post" id="gform_5" class="multi-step-form">
+              <!-- PAGE 1: CONTACT INFORMATION -->
+              <div id="gform_page_5_1" class="gform_page active-page">
+                <!-- Validation Error Banner (Hidden by default) -->
+                <div class="gform_validation_errors" style="display: none">
+                  <h2 class="gform_submission_error">
+                    <span class="gform-icon gform-icon--circle-error"></span
+                    >There was a problem with your submission.
+                  </h2>
+                  <ol>
+                    <li>
+                      <a class="gform_validation_error_link" href="#field_5_6"
+                        >Already a Family Bank Customer?: This field is
+                        required.</a
+                      >
+                    </li>
+                    <li>
+                      <a class="gform_validation_error_link" href="#field_5_8"
+                        >Phone: This field is required.</a
+                      >
+                    </li>
+                  </ol>
+                </div>
+
+                <div class="gform_page_fields">
+                  <div class="gform_fields top_label">
+                    <!-- Customer Type Checkbox -->
+                    <fieldset
+                      id="field_5_6"
+                      class="gfield gfield--type-checkbox gfield--type-choice gfield--width-full"
+                    >
+                      <legend class="gfield_label gform-field-label">
+                        Already a Family Bank Customer?
+                        <span class="gfield_required">(Required)</span>
+                      </legend>
+                      <div class="ginput_container ginput_container_checkbox">
+                        <div
+                          class="gfield_checkbox gfield--choice-align-horizontal"
+                        >
+                          <div class="gchoice">
+                            <input
+                              class="gfield-choice-input"
+                              type="checkbox"
+                              id="choice_5_6_1"
+                            />
+                            <label
+                              for="choice_5_6_1"
+                              class="gform-field-label gform-field-label--type-inline"
+                              >New Customer</label
+                            >
+                          </div>
+                          <div class="gchoice">
+                            <input
+                              class="gfield-choice-input"
+                              type="checkbox"
+                              id="choice_5_6_2"
+                            />
+                            <label
+                              for="choice_5_6_2"
+                              class="gform-field-label gform-field-label--type-inline"
+                              >Existing Customer</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+
+                    <!-- Section Title -->
+                    <div class="gfield gsection gfield--width-full">
+                      <h3 class="gsection_title">Contact Information</h3>
+                    </div>
+
+                    <!-- Name Group (First & Last) -->
+                    <fieldset
+                      id="field_5_7"
+                      class="gfield gfield--type-name gfield--width-full"
+                    >
+                      <div
+                        class="ginput_complex ginput_container ginput_container--name gf_name_has_2"
+                      >
+                        <span class="name_first">
+                          <label
+                            class="gform-field-label gform-field-label--type-sub"
+                            >First</label
+                          >
+                          <input type="text" placeholder="First Name" />
+                        </span>
+                        <span class="name_last">
+                          <label
+                            class="gform-field-label gform-field-label--type-sub"
+                            >Last</label
+                          >
+                          <input type="text" placeholder="Last Name" />
+                        </span>
+                      </div>
+                    </fieldset>
+
+                    <!-- Phone Group -->
+                    <fieldset
+                      id="field_5_8"
+                      class="gfield gfield--type-phone gfield--width-half"
+                    >
+                      <!-- <legend class="gfield_label gform-field-label">
+                        Phone <span class="gfield_required">(Required)</span>
+                      </legend> -->
+                      <div class="ginput_container ginput_container_phone">
+                        <div class="gform-phone gform-phone--show-dial-code">
+                          <div class="gform-phone__input-wrapper">
+                            <span class="ginput_country-selector_container">
+                              <label
+                                class="gform-field-label gform-field-label--type-sub"
+                                >Country</label
+                              >
+                              <button
+                                type="button"
+                                class="gform-phone__country-selector gform-theme-button gform-theme-button--tertiary"
+                              >
+                                <span
+                                  class="gform-phone__flag-icon gform-phone__flag-icon--ke"
+                                ></span>
+                                <span class="gform-phone__dial-code">+254</span>
+                              </button>
+                            </span>
+                            <span class="ginput_phone_container">
+                              <label
+                                class="gform-field-label gform-field-label--type-sub"
+                                >Phone Number</label
+                              >
+                              <input
+                                type="tel"
+                                class="gform-phone__input"
+                                placeholder="020 2012345"
+                              />
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+
+                    <!-- Email -->
+                    <div
+                      id="field_5_9"
+                      class="gfield gfield--type-email gfield--width-half"
+                    >
+                      <label class="gfield_label gform-field-label"
+                        >Email
+                        <span class="gfield_required">(Required)</span></label
+                      >
+                      <div class="ginput_container ginput_container_email">
+                        <input type="email" placeholder="Email Address" />
+                      </div>
+                    </div>
+
+                    <!-- Terms Checkbox -->
+                    <fieldset
+                      id="field_5_11"
+                      class="gfield gfield--type-checkbox gfield--width-full"
+                    >
+                      <div class="ginput_container ginput_container_checkbox">
+                        <div
+                          class="gfield_checkbox gfield--choice-align-vertical"
+                        >
+                          <div class="gchoice">
+                            <input
+                              class="gfield-choice-input"
+                              type="checkbox"
+                              id="choice_5_11_1"
+                            />
+                            <label
+                              for="choice_5_11_1"
+                              class="gform-field-label gform-field-label--type-inline terms-label"
+                              >I agree to the
+                              <a href="#" target="_blank"
+                                >Terms and Conditions</a
+                              >
+                              and the
+                              <a href="#" target="_blank">Privacy Policy</a>,
+                              and that Family Bank may store my details and
+                              contact me by SMS and email about this
+                              application.</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+
+                <div class="gform-page-footer gform_page_footer">
+                  <button
+                    type="button"
+                    class="gform_next_button"
+                    data-current-step="1"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+
+              <!-- PAGE 2: PRODUCT & PERSONAL INFO -->
+              <div id="gform_page_5_2" class="gform_page" style="display: none">
+                <div class="gform_page_fields">
+                  <div class="gform_fields top_label">
+                    <div class="gfield gsection gfield--width-full">
+                      <h3 class="gsection_title">Product Information</h3>
+                    </div>
+
+                    <div
+                      id="field_5_17"
+                      class="gfield gfield--type-select gfield--width-half"
+                    >
+                      <label class="gfield_label gform-field-label"
+                        >What will you use it for?</label
+                      >
+                      <div class="ginput_container ginput_container_select">
+                        <select>
+                          <option>First Choice</option>
+                          <option>Second Choice</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div
+                      id="field_5_18"
+                      class="gfield gfield--type-select gfield--width-half"
+                    >
+                      <label class="gfield_label gform-field-label"
+                        >What kind of Banking do you need?</label
+                      >
+                      <div class="ginput_container ginput_container_select">
+                        <select>
+                          <option>First Choice</option>
+                          <option>Second Choice</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="gfield gsection gfield--width-full">
+                      <h3 class="gsection_title">Personal Information</h3>
+                    </div>
+
+                    <div
+                      id="field_5_20"
+                      class="gfield gfield--type-text gfield--width-half"
+                    >
+                      <label class="gfield_label gform-field-label"
+                        >ID Number
+                      </label>
+                      <div class="ginput_container ginput_container_text">
+                        <input type="text" placeholder="ID Number" />
+                      </div>
+                    </div>
+
+                    <div
+                      id="field_5_21"
+                      class="gfield gfield--type-text gfield--width-half"
+                    >
+                      <label class="gfield_label gform-field-label"
+                        >ID Serial Number
+                      </label>
+                      <div class="ginput_container ginput_container_text">
+                        <input type="text" placeholder="ID Serial Number" />
+                      </div>
+                    </div>
+
+                    <div
+                      id="field_5_22"
+                      class="gfield gfield--type-date gfield--width-half"
+                    >
+                      <label class="gfield_label gform-field-label"
+                        >Date Of Birth
+                        <span class="gfield_required">(Required)</span></label
+                      >
+                      <div class="ginput_container ginput_container_date">
+                        <input type="date" placeholder="mm/dd/yyyy" />
+                      </div>
+                    </div>
+
+                    <div
+                      id="field_5_23"
+                      class="gfield gfield--type-text gfield--width-half"
+                    >
+                      <label class="gfield_label gform-field-label"
+                        >Physical Address
+                      </label>
+                      <div class="ginput_container ginput_container_text">
+                        <input type="text" placeholder="Enter Address" />
+                      </div>
+                    </div>
+
+                    <div
+                      id="field_5_24"
+                      class="gfield gfield--type-text gfield--width-half"
+                    >
+                      <label class="gfield_label gform-field-label"
+                        >Postal Address
+                      </label>
+                      <div class="ginput_container ginput_container_text">
+                        <input type="text" placeholder="Enter Address" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="gform-page-footer gform_page_footer">
+                  <button
+                    type="button"
+                    class="gform_previous_button"
+                    data-target-step="1"
+                  >
+                    Previous
+                  </button>
+                  <button
+                    type="button"
+                    class="gform_next_button"
+                    data-current-step="2"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+
+              <!-- PAGE 3: KIN INFORMATION -->
+              <div id="gform_page_5_3" class="gform_page" style="display: none">
+                <div class="gform_page_fields">
+                  <div class="gform_fields top_label">
+                    <!-- DYNAMIC KIN GROUP CONTAINER -->
+                    <div
+                      id="all-kin-groups"
+                      class="gfield--width-full"
+                      style="display: contents"
+                    >
+                      <!-- ==============================
+                           KIN GROUP 1 (Duplicatable)
+                      =============================== -->
+                      <div
+                        class="kin-group gfield--width-full"
+                        style="display: contents"
+                      >
+                        <!-- Next of Kin Section -->
+                        <div class="gfield gsection gfield--width-full">
+                          <h3 class="gsection_title">
+                            Next of Kin Information 1
+                          </h3>
+                        </div>
+
+                        <div class="gfield gfield--width-half">
+                          <label class="gfield_label gform-field-label"
+                            >Full Names
+                            <span class="gfield_required">*</span></label
+                          >
+                          <div class="ginput_container ginput_container_text">
+                            <input
+                              type="text"
+                              placeholder="John Doe"
+                              required
+                            />
+                          </div>
+                        </div>
+
+                        <div class="gfield gfield--width-half">
+                          <label class="gfield_label gform-field-label"
+                            >Relationship
+                            <span class="gfield_required">*</span></label
+                          >
+                          <div class="ginput_container ginput_container_select">
+                            <select required>
+                              <option value="" disabled selected>Select</option>
+                              <option>Spouse</option>
+                              <option>Parent</option>
+                              <option>Sibling</option>
+                              <option>Child</option>
+                              <option>Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="gfield gfield--width-half">
+                          <label class="gfield_label gform-field-label"
+                            >Contact Details</label
+                          >
+                          <div class="ginput_container ginput_container_text">
+                            <input type="text" placeholder="Mobile Number" />
+                          </div>
+                        </div>
+
+                        <!-- Financial Information Section -->
+                        <div class="gfield gsection gfield--width-full">
+                          <h3 class="gsection_title">Financial Information</h3>
+                        </div>
+
+                        <div class="gfield gfield--width-half">
+                          <label class="gfield_label gform-field-label"
+                            >Source of Income</label
+                          >
+                          <div class="ginput_container ginput_container_select">
+                            <select>
+                              <option value="" disabled selected>Select</option>
+                              <option>Salary</option>
+                              <option>Business</option>
+                              <option>Freelance</option>
+                              <option>Student</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="gfield gfield--width-half">
+                          <label class="gfield_label gform-field-label"
+                            >KRA PIN</label
+                          >
+                          <div class="ginput_container ginput_container_select">
+                            <select>
+                              <option value="" disabled selected>Select</option>
+                              <option>Yes, I have one</option>
+                              <option>No, I don't have one</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <!-- Follow Up Section -->
+                        <div class="gfield gsection gfield--width-full">
+                          <h3 class="gsection_title">
+                            How Should We Follow Up
+                          </h3>
+                        </div>
+
+                        <div class="gfield gfield--width-half">
+                          <label class="gfield_label gform-field-label"
+                            >County</label
+                          >
+                          <div class="ginput_container ginput_container_select">
+                            <select>
+                              <option value="" disabled selected>Select</option>
+                              <option>Nairobi</option>
+                              <option>Mombasa</option>
+                              <option>Kisumu</option>
+                              <option>Nakuru</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="gfield gfield--width-half">
+                          <label class="gfield_label gform-field-label"
+                            >Closest Branch</label
+                          >
+                          <div class="ginput_container ginput_container_select">
+                            <select>
+                              <option value="" disabled selected>Select</option>
+                              <option>Nairobi CBD</option>
+                              <option>Westlands</option>
+                              <option>Karen</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="gfield gfield--width-half">
+                          <label class="gfield_label gform-field-label"
+                            >Preferred Visit Day</label
+                          >
+                          <div class="ginput_container ginput_container_date">
+                            <input type="date" placeholder="dd/mm/yyyy" />
+                          </div>
+                        </div>
+                      </div>
+                      <!-- END KIN GROUP 1 -->
+                    </div>
+
+                    <!-- Add Another Kin Button -->
+                    <div
+                      class="gfield gfield--width-full"
+                      style="margin-top: 20px; margin-bottom: 10px"
+                    >
+                      <button
+                        type="button"
+                        id="add-kin-btn"
+                        class="button button--light"
+                        style="
+                          padding: 8px 16px;
+                          height: auto;
+                          font-size: 14px;
+                          width: fit-content;
+                        "
+                      >
+                        + Add Another Kin
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="gform-page-footer gform_page_footer">
+                  <button
+                    type="button"
+                    class="gform_previous_button"
+                    data-target-step="2"
+                  >
+                    Previous
+                  </button>
+                  <button type="submit" class="gform_button">
+                    Submit Application
+                  </button>
+                </div>
+              </div>
+
+              <!-- SUCCESS MESSAGE  -->
+              <div
+                id="gform_confirmation_wrapper_5"
+                class="gform_confirmation_wrapper"
+                style="display: none"
+              >
+                <div class="gform_confirmation_message">
+                  Thanks for contacting us! We will get in touch with you
+                  shortly.
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Forms -->
+      <section class="contact-forms">
+        <div class="container">
+          <!-- Talk to Sales Form -->
+          <div id="sales-form" class="sales-form">
+            <div class="gform_wrapper" id="gform_wrapper_2">
+              <div class="gform_heading">
+                <h2 class="gform_title">Need Help Choosing?</h2>
+                <p class="gform_description">
+                  Leave your details and we'll call you back to help you choose.
+                </p>
+              </div>
+
+              <form method="post" id="gform_2">
+                <div class="gform-body gform_body">
+                  <div id="gform_fields_2" class="gform_fields top_label">
+                    <!-- First Name -->
+                    <div class="gfield gfield--type-text gfield--width-half">
+                      <label class="gfield_label" for="input_2_1">First</label>
+                      <div class="ginput_container ginput_container_text">
+                        <input
+                          type="text"
+                          id="input_2_1"
+                          placeholder="First Name"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="gfield gfield--type-text gfield--width-half">
+                      <label class="gfield_label" for="input_2_2">Last</label>
+                      <div class="ginput_container ginput_container_text">
+                        <input
+                          type="text"
+                          id="input_2_2"
+                          placeholder="Last Name"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Phone Field with Grouped Country Selector -->
+                    <div class="gfield gfield--type-phone gfield--width-half">
+                      <div class="custom-phone-grid">
+                        <div class="phone-col-country">
+                          <label
+                            class="gform-field-label--type-sub"
+                            for="input_country_4"
+                            >Country</label
+                          >
+                          <!-- Dropdown -->
+                          <select
+                            id="input_country_4"
+                            class="gform-phone__country-select"
+                            name="input_country"
+                          >
+                            <option value="KE" data-code="+254">🇰🇪 +254</option>
+                            <option value="UG" data-code="+256">🇺🇬 +256</option>
+                            <option value="TZ" data-code="+255">🇹🇿 +255</option>
+                            <option value="RW" data-code="+250">🇷🇼 +250</option>
+                            <option value="US" data-code="+1">🇺🇸 +1</option>
+                            <option value="GB" data-code="+44">🇬🇧 +44</option>
+                          </select>
+                        </div>
+
+                        <div class="phone-col-input">
+                          <label
+                            class="gform-field-label--type-sub"
+                            for="input_2_4"
+                            >Phone Number</label
+                          >
+                          <input
+                            type="tel"
+                            id="input_2_4"
+                            placeholder="020 2012345"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="gfield gfield--type-email gfield--width-half">
+                      <label class="gfield_label" for="input_2_3">Email</label>
+                      <div class="ginput_container ginput_container_email">
+                        <input
+                          type="email"
+                          id="input_2_3"
+                          placeholder="Email Address"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Preferred Contact Time -->
+                    <div class="gfield gfield--type-select gfield--width-full">
+                      <label class="gfield_label" for="input_2_5"
+                        >Preferred Contact Time
+                        <span class="gfield_required">(Required)</span></label
+                      >
+                      <div class="ginput_container ginput_container_select">
+                        <select id="input_2_5">
+                          <option value="Morning">Morning</option>
+                          <option value="Afternoon">Afternoon</option>
+                          <option value="Evening">Evening</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div
+                      class="gfield gfield--type-textarea gfield--width-full"
+                    >
+                      <label class="gfield_label" for="input_2_6"
+                        >Additional Information (optional)</label
+                      >
+                      <div class="ginput_container ginput_container_textarea">
+                        <textarea id="input_2_6" rows="5"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="gform_footer">
+                  <button
+                    type="submit"
+                    class="gform_button button button--light"
+                  >
+                    Request Callback
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Loan / Debit Card CTA -->
+          <div class="loan-form">
+            <img
+              src="./assets/images/debit-cta.png"
+              alt="cta background image"
+              class="bg-image"
+            />
+            <div class="overlay"></div>
+            <div class="loan-form-content">
+              <h2>Your Card Starts With an Account</h2>
+              <p class="form-description">
+                Open a Family Bank account and get a debit card to go with it.
+              </p>
+              <div class="loan-form-buttons">
+                <button type="submit" class="button button--cyan">
+                  Open an Account
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Mortgage Calculator -->
+    <div class="calculator-modal" id="mortgage-calculator">
+      <div class="calc-modal-overlay"></div>
+      <div class="calc-modal-content">
+        <button class="calc-close-btn" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- MORTGAGE INPUT VIEW -->
+        <div class="calc-view calc-input-view active">
+          <div class="calc-bg-image">
+            <img
+              src="./assets/images/mortgage-calc-image.png"
+              alt="Mortgage Calculator Background"
+            />
+            <div class="overlay"></div>
+          </div>
+          <div class="calc-form-content">
+            <h2>Estimate Your Mortgage</h2>
+            <p class="calc-description">
+              Use our mortgage calculator to see what your monthly repayments
+              could look like.
+            </p>
+
+            <form class="mortgage-form calculator-form">
+              <div class="form-group">
+                <label>Loan Amount</label>
+                <input
+                  type="number"
+                  name="loan_amount"
+                  placeholder="e.g. 1,000,000"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Duration terms</label>
+                <input
+                  type="number"
+                  name="duration"
+                  placeholder="months"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Property Value</label>
+                <input
+                  type="number"
+                  name="property_value"
+                  placeholder="e.g. 850,000"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Annual Interest Rate</label>
+                <input
+                  type="number"
+                  name="interest_rate"
+                  placeholder="13%"
+                  min="0"
+                  step="0.01"
+                  required
+                />
+              </div>
+
+              <p class="calc-note">
+                Max term 300 months (25 yrs), subject to retirement age at age
+                65.
+              </p>
+
+              <button
+                type="submit"
+                class="button button--cyan calc-submit-btn"
+                disabled
+              >
+                Calculate
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- MORTGAGE RESULTS VIEW (Blue Screen) -->
+        <div class="calc-view calc-results-view">
+          <h2>Estimation Results</h2>
+
+          <div class="results-list">
+            <div class="result-item">
+              <span class="result-label">Loan Amount Requested (KES)</span>
+              <span class="result-value" id="mortgage-res-loan-amount"
+                >10,000,000</span
+              >
+            </div>
+            <div class="result-item">
+              <span class="result-label">Annual Interest %</span>
+              <span class="result-value" id="mortgage-res-interest">13</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Repayment period (years)</span>
+              <span class="result-value" id="mortgage-res-years">20</span>
+            </div>
+            <div class="result-item highlight">
+              <span class="result-label">Monthly Repayment (KES)</span>
+              <span class="result-value" id="mortgage-res-monthly"
+                >117,157.57</span
+              >
+            </div>
+            <div class="result-item">
+              <span class="result-label">Total Interest Payable (KES)</span>
+              <span class="result-value" id="mortgage-res-total-interest"
+                >18,117,817.07</span
+              >
+            </div>
+            <div class="result-item highlight">
+              <span class="result-label">Total Repayment (KES)</span>
+              <span class="result-value" id="mortgage-res-total"
+                >28,117,817.07</span
+              >
+            </div>
+          </div>
+
+          <p class="calc-disclaimer">
+            This calculator is made available to you as a self-help tool for
+            your independent use. The repayment results in every case are an
+            approximate guide only. All borrowing rates used in this tool are
+            indicative.
+          </p>
+
+          <div class="calc-actions">
+            <a href="/open-account" class="button button--light">Apply</a>
+            <button
+              class="button button--cyan view-full-results-btn"
+              data-type="mortgage"
+            >
+              Download Full Results
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loan Calculator -->
+    <div class="calculator-modal" id="loan-calculator">
+      <div class="calc-modal-overlay"></div>
+      <div class="calc-modal-content">
+        <button class="calc-close-btn" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- LOAN INPUT VIEW -->
+        <div class="calc-view calc-input-view active">
+          <div class="calc-bg-image">
+            <img
+              src="./assets/images/loan-calc-image.png"
+              alt="Loan Calculator Background"
+            />
+            <div class="overlay"></div>
+          </div>
+          <div class="calc-form-content">
+            <h2>See What You Could Borrow</h2>
+            <p class="calc-description">
+              Use our loan calculator to estimate your repayments before you
+              apply.
+            </p>
+
+            <form class="loan-form calculator-form">
+              <div class="form-group">
+                <label>Loan Amount</label>
+                <input
+                  type="number"
+                  name="loan_amount"
+                  placeholder="e.g. 1,000,000"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Duration terms</label>
+                <input
+                  type="number"
+                  name="duration"
+                  placeholder="months"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Annual Interest Rate</label>
+                <input
+                  type="number"
+                  name="interest_rate"
+                  placeholder="13%"
+                  min="0"
+                  step="0.01"
+                  required
+                />
+              </div>
+
+              <p class="calc-note">
+                Max term 300 months (25 yrs), subject to retirement age at age
+                65.
+              </p>
+
+              <button
+                type="submit"
+                class="button button--cyan calc-submit-btn"
+                disabled
+              >
+                Calculate
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- LOAN RESULTS VIEW (Blue Screen) -->
+        <div class="calc-view calc-results-view">
+          <h2>Estimation Results</h2>
+
+          <div class="results-list">
+            <div class="result-item">
+              <span class="result-label">Loan Amount Requested (KES)</span>
+              <span class="result-value" id="loan-res-loan-amount"
+                >500,000</span
+              >
+            </div>
+            <div class="result-item">
+              <span class="result-label">Annual Interest %</span>
+              <span class="result-value" id="loan-res-interest">13</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Repayment period (years)</span>
+              <span class="result-value" id="loan-res-years">2</span>
+            </div>
+            <div class="result-item highlight">
+              <span class="result-label">Monthly Repayment (KES)</span>
+              <span class="result-value" id="loan-res-monthly">23,770.91</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Total Interest payable (KES)</span>
+              <span class="result-value" id="loan-res-total-interest"
+                >70,501.87</span
+              >
+            </div>
+            <div class="result-item highlight">
+              <span class="result-label">Total Repayment (KES)</span>
+              <span class="result-value" id="loan-res-total">570,501.87</span>
+            </div>
+          </div>
+
+          <p class="calc-disclaimer">
+            This calculator is made available to you as a self-help tool for
+            your independent use. The repayment results in every case are an
+            approximate guide only. All borrowing rates used in this tool are
+            indicative.
+          </p>
+
+          <div class="calc-actions">
+            <a href="/open-account" class="button button--light">Apply</a>
+            <button
+              class="button button--cyan view-full-results-btn"
+              data-type="loan"
+            >
+              Download Full Results
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full Results Modal (Shared for Both) -->
+    <div class="full-results-modal" id="full-results-modal">
+      <div class="full-results-overlay"></div>
+      <div class="full-results-content">
+        <button class="full-results-close-btn" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="fr-scroll-wrapper">
+          <!-- Header -->
+          <div class="fr-header">
+            <img
+              src="./assets/images/FAMILY BANK LOGO-1 1.svg"
+              alt="Family Bank"
+              class="fr-logo"
+            />
+            <div class="fr-header-right">
+              <span class="fr-title" id="fr-type-title"
+                >Mortgage Repayment Estimate</span
+              >
+              <span class="fr-date"
+                >Generated on <span id="fr-date"></span
+              ></span>
+            </div>
+          </div>
+
+          <!-- Main Title -->
+          <div class="fr-page-title">
+            <h2 id="fr-main-title">Mortgage Repayment Results</h2>
+            <p>
+              Your estimated monthly repayment, based on the details you
+              entered.
+            </p>
+          </div>
+
+          <!--Summary Title-->
+          <h6 class="summary-title">RESULTS</h6>
+
+          <!-- Top Summary Cards -->
+          <div class="fr-results-summary">
+            <div class="fr-summary-card">
+              <span class="fr-card-label">MONTHLY REPAYMENT</span>
+              <div class="fr-card-value">
+                <span class="fr-currency">KES</span>
+                <span id="fr-monthly-val">117,157.57</span>
+              </div>
+            </div>
+            <div class="fr-summary-card">
+              <span class="fr-card-label">TOTAL REPAYMENT</span>
+              <div class="fr-card-value">
+                <span class="fr-currency">KES</span>
+                <span id="fr-total-val">28,117,817.07</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Your Inputs Section -->
+          <div class="fr-section">
+            <h3 class="fr-section-title">YOUR INPUTS</h3>
+            <div class="fr-inputs-table">
+              <div class="fr-row">
+                <span>Loan Amount (KES)</span>
+                <strong id="fr-input-amount">10,000,000.00</strong>
+              </div>
+              <div class="fr-row">
+                <span>Annual Interest Rate (%)</span>
+                <strong id="fr-input-rate">13.00</strong>
+              </div>
+              <div class="fr-row">
+                <span>Term</span>
+                <strong id="fr-input-term">240 months (20.0 years)</strong>
+              </div>
+              <div class="fr-row highlight">
+                <strong>Total Interest (KES)</strong>
+                <strong id="fr-input-interest">18,117,817.07</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Where Your Repayment Goes (Progress Bar) -->
+          <div class="fr-section">
+            <h3 class="fr-section-title">WHERE YOUR REPAYMENT GOES</h3>
+            <div class="fr-progress-bar">
+              <div
+                class="fr-progress-fill"
+                id="fr-progress-fill"
+                style="width: 35.6%"
+              ></div>
+            </div>
+            <div class="fr-progress-labels">
+              <span
+                ><span class="dot dot-blue"></span> Loan amount
+                <span id="fr-percent-loan">35.6%</span></span
+              >
+              <span
+                ><span class="dot dot-light"></span> Interest
+                <span id="fr-percent-interest">64.4%</span></span
+              >
+            </div>
+          </div>
+
+          <!-- Mortgage Specific: Upfront Costs -->
+          <div class="fr-section mortgage-only-section" id="fr-mortgage-costs">
+            <h3 class="fr-section-title">UPFRONT COSTS</h3>
+            <div class="fr-inputs-table">
+              <div class="fr-row">
+                <span>Property Value (KES)</span>
+                <strong id="fr-prop-val">12,000,000.00</strong>
+              </div>
+              <div class="fr-row">
+                <span>Stamp Duty rate</span>
+                <strong id="fr-stamp-rate">4.0%</strong>
+              </div>
+              <div class="fr-row">
+                <span>Appraisal Fee rate</span>
+                <strong id="fr-appraisal-rate">1.0%</strong>
+              </div>
+              <div class="fr-row">
+                <span>Stamp Duty (KES)</span>
+                <strong id="fr-stamp-val">480,000.00</strong>
+              </div>
+              <div class="fr-row">
+                <span>Appraisal Fee (KES)</span>
+                <strong id="fr-appraisal-val">100,000.00</strong>
+              </div>
+              <div class="fr-row">
+                <span>Deposit / Own Contribution (KES)</span>
+                <strong id="fr-deposit-val">2,000,000.00</strong>
+              </div>
+              <div class="fr-row">
+                <span>Loan-to-Value</span>
+                <strong id="fr-ltv-val">83.3%</strong>
+              </div>
+              <div class="fr-row highlight">
+                <span>Total Cash Needed Upfront (KES)</span>
+                <strong id="fr-total-upfront">2,580,000.00</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notes & Disclaimer -->
+          <div class="fr-notes">
+            <p>
+              Maximum term is 300 months (25 years), subject to retirement age
+              or age 65.
+            </p>
+            <div class="fr-disclaimer-box">
+              <p>
+                Disclaimer: This calculator is made available to you as a
+                self-help tool for your independent use. The repayment results
+                in every case are an approximate guide only. All borrowing rates
+                used in this tool are indicative.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="fr-footer">
+          <div class="fr-footer-content">
+            <div class="fr-footer-left">
+              <h4 id="fr-footer-title">Ready to own your home?</h4>
+              <p id="fr-footer-desc">
+                Talk to our mortgage team about your options and the next steps.
+              </p>
+            </div>
+            <div class="fr-footer-middle">
+              <h5>CALL US</h5>
+              <p>+254 (0) 703 095 445</p>
+              <p>+254 (0) 703 095 000</p>
+              <p>020 3252 000</p>
+            </div>
+            <div class="fr-footer-right">
+              <h5>VISIT</h5>
+              <p>familybank.co.ke</p>
+            </div>
+          </div>
+          <div class="fr-footer-bottom">
+            <p>Family Bank is regulated by the Central Bank of Kenya.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
+          <!-- Footer heading -->
+          <div class="footer-heading">
+            <div>
+              <h2>Ready to Bank With Us?</h2>
+              <p>Start online in minutes and finish at your nearest branch.</p>
+            </div>
+
+            <a href="#" class="button button--light">Get Started</a>
+          </div>
+
+          <!-- Main footer columns -->
+          <div class="footer-grid">
+            <!-- Apps and social links -->
+            <div class="footer-column footer-apps">
+              <h3>Get PesaPap</h3>
+
+              <div class="app-links">
+                <a href="#" aria-label="Download on the App Store">
+                  <img
+                    src="./assets/images/foooter-appstore.png"
+                    alt="Apple store"
+                  />
+                </a>
+
+                <a href="#" aria-label="Get it on Google Play">
+                  <img
+                    src="./assets/images/footer-gstore.png"
+                    alt="Apple store"
+                  />
+                </a>
+              </div>
+
+              <h3 class="social-heading">Our Socials</h3>
+
+              <div class="social-links">
+                <a href="#" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="X">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="YouTube">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- About -->
+            <div class="footer-column">
+              <h3>About Us</h3>
+              <ul>
+                <li><a href="#">Company Profile</a></li>
+                <li><a href="#">Board of Directors</a></li>
+                <li><a href="#">Executive Committee</a></li>
+                <li><a href="#">Financials & Policies</a></li>
+                <li>
+                  <a href="./investor-relations.html">Investor Relations</a>
+                </li>
+                <li><a href="./impact.html">Our Impact</a></li>
+                <li><a href="#">News & Updates</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Cost of Credit</a></li>
+              </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="footer-column resources-column">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="#">Merchant & Agent Portal</a></li>
+                <li>
+                  <a href="#"
+                    >Prepaid Cards Portal
+                    <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Access Family Pay
+                    <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li><a href="#">Tariff Guide</a></li>
+                <li><a href="#">Customer Notices</a></li>
+                <li><a href="#">Find an Agent, Branch or ATM</a></li>
+                <li><a href="#">Pepper's Agents</a></li>
+                <li><a href="#">Vehicles on Auction</a></li>
+                <li><a href="#">Documents & Forms</a></li>
+                <li><a href="#">Loan Calculator</a></li>
+                <li><a href="#">Interest Calculator</a></li>
+                <li>
+                  <a href="#"
+                    >Staff Email <i class="fa-solid fa-up-right-from-square"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Correspondent Bank Information Family Bank Prequalification
+                    Notice 2026 - 2027</a
+                  >
+                </li>
+                <li>
+                  <a href="#">Family Bank Prequalification Registration</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="footer-column">
+              <h3>Help & Support</h3>
+              <ul>
+                <li>
+                  <a href="#"
+                    >Indemnity for Instructions Received by Email and/or
+                    Facsimile</a
+                  >
+                </li>
+                <li><a href="#">Branches and Codes</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Complaints Handling Guideline</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Cookies Guidelines</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Notice</a></li>
+                <li><a href="#">Whistle Blowing</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="newsletter">
+            <div class="newsletter__text">
+              <h3>Stay in the Loop</h3>
+              <p>
+                Get the latest updates, offers, and financial tips<br />
+                delivered straight to your inbox.
+              </p>
+            </div>
+
+            <form class="newsletter-form">
+              <label class="sr-only" for="newsletter-email">
+                Your email address
+              </label>
+
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                placeholder="Your email address"
+                required
+              />
+
+              <button type="submit" class="button button--cyan">
+                Subscribe
+              </button>
+            </form>
+          </div>
+
+          <p class="newsletter-message" aria-live="polite"></p>
+
+          <!-- Legal -->
+          <div class="footer-bottom">
+            <p>
+              Copyright © 2026 Family Bank Limited, Kenya. Regulated by the
+              Central Bank of Kenya.
+            </p>
+
+            <a href="#">Site by Bean</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

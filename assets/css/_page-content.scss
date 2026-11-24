@@ -200,13 +200,13 @@ section {
     );
     padding: 12px 0;
     overflow: hidden;
-    pointer-events: none; // Allows clicks to pass through to slides if necessary
+    pointer-events: none;
 
     // The moving track
     .stock-marquee-track {
       display: flex;
       width: fit-content;
-      animation: scrollMarquee 40s linear infinite; // Adjust speed here
+      animation: scrollMarquee 40s linear infinite;
     }
 
     // Individual stock items
@@ -277,6 +277,70 @@ section {
       rgba(0, 0, 0, 0.5) 45%,
       rgba(0, 0, 0, 0.1) 100%
     );
+  }
+
+  .qr-download-widget {
+    position: absolute;
+    bottom: 20px;
+    right: 5%;
+    z-index: 10;
+
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+    padding: 24px;
+
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 260px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+    /* Typography */
+    h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      margin: 0 0 8px 0;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0 0 20px 0;
+      line-height: 1.4;
+    }
+
+    /* QR Image Container */
+    .qr-image-wrapper {
+      width: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+      }
+    }
+
+    /* Hide on Mobile */
+    @media (max-width: 900px) {
+      display: none !important;
+    }
   }
 
   .container {
@@ -2460,6 +2524,13 @@ section {
       .button {
         width: fit-content;
       }
+      .queen-stats {
+        .stat {
+          h2 {
+            color: $queen-primary !important;
+          }
+        }
+      }
       .stats {
         display: flex;
         flex-wrap: wrap;
@@ -2517,7 +2588,7 @@ section {
   // Shared heading styles
   h2 {
     margin: 0 0 10px;
-    font-size: 36px;
+    font-size: 32px;
     line-height: 44px;
     font-weight: 700;
   }
@@ -2679,7 +2750,7 @@ section {
     .overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.35);
+      background: rgba(0, 0, 0, 0.6);
       z-index: 1;
     }
 
@@ -3645,6 +3716,27 @@ section {
   .hero {
     height: 70vh;
     padding: 10vh 0;
+    .qr-download-widget {
+      padding: 20px;
+      width: 320px;
+
+      /* Typography */
+      h4 {
+        font-size: 24px !important;
+      }
+
+      p {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* QR Image Container */
+      .qr-image-wrapper {
+        width: 60%;
+        padding: 10px;
+        border-radius: 12px;
+      }
+    }
     .hero-content {
       max-width: 40vw !important;
     }
@@ -3656,12 +3748,12 @@ section {
       }
     }
     h2 {
-      font-size: 80px !important;
-      line-height: 92px !important;
+      font-size: 72px !important;
+      line-height: 81px !important;
     }
     p {
-      font-size: 24px !important;
-      line-height: 32px !important;
+      font-size: 22px !important;
+      line-height: 31px !important;
     }
   }
 
@@ -3670,7 +3762,7 @@ section {
       text-align: center;
 
       p {
-        font-size: 26px !important;
+        font-size: 20px !important;
         margin-bottom: 0.6em;
       }
     }
@@ -3679,13 +3771,13 @@ section {
   .products {
     .section-intro {
       p {
-        font-size: 26px !important;
+        font-size: 20px !important;
       }
     }
     .tab-links {
       li {
         padding: 8px 16px;
-        font-size: 24px !important;
+        font-size: 18px !important;
       }
     }
     .product-card {
@@ -3701,7 +3793,7 @@ section {
         gap: 15px;
 
         p {
-          font-size: 24px !important;
+          font-size: 20px !important;
         }
       }
     }
@@ -3754,7 +3846,7 @@ section {
         .stories-intro__content {
           p {
             flex: 0.6;
-            font-size: 26px !important;
+            font-size: 20px !important;
             line-height: 1.5;
           }
         }
@@ -3874,7 +3966,7 @@ section {
   .impact-section {
     .section-intro {
       p {
-        font-size: 26px !important;
+        font-size: 22px !important;
         margin-bottom: 1em;
       }
     }
@@ -3883,7 +3975,7 @@ section {
     .tab-nav {
       .tab-btn {
         .stat-number {
-          font-size: 66px !important;
+          font-size: 62px !important;
           line-height: 1.5 !important;
         }
         .stat-label {
@@ -3897,8 +3989,8 @@ section {
 
       .glass-overlay {
         p {
-          font-size: 28px !important;
-          line-height: 36px !important;
+          font-size: 26px !important;
+          line-height: 35px !important;
         }
       }
     }
@@ -3914,7 +4006,7 @@ section {
         max-width: 40vw;
         gap: 20px;
         h3 {
-          font-size: 56px !important;
+          font-size: 48px !important;
           line-height: 1.1;
         }
         p {
@@ -3930,7 +4022,7 @@ section {
           max-width: 450px;
           padding-right: 20px;
           h2 {
-            font-size: 76px !important;
+            font-size: 72px !important;
             line-height: 1.2;
           }
           p {
@@ -3969,12 +4061,12 @@ section {
   .sustainability-slider-section {
     height: 70vh;
     .slide-title {
-      font-size: 84px !important;
-      line-height: 92px !important;
+      font-size: 72px !important;
+      line-height: 81px !important;
     }
     .slide-description {
-      font-size: 26px !important;
-      line-height: 34px !important;
+      font-size: 22px !important;
+      line-height: 32px !important;
     }
   }
 
