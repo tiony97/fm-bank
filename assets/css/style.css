@@ -273,7 +273,7 @@ input:focus-visible {
   body span,
   body a,
   body label {
-    font-size: 20px !important;
+    font-size: 18px !important;
     line-height: 30px !important;
   }
   body button,
@@ -282,7 +282,7 @@ input:focus-visible {
   body input,
   body textarea,
   body select {
-    font-size: 20px !important;
+    font-size: 18px !important;
     line-height: 30px !important;
   }
   body .container {
@@ -310,7 +310,7 @@ input:focus-visible {
     line-height: 24px !important;
   }
   header .utility-bar a {
-    font-size: 17px !important;
+    font-size: 16px !important;
     line-height: 25px !important;
   }
   header .main-nav .primary-nav h2 {
@@ -318,7 +318,7 @@ input:focus-visible {
   }
   header .main-nav .primary-nav p,
   header .main-nav .primary-nav a {
-    font-size: 17px !important;
+    font-size: 16px !important;
     line-height: 25px !important;
   }
   header .main-nav .mega-menu__feature img.feature-image {
@@ -5228,8 +5228,7 @@ section .intro-left * {
   overflow-y: auto;
 }
 .product-tabs-section .tabs-layout .tabs-content .tab-panel .panel-text .tariff-list li span {
-  color: #202020;
-  font-size: 6px;
+  font-size: 14px;
 }
 .product-tabs-section .tabs-layout .tabs-content .tab-panel .panel-text .footnotes {
   display: flex;
@@ -5427,7 +5426,7 @@ section .intro-left * {
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 480px;
+  min-height: 490px;
   border-radius: 24px;
   padding-bottom: 20px;
 }
@@ -12179,6 +12178,10 @@ section .intro-left * {
 .contact-forms .sales-form .gform_wrapper textarea:focus {
   border-color: #fff;
 }
+.contact-forms .sales-form .gform_wrapper select {
+  display: flex !important;
+  align-items: center !important;
+}
 .contact-forms .sales-form .gform_wrapper textarea {
   height: auto;
   min-height: 120px;
@@ -12758,7 +12761,7 @@ section .intro-left * {
   position: fixed;
   top: 10em;
   right: 40px;
-  z-index: 1000000;
+  z-index: 9999;
   width: 60px;
   box-sizing: border-box;
 }
@@ -12870,7 +12873,7 @@ section .intro-left * {
 ========================================= */
 .site-header {
   position: relative;
-  z-index: 100;
+  z-index: 10000;
   width: 100%;
   background: #ffffff;
 }
@@ -13114,12 +13117,15 @@ section .intro-left * {
   display: inline-flex;
   height: 100%;
   align-items: center;
+  z-index: 10000 !important;
 }
 .login-dropdown-wrapper .login-trigger {
   min-width: 80px;
 }
 .login-dropdown-wrapper .login-dropdown {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   top: calc(100% + 15px);
   right: 0;
   width: 220px;
@@ -13131,7 +13137,7 @@ section .intro-left * {
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.3s ease;
-  z-index: 300;
+  z-index: 10000 !important;
 }
 .login-dropdown-wrapper .login-dropdown::before {
   content: "";
@@ -13199,8 +13205,13 @@ section .intro-left * {
   visibility: visible;
   transform: translateY(0);
 }
+.header-search-dropdown .container {
+  width: 100% !important;
+  max-width: 100% !important;
+}
 .header-search-dropdown .search-dropdown-content {
-  max-width: 900px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
 }
 .header-search-dropdown .search-dropdown-content h3 {

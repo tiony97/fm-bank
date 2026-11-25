@@ -12,7 +12,7 @@
 ========================================= */
 .site-header {
   position: relative;
-  z-index: 100;
+  z-index: 10000;
   width: 100%;
   background: $white;
 }
@@ -318,6 +318,7 @@
   display: inline-flex;
   height: 100%;
   align-items: center;
+  z-index: 10000 !important;
 
   .login-trigger {
     min-width: 80px; // Prevents layout shift when text changes to "Close"
@@ -325,6 +326,8 @@
 
   .login-dropdown {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     top: calc(100% + 15px);
     right: 0;
     width: 220px;
@@ -336,7 +339,7 @@
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    z-index: 300;
+    z-index: 10000 !important;
 
     // Arrow pointing up
     &::before {
@@ -412,9 +415,14 @@
     visibility: visible;
     transform: translateY(0);
   }
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 
   .search-dropdown-content {
-    max-width: 900px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
 
     h3 {

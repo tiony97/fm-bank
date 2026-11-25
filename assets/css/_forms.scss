@@ -165,6 +165,10 @@
           border-color: #fff;
         }
       }
+      select {
+        display: flex !important;
+        align-items: center !important;
+      }
 
       textarea {
         height: auto;

@@ -322,7 +322,7 @@ $(function () {
 
       if (!$panel.children(".back-button").length) {
         $panel.prepend(
-          '<div class="back-button"><i class="fa-solid fa-chevron-left"></i> Back</div>',
+          '<div class="back-button"><i class="fa-solid fa-chevron-left"></i></div>',
         );
       }
 
@@ -470,7 +470,7 @@ $(function () {
 
       if (willOpen && !$panel.children(".back-button").length) {
         $panel.prepend(
-          '<div class="back-button"><i class="fa-solid fa-chevron-left"></i> Back</div>',
+          '<div class="back-button"><i class="fa-solid fa-chevron-left"></i></div>',
         );
       }
     });
