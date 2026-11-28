@@ -127,6 +127,8 @@
   align-items: center;
   //gap: 18px;
   min-height: 75px;
+  margin: 0;
+  padding: 0;
   padding-right: 5%;
 
   min-width: 0;
@@ -507,6 +509,10 @@
       }
     }
   }
+}
+
+.queen-search {
+  background: $queen-primary;
 }
 
 /* Adjust search icon button when active */

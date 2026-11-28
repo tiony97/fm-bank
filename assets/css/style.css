@@ -666,7 +666,7 @@ section .intro-left * {
   z-index: 3;
 }
 .hero .container .hero-content {
-  max-width: 600px;
+  max-width: 900px;
 }
 .hero .container .breadcrumbs {
   width: -moz-fit-content;
@@ -10882,6 +10882,123 @@ section .intro-left * {
 }
 
 /* =========================================
+   FAMILY BANK TABS SECTION (E.G. DIASPORA AGENTS)
+========================================= */
+.fm-tabs-section {
+  padding: 60px 0;
+}
+.fm-tabs-section .tabs-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  align-items: stretch;
+  /* ---------- Left Side: Navigation ---------- */
+}
+.fm-tabs-section .tabs-layout .tabs-nav {
+  display: flex;
+  flex-direction: column;
+  background: #2a5caa;
+  border-radius: 24px;
+  padding: 10px 0;
+  overflow: hidden;
+}
+.fm-tabs-section .tabs-layout .tabs-nav .tab-btn {
+  display: block;
+  width: 100%;
+  padding: 18px 24px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.fm-tabs-section .tabs-layout .tabs-nav .tab-btn:last-child {
+  border-bottom: none;
+}
+.fm-tabs-section .tabs-layout .tabs-nav .tab-btn:hover:not(.active) {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+.fm-tabs-section .tabs-layout .tabs-nav .tab-btn.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+.fm-tabs-section .tabs-layout {
+  /* ---------- Right Side: Content ---------- */
+}
+.fm-tabs-section .tabs-layout .tabs-content {
+  position: relative;
+  background: #f8f9fa;
+  border: 1px solid rgba(8, 18, 34, 0.1019607843);
+  border-radius: 24px;
+  overflow: hidden;
+  height: auto;
+}
+.fm-tabs-section .tabs-layout .tabs-content .tab-panel {
+  display: none;
+}
+.fm-tabs-section .tabs-layout .tabs-content .tab-panel.active {
+  display: block;
+}
+.fm-tabs-section .tabs-layout .tabs-content {
+  /* Table Styling */
+}
+.fm-tabs-section .tabs-layout .tabs-content .table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+  background: transparent;
+}
+.fm-tabs-section .tabs-layout .tabs-content .agent-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+  min-width: 800px;
+}
+.fm-tabs-section .tabs-layout .tabs-content .agent-table thead th {
+  background: #f4f4f7;
+  color: #2a5caa;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 16px 20px;
+  white-space: nowrap;
+}
+.fm-tabs-section .tabs-layout .tabs-content .agent-table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+.fm-tabs-section .tabs-layout .tabs-content .agent-table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+.fm-tabs-section .tabs-layout .tabs-content .agent-table tbody tr {
+  background: #ffffff;
+  transition: background 0.2s ease;
+}
+.fm-tabs-section .tabs-layout .tabs-content .agent-table tbody tr:hover {
+  background: #fafafa;
+}
+.fm-tabs-section .tabs-layout .tabs-content .agent-table tbody tr td {
+  padding: 16px 20px;
+  font-size: 15px;
+  color: #1e293b;
+  border-bottom: 1px solid #d4d9e0;
+  vertical-align: middle;
+}
+.fm-tabs-section .tabs-layout .tabs-content .agent-table tbody tr td:nth-child(1) {
+  color: #2a5caa;
+  font-weight: 500;
+}
+.fm-tabs-section .tabs-layout .tabs-content .agent-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================================
    CARD SECTIONS (E.G. HELP, ABOUT, PERSONAL)
 ========================================= */
 .cards-section {
@@ -11803,6 +11920,38 @@ section .intro-left * {
     font-size: 16px;
     margin-bottom: 20px;
   }
+  .fm-tabs-section .tabs-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .fm-tabs-section .tabs-layout .tabs-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0;
+    border-radius: 16px;
+    scrollbar-width: none;
+  }
+  .fm-tabs-section .tabs-layout .tabs-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .fm-tabs-section .tabs-layout .tabs-nav .tab-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 16px;
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    white-space: nowrap;
+    font-size: 14px;
+  }
+  .fm-tabs-section .tabs-layout .tabs-nav .tab-btn:last-child {
+    border-right: none;
+  }
+  .fm-tabs-section .tabs-layout .tabs-content {
+    border-radius: 16px;
+  }
+  .fm-tabs-section .tabs-layout .tabs-content .tab-panel {
+    padding: 0;
+  }
 }
 @media (max-width: 600px) {
   .cards-section {
@@ -12002,6 +12151,15 @@ section .intro-left * {
   }
   .full-results-modal .fr-footer .fr-footer-bottom p {
     font-size: 10px;
+  }
+  .fm-tabs-section .tabs-layout .tabs-nav .tab-btn {
+    padding: 12px;
+    font-size: 13px;
+  }
+  .fm-tabs-section .tabs-layout .tabs-content .agent-table thead th,
+  .fm-tabs-section .tabs-layout .tabs-content .agent-table tbody td {
+    padding: 12px 15px;
+    font-size: 13px;
   }
 }
 /* =========================================
@@ -12955,6 +13113,8 @@ section .intro-left * {
   display: flex;
   align-items: center;
   min-height: 75px;
+  margin: 0;
+  padding: 0;
   padding-right: 5%;
   min-width: 0;
 }
@@ -13286,6 +13446,10 @@ section .intro-left * {
 .header-search-dropdown .search-dropdown-content .search-suggestions .suggestion-pill:hover {
   background: #f0f0f0;
   transform: translateY(-2px);
+}
+
+.queen-search {
+  background: #6a3293;
 }
 
 /* Adjust search icon button when active */

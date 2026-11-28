@@ -955,6 +955,23 @@ $(function () {
     $("#" + targetId).addClass("active");
   });
 
+  // ================= FM TABS =================
+
+  $(document).on("click", ".fm-tabs-section .tab-btn", function () {
+    const $btn = $(this);
+    const targetId = $btn.data("tab");
+
+    // 1. Update the buttons
+    $(".fm-tabs-section .tab-btn")
+      .removeClass("active")
+      .attr("aria-selected", "false");
+    $btn.addClass("active").attr("aria-selected", "true");
+
+    // 2. Hide all panels and show the targeted one
+    $(".fm-tabs-section .tab-panel").removeClass("active");
+    $("#" + targetId).addClass("active");
+  });
+
   // ================= SIMILAR PRODUCTS CAROUSEL =================
   const similarProductsElement = document.querySelector(".similar-swiper");
 

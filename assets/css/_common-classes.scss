@@ -20,6 +20,143 @@
 }
 
 /* =========================================
+   FAMILY BANK TABS SECTION (E.G. DIASPORA AGENTS)
+========================================= */
+.fm-tabs-section {
+  padding: 60px 0;
+
+  .tabs-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr; // Fixed width for sidebar, flexible for content
+    gap: 24px;
+    align-items: stretch;
+
+    /* ---------- Left Side: Navigation ---------- */
+    .tabs-nav {
+      display: flex;
+      flex-direction: column;
+      background: $primary-dark;
+      border-radius: 24px;
+      padding: 10px 0;
+      overflow: hidden;
+
+      .tab-btn {
+        display: block;
+        width: 100%;
+        padding: 18px 24px;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 18px;
+        font-weight: 500;
+        text-align: left;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &:hover:not(.active) {
+          color: $white;
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+        &.active {
+          color: $white;
+          background: rgba(255, 255, 255, 0.1); // Slight highlight for active
+          font-weight: 600;
+          border-bottom-color: rgba(255, 255, 255, 0.4);
+        }
+      }
+    }
+
+    /* ---------- Right Side: Content ---------- */
+    .tabs-content {
+      position: relative;
+      background: #f8f9fa;
+      border: 1px solid #0812221a;
+      border-radius: 24px;
+      overflow: hidden; // Ensures table corners are rounded
+
+      // Remove fixed height
+      height: auto;
+
+      .tab-panel {
+        display: none;
+
+        &.active {
+          display: block;
+        }
+      }
+
+      /* Table Styling */
+      .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+        border-radius: 12px;
+        background: transparent;
+      }
+
+      .agent-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        text-align: left;
+        min-width: 800px; // Ensures table doesn't squish too much on smaller screens
+
+        thead {
+          th {
+            background: #f4f4f7;
+            color: $primary-dark;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 16px 20px;
+            white-space: nowrap;
+
+            &:first-child {
+              border-top-left-radius: 12px;
+            }
+            &:last-child {
+              border-top-right-radius: 12px;
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            background: $white;
+            transition: background 0.2s ease;
+
+            &:hover {
+              background: #fafafa;
+            }
+
+            td {
+              padding: 16px 20px;
+              font-size: 15px;
+              color: $text-primary;
+              border-bottom: 1px solid #d4d9e0;
+              vertical-align: middle;
+
+              &:nth-child(1) {
+                color: $primary-dark; // Agent Name blue
+                font-weight: 500;
+              }
+            }
+
+            &:last-child td {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =========================================
    CARD SECTIONS (E.G. HELP, ABOUT, PERSONAL)
 ========================================= */
 .cards-section {
@@ -1032,6 +1169,48 @@
       }
     }
   }
+
+  .fm-tabs-section {
+    .tabs-layout {
+      grid-template-columns: 1fr;
+      gap: 16px;
+
+      .tabs-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 0;
+        border-radius: 16px;
+
+        // Hide scrollbar
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .tab-btn {
+          flex: 1;
+          justify-content: center;
+          padding: 16px;
+          border-bottom: none;
+          border-right: 1px solid rgba(255, 255, 255, 0.15);
+          white-space: nowrap;
+          font-size: 14px;
+
+          &:last-child {
+            border-right: none;
+          }
+        }
+      }
+
+      .tabs-content {
+        border-radius: 16px;
+
+        .tab-panel {
+          padding: 0;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 600px) {
@@ -1265,6 +1444,27 @@
         padding: 15px 20px;
         p {
           font-size: 10px;
+        }
+      }
+    }
+  }
+
+  .fm-tabs-section {
+    .tabs-layout {
+      .tabs-nav {
+        .tab-btn {
+          padding: 12px;
+          font-size: 13px;
+        }
+      }
+
+      .tabs-content {
+        .agent-table {
+          thead th,
+          tbody td {
+            padding: 12px 15px;
+            font-size: 13px;
+          }
         }
       }
     }
